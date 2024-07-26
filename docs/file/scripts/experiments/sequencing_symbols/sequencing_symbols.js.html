@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">scripts/experiments/sequencing_symbols/sequencing_symbols.js | vcl-web-framework</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<script src="./inject/script/0-conditions-config.js"></script><script src="./inject/script/0-experiments-config.js"></script><script src="./inject/script/0-graphing-config.js"></script><script src="./inject/script/0-trial-structure-config.js"></script><script src="./inject/script/0-balancing-config.js"></script><script src="./inject/script/0-view-controller.js"></script><script src="./inject/script/0-experiments-renderer.js"></script><script src="./inject/script/0-conditions-renderer.js"></script><script src="./inject/script/0-supported-properties-renderer.js"></script><link rel="stylesheet" href="./inject/css/0-styles.css"><meta name="description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="vcl-web-framework"><meta property="twitter:description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/UBC-VCL/VCLWebFramework.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing">experiment-properties/balancing</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-balance_subconditions">balance_subconditions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing-balancing-helpers">experiment-properties/balancing/balancing_helpers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_index_array">generate_index_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_any_array">get_any_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_any_array_repeated">get_any_array_repeated</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_permutation">get_permutation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_remaining_elements">get_remaining_elements</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-heapsPermute">heapsPermute</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reorder">reorder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffle">shuffle</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing-generators">experiment-properties/balancing/generators</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_blocked_latin_square">initialize_blocked_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-innitialize_custom_latin_square">innitialize_custom_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_counter_balanced_order">generate_counter_balanced_order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-innitialize_custom_order">innitialize_custom_order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_latin_square">initialize_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_random_order">initialize_random_order</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-counter">experiment-properties/counter</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-print_curr_trial">print_curr_trial</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-data">experiment-properties/data</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_custom_subcondition">get_custom_subcondition</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_condition_dataset">create_condition_dataset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_design_condition_dataset">create_design_condition_dataset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_data">get_data</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_data_subset">get_data_subset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CUSTOM_TRIAL_STRUCTURE_CONDITIONS">CUSTOM_TRIAL_STRUCTURE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_BASES">EXPERIMENT_BASES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_CONDITIONS">EXPERIMENT_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-data-constants">experiment-properties/data/constants</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENSEMBLE_AVERAGE_BASE">ENSEMBLE_AVERAGE_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENSEMBLE_AVERAGE_CONDITIONS">ENSEMBLE_AVERAGE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ESTIMATION_CONDITIONS">ESTIMATION_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HYBRID_BASE">HYBRID_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HYBRID_CONDITIONS">HYBRID_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_BASE">JND_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_CONDITIONS">JND_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_BASE">JND_RADIUS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_CONDITIONS">JND_RADIUS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_BASE">NUMEROSITY_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_CONDITIONS">NUMEROSITY_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_BASE">SEQUENCING_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_CONDITIONS">SEQUENCING_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SIDE_BY_SIDE_BASE">SEQUENCING_SIDE_BY_SIDE_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SIDE_BY_SIDE_CONDITIONS">SEQUENCING_SIDE_BY_SIDE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SYMBOLS_BASE">SEQUENCING_SYMBOLS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SYMBOLS_CONDITIONS">SEQUENCING_SYMBOLS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_BASE">STEVENS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_CONDITIONS">STEVENS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-VISUAL_SEARCH_BASE">VISUAL_SEARCH_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-VISUAL_SEARCH_CONDITIONS">VISUAL_SEARCH_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-distribution">experiment-properties/distribution</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_adjusted_distribution">generate_adjusted_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_initial_distribution">generate_initial_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_random_distribution">generate_random_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-correlationNotWithinError">correlationNotWithinError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateDistribution">generateDistribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomGaussian">generateRandomGaussian</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getPearsonCorrelation">getPearsonCorrelation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointNotWithinRequiredStdDevs">pointNotWithinRequiredStdDevs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_coordinates">prepare_coordinates</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-random_bm">random_bm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readjustPoints">readjustPoints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformPoints">transformPoints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomDistribution">generateRandomDistribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomUniform">generateRandomUniform</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUniformDistribution">generateUniformDistribution</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing">experiment-properties/graphing</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_color">generate_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_color_hex">generate_color_hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-is_custom_plot">is_custom_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_custom_plot">prepare_custom_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-add_graph_features">add_graph_features</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_attributes_object">generate_attributes_object</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_distributions">plot_distributions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-base-plots">experiment-properties/graphing/d3-base-plots</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_parallel_plot">create_parallel_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_ring_plot">create_ring_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_scatter_plot">create_scatter_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_scatter_points">plot_scatter_points</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_shape_plot">create_shape_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_strip_plot">create_strip_plot</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-custom-plots">experiment-properties/graphing/d3-custom-plots</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_distractor_scatter_plot">create_distractor_scatter_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_bisection_plot">create_estimation_bisection_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_interference_plot">create_estimation_interference_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_multi_interference_plot">create_estimation_multi_interference_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_plot">create_estimation_plot</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-plot-features">experiment-properties/graphing/d3-plot-features</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-combine_target_and_distractor">combine_target_and_distractor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_mixed_attribute_graph">plot_mixed_attribute_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_array_mix_graph">prepare_array_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_mix_graph">prepare_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_targeted_mix_graph">prepare_targeted_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_visual_mask_graph">prepare_visual_mask_graph</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-instructions">experiment-properties/instructions</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_subcond_instruction_block">generate_subcond_instruction_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_instructions">get_instructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_jspsych_instructions">get_jspsych_instructions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-instruction-screen">experiment-timeline/instruction_screen</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_instructions">generate_instructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_ready_screen">generate_ready_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_sitting_distance_screen">generate_sitting_distance_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_welcome">generate_welcome</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-resolution-scaling">experiment-timeline/resolution_scaling</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-manual_resolution_scaling">manual_resolution_scaling</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resolution_scaling">resolution_scaling</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-screening">experiment-timeline/screening</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningInstructions">screeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningPCPInverted">screeningPCPInverted</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-instructionsRegression">instructionsRegression</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningCorrelationSelect">screeningCorrelationSelect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningCorrelationSort">screeningCorrelationSort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningInstructions">screeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningQuestions">screeningQuestions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningRegressionSelect">screeningRegressionSelect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-colorScreeningInstructions">colorScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ignoreScreeningInstructions">ignoreScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-luminanceScreeningInstructions">luminanceScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-orientationScreeningInstructions">orientationScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningStripColorYellowBlue">screeningStripColorYellowBlue</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screenningStripLuminanceSort">screenningStripLuminanceSort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screenningStripOrientationSort">screenningStripOrientationSort</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-ensemble-average">experiments/ensemble_average</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/ensemble_average/ensemble_average.js~Ensemble_Average.html">Ensemble_Average</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ensemble_avg_exp">ensemble_avg_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-estimation">experiments/estimation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/estimation/estimation.js~Estimation.html">Estimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-estimation_exp">estimation_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-hybrid">experiments/hybrid</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/hybrid/hybrid.js~Hybrid.html">Hybrid</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-hybrid_exp">hybrid_exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_exp">jnd_exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-stevens_exp">stevens_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-jnd">experiments/jnd</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/jnd/jnd.js~JND.html">JND</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_block">generate_experiment_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_end">generate_experiment_end</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_screen">generate_feedback_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_block">generate_practice_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_ready_experiment">generate_ready_experiment</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_stop_block">generate_stop_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_exp">jnd_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-jnd-radius">experiments/jnd_radius</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/jnd_radius/jnd_radius.js~JND_Radius.html">JND_Radius</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_radius_exp">jnd_radius_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-numerosity">experiments/numerosity</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/numerosity/numerosity.js~Numerosity.html">Numerosity</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-numerosity_exp">numerosity_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing">experiments/sequencing</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing/sequencing.js~Sequencing.html">Sequencing</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-IMAGE_PATH">IMAGE_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_exp">sequencing_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing-side-by-side">experiments/sequencing_side_by_side</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js~Sequencing_Side_by_Side.html">Sequencing_Side_by_Side</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-IMAGE_PATH">IMAGE_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_side_by_side_exp">sequencing_side_by_side_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing-symbols">experiments/sequencing_symbols</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing_symbols/sequencing_symbols.js~Sequencing_Symbols.html">Sequencing_Symbols</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment">generate_experiment</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_end">generate_experiment_end</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_screen">generate_feedback_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_wrapper">generate_feedback_wrapper</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_block">generate_practice_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_instruction_block">generate_practice_instruction_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_stop_practice_trials">generate_stop_practice_trials</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RECTANGLE_MASK_PATH">RECTANGLE_MASK_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SQUARE_MASK_PATH">SQUARE_MASK_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_symbols_exp">sequencing_symbols_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-stevens">experiments/stevens</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/stevens/stevens.js~Stevens.html">Stevens</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-stevens_exp">stevens_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-visual-search">experiments/visual_search</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/visual_search/visual_search_timeline.js~Visual_Search.html">Visual_Search</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_color_paths">get_color_paths</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex_to_color">hex_to_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-visual_search_exp">visual_search_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers">helpers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/helpers/correlation_dependencies.js~Correlation_Dependencies.html">Correlation_Dependencies</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-above_and_below_generate_random_trial_array">above_and_below_generate_random_trial_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bundle_z_values">bundle_z_values</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-check_params">check_params</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-force_greater_right_position">force_greater_right_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feature_search_trials">generate_feature_search_trials</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_timeline_screen">generate_timeline_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-genereate_hybrid_instruction">genereate_hybrid_instruction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getScreenHeight">getScreenHeight</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_mixed_graph_styles">get_mixed_graph_styles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_mixed_masks">get_mixed_masks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_num_blocks">get_num_blocks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_running_average">get_running_average</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_single_graph_style">get_single_graph_style</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_single_mask">get_single_mask</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-is_converged_in_window">is_converged_in_window</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nova_variables">nova_variables</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_graph_attributes_mixed">randomize_graph_attributes_mixed</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_position">randomize_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_position_symmetric">randomize_position_symmetric</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_radius_position">randomize_radius_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-repeat_y_values">repeat_y_values</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffleArray">shuffleArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-correlation_dependencies">correlation_dependencies</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">scripts/experiments/sequencing_symbols/sequencing_symbols.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { balance_subconditions} from &apos;/scripts/experiment-properties/balancing/balancing_controller.js&apos;
+import { plot_distributions } from &quot;/scripts/experiment-properties/graphing/graphing_controller.js&quot;;
+import { get_data } from &apos;/scripts/experiment-properties/data/data_controller.js&apos;
+import { generate_adjusted_distribution, generate_initial_distribution, generate_random_distribution} from &apos;/scripts/experiment-properties/distribution/distribution_controller.js&apos;
+import { check_params, is_converged_in_window, randomize_position_symmetric, randomize_graph_attributes_mixed, above_and_below_generate_random_trial_array, 
+         get_mixed_masks, get_single_mask, get_mixed_graph_styles, get_single_graph_style, bundle_z_values, repeat_y_values, get_num_blocks, get_running_average} from &apos;/scripts/helpers/experiment_helpers.js&apos;
+import {correlation_dependencies} from &apos;/scripts/helpers/correlation_dependencies.js&apos;
+export { SQUARE_MASK_PATH,  RECTANGLE_MASK_PATH};
+const ADDRESS = location.protocol + &quot;//&quot; + location.hostname + &quot;:&quot; + location.port;
+const SQUARE_MASK_PATH = ADDRESS + &apos;/scripts/experiments/sequencing_symbols/img/noisemask.png&apos;;
+
+const RECTANGLE_MASK_PATH = ADDRESS + &apos;/scripts/experiments/sequencing_symbols/img/noisemask_wide.png&apos;;
+const RECNTANGLE_BLACK_BG_PATH = ADDRESS + &apos;/scripts/experiments/sequencing_symbols/img/noisemask_wide_black.png&apos;;
+const MASK_PATHS = {
+  square: &apos;/scripts/experiments/sequencing_symbols/img/noisemask.png&apos;,
+  square_black: &apos;/scripts/experiments/sequencing_symbols/img/noisemask_black.png&apos;,
+  rectangle: &apos;/scripts/experiments/sequencing_symbols/img/noisemask_wide.png&apos;,
+  rectangle_black: &apos;/scripts/experiments/sequencing_symbols/img/noisemask_wide_black.png&apos;
+}
+
+export default class Sequencing_Symbols {
+  /**
+   * Initializes a Sequencing experiment object.
+   *
+   * @param  {assoc array}  Parameters passed from routing.
+   */
+  constructor(params) {
+    //console.log(&quot;Entered constructor&quot;)
+    console.log(params);
+    let experiment_name = params[&quot;experiment_name&quot;]
+    let trial_structure = params[&quot;trial_structure&quot;];
+    let condition_name = params[&quot;condition&quot;];
+    let graph_type = params[&quot;graph_type&quot;];
+    let balancing_type = params[&quot;balancing&quot;];
+    //let conversion_factor = params[&quot;conversion_factor&quot;]
+
+    // ========================================
+    // PARAMETER CHECKING
+    let sequencing_symbols_exp = this;
+    check_params(sequencing_symbols_exp, experiment_name, trial_structure, graph_type, balancing_type)
+
+    this.condition_name = condition_name;
+    this.condition_group = this.condition_name.split(&apos;_&apos;)[0]; // Mostly to handle &quot;distractor&quot; conditions.
+                                                              // TODO: Should have a better flag for it.
+    this.subject_id = params[&quot;subject_id&quot;];
+    this.subject_initials = params[&quot;subject_initials&quot;];
+    this.auto_mode = false;
+
+    this.is_practice_trials = params[&quot;is_practice_trials&quot;];
+    this.is_screening = params[&quot;is_screening&quot;];
+    this.is_local_save = params[&quot;is_local_save&quot;]
+    this.manual_scaling_factor = params[&quot;manual_scaling_factor&quot;];
+    this.custom_subcondition_order = params[&quot;custom_subcondition_order&quot;];
+   
+    // ========================================
+    // EXPERIMENT CONSTANTS
+
+    this.MIN_CORRELATION = 0.0;
+    this.MAX_CORRELATION = 1.0;
+    this.MIN_TRIALS = 24;
+    this.MAX_TRIALS = 52;
+    this.WINDOW_SIZE = 24;
+    this.WINDOW_INTERVAL = 3;
+    this.CONVERGENCE_THRESHOLD = 0.75;
+    this.INCORRECT_MULTIPLIER = 3;
+    this.MAX_REPETITIONS = 5;
+    //this.SCREEN_HEIGHT = this.getScreenHeight(); //deprecated
+
+    // ========================================
+    // EXPERIMENT FLAGS
+
+    this.converged = false; // used to store subcondition data info
+    //this.first_trial_of_sub_condition = true; 
+
+    // ========================================
+    // PRACTICE EXPERIMENT VARIABLES
+
+    this.MAX_PRACTICE_TRIALS = 2;
+    this.practice_conditions_constants;
+    this.current_practice_condition_index;
+    this.practice_selection_matrix = [];
+    this.adjusted_quantity_practice = [];
+    this.practice_condition_ended = false;
+
+    // ========================================
+    // TEST EXPERIMENT VARIABLES 
+    this.sub_condition_order;
+    this.sub_conditions_constants;
+    this.current_sub_condition_index;     // Index used to keep track of the current subcondition. Starts at 0, goes to 8
+    this.adjusted_quantity_matrix = {};   // The matrix is in this format:
+                                          // { sub_condition_index : [below_track, above_track ] }
+                                          // bot track : [below_adjusted_quantity1, below_adjusted_quantity2 ...]
+                                          // top track : [above_adjusted_quantity1, above_adjusted_quantity2 ...]
+    this.trial_selection_matrix = [];     // Used in above and below tracks to determine above/below display order
+
+    // ========================================
+    // DEBUG VARIABLES
+    this.end_sub_condition_debug = false;
+
+    // ========================================
+    // CURRENT TRIAL DATA
+
+    // Plotting-related vars
+    this.left_coordinates = &quot;&quot;;
+    this.right_coordinates = &quot;&quot;;
+    this.distractor_coordinates = &quot;&quot;;
+
+    // JsPsych trial_data for the current trial
+    this.trial_data = &quot;&quot;;
+
+    // Graph dimension and margin information for graphing controller and mask
+    this.style_attributes = {};
+
+    // ========================================
+    // PREPARE EXPERIMENT
+
+    // Extract raw constants
+    this.raw_constants = get_data(this);
+    console.log(this.raw_constants[0])
+    if(this.raw_constants[0][&quot;block&quot;]){
+      this.num_blocks = get_num_blocks(this.raw_constants, &quot;block&quot;);
+      this.block_size = this.raw_constants.length / this.num_blocks;
+    }
+
+    // Prepare experiment + practice data
+    this.prepare_experiment();
+    this.prepare_practice();
+
+    // ========================================
+    // Adjusted Statistic Values
+    // ** Previously were set inside the get_next_adjusted_statistic method.
+    // ** Replacing constants into variables to be set inside the method.
+    this.correct_statistic_increment = 0.01;
+    this.incorrect_statistic_increment = 0.03;
+    //console.log(&quot;Finished constructor&quot;)
+  }
+  
+  /**
+   * Orders the input data according to balancing type and
+   * initializes the Sequencing object&apos;s variables.
+   *
+   */
+  prepare_experiment() {
+    //console.log(&quot;Entered prepare_experiment()&quot;)
+    let dataset = this.raw_constants;
+    // it gets scrambled for some reason.  put it back in order, according to the hardcoded subcond numbers
+    
+    // Order the data set according to the latin square
+    this.sub_condition_order = balance_subconditions(this.balancing_type, this.constructor.name.toLowerCase(), dataset.length, dataset, &quot;block&quot;, this.custom_subcondition_order);
+    console.log(&quot;Subcondition Order: &quot;, this.sub_condition_order)
+
+    var ordered_dataset = [];
+
+    // Initialize adjusted_quantity_matrix size
+    for (let i=0; i &lt; this.sub_condition_order.length; i++){
+      ordered_dataset[i] = dataset[this.sub_condition_order[i]];
+      this.adjusted_quantity_matrix[i] = [];
+      this.adjusted_quantity_matrix[i][0] = []; //below track
+      this.adjusted_quantity_matrix[i][1] = []; //above track
+    }
+
+    // Set experiment trials
+    this.sub_conditions_constants = ordered_dataset;
+    this.current_sub_condition_index = 0;
+    //console.log(&quot;Finished prepare_experiment()&quot;)
+  }
+
+  /**
+   * Orders the input dataset by randomizing it, and initializes the practice variables.
+   *
+   */
+  prepare_practice() {
+
+    let dataset = this.raw_constants;
+
+    this.sub_condition_order = balance_subconditions(this.balancing_type, this.constructor.name.toLowerCase(), dataset.length, dataset, &quot;block&quot;);
+    // console.log(&quot;Practice Subcondition Order: &quot;)
+    // console.log(this.sub_condition_order)
+
+    var ordered_dataset = [];
+
+    // Order the data set according to the latin square
+    // Initialize adjusted_quantity_matrix size
+    for (let i=0; i &lt; this.sub_condition_order.length; i++){
+      ordered_dataset[i] = dataset[this.sub_condition_order[i]];
+      this.adjusted_quantity_practice[i] = [];
+      this.adjusted_quantity_practice[i][0] = []; //below track
+      this.adjusted_quantity_practice[i][1] = []; //above track
+      if(ordered_dataset[i].direction == &quot;above and below&quot;){
+        this.practice_selection_matrix[i] = [];
+        generate_random_trial_array(this.practice_selection_matrix,this.MAX_TRIALS);
+      }
+    }
+
+    // Set Practice trials
+    this.practice_conditions_constants = ordered_dataset;
+    this.current_practice_condition_index = 0;
+    //console.log(&quot;Finished prepare_practice()&quot;)
+  }
+
+  /**
+   * Generates a Sequencing trial object for use in the jsPsych timeline.
+   *
+   * @param  {string} type &quot;test&quot; or &quot;practice&quot;
+   * @return {object} trial 
+   */
+  generate_trial(block_type) {
+    if ((block_type !== &quot;test&quot;) &amp;&amp; (block_type !== &quot;practice&quot;)) {throw Error(block_type + &quot; is not supported.&quot;)};
+
+    // Initialize a variable for this so it is usable inside trial functions
+    var sequencing_symbols_exp = this;
+    
+    // let participants know which number subcondition block they are about to perform
+    let subcond_num = this.generate_subcond_num_trial(sequencing_symbols_exp, block_type)
+
+    // &quot;Anchoring&quot; trial for Memory conditions
+    let anchoring = this.generate_anchoring_trial(sequencing_symbols_exp,block_type);
+
+    // &quot;First&quot; trial in the sequence. Contains the two side-by-side plots.
+    let first = this.generate_first_trial(sequencing_symbols_exp, block_type);
+
+    // Mask screen
+    let mask = this.generate_mask_trial(sequencing_symbols_exp,block_type);
+
+    // Blank screen where choice is made
+    let blank = this.generate_blank_trial(sequencing_symbols_exp,block_type);
+
+    // Assemble trial
+    let trial = [subcond_num, anchoring,first, mask, blank];
+    return trial;
+  };
+
+  /**
+   * Generates the subcondition number trial and wraps it in a conditional timeline
+   * @param {object} sequencing_symbols_exp 
+   * @param {string} block_type 
+   * @returns 
+   */
+  generate_subcond_num_trial(sequencing_symbols_exp, block_type){
+    let subcond_num = {
+      stimulus: &apos;&apos;,
+      type: &apos;html-keyboard-response&apos;,
+      choices: [&apos; &apos;],
+      on_start: function(subcond_num) {
+        // Subcondtion index and constants
+        let index = correlation_dependencies.get_subcondition_index(sequencing_symbols_exp, block_type);
+        subcond_num.stimulus = `&lt;div align=&quot;center&quot; style=&quot;font-size:20px&quot;&gt;&lt;p&gt;&lt;b&gt;Ready? Experiment block ${index + 1} of ${sequencing_symbols_exp.raw_constants.length} will now begin.&lt;/b&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;Press the spacebar to continue.&lt;/p&gt;&lt;/div&gt;`;
+      }
+    }
+
+    let subcond_num_timeline = {
+      timeline: [subcond_num],
+      conditional_function: function() {
+        if (correlation_dependencies.is_start_of_subcondition(sequencing_symbols_exp, block_type) &amp;&amp; block_type === &quot;test&quot; &amp;&amp; sequencing_symbols_exp.auto_mode == false) { 
+          return true;
+        } else {
+          return false;
+        }
+      }
+    };
+    return subcond_num_timeline;
+  }
+
+  /**
+   * Generates the first trial of the timing condition. The first trial handles generating
+   * the adjusted correlation value, distribution, setting the d3 graph plotting information
+   * and the html style attributes for the d3 graph and mask images. The First trial also
+   * saves the appropiate correlation and graph information into the experiment object and the
+   * adjusted quantity matrix for use in other trials
+   * @param {object} sequencing_symbols_exp 
+   * @param {string} block_type &quot;test&quot; or &quot;practice&quot;
+   * @returns {jsPsych trial}
+   */
+  generate_first_trial(sequencing_symbols_exp, block_type){
+    let first = {
+      type:&apos;d3-plot-keyboard-response&apos;,
+      block_type: block_type,
+      choices: jsPsych.NO_KEYS,
+      order: &apos;first&apos;,
+      exp_obj: sequencing_symbols_exp,
+      plot_distributions: plot_distributions,
+      on_start: function(first){
+        // Subcondtion index and constants
+        let index = correlation_dependencies.get_subcondition_index(sequencing_symbols_exp, block_type);
+        let constants = correlation_dependencies.get_constants(sequencing_symbols_exp, block_type, index);
+        // Get parameters
+        first.trial_duration = constants.stimulus_duration;
+        // Calculate adjusted value and distribution
+        let adjusted_values = correlation_dependencies.calculate_adjusted_value(sequencing_symbols_exp, constants, block_type);
+        sequencing_symbols_exp.adjusted_values = adjusted_values;
+        // Get the individual constants for each graph in case they have specific distribution generation values
+        let graph_constants = sequencing_symbols_exp.get_individual_graph_constants(constants);
+        let randomized_positions = {};
+        let graph_properties;
+        let style_attributes;
+        switch(constants.direction){
+          case &quot;symmetric&quot;:
+            
+            let adjusted_value_low = adjusted_values[0];
+            let adjusted_value_high = adjusted_values[1];
+            
+            // Randomize position of graph types (independent of adjustment)
+            graph_properties = randomize_graph_attributes_mixed();
+
+            // Generate adjusted values and distributions
+            let adjusted_coordinates_low;
+            let adjusted_coordinates_high;
+            let constants_a = graph_constants.constants_a;
+            let constants_b = graph_constants.constants_b;
+            // Handle graphs with different number of points (flagged as -1 in data)
+            // Randomize low-high point count independent of left - right randomization
+            // 0 = low  1 = high
+            // If graph a distribution values == graph b distribution values then it doesn&apos;t really matter
+            let random_high_low = randomize_graph_attributes_mixed();
+            sequencing_symbols_exp.randomized_high_low = random_high_low;
+            let constants_low;
+            let constants_high;
+            if(random_high_low[0] ===  &quot;graph_a_attributes&quot;){
+              constants_low = constants_a;
+              constants_high = constants_b;
+            }
+            else{
+              constants_low = constants_b;
+              constants_high = constants_a;
+            }
+            adjusted_coordinates_low = generate_adjusted_distribution(constants_low, adjusted_value_low);
+            adjusted_coordinates_high = generate_adjusted_distribution(constants_high, adjusted_value_high);
+
+
+            // Randomize position of the base and adjusted graphs
+            randomized_positions = randomize_position_symmetric(constants, adjusted_coordinates_high, adjusted_coordinates_low, adjusted_value_high, adjusted_value_low);
+            sequencing_symbols_exp.randomized_positions = randomized_positions
+
+            // Set up D3 variables for plotting
+            sequencing_symbols_exp.coordinates = [randomized_positions.left_coordinates, randomized_positions.right_coordinates];
+
+            //Set up D3 graph properties for plotting
+            sequencing_symbols_exp.graph_properties = graph_properties;
+            style_attributes = get_mixed_graph_styles(constants, graph_properties, MASK_PATHS);
+            break;
+          case &quot;memory&quot;:
+            // 0 = low, 1 = high
+            let random_high_or_low = randomize_graph_attributes_mixed();
+            sequencing_symbols_exp.randomized_positions = random_high_or_low[0] == &quot;graph_a_attributes&quot; ? &quot;low&quot; : &quot;high&quot;;
+            let adjusted_value = random_high_or_low[0] == &quot;graph_a_attributes&quot; ? adjusted_values[0] : adjusted_values[1];
+            sequencing_symbols_exp.adjusted_value = adjusted_value;
+            let adjusted_coordinates = generate_adjusted_distribution(constants, adjusted_value);
+            sequencing_symbols_exp.coordinates = [adjusted_coordinates];
+
+            // Randomize position of graph types (independent of adjustment)
+            graph_properties = randomize_graph_attributes_mixed();
+            sequencing_symbols_exp.graph_properties = graph_properties;
+            style_attributes = [get_single_graph_style(constants, constants[graph_properties[0]], SQUARE_MASK_PATH, RECTANGLE_MASK_PATH)];
+            
+            break; 
+        }
+        sequencing_symbols_exp.style_attributes = style_attributes;
+
+        // Add z values to coordinates if the condition has z values
+        sequencing_symbols_exp.add_z_values(sequencing_symbols_exp, constants)
+
+        // Save data into matrix and jsPsych data object
+        sequencing_symbols_exp.handle_data_saving(first, block_type, adjusted_values, randomized_positions, graph_properties, style_attributes);
+
+        // Custom jsPsych type requirement
+        first.exp_obj = sequencing_symbols_exp;
+
+        // Console logs
+        console.log(&quot;Base Correlation: &quot; + constants.base_correlation);
+        if(constants.direction === &quot;symmetric&quot;){
+          console.log(&quot;Correlations: &quot; + first.data.left_correlation , first.data.right_correlation);
+          console.log(&quot;[LEFT] Graph type: &quot; + first.data.left_graph);
+          console.log(&quot;[RIGHT] Graph type: &quot; + first.data.right_graph);
+        }
+        if(constants.direction === &quot;memory&quot;){
+          console.log(&quot;Correlation: &quot;, sequencing_symbols_exp.adjusted_value)
+          console.log(&quot;Current Average: &quot;, sequencing_symbols_exp.average_correlation)
+        }
+        if(constants.num_points == -1){
+          console.log(&quot;Num Points: &quot; + first.data.left_num_points , first.data.right_num_points);
+        }
+      
+      },
+    };
+
+    return first;
+  }
+
+  /**
+   * Generates the mask trial, dynamically assigning the trial duration and stimulus
+   * @param {object} sequencing_symbols_exp 
+   * @param {string} block_type 
+   * @returns {jsPsych trial}
+   */
+  generate_mask_trial(sequencing_symbols_exp, block_type){
+    let mask = {
+      type: &apos;html-keyboard-response&apos;,
+      stimulus: `&lt;div align = &quot;center&quot;&gt;&lt;/div&gt;`,
+      choices: jsPsych.NO_KEYS,
+      //trial_duration: 200,
+      on_start: function(mask) {
+        let index = correlation_dependencies.get_subcondition_index(sequencing_symbols_exp, block_type);
+        let constants = correlation_dependencies.get_constants(sequencing_symbols_exp, block_type,index);
+        mask.trial_duration = constants.distractor_duration;
+        switch(constants.direction){
+          case &quot;symmetric&quot;:
+            mask.stimulus = get_mixed_masks(sequencing_symbols_exp.style_attributes);
+            break;
+          case &quot;memory&quot;:
+            mask.stimulus = get_single_mask(sequencing_symbols_exp.style_attributes[0]);
+            break;
+        }
+      }
+    };
+    return mask;
+  }
+
+  /**
+   * Generates the blank trial where the correlation selection is made.
+   * This trial can also be used to initiate debug modes
+   * q - ends the experiment
+   * w - skips the current subcondition
+   * t - starts automode to do an end-to-end test
+   * Saves the data response into jsPsych data
+   * @param {object} sequencing_symbols_exp 
+   * @param {string} block_type 
+   * @returns {jsPsych trial}
+   */
+  generate_blank_trial(sequencing_symbols_exp, block_type){
+    let blank = {
+      type:&apos;sequencing-graph&apos;,
+      block_type: block_type,
+      order: &apos;blank&apos;,
+      stimulus: &quot;&quot;,
+      plot_distributions: plot_distributions,
+      choices:[&apos;z&apos;, &apos;m&apos;, &apos;q&apos;, &apos;t&apos;, &apos;w&apos;], // q to exit, w to skip subcond, t for automode
+      on_start: function(blank){
+        sequencing_symbols_exp.coordinates = [];
+        if (sequencing_symbols_exp.auto_mode) {
+          blank.post_trial_gap = 12;
+          blank.trial_duration = 12;
+        }
+        let randomized_positions = sequencing_symbols_exp.randomized_positions;
+        let graph_properties = sequencing_symbols_exp.graph_properties;
+        let style_attributes = sequencing_symbols_exp.style_attributes;
+        let adjusted_values = sequencing_symbols_exp.adjusted_values
+        // Saves relevant trial data by initializing trial.data property before on_finish so that
+        // data.keypress is not overwritten
+        sequencing_symbols_exp.handle_data_saving(blank, block_type, adjusted_values, randomized_positions, graph_properties, style_attributes);
+        blank.exp_obj = sequencing_symbols_exp;
+       
+      },
+      on_finish: function(data){
+        // Set the constants to be used:
+        if (data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;t&apos;) || sequencing_symbols_exp.auto_mode) {
+          // Turn on automation
+          sequencing_symbols_exp.auto_mode = true;
+          if (Math.random() &lt; 0.5) {
+            console.log(&quot;&apos;z&apos; pressed&quot;);
+            data.key_press = jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;z&apos;);
+          } else {
+            console.log(&quot;&apos;m&apos; pressed&quot;);
+            data.key_press = jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;m&apos;);
+          }
+        }
+        data.correct = sequencing_symbols_exp.check_response_sequencing(data, sequencing_symbols_exp);
+        if(data.direction === &quot;memory&quot;){
+          sequencing_symbols_exp.average_correlation = get_running_average(sequencing_symbols_exp.average_correlation, data.adjusted_value, sequencing_symbols_exp.adjusted_quantity_matrix[data.sub_condition][0].length);
+          console.log(&quot;New Average Correlation: &quot;, sequencing_symbols_exp.average_correlation);
+          console.log(&quot;RESPONSE: &quot; + data.correct);  
+        }
+      },
+    };
+    return blank;
+  }
+
+  /**
+   * Generates the anchoring trial for memory conditions
+   * Displays the base correlation for 5000ms
+   * @param {object} sequencing_symbols_exp 
+   * @param {string} block_type 
+   */
+  generate_anchoring_trial(sequencing_symbols_exp, block_type){
+    let anchoring = {
+      type:&apos;d3-plot-keyboard-response&apos;,
+      block_type: block_type,
+      choices: jsPsych.NO_KEYS,
+      order: &apos;anchoring&apos;,
+      exp_obj: sequencing_symbols_exp,
+      plot_distributions: plot_distributions,
+      on_start: function(anchoring){
+        // Subcondtion index and constants
+        let index = correlation_dependencies.get_subcondition_index(sequencing_symbols_exp, block_type);
+        let constants = correlation_dependencies.get_constants(sequencing_symbols_exp, block_type,index);
+        // Get parameters
+        anchoring.trial_duration = 5000;
+        // Calculate adjusted value and distribution
+        // Get the individual constants for each graph in case they have specific distribution generation values
+        let graph_constants = sequencing_symbols_exp.get_individual_graph_constants(constants);
+        let randomized_positions = {};
+        let graph_properties;     
+        let adjusted_value = constants.base_correlation;
+        sequencing_symbols_exp.adjusted_value = adjusted_value;
+        let adjusted_coordinates = generate_adjusted_distribution(constants, adjusted_value);
+        sequencing_symbols_exp.coordinates = [adjusted_coordinates];
+
+        // Randomize position of graph types (independent of adjustment)
+        graph_properties = randomize_graph_attributes_mixed();
+        sequencing_symbols_exp.graph_properties = graph_properties;
+        let style_attributes = [get_single_graph_style(constants, constants[graph_properties[0]], SQUARE_MASK_PATH, RECTANGLE_MASK_PATH)];
+        sequencing_symbols_exp.style_attributes = style_attributes;
+        sequencing_symbols_exp.average_correlation = adjusted_value
+        // Add z values to coordinates if the condition has z values
+        sequencing_symbols_exp.add_z_values(sequencing_symbols_exp, constants)
+
+        // Save data into matrix and jsPsych data object
+        sequencing_symbols_exp.handle_data_saving(anchoring, block_type, [adjusted_value, adjusted_value], randomized_positions, graph_properties, style_attributes);
+
+        // Custom jsPsych type requirement
+        anchoring.exp_obj = sequencing_symbols_exp;
+      },
+    }
+
+    let anchoring_mask = sequencing_symbols_exp.generate_mask_trial(sequencing_symbols_exp, block_type)
+
+    let anchoring_timeline = {
+      timeline: [anchoring, anchoring_mask],
+      conditional_function: function() {
+        let index = correlation_dependencies.get_subcondition_index(sequencing_symbols_exp, block_type);
+        let constants = correlation_dependencies.get_constants(sequencing_symbols_exp, block_type,index);
+        if (correlation_dependencies.is_start_of_subcondition(sequencing_symbols_exp, block_type)  &amp;&amp; 
+            sequencing_symbols_exp.auto_mode == false &amp;&amp;
+            constants.direction === &quot;memory&quot;) { 
+          return true;
+        } else {
+          return false;
+        }
+      }
+    };
+    return anchoring_timeline;
+  }
+
+
+   /**
+   * Initializes trial data and handles saving the relevant data on a given trial to include trial logic data as 
+   * well as data to be exported to firebase. This function also handles the Adjusted Quantity Matrix updates, 
+   * as well as experiment object data used in the Graphing Controller. Handles block specific saves (practice/test)
+   * and order specific saves (first, blank, likert). 
+   * 
+   * @param {trial}       trial 
+   * @param {String}      block_type 
+   * @param {array}       adjusted_values 
+   * @param {assoc array}  randomized_positions 
+   * @param {array}       graph_properties 
+   * @param {assoc array}  style_attributes 
+   */
+  handle_data_saving(trial, block_type, adjusted_values, randomized_positions, graph_properties, style_attributes) {
+    // Block type data
+    let sequencing_symbols_exp = this;
+    let index = correlation_dependencies.get_subcondition_index(sequencing_symbols_exp, block_type);
+    let constants = correlation_dependencies.get_constants(sequencing_symbols_exp, block_type, index);
+    trial.data = constants;    // Initialize data object with constants
+    trial.data.sub_condition = index;
+    trial.data.balanced_sub_condition = this.sub_condition_order[index];
+
+    // Trial object data
+    let order_type = trial.order;
+    trial.data.order = order_type;
+    let adjusted_value_low = adjusted_values[0];
+    let adjusted_value_high = adjusted_values[1];
+    trial.data.adjusted_value_high = adjusted_value_high;
+    trial.data.adjusted_value_low = adjusted_value_low;
+    trial.data.adjusted_value_type = &quot;correlation&quot;;
+    trial.data.style_attributes = style_attributes;
+    // Randomized Positions Data
+    switch(constants.direction){
+      case &quot;symmetric&quot;:
+        // Adjusted Values data
+        trial.data.left_correlation = randomized_positions.left_correlation;
+        trial.data.right_correlation = randomized_positions.right_correlation;
+        // Randomized Graph Attributes Data
+        trial.data.left_graph =   `${graph_properties[0]} ${constants[graph_properties[0]].graph_type}`;
+        trial.data.right_graph =  `${graph_properties[1]} ${constants[graph_properties[1]].graph_type}`;
+        
+        break;
+      case &quot;memory&quot;:
+        trial.data.high_or_low = randomized_positions;
+        trial.data.adjusted_value = randomized_positions === &quot;high&quot; ? adjusted_value_high : adjusted_value_low;
+        trial.data.average_correlation = this.average_correlation;
+        break;
+    }
+
+    //Num Points for Density Conditions
+    if(constants.num_points == -1){
+      trial.data.left_num_points = constants[graph_properties[0]].num_points
+      trial.data.right_num_points = constants[graph_properties[1]].num_points
+    }
+
+    // Adding constants that required computation (not from excel)
+    trial.data.type = &quot;sequencing_symbols&quot;;
+    trial.data.graph_type = this.graph_type;
+    
+    // Sequence Order specific saves
+    // We want the Adjusted Quantity Matrix to have values pushed into it only once
+    // &quot;likert&quot; are saved for likert data, treated as the last one of the subcondition
+    // Only &quot;blank&quot; trials are saved as they are the last one in the sequence
+    if(order_type === &quot;blank&quot; || order_type === &quot;likert&quot;){
+      trial.data.adjusted_value_type = &quot;correlation&quot;;
+      trial.data.jnd = Math.abs(adjusted_value_high - adjusted_value_low);
+      // Block specific saves
+      trial.data.run_type = block_type;
+      if (block_type == &quot;test&quot;){
+        //console.log(&apos;Pushing data in AQM&apos;)
+        this.adjusted_quantity_matrix[index][0].push(adjusted_value_low);
+        this.adjusted_quantity_matrix[index][1].push(adjusted_value_high);
+      }
+      else{ // Practice
+        this.adjusted_quantity_practice[index][0].push(adjusted_value_low);
+        this.adjusted_quantity_practice[index][1].push(adjusted_value_high);
+      }
+    }
+    //Save jsPsych trial data
+    this.trial_data = trial.data;
+  }
+
+  /**
+   * Given a Sequencing trial data, determines whether response is
+   * correct or not.
+   *
+   * @param  {JsPsych.data}  data
+   * @param {object} sequencing experiment
+   * @return {boolean}
+   */
+  check_response_sequencing(data, sequencing_symbols_exp) {
+    // For debugging purposes:
+    if (data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;q&apos;)){
+      //data.correct = -1; // debug flag
+      return -1;
+    }
+    // Skip current subcondition
+    if (data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;w&apos;)){
+      this.end_sub_condition_debug = true;
+      //data.correct = -1; 
+      return -2; // skip subcondition flag
+    }
+    let alpha = 0.000001; // Alpha value to compare doubles
+    switch(data.direction){
+      case &quot;symmetric&quot;:
+        let right_greater_clause = data.right_correlation &gt; data.left_correlation;
+        let left_greater_clause = data.left_correlation &gt; data.right_correlation;
+  
+        var are_equal = Math.abs(data.right_correlation - data.left_correlation) &lt;= alpha;
+    
+        // Assuming that if base_correlation = adjusted_correlation, at this point
+        // any user choice is wrong.
+        if(are_equal){
+          // data.correct = false;
+          // data.jnd = 0;
+          return false;
+        }
+    
+        if (right_greater_clause &amp;&amp; (data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;m&apos;)) ||
+            left_greater_clause &amp;&amp; (data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;z&apos;))){
+          //data.correct = true;
+          return true;
+        }
+        else{
+          //data.correct = false;
+          return false;
+        }
+        break;
+
+      case &quot;memory&quot;:
+        let higher_than_average_clause = data.adjusted_value &gt; sequencing_symbols_exp.average_correlation;
+        let lower_than_average_clause = data.adjusted_value &lt; sequencing_symbols_exp.average_correlation;
+        let diff = data.adjusted_value - sequencing_symbols_exp.average_correlation;
+        
+        let are_equal_memory = Math.abs(diff) &lt;= alpha;
+        if(are_equal_memory){
+          return false;
+        }
+        if (higher_than_average_clause &amp;&amp; (data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;m&apos;)) ||
+            lower_than_average_clause &amp;&amp; (data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;z&apos;))){
+          return true;
+        }
+        else{
+          return false;
+        }
+
+        break;
+    }
+
+  }
+
+  /**
+   * When called, will save summary data and individual trial data into firebase.
+   */
+  export_trial_data() {
+    //Get experiment&apos;s entire trial data 
+    const trial_data = this.get_trial_data();
+
+    //console.log(&quot;trial data: &quot;,trial_data.json());
+    //console.log(&quot;stringified trial data: &quot;, JSON.stringify(JSON.parse(trial_data.json())));
+
+    // TODO: js converting key_string to use double quotes, needs to be single to pass into ignore() fxn
+    //
+    // for (var key in sequencing_exp.trial_variables){
+    //  var key_string = &apos;${key}&apos;;
+    //  trial_data.ignore(key);
+    // }
+
+    if(this.is_local_save === &quot;true&quot;){
+      // Local save
+      var string = &quot;S&quot; + this.subject_id + &quot;_&quot; + this.condition_name + &quot;_sequencing_trial_results.csv&quot;;
+      trial_data.localSave(&apos;csv&apos;, string);
+    }
+    else{
+      // Get Summary Data for the 9 subconditions
+      let summary_data = this.get_summary_data()
+          
+      //Firebase upload
+      // Sends the data to the app.js listener
+      $.post(&quot;/api/experiment_data&quot;,
+              {
+              trial_data: JSON.parse(trial_data.json()), 
+              summary_data: summary_data, 
+              experiment: &quot;sequencing_symbols&quot;, 
+              condition: params[&quot;condition&quot;], 
+              prolific_pid: params[&quot;subject_id&quot;], 
+              study_id: params[&quot;study_id&quot;], 
+              session_id: params[&quot;session_id&quot;],
+              subject_initials: params[&quot;subject_initials&quot;]
+              },
+              function(data, status) {
+                console.log(&quot;Data: &quot; + data + &quot;\nStatus: &quot; + status)
+              }
+            );
+    }
+    
+
+
+    
+  }
+
+  // Getters
+
+  /**
+   * Gets jsPsych trial with given filters. Only returns &apos;blank&apos;
+   * type trials since those are the only ones that save data.
+   * 
+   * @param   {assoc array} filters 
+   * @returns {jsPsych data} entire jsPsych data object. Needs to be furtherly filtered later to be useful
+   */
+  get_jsPsych_data(filters){
+    return jsPsych.data.get().filter(filters)
+                             .filterCustom(function(x) {
+                                return (x.correct != -1
+                                     &amp;&amp; x.order === &quot;blank&quot;);
+                                    });
+  }
+
+  /**
+   * Returns releveant array of the experiment&apos;s trial data (in order from first to last)
+   * Non-relevant fields are ignored.
+   * &quot;Column order&quot; if downloaded to csv is &quot;randomized&quot; because trial data object is an unordered map
+   * 
+   * @returns {array} [{trial_0},{trial_1},...,{trial_n}]
+   */
+  get_trial_data(){
+    return jsPsych.data.get().filter({type: &apos;sequencing_symbols&apos;, run_type: &apos;test&apos;})
+                              .filterCustom(function(x){ //Don&apos;t include the exit trials
+                                return x.correct != -1;
+                              })
+                              .filterCustom(function(x){
+                                if (x.order === &quot;blank&quot; || x.order === &quot;likert&quot;)  // filter for only blank and likert trials (&quot;first&quot; are not included)
+                                return x;
+                              })
+                              // Sequencing&apos;s trial variables
+                              .ignore(&apos;type&apos;)
+                              .ignore(&apos;run_type&apos;)
+                              .ignore(&apos;left_correlation&apos;)
+                              .ignore(&apos;right_correlation&apos;)
+                              // Experiment constants
+                              .ignore(&apos;style_attributes&apos;)
+                              .ignore(&apos;SD&apos;)
+                              .ignore(&apos;background_color&apos;)
+                              .ignore(&apos;feedback_background_color&apos;)
+                              .ignore(&apos;initial_difference&apos;)
+                              .ignore(&apos;mean&apos;)
+                              .ignore(&apos;num_SD&apos;)
+                              // These are variables forced on by jsPsych
+                              .ignore(&apos;stimulus&apos;)
+                              .ignore(&apos;key_press&apos;)
+                              .ignore(&apos;choices&apos;)
+                              .ignore(&apos;trial_type&apos;)
+                              .ignore(&apos;trial_index&apos;)
+                              .ignore(&apos;time_elapsed&apos;)
+                              .ignore(&apos;internal_node_id&apos;)
+                              .ignore(&apos;subcondition_instructions&apos;);
+  } 
+
+  /**
+   * Get&apos;s experiment relevant summary data.
+   * Relevant summary data includes: independent variables, overall JND, convergance JND (last 24), convergance results, trial count
+   * 
+   * @returns {assoc[]} array of summary data
+   */
+  get_summary_data(){
+    let summary_data = [];
+    let screening_json = jsPsych.data.get().filter({trial_type: &apos;survey-html-form&apos;}).select(&apos;responses&apos;).values[0]
+    // Participant information
+    // indexing might need to be genralized better if there are previous trials before the start of the experiment
+    if(screening_json){
+      console.log(&apos;Saving Screening&apos;)
+      let screening_responses = JSON.parse(screening_json)
+      let screening_data = {};
+      screening_data.education = screening_responses[2].value
+      screening_data.stat_classes_take = screening_responses[3].value
+      screening_data.vision = screening_responses[4].value
+      screening_data.gender = screening_responses[5].value
+      screening_data.age = screening_responses[6].value
+      summary_data.push(screening_data);
+    }
+
+    // Subcondition Data
+    for (let i = 0; i&lt;this.sub_conditions_constants.length; i++) {
+      let sub_data = {};
+
+      const constants = this.sub_conditions_constants[i];
+      //console.log(constants)
+      
+      const condition_data = jsPsych.data.get().filter({type: &apos;sequencing_symbols&apos;, run_type: &apos;test&apos;, balanced_sub_condition: this.sub_condition_order[i]})
+                                                .filterCustom(function(x) {
+                                                  return (x.correct != -1
+                                                      &amp;&amp; x.order === &quot;blank&quot;);
+                                                    });
+
+      // const likert_data = jsPsych.data.get().filter({type: &apos;sequencing_symbols&apos;, run_type: &apos;test&apos;, balanced_sub_condition: this.sub_condition_order[i]})
+      //                                          .filterCustom(function(x) {
+      //                                           return (x.order === &quot;likert&quot;);
+      //                                           });
+
+      //sub_data.jnd = condition_data.select(&apos;jnd&apos;).mean();
+      sub_data.convergance_jnd = condition_data.last(24).select(&apos;jnd&apos;).mean();
+      sub_data.average_response_time = condition_data.select(&apos;rt&apos;).mean();
+      sub_data.converged = condition_data.last().select(&apos;converged&apos;).values[0]
+      //sub_data.direction = constants.direction;
+      sub_data.base_correlation = constants.base_correlation;
+      //sub_data.stimulus_duration = constants.stimulus_duration;
+      sub_data.comparison_type = constants.block;
+      sub_data.trial_count = condition_data.count();
+      //sub_data.likert_data = JSON.stringify(likert_data.select(&apos;responses&apos;).values[0]);
+      //sub_data.subcondition_index = constants.subcondition_number
+
+
+      summary_data.push(sub_data);
+      console.log(&quot;index success &quot; + i);
+    }
+
+    return summary_data;
+  }
+
+  /**
+   * Get current subcondition index of block type for current index.
+   *
+   * @param   {String} block_type - Either &quot;test&quot; or &quot;practice&quot;
+   * @returns {int}     index - current subcondition index
+   */
+  get_subcondition_index(block_type){
+    // Error handling
+    if (block_type != &quot;test&quot; &amp;&amp; block_type != &quot;practice&quot;) {
+      throw Error(`Invalid experiment type of ${block_type}`);
+    }
+    var index;
+    if (block_type == &quot;test&quot;){
+      index = this.current_sub_condition_index;
+    } 
+    else {
+      index = this.current_practice_condition_index;
+    }
+    return index;
+  }
+
+  /**
+   * Get current trial index for above and below condition.
+   *
+   * @param {String} block_type - Either &quot;test&quot; or &quot;practice&quot;
+   * @param {int} index         - current subcondition index
+   * @returns {int} curr_index  - current trial index
+   */
+  get_above_below_curr_index(block_type, index){
+    // Error handling
+    if (block_type != &quot;test&quot; &amp;&amp; block_type != &quot;practice&quot;) {
+      throw Error(`Invalid experiment type of ${block_type}`);
+    }
+    let curr_index;
+    if (block_type == &quot;test&quot;){
+      curr_index = this.adjusted_quantity_matrix[index][0].length + this.adjusted_quantity_matrix[index][1].length;
+    } else {
+      curr_index = this.adjusted_quantity_practice[index][0].length + this.adjusted_quantity_practice[index][1].length
+    }
+    return curr_index;
+  }
+
+  /**
+   * Get the current direction 
+   * @param {string} block_type 
+   * @param {int} index 
+   * @param {int} curr_trial_index 
+   * @returns {string}
+   */
+  get_above_below_curr_direction(block_type, index, curr_trial_index){
+    if (block_type != &quot;test&quot; &amp;&amp; block_type != &quot;practice&quot;) {
+      throw Error(`Invalid experiment type of ${block_type}`);
+    }
+    let curr_direction;
+    if (block_type == &quot;test&quot;){
+      curr_direction = this.trial_selection_matrix[index][curr_trial_index];
+    } else {
+      curr_direction = this.practice_selection_matrix[index][curr_trial_index];
+    }
+    return curr_direction;
+  }
+
+  /**
+   * Returns the individual graph constants for graphs a and b
+   * Handles the case where the number of points is different in them
+   * @param {assoc array} constants 
+   * @returns 
+   */
+  get_individual_graph_constants(constants){
+    let constants_a = constants;
+    let constants_b = constants;
+    if(constants.num_points == -1){
+      constants_a = {error: constants.error,
+                        num_points: constants.graph_a_attributes.num_points,
+                        num_SD: constants.num_SD,
+                        mean:  constants.mean,
+                        SD:  constants.SD}
+      constants_b = {error: constants.error,
+                        num_points: constants.graph_b_attributes.num_points,
+                        num_SD: constants.num_SD,
+                        mean:  constants.mean,
+                        SD:  constants.SD}
+
+    }
+
+    return {constants_a: constants_a, constants_b:constants_b}
+  }
+
+  /**
+   * Addz the Z values to the experiment coordinates.
+   * 
+   * @param {object} sequencing_symbols_exp 
+   * @param {assoc} constants 
+   */
+  add_z_values(sequencing_symbols_exp, constants){
+     switch(constants.z_value){
+       case &quot;random&quot;:
+        for(let i = 0; i &lt; sequencing_symbols_exp.coordinates.length; i++){
+          let z_values = generate_random_distribution(constants.num_points,&apos;uniform&apos;);
+          sequencing_symbols_exp.coordinates[i] = bundle_z_values(sequencing_symbols_exp.coordinates[i], z_values)
+        }
+         break;
+       case &quot;y_value&quot;:
+          for(let i = 0; i &lt; sequencing_symbols_exp.coordinates.length; i++){
+            sequencing_symbols_exp.coordinates[i] = repeat_y_values(sequencing_symbols_exp.coordinates[i])
+          }
+          break;
+     }
+  
+ }
+
+  /**
+     * Returns the data of the last trial on the jsPsych data object
+     * @param {string} experiment_name
+     * @returns {assoc array} last jsPsych trial data object
+     */
+  get_last_trial_data(){
+    return jsPsych.data.get().filter({type: &quot;sequencing_symbols&quot;}).last(1).values()[0];
+}
+
+  /**
+   * Sets the automode for end-to-end testing
+   * 
+   * @param {boolean} mode 
+   */
+  set_auto_mode(mode){
+    this.auto_mode = mode;
+  }
+
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

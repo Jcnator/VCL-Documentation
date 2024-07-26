@@ -1,0 +1,1150 @@
+{
+  "coverage": "30.38%",
+  "expectCount": 1053,
+  "actualCount": 320,
+  "files": {
+    "scripts/experiment-properties/balancing/balancing_controller.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "scripts/experiment-properties/balancing/balancing_helpers/balancing_helper.js": {
+      "expectCount": 9,
+      "actualCount": 6,
+      "undocumentLines": [
+        127,
+        145,
+        5
+      ]
+    },
+    "scripts/experiment-properties/balancing/generators/blocked_latin_square_generator.js": {
+      "expectCount": 3,
+      "actualCount": 2,
+      "undocumentLines": [
+        72
+      ]
+    },
+    "scripts/experiment-properties/balancing/generators/counter_balanced_order_generator.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "scripts/experiment-properties/balancing/generators/custom_order_generator.js": {
+      "expectCount": 9,
+      "actualCount": 3,
+      "undocumentLines": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    "scripts/experiment-properties/balancing/generators/latin_square_generator.js": {
+      "expectCount": 3,
+      "actualCount": 1,
+      "undocumentLines": [
+        38,
+        43
+      ]
+    },
+    "scripts/experiment-properties/balancing/generators/random_generator.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "scripts/experiment-properties/counter/counter_controller.js": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        12
+      ]
+    },
+    "scripts/experiment-properties/data/constants/ensemble_average_data.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        5,
+        19
+      ]
+    },
+    "scripts/experiment-properties/data/constants/estimation_data.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        4,
+        5,
+        6,
+        8
+      ]
+    },
+    "scripts/experiment-properties/data/constants/hybrid_data.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        7
+      ]
+    },
+    "scripts/experiment-properties/data/constants/jnd_data.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        58
+      ]
+    },
+    "scripts/experiment-properties/data/constants/jnd_radius_data.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        19
+      ]
+    },
+    "scripts/experiment-properties/data/constants/numerosity_data.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        25
+      ]
+    },
+    "scripts/experiment-properties/data/constants/sequencing_data.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        26
+      ]
+    },
+    "scripts/experiment-properties/data/constants/sequencing_side_by_side_data.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        26
+      ]
+    },
+    "scripts/experiment-properties/data/constants/sequencing_symbols_data.js": {
+      "expectCount": 24,
+      "actualCount": 0,
+      "undocumentLines": [
+        2,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        17,
+        19,
+        20,
+        21,
+        22,
+        24,
+        25,
+        27,
+        28,
+        29,
+        30,
+        32,
+        49
+      ]
+    },
+    "scripts/experiment-properties/data/constants/stevens_data.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        49
+      ]
+    },
+    "scripts/experiment-properties/data/constants/visual_search_data.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        17
+      ]
+    },
+    "scripts/experiment-properties/data/custom_subcondition_generator.js": {
+      "expectCount": 11,
+      "actualCount": 8,
+      "undocumentLines": [
+        338,
+        9,
+        39
+      ]
+    },
+    "scripts/experiment-properties/data/data_controller.js": {
+      "expectCount": 11,
+      "actualCount": 6,
+      "undocumentLines": [
+        53,
+        184,
+        190,
+        24,
+        38
+      ]
+    },
+    "scripts/experiment-properties/distribution/distribution_controller.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
+    "scripts/experiment-properties/distribution/gaussian_distribution_generator.js": {
+      "expectCount": 17,
+      "actualCount": 5,
+      "undocumentLines": [
+        11,
+        130,
+        148,
+        239,
+        267,
+        275,
+        344,
+        251,
+        172,
+        235,
+        247,
+        284
+      ]
+    },
+    "scripts/experiment-properties/distribution/random_distribution_generator.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "scripts/experiment-properties/distribution/uniform_distribution_generator.js": {
+      "expectCount": 7,
+      "actualCount": 2,
+      "undocumentLines": [
+        5,
+        49,
+        78,
+        119,
+        7
+      ]
+    },
+    "scripts/experiment-properties/graphing/color_generator.js": {
+      "expectCount": 3,
+      "actualCount": 1,
+      "undocumentLines": [
+        38,
+        53
+      ]
+    },
+    "scripts/experiment-properties/graphing/custom_graphing_controller.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "scripts/experiment-properties/graphing/d3-base-plots/parallel_plot.js": {
+      "expectCount": 7,
+      "actualCount": 2,
+      "undocumentLines": [
+        91,
+        110,
+        118,
+        127,
+        145
+      ]
+    },
+    "scripts/experiment-properties/graphing/d3-base-plots/ring_plot.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "scripts/experiment-properties/graphing/d3-base-plots/scatter_plot.js": {
+      "expectCount": 10,
+      "actualCount": 7,
+      "undocumentLines": [
+        304,
+        363,
+        380
+      ]
+    },
+    "scripts/experiment-properties/graphing/d3-base-plots/shape_plot.js": {
+      "expectCount": 7,
+      "actualCount": 7,
+      "undocumentLines": []
+    },
+    "scripts/experiment-properties/graphing/d3-base-plots/strip_plot.js": {
+      "expectCount": 11,
+      "actualCount": 7,
+      "undocumentLines": [
+        54,
+        237,
+        268,
+        310
+      ]
+    },
+    "scripts/experiment-properties/graphing/d3-custom-plots/distractor_scatter_plot.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "scripts/experiment-properties/graphing/d3-custom-plots/estimation_plot.js": {
+      "expectCount": 17,
+      "actualCount": 17,
+      "undocumentLines": []
+    },
+    "scripts/experiment-properties/graphing/d3-plot-features/distractor_plot.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "scripts/experiment-properties/graphing/d3-plot-features/mix_attribute_generator.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
+    "scripts/experiment-properties/graphing/d3-plot-features/visual_mask_generator.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "scripts/experiment-properties/graphing/graphing_controller.js": {
+      "expectCount": 13,
+      "actualCount": 13,
+      "undocumentLines": []
+    },
+    "scripts/experiment-properties/graphing/graph_feature_controller.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "scripts/experiment-properties/instructions/instructions_controller.js": {
+      "expectCount": 13,
+      "actualCount": 13,
+      "undocumentLines": []
+    },
+    "scripts/experiment-timeline/instruction_screen/instruction_screen.js": {
+      "expectCount": 6,
+      "actualCount": 3,
+      "undocumentLines": [
+        2,
+        41,
+        53
+      ]
+    },
+    "scripts/experiment-timeline/resolution_scaling/resolution_scaling.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        13
+      ]
+    },
+    "scripts/experiment-timeline/screening/pcp_screening.js": {
+      "expectCount": 9,
+      "actualCount": 1,
+      "undocumentLines": [
+        1,
+        3,
+        18,
+        30,
+        31,
+        32,
+        34,
+        40
+      ]
+    },
+    "scripts/experiment-timeline/screening/screening.js": {
+      "expectCount": 33,
+      "actualCount": 5,
+      "undocumentLines": [
+        5,
+        6,
+        7,
+        93,
+        102,
+        111,
+        120,
+        132,
+        141,
+        149,
+        156,
+        168,
+        169,
+        170,
+        172,
+        177,
+        198,
+        199,
+        200,
+        201,
+        203,
+        210,
+        230,
+        252,
+        253,
+        254,
+        256,
+        261
+      ]
+    },
+    "scripts/experiment-timeline/screening/strip_plot_screening.js": {
+      "expectCount": 24,
+      "actualCount": 1,
+      "undocumentLines": [
+        1,
+        3,
+        16,
+        23,
+        32,
+        38,
+        45,
+        52,
+        60,
+        68,
+        77,
+        90,
+        91,
+        92,
+        94,
+        100,
+        116,
+        117,
+        118,
+        120,
+        126,
+        141,
+        147
+      ]
+    },
+    "scripts/experiments/ensemble_average/ensemble_average.js": {
+      "expectCount": 25,
+      "actualCount": 6,
+      "undocumentLines": [
+        5,
+        22,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        33,
+        36,
+        37,
+        40,
+        43,
+        44,
+        48,
+        387,
+        450,
+        454,
+        459
+      ]
+    },
+    "scripts/experiments/ensemble_average/ensemble_average_timeline.js": {
+      "expectCount": 13,
+      "actualCount": 0,
+      "undocumentLines": [
+        6,
+        8,
+        27,
+        39,
+        41,
+        49,
+        51,
+        62,
+        63,
+        64,
+        66,
+        90,
+        92
+      ]
+    },
+    "scripts/experiments/estimation/estimation.js": {
+      "expectCount": 56,
+      "actualCount": 23,
+      "undocumentLines": [
+        7,
+        24,
+        30,
+        36,
+        39,
+        40,
+        41,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        54,
+        62,
+        65,
+        66,
+        67,
+        68,
+        75,
+        76,
+        81,
+        82,
+        83,
+        91,
+        93,
+        99,
+        102,
+        103,
+        105,
+        118,
+        145,
+        1057
+      ]
+    },
+    "scripts/experiments/estimation/estimation_timeline.js": {
+      "expectCount": 16,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        6,
+        7,
+        12,
+        28,
+        34,
+        41,
+        53,
+        54,
+        97,
+        108,
+        121,
+        127,
+        137,
+        138,
+        153
+      ]
+    },
+    "scripts/experiments/hybrid/hybrid.js": {
+      "expectCount": 26,
+      "actualCount": 6,
+      "undocumentLines": [
+        5,
+        7,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23,
+        33,
+        39,
+        45,
+        51,
+        54,
+        56,
+        60,
+        62,
+        63
+      ]
+    },
+    "scripts/experiments/hybrid/hybrid_timeline.js": {
+      "expectCount": 32,
+      "actualCount": 0,
+      "undocumentLines": [
+        11,
+        12,
+        16,
+        18,
+        19,
+        26,
+        27,
+        29,
+        31,
+        32,
+        33,
+        41,
+        64,
+        65,
+        72,
+        74,
+        106,
+        237,
+        248,
+        253,
+        256,
+        265,
+        267,
+        309,
+        320,
+        326,
+        328,
+        384,
+        386,
+        425,
+        470,
+        497
+      ]
+    },
+    "scripts/experiments/jnd/jnd.js": {
+      "expectCount": 48,
+      "actualCount": 9,
+      "undocumentLines": [
+        10,
+        27,
+        28,
+        30,
+        31,
+        32,
+        34,
+        35,
+        36,
+        37,
+        40,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        65,
+        66,
+        80,
+        82,
+        87,
+        93,
+        94,
+        95,
+        98,
+        104,
+        130,
+        141,
+        142,
+        156,
+        171,
+        528,
+        538
+      ]
+    },
+    "scripts/experiments/jnd/jnd_timeline.js": {
+      "expectCount": 17,
+      "actualCount": 0,
+      "undocumentLines": [
+        10,
+        17,
+        18,
+        20,
+        21,
+        22,
+        28,
+        60,
+        61,
+        64,
+        76,
+        84,
+        85,
+        87,
+        135,
+        140,
+        149
+      ]
+    },
+    "scripts/experiments/jnd/jnd_timeline_generators.js": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        64,
+        105,
+        123,
+        139,
+        176
+      ]
+    },
+    "scripts/experiments/jnd_radius/jnd_radius.js": {
+      "expectCount": 37,
+      "actualCount": 12,
+      "undocumentLines": [
+        9,
+        24,
+        25,
+        26,
+        35,
+        41,
+        47,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        72,
+        76,
+        83,
+        84,
+        87,
+        93,
+        112,
+        124,
+        125
+      ]
+    },
+    "scripts/experiments/jnd_radius/jnd_radius_timeline.js": {
+      "expectCount": 10,
+      "actualCount": 0,
+      "undocumentLines": [
+        5,
+        7,
+        8,
+        20,
+        22,
+        41,
+        53,
+        85,
+        87,
+        129
+      ]
+    },
+    "scripts/experiments/numerosity/numerosity.js": {
+      "expectCount": 24,
+      "actualCount": 5,
+      "undocumentLines": [
+        5,
+        19,
+        20,
+        26,
+        32,
+        38,
+        42,
+        43,
+        48,
+        53,
+        55,
+        61,
+        62,
+        65,
+        70,
+        83,
+        92,
+        183,
+        230
+      ]
+    },
+    "scripts/experiments/numerosity/numerosity_timeline.js": {
+      "expectCount": 8,
+      "actualCount": 0,
+      "undocumentLines": [
+        5,
+        7,
+        8,
+        20,
+        36,
+        48,
+        50,
+        82
+      ]
+    },
+    "scripts/experiments/sequencing/sequencing.js": {
+      "expectCount": 66,
+      "actualCount": 16,
+      "undocumentLines": [
+        14,
+        28,
+        29,
+        31,
+        32,
+        33,
+        42,
+        48,
+        54,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        76,
+        77,
+        78,
+        81,
+        82,
+        83,
+        94,
+        95,
+        96,
+        97,
+        98,
+        102,
+        103,
+        110,
+        116,
+        117,
+        118,
+        121,
+        127,
+        155,
+        171,
+        172,
+        195,
+        196,
+        206,
+        791,
+        794,
+        1083,
+        1095,
+        12
+      ]
+    },
+    "scripts/experiments/sequencing/sequencing_timeline.js": {
+      "expectCount": 21,
+      "actualCount": 0,
+      "undocumentLines": [
+        7,
+        9,
+        10,
+        15,
+        49,
+        55,
+        62,
+        74,
+        128,
+        141,
+        146,
+        157,
+        175,
+        220,
+        234,
+        246,
+        251,
+        262,
+        280,
+        339,
+        359
+      ]
+    },
+    "scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js": {
+      "expectCount": 60,
+      "actualCount": 16,
+      "undocumentLines": [
+        14,
+        28,
+        29,
+        31,
+        32,
+        33,
+        42,
+        48,
+        54,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        76,
+        77,
+        78,
+        81,
+        82,
+        83,
+        93,
+        98,
+        103,
+        109,
+        110,
+        111,
+        114,
+        120,
+        149,
+        161,
+        162,
+        189,
+        190,
+        690,
+        696,
+        933,
+        945,
+        12
+      ]
+    },
+    "scripts/experiments/sequencing_side_by_side/sequencing_side_by_side_timeline.js": {
+      "expectCount": 21,
+      "actualCount": 0,
+      "undocumentLines": [
+        7,
+        9,
+        10,
+        15,
+        50,
+        56,
+        63,
+        75,
+        129,
+        142,
+        147,
+        158,
+        176,
+        216,
+        230,
+        242,
+        247,
+        258,
+        276,
+        331,
+        351
+      ]
+    },
+    "scripts/experiments/sequencing_symbols/sequencing_symbols.js": {
+      "expectCount": 70,
+      "actualCount": 22,
+      "undocumentLines": [
+        9,
+        13,
+        14,
+        21,
+        42,
+        43,
+        45,
+        46,
+        47,
+        49,
+        50,
+        51,
+        52,
+        53,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        72,
+        78,
+        81,
+        82,
+        83,
+        90,
+        94,
+        98,
+        104,
+        105,
+        106,
+        109,
+        112,
+        118,
+        121,
+        122,
+        133,
+        134,
+        149,
+        163,
+        164,
+        196,
+        197,
+        10,
+        12
+      ]
+    },
+    "scripts/experiments/sequencing_symbols/sequencing_symbols_timeline.js": {
+      "expectCount": 17,
+      "actualCount": 0,
+      "undocumentLines": [
+        11,
+        13,
+        14,
+        16,
+        17,
+        18,
+        20,
+        27,
+        98,
+        99,
+        118,
+        129,
+        130,
+        160,
+        167,
+        181,
+        188
+      ]
+    },
+    "scripts/experiments/sequencing_symbols/sequencing_symbols_timeline_generators.js": {
+      "expectCount": 7,
+      "actualCount": 7,
+      "undocumentLines": []
+    },
+    "scripts/experiments/stevens/stevens.js": {
+      "expectCount": 64,
+      "actualCount": 22,
+      "undocumentLines": [
+        12,
+        15,
+        32,
+        33,
+        35,
+        36,
+        38,
+        39,
+        40,
+        41,
+        43,
+        44,
+        53,
+        59,
+        65,
+        71,
+        72,
+        76,
+        81,
+        82,
+        89,
+        90,
+        91,
+        97,
+        103,
+        104,
+        105,
+        106,
+        109,
+        115,
+        164,
+        165,
+        166,
+        198,
+        199,
+        200,
+        203,
+        215,
+        218,
+        374,
+        994,
+        1005
+      ]
+    },
+    "scripts/experiments/stevens/stevens_timeline.js": {
+      "expectCount": 14,
+      "actualCount": 0,
+      "undocumentLines": [
+        8,
+        14,
+        15,
+        17,
+        18,
+        22,
+        58,
+        71,
+        248,
+        270,
+        293,
+        295,
+        298,
+        350
+      ]
+    },
+    "scripts/experiments/visual_search/visual_search.js": {
+      "expectCount": 11,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        58,
+        73,
+        89,
+        16,
+        30
+      ]
+    },
+    "scripts/experiments/visual_search/visual_search_timeline.js": {
+      "expectCount": 38,
+      "actualCount": 3,
+      "undocumentLines": [
+        96,
+        98,
+        99,
+        111,
+        127,
+        136,
+        147,
+        158,
+        191,
+        221,
+        254,
+        268,
+        269,
+        270,
+        271,
+        278,
+        307,
+        325,
+        382,
+        9,
+        20,
+        21,
+        28,
+        35,
+        42,
+        46,
+        47,
+        52,
+        57,
+        64,
+        65,
+        68,
+        73,
+        77,
+        86
+      ]
+    },
+    "scripts/helpers/correlation_dependencies.js": {
+      "expectCount": 16,
+      "actualCount": 14,
+      "undocumentLines": [
+        26,
+        503
+      ]
+    },
+    "scripts/helpers/experiment_helpers.js": {
+      "expectCount": 22,
+      "actualCount": 20,
+      "undocumentLines": [
+        357,
+        1085
+      ]
+    }
+  }
+}

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">scripts/experiment-properties/instructions/instructions_controller.js | vcl-web-framework</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<script src="./inject/script/0-conditions-config.js"></script><script src="./inject/script/0-experiments-config.js"></script><script src="./inject/script/0-graphing-config.js"></script><script src="./inject/script/0-trial-structure-config.js"></script><script src="./inject/script/0-balancing-config.js"></script><script src="./inject/script/0-view-controller.js"></script><script src="./inject/script/0-experiments-renderer.js"></script><script src="./inject/script/0-conditions-renderer.js"></script><script src="./inject/script/0-supported-properties-renderer.js"></script><link rel="stylesheet" href="./inject/css/0-styles.css"><meta name="description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="vcl-web-framework"><meta property="twitter:description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/UBC-VCL/VCLWebFramework.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing">experiment-properties/balancing</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-balance_subconditions">balance_subconditions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing-balancing-helpers">experiment-properties/balancing/balancing_helpers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_index_array">generate_index_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_any_array">get_any_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_any_array_repeated">get_any_array_repeated</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_permutation">get_permutation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_remaining_elements">get_remaining_elements</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-heapsPermute">heapsPermute</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reorder">reorder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffle">shuffle</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing-generators">experiment-properties/balancing/generators</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_blocked_latin_square">initialize_blocked_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-innitialize_custom_latin_square">innitialize_custom_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_counter_balanced_order">generate_counter_balanced_order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-innitialize_custom_order">innitialize_custom_order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_latin_square">initialize_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_random_order">initialize_random_order</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-counter">experiment-properties/counter</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-print_curr_trial">print_curr_trial</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-data">experiment-properties/data</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_custom_subcondition">get_custom_subcondition</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_condition_dataset">create_condition_dataset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_design_condition_dataset">create_design_condition_dataset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_data">get_data</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_data_subset">get_data_subset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CUSTOM_TRIAL_STRUCTURE_CONDITIONS">CUSTOM_TRIAL_STRUCTURE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_BASES">EXPERIMENT_BASES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_CONDITIONS">EXPERIMENT_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-data-constants">experiment-properties/data/constants</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENSEMBLE_AVERAGE_BASE">ENSEMBLE_AVERAGE_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENSEMBLE_AVERAGE_CONDITIONS">ENSEMBLE_AVERAGE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ESTIMATION_CONDITIONS">ESTIMATION_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HYBRID_BASE">HYBRID_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HYBRID_CONDITIONS">HYBRID_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_BASE">JND_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_CONDITIONS">JND_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_BASE">JND_RADIUS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_CONDITIONS">JND_RADIUS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_BASE">NUMEROSITY_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_CONDITIONS">NUMEROSITY_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_BASE">SEQUENCING_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_CONDITIONS">SEQUENCING_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SIDE_BY_SIDE_BASE">SEQUENCING_SIDE_BY_SIDE_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SIDE_BY_SIDE_CONDITIONS">SEQUENCING_SIDE_BY_SIDE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SYMBOLS_BASE">SEQUENCING_SYMBOLS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SYMBOLS_CONDITIONS">SEQUENCING_SYMBOLS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_BASE">STEVENS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_CONDITIONS">STEVENS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-VISUAL_SEARCH_BASE">VISUAL_SEARCH_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-VISUAL_SEARCH_CONDITIONS">VISUAL_SEARCH_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-distribution">experiment-properties/distribution</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_adjusted_distribution">generate_adjusted_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_initial_distribution">generate_initial_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_random_distribution">generate_random_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-correlationNotWithinError">correlationNotWithinError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateDistribution">generateDistribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomGaussian">generateRandomGaussian</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getPearsonCorrelation">getPearsonCorrelation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointNotWithinRequiredStdDevs">pointNotWithinRequiredStdDevs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_coordinates">prepare_coordinates</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-random_bm">random_bm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readjustPoints">readjustPoints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformPoints">transformPoints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomDistribution">generateRandomDistribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomUniform">generateRandomUniform</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUniformDistribution">generateUniformDistribution</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing">experiment-properties/graphing</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_color">generate_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_color_hex">generate_color_hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-is_custom_plot">is_custom_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_custom_plot">prepare_custom_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-add_graph_features">add_graph_features</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_attributes_object">generate_attributes_object</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_distributions">plot_distributions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-base-plots">experiment-properties/graphing/d3-base-plots</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_parallel_plot">create_parallel_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_ring_plot">create_ring_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_scatter_plot">create_scatter_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_scatter_points">plot_scatter_points</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_shape_plot">create_shape_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_strip_plot">create_strip_plot</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-custom-plots">experiment-properties/graphing/d3-custom-plots</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_distractor_scatter_plot">create_distractor_scatter_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_bisection_plot">create_estimation_bisection_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_interference_plot">create_estimation_interference_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_multi_interference_plot">create_estimation_multi_interference_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_plot">create_estimation_plot</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-plot-features">experiment-properties/graphing/d3-plot-features</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-combine_target_and_distractor">combine_target_and_distractor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_mixed_attribute_graph">plot_mixed_attribute_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_array_mix_graph">prepare_array_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_mix_graph">prepare_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_targeted_mix_graph">prepare_targeted_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_visual_mask_graph">prepare_visual_mask_graph</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-instructions">experiment-properties/instructions</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_subcond_instruction_block">generate_subcond_instruction_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_instructions">get_instructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_jspsych_instructions">get_jspsych_instructions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-instruction-screen">experiment-timeline/instruction_screen</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_instructions">generate_instructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_ready_screen">generate_ready_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_sitting_distance_screen">generate_sitting_distance_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_welcome">generate_welcome</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-resolution-scaling">experiment-timeline/resolution_scaling</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-manual_resolution_scaling">manual_resolution_scaling</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resolution_scaling">resolution_scaling</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-screening">experiment-timeline/screening</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningInstructions">screeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningPCPInverted">screeningPCPInverted</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-instructionsRegression">instructionsRegression</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningCorrelationSelect">screeningCorrelationSelect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningCorrelationSort">screeningCorrelationSort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningInstructions">screeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningQuestions">screeningQuestions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningRegressionSelect">screeningRegressionSelect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-colorScreeningInstructions">colorScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ignoreScreeningInstructions">ignoreScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-luminanceScreeningInstructions">luminanceScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-orientationScreeningInstructions">orientationScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningStripColorYellowBlue">screeningStripColorYellowBlue</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screenningStripLuminanceSort">screenningStripLuminanceSort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screenningStripOrientationSort">screenningStripOrientationSort</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-ensemble-average">experiments/ensemble_average</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/ensemble_average/ensemble_average.js~Ensemble_Average.html">Ensemble_Average</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ensemble_avg_exp">ensemble_avg_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-estimation">experiments/estimation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/estimation/estimation.js~Estimation.html">Estimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-estimation_exp">estimation_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-hybrid">experiments/hybrid</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/hybrid/hybrid.js~Hybrid.html">Hybrid</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-hybrid_exp">hybrid_exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_exp">jnd_exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-stevens_exp">stevens_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-jnd">experiments/jnd</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/jnd/jnd.js~JND.html">JND</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_block">generate_experiment_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_end">generate_experiment_end</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_screen">generate_feedback_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_block">generate_practice_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_ready_experiment">generate_ready_experiment</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_stop_block">generate_stop_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_exp">jnd_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-jnd-radius">experiments/jnd_radius</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/jnd_radius/jnd_radius.js~JND_Radius.html">JND_Radius</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_radius_exp">jnd_radius_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-numerosity">experiments/numerosity</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/numerosity/numerosity.js~Numerosity.html">Numerosity</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-numerosity_exp">numerosity_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing">experiments/sequencing</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing/sequencing.js~Sequencing.html">Sequencing</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-IMAGE_PATH">IMAGE_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_exp">sequencing_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing-side-by-side">experiments/sequencing_side_by_side</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js~Sequencing_Side_by_Side.html">Sequencing_Side_by_Side</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-IMAGE_PATH">IMAGE_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_side_by_side_exp">sequencing_side_by_side_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing-symbols">experiments/sequencing_symbols</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing_symbols/sequencing_symbols.js~Sequencing_Symbols.html">Sequencing_Symbols</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment">generate_experiment</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_end">generate_experiment_end</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_screen">generate_feedback_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_wrapper">generate_feedback_wrapper</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_block">generate_practice_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_instruction_block">generate_practice_instruction_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_stop_practice_trials">generate_stop_practice_trials</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RECTANGLE_MASK_PATH">RECTANGLE_MASK_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SQUARE_MASK_PATH">SQUARE_MASK_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_symbols_exp">sequencing_symbols_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-stevens">experiments/stevens</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/stevens/stevens.js~Stevens.html">Stevens</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-stevens_exp">stevens_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-visual-search">experiments/visual_search</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/visual_search/visual_search_timeline.js~Visual_Search.html">Visual_Search</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_color_paths">get_color_paths</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex_to_color">hex_to_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-visual_search_exp">visual_search_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers">helpers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/helpers/correlation_dependencies.js~Correlation_Dependencies.html">Correlation_Dependencies</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-above_and_below_generate_random_trial_array">above_and_below_generate_random_trial_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bundle_z_values">bundle_z_values</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-check_params">check_params</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-force_greater_right_position">force_greater_right_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feature_search_trials">generate_feature_search_trials</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_timeline_screen">generate_timeline_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-genereate_hybrid_instruction">genereate_hybrid_instruction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getScreenHeight">getScreenHeight</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_mixed_graph_styles">get_mixed_graph_styles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_mixed_masks">get_mixed_masks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_num_blocks">get_num_blocks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_running_average">get_running_average</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_single_graph_style">get_single_graph_style</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_single_mask">get_single_mask</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-is_converged_in_window">is_converged_in_window</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nova_variables">nova_variables</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_graph_attributes_mixed">randomize_graph_attributes_mixed</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_position">randomize_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_position_symmetric">randomize_position_symmetric</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_radius_position">randomize_radius_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-repeat_y_values">repeat_y_values</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffleArray">shuffleArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-correlation_dependencies">correlation_dependencies</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">scripts/experiment-properties/instructions/instructions_controller.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { EXPERIMENTS } from &quot;/config/experiments-config.js&quot;;
+import { CONDITIONS } from &quot;/config/conditions-config.js&quot;;
+import { correlation_dependencies } from &quot;/scripts/helpers/correlation_dependencies.js&quot;
+export { get_instructions, get_jspsych_instructions, generate_subcond_instruction_block }
+
+
+/**
+ * Generates a jsPsych instruction trial for the current condition if it has been defined for it, or
+ * the default experiment instruction (which needs to be defined otherwise an error is thrown)
+ * 
+ * It handles the old instruction format where the instructions are a plain HTML string and image array that replaces
+ * the image key words in the html string with get_html_with_images(). This is done through either entering no instruction name
+ * (the jnd timeline does this), which defaults to the old behavior, or 
+ * 
+ * It also handles experiments with both type of instruction types such as new_sequencing by givin it the experiment name as
+ * the instruction name. 
+ * 
+ * Otherwise (default) it gets the jsPsych trial instruction object with the given instruction_name
+ * 
+ * @param {object} experiment 
+ * @param {string} instruction_name 
+ * @param {boolean} custom_instructions 
+ * @returns {jsPsych trial}
+ */
+function get_jspsych_instructions(experiment, instruction_name = &quot;&quot;, custom_instructions = false) {
+  let experiment_name = experiment.constructor.name.toLowerCase();
+  let experiment_instructions = EXPERIMENTS[experiment_name].instructions;
+  let condition_instructions_object = CONDITIONS[experiment.condition_name].instructions;
+
+  switch (instruction_name) {
+    case &quot;&quot;:
+      //check if there is specific images for the block
+      if (is_block_specific_image(experiment) &amp;&amp; condition_instructions_object) {
+        return condition_custom_block_html_to_trial(experiment, experiment_instructions);
+      }
+      // Backwards compatibility case for experiments with only HTML instructions
+      if (condition_instructions_object) {
+        if (is_custom_html_trial_instruction(condition_instructions_object, experiment_name)) {
+          return condition_custom_html_to_trial(condition_instructions_object[experiment_name], experiment_instructions)
+        }
+        throw new Error(&quot;Condition instructions with no name default to old HTML instruction format. Double check if this condition is formated as that, otherwise use the specific instruction name or&quot;)
+      }
+      if (experiment_instructions.default_html || experiment_instructions.default_images) {
+        return experiment_custom_html_to_trial(experiment_instructions);
+      }
+      else {
+        throw new Error(&quot;No default html defined in instructions object for this condition for experiment &quot; + experiment.constructor.name);
+      }
+    case experiment_name:
+      // Backwards compatibility case for experiments with combined instruction types
+      if (condition_instructions_object) {
+        if (condition_instructions_object[experiment_name]) {
+          return condition_instructions_object[experiment_name];
+        }
+      }
+      if (experiment_instructions.default_html || experiment_instructions.default_images) {
+        return experiment_custom_html_to_trial(experiment_instructions);
+      }
+      else {
+        throw new Error(&quot;No default html defined in instructions object for this condition for experiment &quot; + experiment.constructor.name);
+      }
+    default:
+      let instruction = instruction_name + &quot;_html&quot;;
+      if (condition_instructions_object &amp;&amp; condition_instructions_object[instruction]) {
+
+        return condition_instructions_object[instruction];
+      }
+      if (experiment_instructions[instruction]) {
+
+        return experiment_instructions[instruction];
+      }
+      else {
+        throw new Error(&quot;No jspsych html defined in instructions object for this condition for experiment &quot; + experiment.constructor.name);
+      }
+  }
+}
+
+/**
+ * Generates the instructions html for the given experiment.
+ * Loads default Instruction object from experiments-config.js
+ * and Condition Instruction object from conditions-config.js if it exists
+ *
+ * @param   {object}   experiment
+ *
+ * @return  {string}   html for the instructions jsPsych block
+ */
+function get_instructions(experiment) {
+
+  // EXPERIMENTS from experiments-config.js
+  let experiment_name = experiment.constructor.name.toLowerCase();
+  let instructions_info = EXPERIMENTS[experiment_name].instructions;
+
+  if (!instructions_info.default_html || instructions_info.default_html.length === 0) {
+    throw new Error(&quot;No default html specified for experiment &quot; + experiment_name);
+  }
+
+  if (!instructions_info.default_images || instructions_info.default_images.length === 0) {
+    throw new Error(&quot;No default images are defined for experiment &quot; + experiment_name);
+  }
+
+  let default_html = instructions_info.default_html;
+  let default_images = instructions_info.default_images;
+  let condition_instructions_object = CONDITIONS[experiment.condition_name].instructions;
+
+  if (condition_instructions_object) {
+    return get_custom_instructions(experiment, condition_instructions_object, default_html, default_images);
+  }
+  // Else use default html and images
+  else {
+    return get_html_with_images(default_html, default_images);
+  }
+
+}
+
+/**
+ * Generates custom instructions depending on whether custom_html is defined, or 
+ * custom_images is defined.
+ *
+ * @param   {object}   experiment
+ * @param   {object}   condition_instructions_object
+ * @param   {string}   default_html
+ * @param   {array}    default_images
+ *
+ * @return  {string}   html for custom instructions
+ */
+function get_custom_instructions(experiment, condition_instructions_object, default_html, default_images) {
+
+  // Validation check that experiment in instructions object is a supported experiment for the condition
+  Object.keys(condition_instructions_object).forEach(function (exp) {
+    if (!CONDITIONS[experiment.condition_name][&quot;experiment&quot;].includes(exp)) {
+      throw new Error(&quot;Experiment &quot; + exp + &quot; is listed within instructions key but is not among the supported experiments &quot; +
+        &quot;listed for the condition. Listed experiments are: &quot; + CONDITIONS[experiment.condition_name][&quot;experiment&quot;] + &quot;.&quot;);
+    }
+  });
+
+  let condition_instructions = condition_instructions_object[experiment.constructor.name.toLowerCase()];
+
+  // If no instructions for this experiment, use default
+  if (!condition_instructions) {
+    return get_html_with_images(default_html, default_images);
+  }
+  else {
+
+    // Validation check that must only have one key (custom_html or custom_images) defined
+    if (Object.keys(condition_instructions).length &gt; 1) {
+      throw new Error(&quot;Only one key permitted inside instructions object for experiment &quot; + experiment.constructor.name.toLowerCase() + &quot;. Must be &quot; +
+        &quot;either custom_html or custom_images.&quot;);
+    }
+
+    // If there is custom html
+    if (condition_instructions.custom_html) {
+      return condition_instructions.custom_html;
+    }
+    // If there is custom images
+    else if (condition_instructions.custom_images) {
+      let images = condition_instructions.custom_images;
+
+      // Validation check that specified num of custom_images == num of default_images
+      if (images.length !== default_images.length) {
+        throw new Error(&quot;The default instruction for this experiment requires &quot; + default_images.length + &quot; image(s). &quot; + images.length + &quot; image(s) were specified for the condition instead.&quot;);
+      }
+
+      return get_html_with_images(default_html, images);
+    } else {
+      throw new Error(&quot;No custom_html or custom_images defined in instructions object for this condition for experiment &quot; + experiment.constructor.name);
+    }
+
+  }
+}
+
+/**
+ * Replaces any &apos;image1.png&apos;, &apos;image2.png&apos; ... etc with each string 
+ * entry in images.
+ *
+ * NOTE: When defining default_html in experiments-config.js, need to name
+ *       images as &apos;image1.png&apos;, &apos;image2.png&apos; so this code knows what to replace
+ *
+ * @param   {string}   html
+ * @param   {array}    images 
+ *
+ * @return  {string}   html with any &apos;image1.png&apos; etc replaced with entries in images
+ */
+function get_html_with_images(html, images) {
+
+  let counter = 1;
+  console.log(images);
+  for (let image_url of images) {
+    let url_to_replace = &quot;image&quot; + counter + &quot;.png&quot;;
+
+    html = html.replace(url_to_replace, image_url);
+
+    counter++;
+  }
+
+  return html;
+}
+
+
+
+/**
+ * Transforms legacy HTML instructions in conditions-config to jsPsych trials.
+ * They are html-keyboard-response trials to retain &quot;press any key to continue&quot;
+ * functionality rather than use the &quot;next page&quot; mouse button.
+ * 
+ * @param {string} experiment
+ * @param {assoc array} html_instructions 
+ * @return {jsPsych trial}
+ */
+function condition_custom_html_to_trial(condition_object, experiment_instructions) {
+  let custom_html = experiment_instructions.default_html;
+  if (condition_object) {
+    if (condition_object.custom_html &amp;&amp; condition_object.custom_images) {
+      custom_html = get_html_with_images(condition_object.custom_html, condition_object.custom_images)
+    }
+    else if (condition_object.custom_images) {
+      custom_html = get_html_with_images(experiment_instructions.default_html, condition_object.custom_images)
+    }
+    else {
+      custom_html = condition_object.custom_html;
+    }
+  }
+
+  let instruction_trial = {
+    type: &quot;html-keyboard-response&quot;,
+    data: { screen_id: &quot;instruction&quot;, },
+    stimulus: custom_html,
+  }
+  return instruction_trial
+}
+
+/**
+ * Transforms legacy HTML instructions in experiments-config to jsPsych trials.
+ * They are html-keyboard-response trials to retain &quot;press any key to continue&quot;
+ * functionality rather than use the &quot;next page&quot; mouse button.
+ * 
+ * @param {object} instructions 
+ * @returns {jsPsych trial}
+ */
+function experiment_custom_html_to_trial(instructions) {
+  let instruction_trial = {
+    type: &quot;html-keyboard-response&quot;,
+    data: { screen_id: &quot;instruction&quot;, },
+    stimulus: get_html_with_images(instructions.default_html, instructions.default_images),
+  }
+
+  return instruction_trial;
+}
+
+/**
+ * Transforms legacy HTML instructions and custom block images in conditions-config to jsPsych trials.
+ * They are html-keyboard-response trials to retain &quot;press any key to continue&quot;
+ * functionality rather than use the &quot;next page&quot; mouse button.
+ * 
+ * @param {string} experiment (in conditions-config)
+ * @param {assoc array} html_instructions 
+ * @returns {jsPsych trial}
+ */
+function condition_custom_block_html_to_trial(experiment, experiment_instructions) {
+  let first_block = get_first_block_name(experiment);
+  let experiment_name = experiment.constructor.name.toLowerCase();
+  if (experiment_name == &quot;hybrid&quot;) {
+    experiment_name = experiment.current_experiment;
+  }
+
+
+  //get the custom block image paths
+  let condition_instructions = CONDITIONS[experiment.condition_name].instructions[experiment_name];
+  let block_images = condition_instructions.custom_block_images[`block_${first_block}_images`];
+
+  //generate default trial without custom images
+  let custom_html = experiment_instructions.default_html;
+  if (condition_instructions.custom_html) {
+    custom_html = get_html_with_images(condition_instructions.custom_html, block_images)
+  }
+  else {
+    custom_html = get_html_with_images(experiment_instructions.default_html, block_images)
+  }
+
+  let trial = {
+    type: &quot;html-keyboard-response&quot;,
+    data: { screen_id: &quot;instruction&quot;, },
+    stimulus: custom_html,
+  }
+
+  return trial;
+}
+
+/**
+ * 
+ * @param {object} condition_instructions_object 
+ * @returns {boolean}
+ */
+function is_custom_html_trial_instruction(condition_instructions_object, experiment_name) {
+  if (condition_instructions_object[experiment_name].custom_html || condition_instructions_object[experiment_name].custom_images) {
+    return true
+  }
+  return false
+}
+
+/**
+ * Generates the experiment&apos;s instruction blocks.
+ * @param {object} experiment 
+ * @param {string} block_type
+ * @returns {trial}
+ */
+function generate_subcond_instruction_block(experiment, block_type) {
+  let instruction_trial = {
+    type: &quot;instructions&quot;,
+    data: {},
+    key_forward: &quot; &quot;,
+    pages: [],
+    on_start: function (trial) {
+      console.log(&quot;test&quot;)
+      let index = correlation_dependencies.get_subcondition_index(experiment, block_type);
+      let constants = correlation_dependencies.get_constants(experiment, block_type, index);
+      let curr_block = constants.block;
+      let experiment_name = experiment.constructor.name.toLowerCase();
+      let current_instruction = get_subcondition_instruction_trial(experiment, experiment_name, curr_block);
+      let curr_pages = current_instruction.pages;
+      trial.pages = curr_pages;
+      trial.data = { screen_id: `${experiment_name}_${curr_block}_html` }
+    }
+  };
+  let subcond_instruction_block = {
+    timeline: [instruction_trial],
+    conditional_function: function () {
+      let index = correlation_dependencies.get_subcondition_index(experiment, block_type);
+      let constants = correlation_dependencies.get_constants(experiment, block_type, index);
+      return ((constants.block != undefined) &amp;&amp; constants.subcondition_instructions === true &amp;&amp;
+        correlation_dependencies.is_start_of_subcondition(experiment, block_type) &amp;&amp;
+        correlation_dependencies.is_start_of_block(experiment, block_type))
+    },
+  }
+  return subcond_instruction_block;
+}
+
+/**
+ * Gets the instruction trial defined for the current block/sub condition in the condition.
+ * @param {object} experiment 
+ * @returns {trial}
+ */
+function get_subcondition_instruction_trial(experiment, experiment_name, curr_block) {
+  let block_instruction_html_key = `${experiment_name}_${curr_block}_html`;
+  let block_instruction_image_key = `${experiment_name}_${curr_block}_images`;
+  let block_instructions_text = null;
+  let block_instructions_images = null;
+  console.log(block_instruction_html_key, block_instruction_image_key)
+
+  // Get jsPsych trial 
+  if (CONDITIONS[experiment.condition_name][&quot;block_instructions&quot;]) {
+    if (CONDITIONS[experiment.condition_name][&quot;block_instructions&quot;][block_instruction_html_key]) {
+      block_instructions_text = CONDITIONS[experiment.condition_name][&quot;block_instructions&quot;][block_instruction_html_key];
+    }
+  }
+  else if (EXPERIMENTS[experiment_name][&quot;block_instructions&quot;]) {
+    if (EXPERIMENTS[experiment_name][&quot;block_instructions&quot;][block_instruction_html_key]) {
+      block_instructions_text = EXPERIMENTS[experiment_name][&quot;block_instructions&quot;][block_instruction_html_key];
+    }
+  }
+
+  // Get image names to replace (if they exist)
+  if (CONDITIONS[experiment.condition_name][&quot;block_instructions&quot;]) {
+    if (CONDITIONS[experiment.condition_name][&quot;block_instructions&quot;][block_instruction_image_key]) {
+      block_instructions_images = CONDITIONS[experiment.condition_name][&quot;block_instructions&quot;][block_instruction_image_key];
+    }
+  }
+  else if (EXPERIMENTS[experiment_name][&quot;block_instructions&quot;]) {
+    if (EXPERIMENTS[experiment_name][&quot;block_instructions&quot;][block_instruction_image_key]) {
+      block_instructions_images = EXPERIMENTS[experiment_name][&quot;block_instructions&quot;][block_instruction_image_key];
+    }
+  }
+
+  // Replace images if any
+  if (block_instructions_images != null) {
+    return replace_trial_images(block_instructions_text, block_instructions_images);
+  }
+
+  if (block_instructions_text != null) {
+    return block_instructions_text;
+  }
+  // stub jsPsych trial for no block instructions case
+  return { type: &quot;instructions&quot; }
+}
+
+/**
+ * Replaces the image text in the jsPsych instruction trial html with the given image paths
+ * make sure if you have multiple instructions, the images corresponding to the instructions have the same name, 
+ * plus naming convention: &lt;instruction_name&gt;_html, &lt;instruction_name&gt;_images
+ * 
+ * @param {jsPsych trial} instruction_trial jsPsych instruction trial
+ * @param {array} images array of image paths
+ * @return {jsPsych trial}
+ */
+function replace_trial_images(instruction_trial, images) {
+  for (let i = 0; i &lt; instruction_trial.pages.length; i++) {
+    instruction_trial.pages[i] = get_html_with_images(instruction_trial.pages[i], images)
+  }
+  return instruction_trial;
+}
+
+/**
+ * Checks if there is a block specific instruction image.
+ * @param {object} experiment
+ * @return {boolean}
+ */
+function is_block_specific_image(experiment) {
+  let condition_name = experiment.condition_name;
+  let first_block = get_first_block_name(experiment);
+  let experiment_name = experiment.constructor.name.toLowerCase();
+  if (experiment_name == &quot;hybrid&quot;) {
+    experiment_name = experiment.current_experiment.toLowerCase();
+  }
+
+  if (CONDITIONS[condition_name].instructions &amp;&amp;
+    CONDITIONS[condition_name].instructions[experiment_name].custom_block_images &amp;&amp;
+    CONDITIONS[condition_name].instructions[experiment_name].custom_block_images[`block_${first_block}_images`]) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+/**
+ * Returns the name of the first block in the experiment
+ * @param {object} experiment
+ * @return {boolean}
+ */
+function get_first_block_name(experiment) {
+  let experiment_name = experiment.constructor.name.toLowerCase();
+  let constants = null;
+  if (experiment_name == &quot;hybrid&quot;) {
+    let current_exp = `${experiment.current_experiment.toLowerCase()}_constants`;
+    constants = experiment[current_exp][0];
+  } else {
+    constants = experiment.sub_conditions_constants[0];
+  }
+  let first_block = constants.block;
+
+  //check if condition is multi_size_scatter_combined. If so, remove decimal in block name
+  if (experiment.condition_name == &quot;multi_size_scatter_combined&quot;) {
+    first_block = first_block.replace(/\./g, &apos;&apos;);
+  }
+
+  return first_block;
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

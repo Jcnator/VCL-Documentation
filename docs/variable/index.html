@@ -1,0 +1,4356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../">
+  <title data-ice="title">Variable | vcl-web-framework</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<script src="./inject/script/0-conditions-config.js"></script><script src="./inject/script/0-experiments-config.js"></script><script src="./inject/script/0-graphing-config.js"></script><script src="./inject/script/0-trial-structure-config.js"></script><script src="./inject/script/0-balancing-config.js"></script><script src="./inject/script/0-view-controller.js"></script><script src="./inject/script/0-experiments-renderer.js"></script><script src="./inject/script/0-conditions-renderer.js"></script><script src="./inject/script/0-supported-properties-renderer.js"></script><link rel="stylesheet" href="./inject/css/0-styles.css"><meta name="description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="vcl-web-framework"><meta property="twitter:description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/UBC-VCL/VCLWebFramework.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing">experiment-properties/balancing</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-balance_subconditions">balance_subconditions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing-balancing-helpers">experiment-properties/balancing/balancing_helpers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_index_array">generate_index_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_any_array">get_any_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_any_array_repeated">get_any_array_repeated</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_permutation">get_permutation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_remaining_elements">get_remaining_elements</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-heapsPermute">heapsPermute</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reorder">reorder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffle">shuffle</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing-generators">experiment-properties/balancing/generators</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_blocked_latin_square">initialize_blocked_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-innitialize_custom_latin_square">innitialize_custom_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_counter_balanced_order">generate_counter_balanced_order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-innitialize_custom_order">innitialize_custom_order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_latin_square">initialize_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_random_order">initialize_random_order</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-counter">experiment-properties/counter</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-print_curr_trial">print_curr_trial</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-data">experiment-properties/data</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_custom_subcondition">get_custom_subcondition</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_condition_dataset">create_condition_dataset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_design_condition_dataset">create_design_condition_dataset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_data">get_data</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_data_subset">get_data_subset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CUSTOM_TRIAL_STRUCTURE_CONDITIONS">CUSTOM_TRIAL_STRUCTURE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_BASES">EXPERIMENT_BASES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_CONDITIONS">EXPERIMENT_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-data-constants">experiment-properties/data/constants</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENSEMBLE_AVERAGE_BASE">ENSEMBLE_AVERAGE_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENSEMBLE_AVERAGE_CONDITIONS">ENSEMBLE_AVERAGE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ESTIMATION_CONDITIONS">ESTIMATION_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HYBRID_BASE">HYBRID_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HYBRID_CONDITIONS">HYBRID_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_BASE">JND_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_CONDITIONS">JND_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_BASE">JND_RADIUS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_CONDITIONS">JND_RADIUS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_BASE">NUMEROSITY_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_CONDITIONS">NUMEROSITY_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_BASE">SEQUENCING_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_CONDITIONS">SEQUENCING_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SIDE_BY_SIDE_BASE">SEQUENCING_SIDE_BY_SIDE_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SIDE_BY_SIDE_CONDITIONS">SEQUENCING_SIDE_BY_SIDE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SYMBOLS_BASE">SEQUENCING_SYMBOLS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SYMBOLS_CONDITIONS">SEQUENCING_SYMBOLS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_BASE">STEVENS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_CONDITIONS">STEVENS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-VISUAL_SEARCH_BASE">VISUAL_SEARCH_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-VISUAL_SEARCH_CONDITIONS">VISUAL_SEARCH_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-distribution">experiment-properties/distribution</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_adjusted_distribution">generate_adjusted_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_initial_distribution">generate_initial_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_random_distribution">generate_random_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-correlationNotWithinError">correlationNotWithinError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateDistribution">generateDistribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomGaussian">generateRandomGaussian</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getPearsonCorrelation">getPearsonCorrelation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointNotWithinRequiredStdDevs">pointNotWithinRequiredStdDevs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_coordinates">prepare_coordinates</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-random_bm">random_bm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readjustPoints">readjustPoints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformPoints">transformPoints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomDistribution">generateRandomDistribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomUniform">generateRandomUniform</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUniformDistribution">generateUniformDistribution</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing">experiment-properties/graphing</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_color">generate_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_color_hex">generate_color_hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-is_custom_plot">is_custom_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_custom_plot">prepare_custom_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-add_graph_features">add_graph_features</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_attributes_object">generate_attributes_object</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_distributions">plot_distributions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-base-plots">experiment-properties/graphing/d3-base-plots</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_parallel_plot">create_parallel_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_ring_plot">create_ring_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_scatter_plot">create_scatter_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_scatter_points">plot_scatter_points</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_shape_plot">create_shape_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_strip_plot">create_strip_plot</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-custom-plots">experiment-properties/graphing/d3-custom-plots</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_distractor_scatter_plot">create_distractor_scatter_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_bisection_plot">create_estimation_bisection_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_interference_plot">create_estimation_interference_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_multi_interference_plot">create_estimation_multi_interference_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_plot">create_estimation_plot</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-plot-features">experiment-properties/graphing/d3-plot-features</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-combine_target_and_distractor">combine_target_and_distractor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_mixed_attribute_graph">plot_mixed_attribute_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_array_mix_graph">prepare_array_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_mix_graph">prepare_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_targeted_mix_graph">prepare_targeted_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_visual_mask_graph">prepare_visual_mask_graph</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-instructions">experiment-properties/instructions</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_subcond_instruction_block">generate_subcond_instruction_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_instructions">get_instructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_jspsych_instructions">get_jspsych_instructions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-instruction-screen">experiment-timeline/instruction_screen</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_instructions">generate_instructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_ready_screen">generate_ready_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_sitting_distance_screen">generate_sitting_distance_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_welcome">generate_welcome</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-resolution-scaling">experiment-timeline/resolution_scaling</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-manual_resolution_scaling">manual_resolution_scaling</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resolution_scaling">resolution_scaling</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-screening">experiment-timeline/screening</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningInstructions">screeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningPCPInverted">screeningPCPInverted</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-instructionsRegression">instructionsRegression</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningCorrelationSelect">screeningCorrelationSelect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningCorrelationSort">screeningCorrelationSort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningInstructions">screeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningQuestions">screeningQuestions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningRegressionSelect">screeningRegressionSelect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-colorScreeningInstructions">colorScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ignoreScreeningInstructions">ignoreScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-luminanceScreeningInstructions">luminanceScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-orientationScreeningInstructions">orientationScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningStripColorYellowBlue">screeningStripColorYellowBlue</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screenningStripLuminanceSort">screenningStripLuminanceSort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screenningStripOrientationSort">screenningStripOrientationSort</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-ensemble-average">experiments/ensemble_average</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/ensemble_average/ensemble_average.js~Ensemble_Average.html">Ensemble_Average</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ensemble_avg_exp">ensemble_avg_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-estimation">experiments/estimation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/estimation/estimation.js~Estimation.html">Estimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-estimation_exp">estimation_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-hybrid">experiments/hybrid</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/hybrid/hybrid.js~Hybrid.html">Hybrid</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-hybrid_exp">hybrid_exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_exp">jnd_exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-stevens_exp">stevens_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-jnd">experiments/jnd</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/jnd/jnd.js~JND.html">JND</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_block">generate_experiment_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_end">generate_experiment_end</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_screen">generate_feedback_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_block">generate_practice_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_ready_experiment">generate_ready_experiment</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_stop_block">generate_stop_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_exp">jnd_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-jnd-radius">experiments/jnd_radius</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/jnd_radius/jnd_radius.js~JND_Radius.html">JND_Radius</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_radius_exp">jnd_radius_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-numerosity">experiments/numerosity</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/numerosity/numerosity.js~Numerosity.html">Numerosity</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-numerosity_exp">numerosity_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing">experiments/sequencing</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing/sequencing.js~Sequencing.html">Sequencing</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-IMAGE_PATH">IMAGE_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_exp">sequencing_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing-side-by-side">experiments/sequencing_side_by_side</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js~Sequencing_Side_by_Side.html">Sequencing_Side_by_Side</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-IMAGE_PATH">IMAGE_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_side_by_side_exp">sequencing_side_by_side_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing-symbols">experiments/sequencing_symbols</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing_symbols/sequencing_symbols.js~Sequencing_Symbols.html">Sequencing_Symbols</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment">generate_experiment</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_end">generate_experiment_end</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_screen">generate_feedback_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_wrapper">generate_feedback_wrapper</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_block">generate_practice_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_instruction_block">generate_practice_instruction_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_stop_practice_trials">generate_stop_practice_trials</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RECTANGLE_MASK_PATH">RECTANGLE_MASK_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SQUARE_MASK_PATH">SQUARE_MASK_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_symbols_exp">sequencing_symbols_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-stevens">experiments/stevens</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/stevens/stevens.js~Stevens.html">Stevens</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-stevens_exp">stevens_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-visual-search">experiments/visual_search</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/visual_search/visual_search_timeline.js~Visual_Search.html">Visual_Search</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_color_paths">get_color_paths</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex_to_color">hex_to_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-visual_search_exp">visual_search_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers">helpers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/helpers/correlation_dependencies.js~Correlation_Dependencies.html">Correlation_Dependencies</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-above_and_below_generate_random_trial_array">above_and_below_generate_random_trial_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bundle_z_values">bundle_z_values</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-check_params">check_params</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-force_greater_right_position">force_greater_right_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feature_search_trials">generate_feature_search_trials</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_timeline_screen">generate_timeline_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-genereate_hybrid_instruction">genereate_hybrid_instruction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getScreenHeight">getScreenHeight</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_mixed_graph_styles">get_mixed_graph_styles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_mixed_masks">get_mixed_masks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_num_blocks">get_num_blocks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_running_average">get_running_average</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_single_graph_style">get_single_graph_style</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_single_mask">get_single_mask</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-is_converged_in_window">is_converged_in_window</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nova_variables">nova_variables</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_graph_attributes_mixed">randomize_graph_attributes_mixed</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_position">randomize_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_position_symmetric">randomize_position_symmetric</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_radius_position">randomize_radius_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-repeat_y_values">repeat_y_values</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffleArray">shuffleArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-correlation_dependencies">correlation_dependencies</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">Variable</h1>
+<div data-ice="summaries"><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Summary</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-CUSTOM_TRIAL_STRUCTURE_CONDITIONS">CUSTOM_TRIAL_STRUCTURE_CONDITIONS</a></span></span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>, &quot;design&quot;: <span>*</span>, &quot;custom&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-ENSEMBLE_AVERAGE_BASE">ENSEMBLE_AVERAGE_BASE</a></span></span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-ENSEMBLE_AVERAGE_CONDITIONS">ENSEMBLE_AVERAGE_CONDITIONS</a></span></span><span class="code" data-ice="signature">: {&quot;distractor_ensemble_average_trial_test&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_1&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_2&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_3&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_4&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_5&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_6&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_7&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_8&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_9&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_10&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_11&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_12&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-ESTIMATION_CONDITIONS">ESTIMATION_CONDITIONS</a></span></span><span class="code" data-ice="signature">: {&quot;shape_estimation&quot;: <span>*</span>, &quot;line_length&quot;: <span>*</span>, &quot;rectangle_square&quot;: <span>*</span>, &quot;rectangle_rotated_square_solid&quot;: <span>*</span>, &quot;rectangle_rotated_square_outline&quot;: <span>*</span>, &quot;triangle&quot;: <span>*</span>, &quot;square_circle_interference&quot;: <span>*</span>, &quot;circle_interference&quot;: <span>*</span>, &quot;multi_square_interference&quot;: <span>*</span>, &quot;multi_shape_interference&quot;: <span>*</span>, &quot;multi_fan_interference&quot;: <span>*</span>, &quot;absolute_area_ratio&quot;: <span>*</span>, &quot;absolute_area_ratio_bisection_variant_A&quot;: <span>*</span>, &quot;absolute_area_ratio_bisection_variant_B&quot;: <span>*</span>, &quot;multi_fan_interference_B&quot;: <span>*</span>, &quot;multi_square_cutout_interference&quot;: <span>*</span>, &quot;absolute_area_ratio_flicker&quot;: <span>*</span>, &quot;absolute_area_ratio_bisection_variant_A_flicker&quot;: <span>*</span>, &quot;multi_fan_interference_B_flicker&quot;: <span>*</span>, &quot;multi_square_cutout_interference_flicker&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_BASES">EXPERIMENT_BASES</a></span></span><span class="code" data-ice="signature">: {&quot;JND&quot;: <span>*</span>, &quot;Stevens&quot;: <span>*</span>, &quot;Hybrid&quot;: <span>*</span>, &quot;JND_Radius&quot;: <span>*</span>, &quot;Estimation&quot;: <span>*</span>, &quot;Numerosity&quot;: <span>*</span>, &quot;Visual_Search&quot;: <span>*</span>, &quot;Sequencing&quot;: <span>*</span>, &quot;Sequencing_Side_by_Side&quot;: <span>*</span>, &quot;Sequencing_Symbols&quot;: <span>*</span>, &quot;Ensemble_Average&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_CONDITIONS">EXPERIMENT_CONDITIONS</a></span></span><span class="code" data-ice="signature">: {&quot;JND&quot;: <span>*</span>, &quot;Stevens&quot;: <span>*</span>, &quot;Hybrid&quot;: <span>*</span>, &quot;JND_Radius&quot;: <span>*</span>, &quot;Estimation&quot;: <span>*</span>, &quot;Numerosity&quot;: <span>*</span>, &quot;Visual_Search&quot;: <span>*</span>, &quot;Sequencing&quot;: <span>*</span>, &quot;Sequencing_Side_by_Side&quot;: <span>*</span>, &quot;Sequencing_Symbols&quot;: <span>*</span>, &quot;Ensemble_Average&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-HYBRID_BASE">HYBRID_BASE</a></span></span><span class="code" data-ice="signature">: {&quot;design&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-HYBRID_CONDITIONS">HYBRID_CONDITIONS</a></span></span><span class="code" data-ice="signature">: {&quot;multi_size_scatter_combined&quot;: <span>*</span>, &quot;multi_opacity_scatter_combined&quot;: <span>*</span>, &quot;decreasing_number_of_dots&quot;: <span>*</span>, &quot;increasing_number_of_dots&quot;: <span>*</span>, &quot;multi_luminance_scatter_combined&quot;: <span>*</span>, &quot;hybrid_multi_luminance_scatter&quot;: <span>*</span>, &quot;multi_color_scatter_combined&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-IMAGE_PATH">IMAGE_PATH</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-IMAGE_PATH">IMAGE_PATH</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-JND_BASE">JND_BASE</a></span></span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>, &quot;design&quot;: <span>*</span>, &quot;custom&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-JND_CONDITIONS">JND_CONDITIONS</a></span></span><span class="code" data-ice="signature">: {&quot;symmetric_jnd&quot;: <span>*</span>, &quot;strip_ring_size&quot;: <span>*</span>, &quot;line_length_strip&quot;: <span>*</span>, &quot;stable_line_length_strip&quot;: <span>*</span>, &quot;multi_size_scatter&quot;: <span>*</span>, &quot;distractor_multi&quot;: <span>*</span>, &quot;hollow_scatter&quot;: <span>*</span>, &quot;thin_hollow_scatter&quot;: <span>*</span>, &quot;bullseye_scatter&quot;: <span>*</span>, &quot;large_dot_sizes&quot;: <span>*</span>, &quot;multi_color_scatter_combined&quot;: <span>*</span>, &quot;multi_shape_scatter_combined&quot;: <span>*</span>, &quot;multi_border_combined&quot;: <span>*</span>, &quot;multi_luminance_scatter_combined&quot;: <span>*</span>, &quot;multi_opacity_scatter_combined&quot;: <span>*</span>, &quot;multi_size_scatter_combined&quot;: <span>*</span>, &quot;mix_point_styles&quot;: <span>*</span>, &quot;point_styles_combined&quot;: <span>*</span>, &quot;decreasing_number_of_dots&quot;: <span>*</span>, &quot;increasing_number_of_dots&quot;: <span>*</span>, &quot;multi_size_scatter_alternate&quot;: <span>*</span>, &quot;visual_masking&quot;: <span>*</span>, &quot;visual_masking_multi_size_half&quot;: <span>*</span>, &quot;visual_masking_multi_size_half_border&quot;: <span>*</span>, &quot;visual_masking_border&quot;: <span>*</span>, &quot;visual_masking_sides&quot;: <span>*</span>, &quot;visual_masking_sides_border&quot;: <span>*</span>, &quot;visual_masking_sides_multi_size_half_border&quot;: <span>*</span>, &quot;visual_masking_sides_multi_size_half&quot;: <span>*</span>, &quot;visual_masking_fence&quot;: <span>*</span>, &quot;visual_masking_fence_border&quot;: <span>*</span>, &quot;visual_masking_fence_multi_size_half_border&quot;: <span>*</span>, &quot;visual_masking_fence_multi_size_half&quot;: <span>*</span>, &quot;distractor_rainbow&quot;: <span>*</span>, &quot;distractor_square_red_hue&quot;: <span>*</span>, &quot;distractor_square_red_lum&quot;: <span>*</span>, &quot;distractor_square_red_chrom&quot;: <span>*</span>, &quot;distractor_square_yellow_hue&quot;: <span>*</span>, &quot;distractor_square_yellow_lum&quot;: <span>*</span>, &quot;distractor_square_yellow_chrom&quot;: <span>*</span>, &quot;distractor_square_blue_hue&quot;: <span>*</span>, &quot;distractor_square_blue_lum&quot;: <span>*</span>, &quot;distractor_square_blue_chrom&quot;: <span>*</span>, &quot;distractor_square_green_hue&quot;: <span>*</span>, &quot;distractor_square_green_lum&quot;: <span>*</span>, &quot;distractor_square_green_chrom&quot;: <span>*</span>, &quot;distractor_blue_shades&quot;: <span>*</span>, &quot;distractor_red_shades&quot;: <span>*</span>, &quot;distractor_yellow_shades&quot;: <span>*</span>, &quot;distractor_control_shades&quot;: <span>*</span>, &quot;distractor_ratio_pilot&quot;: <span>*</span>, &quot;distractor_black_high_target&quot;: <span>*</span>, &quot;distractor_black_low_target&quot;: <span>*</span>, &quot;devon_attribute_array_test&quot;: <span>*</span>, &quot;distractor_array_devon_test&quot;: <span>*</span>, &quot;test_hybrid_scatter&quot;: <span>*</span>, &quot;hybrid_multi_luminance_scatter&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_BASE">JND_RADIUS_BASE</a></span></span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_CONDITIONS">JND_RADIUS_CONDITIONS</a></span></span><span class="code" data-ice="signature">: {&quot;circle_square&quot;: <span>*</span>, &quot;circle_triangle&quot;: <span>*</span>, &quot;square_triangle&quot;: <span>*</span>, &quot;rotSquare_rotTriangle&quot;: <span>*</span>, &quot;slice0_triangle&quot;: <span>*</span>, &quot;slice45_triangle&quot;: <span>*</span>, &quot;slice90_triangle&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_BASE">NUMEROSITY_BASE</a></span></span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_CONDITIONS">NUMEROSITY_CONDITIONS</a></span></span><span class="code" data-ice="signature">: {&quot;numerosity_blue_squares&quot;: <span>*</span>, &quot;numerosity_red_squares&quot;: <span>*</span>, &quot;numerosity_green_squares&quot;: <span>*</span>, &quot;numerosity_yellow_squares&quot;: <span>*</span>, &quot;distractor_numerosity_red_lum_1&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-RECTANGLE_MASK_PATH">RECTANGLE_MASK_PATH</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_BASE">SEQUENCING_BASE</a></span></span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_CONDITIONS">SEQUENCING_CONDITIONS</a></span></span><span class="code" data-ice="signature">: {&quot;sequencing_timing_condition&quot;: <span>*</span>, &quot;timing_condition_uniform_distribution&quot;: <span>*</span>, &quot;strip_ring_size&quot;: <span>*</span>, &quot;line_length_strip&quot;: <span>*</span>, &quot;stable_line_length_strip&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SIDE_BY_SIDE_BASE">SEQUENCING_SIDE_BY_SIDE_BASE</a></span></span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SIDE_BY_SIDE_CONDITIONS">SEQUENCING_SIDE_BY_SIDE_CONDITIONS</a></span></span><span class="code" data-ice="signature">: {&quot;sequencing_side_by_side_condition&quot;: <span>*</span>, &quot;sequencing_side_by_side_condition_uniform_distribution&quot;: <span>*</span>, &quot;strip_ring_size&quot;: <span>*</span>, &quot;line_length_strip&quot;: <span>*</span>, &quot;stable_line_length_strip&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SYMBOLS_BASE">SEQUENCING_SYMBOLS_BASE</a></span></span><span class="code" data-ice="signature">: {&quot;design&quot;: <span>*</span>, &quot;custom&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SYMBOLS_CONDITIONS">SEQUENCING_SYMBOLS_CONDITIONS</a></span></span><span class="code" data-ice="signature">: {&quot;sequencing_symbols_condition&quot;: <span>*</span>, &quot;sequencing_symbols_condition_uniform_distribution&quot;: <span>*</span>, &quot;sequencing_symbols_condition_strip_plot&quot;: <span>*</span>, &quot;sequencing_symbols_scatter_density&quot;: <span>*</span>, &quot;sequencing_symbols_scatter_parallel&quot;: <span>*</span>, &quot;sequencing_symbols_scatter_strip_luminance&quot;: <span>*</span>, &quot;sequencing_symbols_features_strip_luminance_orientation&quot;: <span>*</span>, &quot;sequencing_symbols_features_strip_orientation_luminance&quot;: <span>*</span>, &quot;sequencing_symbols_strip_luminance_widths&quot;: <span>*</span>, &quot;sequencing_symbols_scatter_strip_color_yellow_blue&quot;: <span>*</span>, &quot;sequencing_symbols_scatter_strip_color_yellow_blue_800&quot;: <span>*</span>, &quot;sequencing_symbols_scatter_strip_color_yellow_blue_1200&quot;: <span>*</span>, &quot;sequencing_symbols_strip_color_luminance&quot;: <span>*</span>, &quot;sequencing_symbols_memory_control_1200&quot;: <span>*</span>, &quot;sequencing_symbols_strip_orientation_luminance_combined&quot;: <span>*</span>, &quot;sequencing_symbols_memory_control&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-SQUARE_MASK_PATH">SQUARE_MASK_PATH</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_BASE">STEVENS_BASE</a></span></span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>, &quot;design&quot;: <span>*</span>, &quot;custom&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_CONDITIONS">STEVENS_CONDITIONS</a></span></span><span class="code" data-ice="signature">: {&quot;strip_ring_size&quot;: <span>*</span>, &quot;line_length_strip&quot;: <span>*</span>, &quot;stable_line_length_strip&quot;: <span>*</span>, &quot;distractor_rainbow&quot;: <span>*</span>, &quot;distractor_square_red_hue&quot;: <span>*</span>, &quot;distractor_square_red_lum&quot;: <span>*</span>, &quot;distractor_square_red_chrom&quot;: <span>*</span>, &quot;distractor_square_yellow_hue&quot;: <span>*</span>, &quot;distractor_square_yellow_lum&quot;: <span>*</span>, &quot;distractor_square_yellow_chrom&quot;: <span>*</span>, &quot;distractor_square_blue_hue&quot;: <span>*</span>, &quot;distractor_square_blue_lum&quot;: <span>*</span>, &quot;distractor_square_blue_chrom&quot;: <span>*</span>, &quot;distractor_square_green_hue&quot;: <span>*</span>, &quot;distractor_square_green_lum&quot;: <span>*</span>, &quot;distractor_square_green_chrom&quot;: <span>*</span>, &quot;distractor_blue_shades&quot;: <span>*</span>, &quot;distractor_red_shades&quot;: <span>*</span>, &quot;distractor_yellow_shades&quot;: <span>*</span>, &quot;distractor_control_shades&quot;: <span>*</span>, &quot;hollow_scatter&quot;: <span>*</span>, &quot;thin_hollow_scatter&quot;: <span>*</span>, &quot;bullseye_scatter&quot;: <span>*</span>, &quot;mix_point_styles&quot;: <span>*</span>, &quot;point_styles_combined&quot;: <span>*</span>, &quot;multi_size_scatter&quot;: <span>*</span>, &quot;large_dot_sizes&quot;: <span>*</span>, &quot;multi_color_scatter_combined&quot;: <span>*</span>, &quot;multi_shape_scatter_combined&quot;: <span>*</span>, &quot;multi_border_combined&quot;: <span>*</span>, &quot;multi_luminance_scatter_combined&quot;: <span>*</span>, &quot;multi_opacity_scatter_combined&quot;: <span>*</span>, &quot;multi_size_scatter_combined&quot;: <span>*</span>, &quot;decreasing_number_of_dots&quot;: <span>*</span>, &quot;increasing_number_of_dots&quot;: <span>*</span>, &quot;hybrid_multi_luminance_scatter&quot;: <span>*</span>, &quot;test_hybrid_scatter&quot;: <span>*</span>, &quot;multi_size_scatter_alternate&quot;: <span>*</span>, &quot;visual_masking&quot;: <span>*</span>, &quot;visual_masking_border&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-VISUAL_SEARCH_BASE">VISUAL_SEARCH_BASE</a></span></span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-VISUAL_SEARCH_CONDITIONS">VISUAL_SEARCH_CONDITIONS</a></span></span><span class="code" data-ice="signature">: {&quot;vs_blue_squares&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-colorScreeningInstructions">colorScreeningInstructions</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;allow_backward&quot;: <span>*</span>, &quot;pages&quot;: <span>*</span>, &quot;show_clickable_nav&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;button_label_next&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-correlation_dependencies">correlation_dependencies</a></span></span><span class="code" data-ice="signature">: <span><a href="class/scripts/helpers/correlation_dependencies.js~Correlation_Dependencies.html">Correlation_Dependencies</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-ensemble_avg_exp">ensemble_avg_exp</a></span></span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/ensemble_average/ensemble_average.js~Ensemble_Average.html">Ensemble_Average</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-estimation_exp">estimation_exp</a></span></span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/estimation/estimation.js~Estimation.html">Estimation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-hybrid_exp">hybrid_exp</a></span></span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/hybrid/hybrid.js~Hybrid.html">Hybrid</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-ignoreScreeningInstructions">ignoreScreeningInstructions</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;allow_backward&quot;: <span>*</span>, &quot;pages&quot;: <span>*</span>, &quot;show_clickable_nav&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;button_label_next&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-instructionsRegression">instructionsRegression</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;allow_backward&quot;: <span>*</span>, &quot;pages&quot;: <span>*</span>, &quot;show_clickable_nav&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;button_label_next&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-jnd_exp">jnd_exp</a></span></span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/jnd/jnd.js~JND.html">JND</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-jnd_exp">jnd_exp</a></span></span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/jnd/jnd.js~JND.html">JND</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-jnd_radius_exp">jnd_radius_exp</a></span></span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/jnd_radius/jnd_radius.js~JND_Radius.html">JND_Radius</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-luminanceScreeningInstructions">luminanceScreeningInstructions</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;allow_backward&quot;: <span>*</span>, &quot;pages&quot;: <span>*</span>, &quot;show_clickable_nav&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;button_label_next&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-numerosity_exp">numerosity_exp</a></span></span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/numerosity/numerosity.js~Numerosity.html">Numerosity</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-orientationScreeningInstructions">orientationScreeningInstructions</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;allow_backward&quot;: <span>*</span>, &quot;pages&quot;: <span>*</span>, &quot;show_clickable_nav&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;button_label_next&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-resolution_scaling">resolution_scaling</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;item_width&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, &quot;item_height&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, &quot;prompt&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;pixels_per_unit&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, &quot;starting_size&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-screeningCorrelationSelect">screeningCorrelationSelect</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;image_class&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;stimuli&quot;: <span>*</span>, &quot;button_label&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;condition&quot;: <span>*</span>, &quot;failed_message&quot;: <span>*</span>, &quot;prompt&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-screeningCorrelationSort">screeningCorrelationSort</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;image_class&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;stimuli&quot;: <span>*</span>, &quot;button_label&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;condition_string&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;failed_message&quot;: <span>*</span>, &quot;prompt&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-screeningInstructions">screeningInstructions</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;allow_backward&quot;: <span>*</span>, &quot;pages&quot;: <span>*</span>, &quot;show_clickable_nav&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;button_label_next&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-screeningInstructions">screeningInstructions</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;allow_backward&quot;: <span>*</span>, &quot;pages&quot;: <span>*</span>, &quot;show_clickable_nav&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;button_label_next&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-screeningPCPInverted">screeningPCPInverted</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;image_class&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;stimuli&quot;: <span>*</span>, &quot;button_label&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;condition_string&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;failed_message&quot;: <span>*</span>, &quot;prompt&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-screeningQuestions">screeningQuestions</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;dataAsArray&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;html&quot;: <span>*</span>, &quot;on_finish&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Screening questions</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-screeningRegressionSelect">screeningRegressionSelect</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;image_class&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;stimuli&quot;: <span>*</span>, &quot;button_label&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;condition&quot;: <span>*</span>, &quot;multi_select&quot;: <span>*</span>, &quot;failed_message&quot;: <span>*</span>, &quot;prompt&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-screeningStripColorYellowBlue">screeningStripColorYellowBlue</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;image_class&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;stimuli&quot;: <span>*</span>, &quot;button_label&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;condition_string&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;failed_message&quot;: <span>*</span>, &quot;prompt&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-screenningStripLuminanceSort">screenningStripLuminanceSort</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;image_class&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;stimuli&quot;: <span>*</span>, &quot;button_label&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;condition_string&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;failed_message&quot;: <span>*</span>, &quot;prompt&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-screenningStripOrientationSort">screenningStripOrientationSort</a></span></span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;image_class&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;stimuli&quot;: <span>*</span>, &quot;button_label&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;condition_string&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;failed_message&quot;: <span>*</span>, &quot;prompt&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_exp">sequencing_exp</a></span></span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/sequencing/sequencing.js~Sequencing.html">Sequencing</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_side_by_side_exp">sequencing_side_by_side_exp</a></span></span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js~Sequencing_Side_by_Side.html">Sequencing_Side_by_Side</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_symbols_exp">sequencing_symbols_exp</a></span></span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/sequencing_symbols/sequencing_symbols.js~Sequencing_Symbols.html">Sequencing_Symbols</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-stevens_exp">stevens_exp</a></span></span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/stevens/stevens.js~Stevens.html">Stevens</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-stevens_exp">stevens_exp</a></span></span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/stevens/stevens.js~Stevens.html">Stevens</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-visual_search_exp">visual_search_exp</a></span></span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/visual_search/visual_search_timeline.js~Visual_Search.html">Visual_Search</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div data-ice="details"><h2 data-ice="title">Static Public </h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-CUSTOM_TRIAL_STRUCTURE_CONDITIONS">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">CUSTOM_TRIAL_STRUCTURE_CONDITIONS</span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>, &quot;design&quot;: <span>*</span>, &quot;custom&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/custom_subcondition_generator.js.html#lineNumber9">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {CUSTOM_TRIAL_STRUCTURE_CONDITIONS} from &apos;<span><a href="file/scripts/experiment-properties/data/custom_subcondition_generator.js.html#lineNumber9">vcl-web-framework/scripts/experiment-properties/data/custom_subcondition_generator.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-ENSEMBLE_AVERAGE_BASE">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">ENSEMBLE_AVERAGE_BASE</span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/ensemble_average_data.js.html#lineNumber5">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {ENSEMBLE_AVERAGE_BASE} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/ensemble_average_data.js.html#lineNumber5">vcl-web-framework/scripts/experiment-properties/data/constants/ensemble_average_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-ENSEMBLE_AVERAGE_CONDITIONS">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">ENSEMBLE_AVERAGE_CONDITIONS</span><span class="code" data-ice="signature">: {&quot;distractor_ensemble_average_trial_test&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_1&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_2&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_3&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_4&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_5&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_6&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_7&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_8&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_9&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_10&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_11&quot;: <span>*</span>, &quot;distractor_ensemble_average_trial_12&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/ensemble_average_data.js.html#lineNumber19">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {ENSEMBLE_AVERAGE_CONDITIONS} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/ensemble_average_data.js.html#lineNumber19">vcl-web-framework/scripts/experiment-properties/data/constants/ensemble_average_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-ESTIMATION_CONDITIONS">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">ESTIMATION_CONDITIONS</span><span class="code" data-ice="signature">: {&quot;shape_estimation&quot;: <span>*</span>, &quot;line_length&quot;: <span>*</span>, &quot;rectangle_square&quot;: <span>*</span>, &quot;rectangle_rotated_square_solid&quot;: <span>*</span>, &quot;rectangle_rotated_square_outline&quot;: <span>*</span>, &quot;triangle&quot;: <span>*</span>, &quot;square_circle_interference&quot;: <span>*</span>, &quot;circle_interference&quot;: <span>*</span>, &quot;multi_square_interference&quot;: <span>*</span>, &quot;multi_shape_interference&quot;: <span>*</span>, &quot;multi_fan_interference&quot;: <span>*</span>, &quot;absolute_area_ratio&quot;: <span>*</span>, &quot;absolute_area_ratio_bisection_variant_A&quot;: <span>*</span>, &quot;absolute_area_ratio_bisection_variant_B&quot;: <span>*</span>, &quot;multi_fan_interference_B&quot;: <span>*</span>, &quot;multi_square_cutout_interference&quot;: <span>*</span>, &quot;absolute_area_ratio_flicker&quot;: <span>*</span>, &quot;absolute_area_ratio_bisection_variant_A_flicker&quot;: <span>*</span>, &quot;multi_fan_interference_B_flicker&quot;: <span>*</span>, &quot;multi_square_cutout_interference_flicker&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/estimation_data.js.html#lineNumber8">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {ESTIMATION_CONDITIONS} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/estimation_data.js.html#lineNumber8">vcl-web-framework/scripts/experiment-properties/data/constants/estimation_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-EXPERIMENT_BASES">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">EXPERIMENT_BASES</span><span class="code" data-ice="signature">: {&quot;JND&quot;: <span>*</span>, &quot;Stevens&quot;: <span>*</span>, &quot;Hybrid&quot;: <span>*</span>, &quot;JND_Radius&quot;: <span>*</span>, &quot;Estimation&quot;: <span>*</span>, &quot;Numerosity&quot;: <span>*</span>, &quot;Visual_Search&quot;: <span>*</span>, &quot;Sequencing&quot;: <span>*</span>, &quot;Sequencing_Side_by_Side&quot;: <span>*</span>, &quot;Sequencing_Symbols&quot;: <span>*</span>, &quot;Ensemble_Average&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/data_controller.js.html#lineNumber24">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {EXPERIMENT_BASES} from &apos;<span><a href="file/scripts/experiment-properties/data/data_controller.js.html#lineNumber24">vcl-web-framework/scripts/experiment-properties/data/data_controller.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-EXPERIMENT_CONDITIONS">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">EXPERIMENT_CONDITIONS</span><span class="code" data-ice="signature">: {&quot;JND&quot;: <span>*</span>, &quot;Stevens&quot;: <span>*</span>, &quot;Hybrid&quot;: <span>*</span>, &quot;JND_Radius&quot;: <span>*</span>, &quot;Estimation&quot;: <span>*</span>, &quot;Numerosity&quot;: <span>*</span>, &quot;Visual_Search&quot;: <span>*</span>, &quot;Sequencing&quot;: <span>*</span>, &quot;Sequencing_Side_by_Side&quot;: <span>*</span>, &quot;Sequencing_Symbols&quot;: <span>*</span>, &quot;Ensemble_Average&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/data_controller.js.html#lineNumber38">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {EXPERIMENT_CONDITIONS} from &apos;<span><a href="file/scripts/experiment-properties/data/data_controller.js.html#lineNumber38">vcl-web-framework/scripts/experiment-properties/data/data_controller.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-HYBRID_BASE">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">HYBRID_BASE</span><span class="code" data-ice="signature">: {&quot;design&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/hybrid_data.js.html#lineNumber3">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {HYBRID_BASE} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/hybrid_data.js.html#lineNumber3">vcl-web-framework/scripts/experiment-properties/data/constants/hybrid_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-HYBRID_CONDITIONS">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">HYBRID_CONDITIONS</span><span class="code" data-ice="signature">: {&quot;multi_size_scatter_combined&quot;: <span>*</span>, &quot;multi_opacity_scatter_combined&quot;: <span>*</span>, &quot;decreasing_number_of_dots&quot;: <span>*</span>, &quot;increasing_number_of_dots&quot;: <span>*</span>, &quot;multi_luminance_scatter_combined&quot;: <span>*</span>, &quot;hybrid_multi_luminance_scatter&quot;: <span>*</span>, &quot;multi_color_scatter_combined&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/hybrid_data.js.html#lineNumber7">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {HYBRID_CONDITIONS} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/hybrid_data.js.html#lineNumber7">vcl-web-framework/scripts/experiment-properties/data/constants/hybrid_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-IMAGE_PATH">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">IMAGE_PATH</span><span class="code" data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/sequencing/sequencing.js.html#lineNumber12">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {IMAGE_PATH} from &apos;<span><a href="file/scripts/experiments/sequencing/sequencing.js.html#lineNumber12">vcl-web-framework/scripts/experiments/sequencing/sequencing.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-IMAGE_PATH">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">IMAGE_PATH</span><span class="code" data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js.html#lineNumber12">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {IMAGE_PATH} from &apos;<span><a href="file/scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js.html#lineNumber12">vcl-web-framework/scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-JND_BASE">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">JND_BASE</span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>, &quot;design&quot;: <span>*</span>, &quot;custom&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/jnd_data.js.html#lineNumber3">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {JND_BASE} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/jnd_data.js.html#lineNumber3">vcl-web-framework/scripts/experiment-properties/data/constants/jnd_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-JND_CONDITIONS">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">JND_CONDITIONS</span><span class="code" data-ice="signature">: {&quot;symmetric_jnd&quot;: <span>*</span>, &quot;strip_ring_size&quot;: <span>*</span>, &quot;line_length_strip&quot;: <span>*</span>, &quot;stable_line_length_strip&quot;: <span>*</span>, &quot;multi_size_scatter&quot;: <span>*</span>, &quot;distractor_multi&quot;: <span>*</span>, &quot;hollow_scatter&quot;: <span>*</span>, &quot;thin_hollow_scatter&quot;: <span>*</span>, &quot;bullseye_scatter&quot;: <span>*</span>, &quot;large_dot_sizes&quot;: <span>*</span>, &quot;multi_color_scatter_combined&quot;: <span>*</span>, &quot;multi_shape_scatter_combined&quot;: <span>*</span>, &quot;multi_border_combined&quot;: <span>*</span>, &quot;multi_luminance_scatter_combined&quot;: <span>*</span>, &quot;multi_opacity_scatter_combined&quot;: <span>*</span>, &quot;multi_size_scatter_combined&quot;: <span>*</span>, &quot;mix_point_styles&quot;: <span>*</span>, &quot;point_styles_combined&quot;: <span>*</span>, &quot;decreasing_number_of_dots&quot;: <span>*</span>, &quot;increasing_number_of_dots&quot;: <span>*</span>, &quot;multi_size_scatter_alternate&quot;: <span>*</span>, &quot;visual_masking&quot;: <span>*</span>, &quot;visual_masking_multi_size_half&quot;: <span>*</span>, &quot;visual_masking_multi_size_half_border&quot;: <span>*</span>, &quot;visual_masking_border&quot;: <span>*</span>, &quot;visual_masking_sides&quot;: <span>*</span>, &quot;visual_masking_sides_border&quot;: <span>*</span>, &quot;visual_masking_sides_multi_size_half_border&quot;: <span>*</span>, &quot;visual_masking_sides_multi_size_half&quot;: <span>*</span>, &quot;visual_masking_fence&quot;: <span>*</span>, &quot;visual_masking_fence_border&quot;: <span>*</span>, &quot;visual_masking_fence_multi_size_half_border&quot;: <span>*</span>, &quot;visual_masking_fence_multi_size_half&quot;: <span>*</span>, &quot;distractor_rainbow&quot;: <span>*</span>, &quot;distractor_square_red_hue&quot;: <span>*</span>, &quot;distractor_square_red_lum&quot;: <span>*</span>, &quot;distractor_square_red_chrom&quot;: <span>*</span>, &quot;distractor_square_yellow_hue&quot;: <span>*</span>, &quot;distractor_square_yellow_lum&quot;: <span>*</span>, &quot;distractor_square_yellow_chrom&quot;: <span>*</span>, &quot;distractor_square_blue_hue&quot;: <span>*</span>, &quot;distractor_square_blue_lum&quot;: <span>*</span>, &quot;distractor_square_blue_chrom&quot;: <span>*</span>, &quot;distractor_square_green_hue&quot;: <span>*</span>, &quot;distractor_square_green_lum&quot;: <span>*</span>, &quot;distractor_square_green_chrom&quot;: <span>*</span>, &quot;distractor_blue_shades&quot;: <span>*</span>, &quot;distractor_red_shades&quot;: <span>*</span>, &quot;distractor_yellow_shades&quot;: <span>*</span>, &quot;distractor_control_shades&quot;: <span>*</span>, &quot;distractor_ratio_pilot&quot;: <span>*</span>, &quot;distractor_black_high_target&quot;: <span>*</span>, &quot;distractor_black_low_target&quot;: <span>*</span>, &quot;devon_attribute_array_test&quot;: <span>*</span>, &quot;distractor_array_devon_test&quot;: <span>*</span>, &quot;test_hybrid_scatter&quot;: <span>*</span>, &quot;hybrid_multi_luminance_scatter&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/jnd_data.js.html#lineNumber58">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {JND_CONDITIONS} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/jnd_data.js.html#lineNumber58">vcl-web-framework/scripts/experiment-properties/data/constants/jnd_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-JND_RADIUS_BASE">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">JND_RADIUS_BASE</span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/jnd_radius_data.js.html#lineNumber3">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {JND_RADIUS_BASE} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/jnd_radius_data.js.html#lineNumber3">vcl-web-framework/scripts/experiment-properties/data/constants/jnd_radius_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-JND_RADIUS_CONDITIONS">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">JND_RADIUS_CONDITIONS</span><span class="code" data-ice="signature">: {&quot;circle_square&quot;: <span>*</span>, &quot;circle_triangle&quot;: <span>*</span>, &quot;square_triangle&quot;: <span>*</span>, &quot;rotSquare_rotTriangle&quot;: <span>*</span>, &quot;slice0_triangle&quot;: <span>*</span>, &quot;slice45_triangle&quot;: <span>*</span>, &quot;slice90_triangle&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/jnd_radius_data.js.html#lineNumber19">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {JND_RADIUS_CONDITIONS} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/jnd_radius_data.js.html#lineNumber19">vcl-web-framework/scripts/experiment-properties/data/constants/jnd_radius_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-NUMEROSITY_BASE">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">NUMEROSITY_BASE</span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/numerosity_data.js.html#lineNumber3">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {NUMEROSITY_BASE} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/numerosity_data.js.html#lineNumber3">vcl-web-framework/scripts/experiment-properties/data/constants/numerosity_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-NUMEROSITY_CONDITIONS">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">NUMEROSITY_CONDITIONS</span><span class="code" data-ice="signature">: {&quot;numerosity_blue_squares&quot;: <span>*</span>, &quot;numerosity_red_squares&quot;: <span>*</span>, &quot;numerosity_green_squares&quot;: <span>*</span>, &quot;numerosity_yellow_squares&quot;: <span>*</span>, &quot;distractor_numerosity_red_lum_1&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/numerosity_data.js.html#lineNumber25">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {NUMEROSITY_CONDITIONS} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/numerosity_data.js.html#lineNumber25">vcl-web-framework/scripts/experiment-properties/data/constants/numerosity_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-RECTANGLE_MASK_PATH">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">RECTANGLE_MASK_PATH</span><span class="code" data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/sequencing_symbols/sequencing_symbols.js.html#lineNumber12">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {RECTANGLE_MASK_PATH} from &apos;<span><a href="file/scripts/experiments/sequencing_symbols/sequencing_symbols.js.html#lineNumber12">vcl-web-framework/scripts/experiments/sequencing_symbols/sequencing_symbols.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-SEQUENCING_BASE">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">SEQUENCING_BASE</span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/sequencing_data.js.html#lineNumber3">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {SEQUENCING_BASE} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/sequencing_data.js.html#lineNumber3">vcl-web-framework/scripts/experiment-properties/data/constants/sequencing_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-SEQUENCING_CONDITIONS">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">SEQUENCING_CONDITIONS</span><span class="code" data-ice="signature">: {&quot;sequencing_timing_condition&quot;: <span>*</span>, &quot;timing_condition_uniform_distribution&quot;: <span>*</span>, &quot;strip_ring_size&quot;: <span>*</span>, &quot;line_length_strip&quot;: <span>*</span>, &quot;stable_line_length_strip&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/sequencing_data.js.html#lineNumber26">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {SEQUENCING_CONDITIONS} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/sequencing_data.js.html#lineNumber26">vcl-web-framework/scripts/experiment-properties/data/constants/sequencing_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-SEQUENCING_SIDE_BY_SIDE_BASE">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">SEQUENCING_SIDE_BY_SIDE_BASE</span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/sequencing_side_by_side_data.js.html#lineNumber3">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {SEQUENCING_SIDE_BY_SIDE_BASE} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/sequencing_side_by_side_data.js.html#lineNumber3">vcl-web-framework/scripts/experiment-properties/data/constants/sequencing_side_by_side_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-SEQUENCING_SIDE_BY_SIDE_CONDITIONS">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">SEQUENCING_SIDE_BY_SIDE_CONDITIONS</span><span class="code" data-ice="signature">: {&quot;sequencing_side_by_side_condition&quot;: <span>*</span>, &quot;sequencing_side_by_side_condition_uniform_distribution&quot;: <span>*</span>, &quot;strip_ring_size&quot;: <span>*</span>, &quot;line_length_strip&quot;: <span>*</span>, &quot;stable_line_length_strip&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/sequencing_side_by_side_data.js.html#lineNumber26">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {SEQUENCING_SIDE_BY_SIDE_CONDITIONS} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/sequencing_side_by_side_data.js.html#lineNumber26">vcl-web-framework/scripts/experiment-properties/data/constants/sequencing_side_by_side_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-SEQUENCING_SYMBOLS_BASE">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">SEQUENCING_SYMBOLS_BASE</span><span class="code" data-ice="signature">: {&quot;design&quot;: <span>*</span>, &quot;custom&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/sequencing_symbols_data.js.html#lineNumber32">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {SEQUENCING_SYMBOLS_BASE} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/sequencing_symbols_data.js.html#lineNumber32">vcl-web-framework/scripts/experiment-properties/data/constants/sequencing_symbols_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-SEQUENCING_SYMBOLS_CONDITIONS">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">SEQUENCING_SYMBOLS_CONDITIONS</span><span class="code" data-ice="signature">: {&quot;sequencing_symbols_condition&quot;: <span>*</span>, &quot;sequencing_symbols_condition_uniform_distribution&quot;: <span>*</span>, &quot;sequencing_symbols_condition_strip_plot&quot;: <span>*</span>, &quot;sequencing_symbols_scatter_density&quot;: <span>*</span>, &quot;sequencing_symbols_scatter_parallel&quot;: <span>*</span>, &quot;sequencing_symbols_scatter_strip_luminance&quot;: <span>*</span>, &quot;sequencing_symbols_features_strip_luminance_orientation&quot;: <span>*</span>, &quot;sequencing_symbols_features_strip_orientation_luminance&quot;: <span>*</span>, &quot;sequencing_symbols_strip_luminance_widths&quot;: <span>*</span>, &quot;sequencing_symbols_scatter_strip_color_yellow_blue&quot;: <span>*</span>, &quot;sequencing_symbols_scatter_strip_color_yellow_blue_800&quot;: <span>*</span>, &quot;sequencing_symbols_scatter_strip_color_yellow_blue_1200&quot;: <span>*</span>, &quot;sequencing_symbols_strip_color_luminance&quot;: <span>*</span>, &quot;sequencing_symbols_memory_control_1200&quot;: <span>*</span>, &quot;sequencing_symbols_strip_orientation_luminance_combined&quot;: <span>*</span>, &quot;sequencing_symbols_memory_control&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/sequencing_symbols_data.js.html#lineNumber49">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {SEQUENCING_SYMBOLS_CONDITIONS} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/sequencing_symbols_data.js.html#lineNumber49">vcl-web-framework/scripts/experiment-properties/data/constants/sequencing_symbols_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-SQUARE_MASK_PATH">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">SQUARE_MASK_PATH</span><span class="code" data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/sequencing_symbols/sequencing_symbols.js.html#lineNumber10">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {SQUARE_MASK_PATH} from &apos;<span><a href="file/scripts/experiments/sequencing_symbols/sequencing_symbols.js.html#lineNumber10">vcl-web-framework/scripts/experiments/sequencing_symbols/sequencing_symbols.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-STEVENS_BASE">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">STEVENS_BASE</span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>, &quot;design&quot;: <span>*</span>, &quot;custom&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/stevens_data.js.html#lineNumber3">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {STEVENS_BASE} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/stevens_data.js.html#lineNumber3">vcl-web-framework/scripts/experiment-properties/data/constants/stevens_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-STEVENS_CONDITIONS">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">STEVENS_CONDITIONS</span><span class="code" data-ice="signature">: {&quot;strip_ring_size&quot;: <span>*</span>, &quot;line_length_strip&quot;: <span>*</span>, &quot;stable_line_length_strip&quot;: <span>*</span>, &quot;distractor_rainbow&quot;: <span>*</span>, &quot;distractor_square_red_hue&quot;: <span>*</span>, &quot;distractor_square_red_lum&quot;: <span>*</span>, &quot;distractor_square_red_chrom&quot;: <span>*</span>, &quot;distractor_square_yellow_hue&quot;: <span>*</span>, &quot;distractor_square_yellow_lum&quot;: <span>*</span>, &quot;distractor_square_yellow_chrom&quot;: <span>*</span>, &quot;distractor_square_blue_hue&quot;: <span>*</span>, &quot;distractor_square_blue_lum&quot;: <span>*</span>, &quot;distractor_square_blue_chrom&quot;: <span>*</span>, &quot;distractor_square_green_hue&quot;: <span>*</span>, &quot;distractor_square_green_lum&quot;: <span>*</span>, &quot;distractor_square_green_chrom&quot;: <span>*</span>, &quot;distractor_blue_shades&quot;: <span>*</span>, &quot;distractor_red_shades&quot;: <span>*</span>, &quot;distractor_yellow_shades&quot;: <span>*</span>, &quot;distractor_control_shades&quot;: <span>*</span>, &quot;hollow_scatter&quot;: <span>*</span>, &quot;thin_hollow_scatter&quot;: <span>*</span>, &quot;bullseye_scatter&quot;: <span>*</span>, &quot;mix_point_styles&quot;: <span>*</span>, &quot;point_styles_combined&quot;: <span>*</span>, &quot;multi_size_scatter&quot;: <span>*</span>, &quot;large_dot_sizes&quot;: <span>*</span>, &quot;multi_color_scatter_combined&quot;: <span>*</span>, &quot;multi_shape_scatter_combined&quot;: <span>*</span>, &quot;multi_border_combined&quot;: <span>*</span>, &quot;multi_luminance_scatter_combined&quot;: <span>*</span>, &quot;multi_opacity_scatter_combined&quot;: <span>*</span>, &quot;multi_size_scatter_combined&quot;: <span>*</span>, &quot;decreasing_number_of_dots&quot;: <span>*</span>, &quot;increasing_number_of_dots&quot;: <span>*</span>, &quot;hybrid_multi_luminance_scatter&quot;: <span>*</span>, &quot;test_hybrid_scatter&quot;: <span>*</span>, &quot;multi_size_scatter_alternate&quot;: <span>*</span>, &quot;visual_masking&quot;: <span>*</span>, &quot;visual_masking_border&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/stevens_data.js.html#lineNumber49">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {STEVENS_CONDITIONS} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/stevens_data.js.html#lineNumber49">vcl-web-framework/scripts/experiment-properties/data/constants/stevens_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-VISUAL_SEARCH_BASE">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">VISUAL_SEARCH_BASE</span><span class="code" data-ice="signature">: {&quot;foundational&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/visual_search_data.js.html#lineNumber3">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {VISUAL_SEARCH_BASE} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/visual_search_data.js.html#lineNumber3">vcl-web-framework/scripts/experiment-properties/data/constants/visual_search_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-VISUAL_SEARCH_CONDITIONS">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">VISUAL_SEARCH_CONDITIONS</span><span class="code" data-ice="signature">: {&quot;vs_blue_squares&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-properties/data/constants/visual_search_data.js.html#lineNumber17">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {VISUAL_SEARCH_CONDITIONS} from &apos;<span><a href="file/scripts/experiment-properties/data/constants/visual_search_data.js.html#lineNumber17">vcl-web-framework/scripts/experiment-properties/data/constants/visual_search_data.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-colorScreeningInstructions">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">colorScreeningInstructions</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;allow_backward&quot;: <span>*</span>, &quot;pages&quot;: <span>*</span>, &quot;show_clickable_nav&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;button_label_next&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/screening/strip_plot_screening.js.html#lineNumber68">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {colorScreeningInstructions} from &apos;<span><a href="file/scripts/experiment-timeline/screening/strip_plot_screening.js.html#lineNumber68">vcl-web-framework/scripts/experiment-timeline/screening/strip_plot_screening.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-correlation_dependencies">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">correlation_dependencies</span><span class="code" data-ice="signature">: <span><a href="class/scripts/helpers/correlation_dependencies.js~Correlation_Dependencies.html">Correlation_Dependencies</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/helpers/correlation_dependencies.js.html#lineNumber503">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {correlation_dependencies} from &apos;<span><a href="file/scripts/helpers/correlation_dependencies.js.html#lineNumber503">vcl-web-framework/scripts/helpers/correlation_dependencies.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-ensemble_avg_exp">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">ensemble_avg_exp</span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/ensemble_average/ensemble_average.js~Ensemble_Average.html">Ensemble_Average</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/ensemble_average/ensemble_average_timeline.js.html#lineNumber6">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {ensemble_avg_exp} from &apos;<span><a href="file/scripts/experiments/ensemble_average/ensemble_average_timeline.js.html#lineNumber6">vcl-web-framework/scripts/experiments/ensemble_average/ensemble_average_timeline.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-estimation_exp">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">estimation_exp</span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/estimation/estimation.js~Estimation.html">Estimation</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/estimation/estimation_timeline.js.html#lineNumber4">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {estimation_exp} from &apos;<span><a href="file/scripts/experiments/estimation/estimation_timeline.js.html#lineNumber4">vcl-web-framework/scripts/experiments/estimation/estimation_timeline.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-hybrid_exp">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">hybrid_exp</span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/hybrid/hybrid.js~Hybrid.html">Hybrid</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/hybrid/hybrid_timeline.js.html#lineNumber16">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {hybrid_exp} from &apos;<span><a href="file/scripts/experiments/hybrid/hybrid_timeline.js.html#lineNumber16">vcl-web-framework/scripts/experiments/hybrid/hybrid_timeline.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-ignoreScreeningInstructions">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">ignoreScreeningInstructions</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;allow_backward&quot;: <span>*</span>, &quot;pages&quot;: <span>*</span>, &quot;show_clickable_nav&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;button_label_next&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/screening/strip_plot_screening.js.html#lineNumber77">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {ignoreScreeningInstructions} from &apos;<span><a href="file/scripts/experiment-timeline/screening/strip_plot_screening.js.html#lineNumber77">vcl-web-framework/scripts/experiment-timeline/screening/strip_plot_screening.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-instructionsRegression">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">instructionsRegression</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;allow_backward&quot;: <span>*</span>, &quot;pages&quot;: <span>*</span>, &quot;show_clickable_nav&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;button_label_next&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/screening/screening.js.html#lineNumber230">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {instructionsRegression} from &apos;<span><a href="file/scripts/experiment-timeline/screening/screening.js.html#lineNumber230">vcl-web-framework/scripts/experiment-timeline/screening/screening.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-jnd_exp">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">jnd_exp</span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/jnd/jnd.js~JND.html">JND</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/hybrid/hybrid_timeline.js.html#lineNumber18">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {jnd_exp} from &apos;<span><a href="file/scripts/experiments/hybrid/hybrid_timeline.js.html#lineNumber18">vcl-web-framework/scripts/experiments/hybrid/hybrid_timeline.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-jnd_exp">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">jnd_exp</span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/jnd/jnd.js~JND.html">JND</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/jnd/jnd_timeline.js.html#lineNumber10">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {jnd_exp} from &apos;<span><a href="file/scripts/experiments/jnd/jnd_timeline.js.html#lineNumber10">vcl-web-framework/scripts/experiments/jnd/jnd_timeline.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-jnd_radius_exp">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">jnd_radius_exp</span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/jnd_radius/jnd_radius.js~JND_Radius.html">JND_Radius</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/jnd_radius/jnd_radius_timeline.js.html#lineNumber5">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {jnd_radius_exp} from &apos;<span><a href="file/scripts/experiments/jnd_radius/jnd_radius_timeline.js.html#lineNumber5">vcl-web-framework/scripts/experiments/jnd_radius/jnd_radius_timeline.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-luminanceScreeningInstructions">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">luminanceScreeningInstructions</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;allow_backward&quot;: <span>*</span>, &quot;pages&quot;: <span>*</span>, &quot;show_clickable_nav&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;button_label_next&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/screening/strip_plot_screening.js.html#lineNumber60">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {luminanceScreeningInstructions} from &apos;<span><a href="file/scripts/experiment-timeline/screening/strip_plot_screening.js.html#lineNumber60">vcl-web-framework/scripts/experiment-timeline/screening/strip_plot_screening.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-numerosity_exp">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">numerosity_exp</span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/numerosity/numerosity.js~Numerosity.html">Numerosity</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/numerosity/numerosity_timeline.js.html#lineNumber5">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {numerosity_exp} from &apos;<span><a href="file/scripts/experiments/numerosity/numerosity_timeline.js.html#lineNumber5">vcl-web-framework/scripts/experiments/numerosity/numerosity_timeline.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-orientationScreeningInstructions">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">orientationScreeningInstructions</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;allow_backward&quot;: <span>*</span>, &quot;pages&quot;: <span>*</span>, &quot;show_clickable_nav&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;button_label_next&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/screening/strip_plot_screening.js.html#lineNumber52">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {orientationScreeningInstructions} from &apos;<span><a href="file/scripts/experiment-timeline/screening/strip_plot_screening.js.html#lineNumber52">vcl-web-framework/scripts/experiment-timeline/screening/strip_plot_screening.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-resolution_scaling">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">resolution_scaling</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;item_width&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, &quot;item_height&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, &quot;prompt&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;pixels_per_unit&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, &quot;starting_size&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/resolution_scaling/resolution_scaling.js.html#lineNumber4">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {resolution_scaling} from &apos;<span><a href="file/scripts/experiment-timeline/resolution_scaling/resolution_scaling.js.html#lineNumber4">vcl-web-framework/scripts/experiment-timeline/resolution_scaling/resolution_scaling.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-screeningCorrelationSelect">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">screeningCorrelationSelect</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;image_class&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;stimuli&quot;: <span>*</span>, &quot;button_label&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;condition&quot;: <span>*</span>, &quot;failed_message&quot;: <span>*</span>, &quot;prompt&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/screening/screening.js.html#lineNumber210">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {screeningCorrelationSelect} from &apos;<span><a href="file/scripts/experiment-timeline/screening/screening.js.html#lineNumber210">vcl-web-framework/scripts/experiment-timeline/screening/screening.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-screeningCorrelationSort">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">screeningCorrelationSort</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;image_class&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;stimuli&quot;: <span>*</span>, &quot;button_label&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;condition_string&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;failed_message&quot;: <span>*</span>, &quot;prompt&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/screening/screening.js.html#lineNumber177">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {screeningCorrelationSort} from &apos;<span><a href="file/scripts/experiment-timeline/screening/screening.js.html#lineNumber177">vcl-web-framework/scripts/experiment-timeline/screening/screening.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-screeningInstructions">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">screeningInstructions</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;allow_backward&quot;: <span>*</span>, &quot;pages&quot;: <span>*</span>, &quot;show_clickable_nav&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;button_label_next&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/screening/pcp_screening.js.html#lineNumber18">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {screeningInstructions} from &apos;<span><a href="file/scripts/experiment-timeline/screening/pcp_screening.js.html#lineNumber18">vcl-web-framework/scripts/experiment-timeline/screening/pcp_screening.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-screeningInstructions">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">screeningInstructions</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;allow_backward&quot;: <span>*</span>, &quot;pages&quot;: <span>*</span>, &quot;show_clickable_nav&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;button_label_next&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/screening/screening.js.html#lineNumber156">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {screeningInstructions} from &apos;<span><a href="file/scripts/experiment-timeline/screening/screening.js.html#lineNumber156">vcl-web-framework/scripts/experiment-timeline/screening/screening.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-screeningPCPInverted">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">screeningPCPInverted</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;image_class&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;stimuli&quot;: <span>*</span>, &quot;button_label&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;condition_string&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;failed_message&quot;: <span>*</span>, &quot;prompt&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/screening/pcp_screening.js.html#lineNumber40">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {screeningPCPInverted} from &apos;<span><a href="file/scripts/experiment-timeline/screening/pcp_screening.js.html#lineNumber40">vcl-web-framework/scripts/experiment-timeline/screening/pcp_screening.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-screeningQuestions">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">screeningQuestions</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;dataAsArray&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, &quot;html&quot;: <span>*</span>, &quot;on_finish&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/screening/screening.js.html#lineNumber12">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {screeningQuestions} from &apos;<span><a href="file/scripts/experiment-timeline/screening/screening.js.html#lineNumber12">vcl-web-framework/scripts/experiment-timeline/screening/screening.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Screening questions</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-screeningRegressionSelect">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">screeningRegressionSelect</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;image_class&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;stimuli&quot;: <span>*</span>, &quot;button_label&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;condition&quot;: <span>*</span>, &quot;multi_select&quot;: <span>*</span>, &quot;failed_message&quot;: <span>*</span>, &quot;prompt&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/screening/screening.js.html#lineNumber261">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {screeningRegressionSelect} from &apos;<span><a href="file/scripts/experiment-timeline/screening/screening.js.html#lineNumber261">vcl-web-framework/scripts/experiment-timeline/screening/screening.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-screeningStripColorYellowBlue">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">screeningStripColorYellowBlue</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;image_class&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;stimuli&quot;: <span>*</span>, &quot;button_label&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;condition_string&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;failed_message&quot;: <span>*</span>, &quot;prompt&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/screening/strip_plot_screening.js.html#lineNumber147">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {screeningStripColorYellowBlue} from &apos;<span><a href="file/scripts/experiment-timeline/screening/strip_plot_screening.js.html#lineNumber147">vcl-web-framework/scripts/experiment-timeline/screening/strip_plot_screening.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-screenningStripLuminanceSort">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">screenningStripLuminanceSort</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;image_class&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;stimuli&quot;: <span>*</span>, &quot;button_label&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;condition_string&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;failed_message&quot;: <span>*</span>, &quot;prompt&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/screening/strip_plot_screening.js.html#lineNumber126">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {screenningStripLuminanceSort} from &apos;<span><a href="file/scripts/experiment-timeline/screening/strip_plot_screening.js.html#lineNumber126">vcl-web-framework/scripts/experiment-timeline/screening/strip_plot_screening.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-screenningStripOrientationSort">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">screenningStripOrientationSort</span><span class="code" data-ice="signature">: {&quot;type&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;image_class&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;stimuli&quot;: <span>*</span>, &quot;button_label&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;condition_string&quot;: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, &quot;failed_message&quot;: <span>*</span>, &quot;prompt&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiment-timeline/screening/strip_plot_screening.js.html#lineNumber100">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {screenningStripOrientationSort} from &apos;<span><a href="file/scripts/experiment-timeline/screening/strip_plot_screening.js.html#lineNumber100">vcl-web-framework/scripts/experiment-timeline/screening/strip_plot_screening.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-sequencing_exp">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">sequencing_exp</span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/sequencing/sequencing.js~Sequencing.html">Sequencing</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/sequencing/sequencing_timeline.js.html#lineNumber7">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {sequencing_exp} from &apos;<span><a href="file/scripts/experiments/sequencing/sequencing_timeline.js.html#lineNumber7">vcl-web-framework/scripts/experiments/sequencing/sequencing_timeline.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-sequencing_side_by_side_exp">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">sequencing_side_by_side_exp</span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js~Sequencing_Side_by_Side.html">Sequencing_Side_by_Side</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/sequencing_side_by_side/sequencing_side_by_side_timeline.js.html#lineNumber7">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {sequencing_side_by_side_exp} from &apos;<span><a href="file/scripts/experiments/sequencing_side_by_side/sequencing_side_by_side_timeline.js.html#lineNumber7">vcl-web-framework/scripts/experiments/sequencing_side_by_side/sequencing_side_by_side_timeline.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-sequencing_symbols_exp">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">sequencing_symbols_exp</span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/sequencing_symbols/sequencing_symbols.js~Sequencing_Symbols.html">Sequencing_Symbols</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/sequencing_symbols/sequencing_symbols_timeline.js.html#lineNumber11">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {sequencing_symbols_exp} from &apos;<span><a href="file/scripts/experiments/sequencing_symbols/sequencing_symbols_timeline.js.html#lineNumber11">vcl-web-framework/scripts/experiments/sequencing_symbols/sequencing_symbols_timeline.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-stevens_exp">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">stevens_exp</span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/stevens/stevens.js~Stevens.html">Stevens</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/hybrid/hybrid_timeline.js.html#lineNumber19">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {stevens_exp} from &apos;<span><a href="file/scripts/experiments/hybrid/hybrid_timeline.js.html#lineNumber19">vcl-web-framework/scripts/experiments/hybrid/hybrid_timeline.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-stevens_exp">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">stevens_exp</span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/stevens/stevens.js~Stevens.html">Stevens</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/stevens/stevens_timeline.js.html#lineNumber8">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {stevens_exp} from &apos;<span><a href="file/scripts/experiments/stevens/stevens_timeline.js.html#lineNumber8">vcl-web-framework/scripts/experiments/stevens/stevens_timeline.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-visual_search_exp">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">visual_search_exp</span><span class="code" data-ice="signature">: <span><a href="class/scripts/experiments/visual_search/visual_search_timeline.js~Visual_Search.html">Visual_Search</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/scripts/experiments/visual_search/visual_search_timeline.js.html#lineNumber96">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {visual_search_exp} from &apos;<span><a href="file/scripts/experiments/visual_search/visual_search_timeline.js.html#lineNumber96">vcl-web-framework/scripts/experiments/visual_search/visual_search_timeline.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

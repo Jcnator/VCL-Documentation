@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../">
+  <title data-ice="title">scripts/experiment-properties/data/constants/jnd_data.js | vcl-web-framework</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<script src="./inject/script/0-conditions-config.js"></script><script src="./inject/script/0-experiments-config.js"></script><script src="./inject/script/0-graphing-config.js"></script><script src="./inject/script/0-trial-structure-config.js"></script><script src="./inject/script/0-balancing-config.js"></script><script src="./inject/script/0-view-controller.js"></script><script src="./inject/script/0-experiments-renderer.js"></script><script src="./inject/script/0-conditions-renderer.js"></script><script src="./inject/script/0-supported-properties-renderer.js"></script><link rel="stylesheet" href="./inject/css/0-styles.css"><meta name="description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="vcl-web-framework"><meta property="twitter:description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/UBC-VCL/VCLWebFramework.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing">experiment-properties/balancing</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-balance_subconditions">balance_subconditions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing-balancing-helpers">experiment-properties/balancing/balancing_helpers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_index_array">generate_index_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_any_array">get_any_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_any_array_repeated">get_any_array_repeated</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_permutation">get_permutation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_remaining_elements">get_remaining_elements</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-heapsPermute">heapsPermute</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reorder">reorder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffle">shuffle</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing-generators">experiment-properties/balancing/generators</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_blocked_latin_square">initialize_blocked_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-innitialize_custom_latin_square">innitialize_custom_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_counter_balanced_order">generate_counter_balanced_order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-innitialize_custom_order">innitialize_custom_order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_latin_square">initialize_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_random_order">initialize_random_order</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-counter">experiment-properties/counter</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-print_curr_trial">print_curr_trial</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-data">experiment-properties/data</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_custom_subcondition">get_custom_subcondition</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_condition_dataset">create_condition_dataset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_design_condition_dataset">create_design_condition_dataset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_data">get_data</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_data_subset">get_data_subset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CUSTOM_TRIAL_STRUCTURE_CONDITIONS">CUSTOM_TRIAL_STRUCTURE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_BASES">EXPERIMENT_BASES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_CONDITIONS">EXPERIMENT_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-data-constants">experiment-properties/data/constants</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENSEMBLE_AVERAGE_BASE">ENSEMBLE_AVERAGE_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENSEMBLE_AVERAGE_CONDITIONS">ENSEMBLE_AVERAGE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ESTIMATION_CONDITIONS">ESTIMATION_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HYBRID_BASE">HYBRID_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HYBRID_CONDITIONS">HYBRID_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_BASE">JND_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_CONDITIONS">JND_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_BASE">JND_RADIUS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_CONDITIONS">JND_RADIUS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_BASE">NUMEROSITY_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_CONDITIONS">NUMEROSITY_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_BASE">SEQUENCING_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_CONDITIONS">SEQUENCING_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SIDE_BY_SIDE_BASE">SEQUENCING_SIDE_BY_SIDE_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SIDE_BY_SIDE_CONDITIONS">SEQUENCING_SIDE_BY_SIDE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SYMBOLS_BASE">SEQUENCING_SYMBOLS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SYMBOLS_CONDITIONS">SEQUENCING_SYMBOLS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_BASE">STEVENS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_CONDITIONS">STEVENS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-VISUAL_SEARCH_BASE">VISUAL_SEARCH_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-VISUAL_SEARCH_CONDITIONS">VISUAL_SEARCH_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-distribution">experiment-properties/distribution</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_adjusted_distribution">generate_adjusted_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_initial_distribution">generate_initial_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_random_distribution">generate_random_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-correlationNotWithinError">correlationNotWithinError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateDistribution">generateDistribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomGaussian">generateRandomGaussian</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getPearsonCorrelation">getPearsonCorrelation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointNotWithinRequiredStdDevs">pointNotWithinRequiredStdDevs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_coordinates">prepare_coordinates</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-random_bm">random_bm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readjustPoints">readjustPoints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformPoints">transformPoints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomDistribution">generateRandomDistribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomUniform">generateRandomUniform</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUniformDistribution">generateUniformDistribution</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing">experiment-properties/graphing</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_color">generate_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_color_hex">generate_color_hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-is_custom_plot">is_custom_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_custom_plot">prepare_custom_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-add_graph_features">add_graph_features</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_attributes_object">generate_attributes_object</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_distributions">plot_distributions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-base-plots">experiment-properties/graphing/d3-base-plots</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_parallel_plot">create_parallel_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_ring_plot">create_ring_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_scatter_plot">create_scatter_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_scatter_points">plot_scatter_points</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_shape_plot">create_shape_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_strip_plot">create_strip_plot</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-custom-plots">experiment-properties/graphing/d3-custom-plots</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_distractor_scatter_plot">create_distractor_scatter_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_bisection_plot">create_estimation_bisection_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_interference_plot">create_estimation_interference_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_multi_interference_plot">create_estimation_multi_interference_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_plot">create_estimation_plot</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-plot-features">experiment-properties/graphing/d3-plot-features</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-combine_target_and_distractor">combine_target_and_distractor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_mixed_attribute_graph">plot_mixed_attribute_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_array_mix_graph">prepare_array_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_mix_graph">prepare_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_targeted_mix_graph">prepare_targeted_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_visual_mask_graph">prepare_visual_mask_graph</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-instructions">experiment-properties/instructions</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_subcond_instruction_block">generate_subcond_instruction_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_instructions">get_instructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_jspsych_instructions">get_jspsych_instructions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-instruction-screen">experiment-timeline/instruction_screen</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_instructions">generate_instructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_ready_screen">generate_ready_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_sitting_distance_screen">generate_sitting_distance_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_welcome">generate_welcome</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-resolution-scaling">experiment-timeline/resolution_scaling</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-manual_resolution_scaling">manual_resolution_scaling</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resolution_scaling">resolution_scaling</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-screening">experiment-timeline/screening</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningInstructions">screeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningPCPInverted">screeningPCPInverted</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-instructionsRegression">instructionsRegression</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningCorrelationSelect">screeningCorrelationSelect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningCorrelationSort">screeningCorrelationSort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningInstructions">screeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningQuestions">screeningQuestions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningRegressionSelect">screeningRegressionSelect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-colorScreeningInstructions">colorScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ignoreScreeningInstructions">ignoreScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-luminanceScreeningInstructions">luminanceScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-orientationScreeningInstructions">orientationScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningStripColorYellowBlue">screeningStripColorYellowBlue</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screenningStripLuminanceSort">screenningStripLuminanceSort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screenningStripOrientationSort">screenningStripOrientationSort</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-ensemble-average">experiments/ensemble_average</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/ensemble_average/ensemble_average.js~Ensemble_Average.html">Ensemble_Average</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ensemble_avg_exp">ensemble_avg_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-estimation">experiments/estimation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/estimation/estimation.js~Estimation.html">Estimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-estimation_exp">estimation_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-hybrid">experiments/hybrid</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/hybrid/hybrid.js~Hybrid.html">Hybrid</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-hybrid_exp">hybrid_exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_exp">jnd_exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-stevens_exp">stevens_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-jnd">experiments/jnd</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/jnd/jnd.js~JND.html">JND</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_block">generate_experiment_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_end">generate_experiment_end</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_screen">generate_feedback_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_block">generate_practice_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_ready_experiment">generate_ready_experiment</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_stop_block">generate_stop_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_exp">jnd_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-jnd-radius">experiments/jnd_radius</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/jnd_radius/jnd_radius.js~JND_Radius.html">JND_Radius</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_radius_exp">jnd_radius_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-numerosity">experiments/numerosity</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/numerosity/numerosity.js~Numerosity.html">Numerosity</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-numerosity_exp">numerosity_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing">experiments/sequencing</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing/sequencing.js~Sequencing.html">Sequencing</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-IMAGE_PATH">IMAGE_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_exp">sequencing_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing-side-by-side">experiments/sequencing_side_by_side</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js~Sequencing_Side_by_Side.html">Sequencing_Side_by_Side</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-IMAGE_PATH">IMAGE_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_side_by_side_exp">sequencing_side_by_side_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing-symbols">experiments/sequencing_symbols</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing_symbols/sequencing_symbols.js~Sequencing_Symbols.html">Sequencing_Symbols</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment">generate_experiment</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_end">generate_experiment_end</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_screen">generate_feedback_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_wrapper">generate_feedback_wrapper</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_block">generate_practice_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_instruction_block">generate_practice_instruction_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_stop_practice_trials">generate_stop_practice_trials</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RECTANGLE_MASK_PATH">RECTANGLE_MASK_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SQUARE_MASK_PATH">SQUARE_MASK_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_symbols_exp">sequencing_symbols_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-stevens">experiments/stevens</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/stevens/stevens.js~Stevens.html">Stevens</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-stevens_exp">stevens_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-visual-search">experiments/visual_search</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/visual_search/visual_search_timeline.js~Visual_Search.html">Visual_Search</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_color_paths">get_color_paths</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex_to_color">hex_to_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-visual_search_exp">visual_search_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers">helpers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/helpers/correlation_dependencies.js~Correlation_Dependencies.html">Correlation_Dependencies</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-above_and_below_generate_random_trial_array">above_and_below_generate_random_trial_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bundle_z_values">bundle_z_values</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-check_params">check_params</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-force_greater_right_position">force_greater_right_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feature_search_trials">generate_feature_search_trials</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_timeline_screen">generate_timeline_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-genereate_hybrid_instruction">genereate_hybrid_instruction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getScreenHeight">getScreenHeight</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_mixed_graph_styles">get_mixed_graph_styles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_mixed_masks">get_mixed_masks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_num_blocks">get_num_blocks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_running_average">get_running_average</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_single_graph_style">get_single_graph_style</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_single_mask">get_single_mask</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-is_converged_in_window">is_converged_in_window</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nova_variables">nova_variables</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_graph_attributes_mixed">randomize_graph_attributes_mixed</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_position">randomize_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_position_symmetric">randomize_position_symmetric</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_radius_position">randomize_radius_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-repeat_y_values">repeat_y_values</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffleArray">shuffleArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-correlation_dependencies">correlation_dependencies</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">scripts/experiment-properties/data/constants/jnd_data.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export { JND_BASE, JND_CONDITIONS };
+
+const JND_BASE = {
+
+  foundational:
+    [
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.9, error: 0.0001, max_step_size: 0.01, direction: &quot;below&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.8, error: 0.0001, max_step_size: 0.01, direction: &quot;below&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.7, error: 0.0001, max_step_size: 0.01, direction: &quot;below&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.6, error: 0.0001, max_step_size: 0.01, direction: &quot;below&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.5, error: 0.0001, max_step_size: 0.01, direction: &quot;below&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.4, error: 0.0001, max_step_size: 0.01, direction: &quot;above&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.3, error: 0.0001, max_step_size: 0.01, direction: &quot;above&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.2, error: 0.0001, max_step_size: 0.01, direction: &quot;above&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.1, error: 0.0001, max_step_size: 0.01, direction: &quot;above&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.0, error: 0.0001, max_step_size: 0.01, direction: &quot;above&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.9, error: 0.0001, max_step_size: 0.01, direction: &quot;above&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.8, error: 0.0001, max_step_size: 0.01, direction: &quot;above&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.7, error: 0.0001, max_step_size: 0.01, direction: &quot;above&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.6, error: 0.0001, max_step_size: 0.01, direction: &quot;above&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.5, error: 0.0001, max_step_size: 0.01, direction: &quot;above&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.4, error: 0.0001, max_step_size: 0.01, direction: &quot;above&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.3, error: 0.0001, max_step_size: 0.01, direction: &quot;above&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 }
+    ],
+
+  design:
+    [
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.3, error: 0.0001, max_step_size: 0.01, direction: &quot;above&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.6, error: 0.0001, max_step_size: 0.01, direction: &quot;above&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.9, error: 0.0001, max_step_size: 0.01, direction: &quot;above&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+    ],
+
+  custom:
+    [
+      { distribution_type: &quot;gaussian&quot;, error: 0.0001, max_step_size: 0.01, direction: &quot;below&quot;, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 6 },
+
+    ]
+}
+
+const JND_CONDITIONS = {
+  // Foundational
+  symmetric_jnd:
+    [
+      { base_correlation: 0.3, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0, adjusted_correlation_high: 0.3, adjusted_correlation_low: 0.3 },
+      { base_correlation: 0.6, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0, adjusted_correlation_high: 0.6, adjusted_correlation_low: 0.6 },
+      { base_correlation: 0.85, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0, adjusted_correlation_high: 0.85, adjusted_correlation_low: 0.85 },
+
+      { base_correlation: 0.3, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0.05, adjusted_correlation_high: 0.35, adjusted_correlation_low: 0.25 },
+      { base_correlation: 0.6, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0.05, adjusted_correlation_high: 0.65, adjusted_correlation_low: 0.55 },
+      { base_correlation: 0.85, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0.05, adjusted_correlation_high: 0.9, adjusted_correlation_low: 0.85 },
+
+      { base_correlation: 0.3, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0.1, adjusted_correlation_high: 0.4, adjusted_correlation_low: 0.2 },
+      { base_correlation: 0.6, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0.1, adjusted_correlation_high: 0.7, adjusted_correlation_low: 0.5 },
+      { base_correlation: 0.85, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0.1, adjusted_correlation_high: 0.95, adjusted_correlation_low: 0.85 },
+
+      { base_correlation: 0.3, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0.15, adjusted_correlation_high: 0.45, adjusted_correlation_low: 0.25 },
+      { base_correlation: 0.6, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0.15, adjusted_correlation_high: 0.75, adjusted_correlation_low: 0.45 },
+      { base_correlation: 0.85, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0.15, adjusted_correlation_high: 1, adjusted_correlation_low: 0.7 },
+
+      { base_correlation: 0.3, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0.15, adjusted_correlation_high: 0.45, adjusted_correlation_low: 0.25 },
+      { base_correlation: 0.6, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0.15, adjusted_correlation_high: 0.75, adjusted_correlation_low: 0.45 },
+      { base_correlation: 0.85, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0.15, adjusted_correlation_high: 1, adjusted_correlation_low: 0.7 },
+      { base_correlation: 0.3, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0.15, adjusted_correlation_high: 0.45, adjusted_correlation_low: 0.25 },
+      { base_correlation: 0.6, error: 0.0001, max_step_size: 0.005, direction: &quot;symmetric&quot;, initial_difference: 0.15, adjusted_correlation_high: 1, adjusted_correlation_low: 0.7 }
+    ],
+
+  strip_ring_size:
+    [
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 },
+
+      { ring_thickness: 1 }
+    ],
+
+  line_length_strip:
+    [
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; },
+
+      { strip_width: 1, y_value_representation: &quot;height&quot; }
+    ],
+
+  stable_line_length_strip:
+    [
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true },
+
+      { fixed_strip_height: true }
+    ],
+
+  // Design Conditions
+  multi_size_scatter:
+    [
+      { num_points: 50, point_size: 6.25 },
+
+      { num_points: 50, point_size: 12.5 },//mix_by_attribute: {point_size: [0.125, 0.25, 0.5, 1]}},
+
+      { num_points: 50, point_size: 25},//mix_by_attribute: {point_size: [0.125, 0.25, 0.5, 1]}},
+
+      { num_points: 50, point_size: 50},//mix_by_attribute: {point_size: [0.125, 0.25, 0.5, 1]}},
+
+      { num_points: 50, mix_type: &quot;targeted&quot;, mix_data: { point_size: [6.25, 12.5, 25, 50], num_target: 11 } },//mix_by_attribute: {point_size: [0.125, 0.25, 0.5, 1]}},
+    ],
+
+  distractor_multi:
+    [
+      { dist_attributes: {dist_base: 0.2, dist_error: 0.0001, num_points: 100, point_color: &apos;#cd4c32&apos;, point_size: 6 }, point_color: &apos;BLACK&apos;, },
+
+      { dist_attributes: {dist_base: 0.2, dist_error: 0.0001, num_points: 100, point_color: &apos;#007ebc&apos;, point_size: 6 }, point_color: &apos;BLACK&apos;, },
+
+      { dist_attributes: {dist_base: 0.2, dist_error: 0.0001, num_points: 100, point_color: &apos;#20874a&apos;, point_size: 6 }, point_color: &apos;BLACK&apos;, },
+
+      { dist_attributes: {dist_base: 0.2, dist_error: 0.0001, num_points: 100, point_color: &apos;#dbc667&apos;, point_size: 6 }, point_color: &apos;BLACK&apos;, },
+
+    ],
+
+  // TODO: Check if these are foundational or custom, otherwise they are repeating the same 3 correlations 5 times instead of having a distinct correlation per subcondition
+  hollow_scatter:
+    [
+      { point_shape: &quot;hollow_circle&quot; },
+
+      { point_shape: &quot;hollow_circle&quot; },
+
+      { point_shape: &quot;hollow_circle&quot; },
+
+      { point_shape: &quot;hollow_circle&quot; },
+
+      { point_shape: &quot;hollow_circle&quot; },
+    ],
+
+  thin_hollow_scatter:
+    [
+      { point_shape: &quot;thin_hollow_circle&quot; },
+
+      { point_shape: &quot;thin_hollow_circle&quot; },
+
+      { point_shape: &quot;thin_hollow_circle&quot; },
+
+      { point_shape: &quot;thin_hollow_circle&quot; },
+
+      { point_shape: &quot;thin_hollow_circle&quot; },
+    ],
+
+  bullseye_scatter:
+    [
+      { point_shape: &quot;bullseye_circle&quot; },
+
+      { point_shape: &quot;bullseye_circle&quot; },
+
+      { point_shape: &quot;bullseye_circle&quot; },
+
+      { point_shape: &quot;bullseye_circle&quot; },
+
+      { point_shape: &quot;bullseye_circle&quot; },
+    ],
+  //
+
+  large_dot_sizes:
+    [
+      { point_size: 24 },
+
+      { point_size: 35.5 },
+
+      { point_size: 50},
+
+      { point_size: 71 },
+
+      { mix_type: &quot;attribute&quot;, mix_data: { point_size: [24, 35.5, 50, 71] } },
+    ],
+
+    multi_color_scatter_combined:
+    [
+      { num_points: 48, point_size: 20, point_color: &quot;#808080&quot;, block: &quot;GREY&quot; },
+
+      { num_points: 48, point_size: 20, point_color: &quot;BLUE&quot;, block: &quot;BLUE&quot; },
+
+      { num_points: 48, point_size: 20, point_color: &quot;RED&quot;, block: &quot;RED&quot; },
+
+      { num_points: 48, point_size: 20, point_color: &quot;GREEN&quot;, block: &quot;GREEN&quot; },
+
+      { num_points: 48, point_size: 20, mix_type: &quot;attribute&quot;, mix_data: { point_color: [&quot;#808080&quot;, &quot;BLUE&quot;, &quot;RED&quot;, &quot;GREEN&quot;] }, block: &quot;MIX&quot; },
+    ],
+
+  multi_shape_scatter_combined:
+    [
+      { num_points: 48, point_size: 10, point_shape: &quot;hollow_circle&quot;, block: &quot;hollow_circle&quot; },
+
+      { num_points: 48, point_size: 10, point_shape: &quot;hollow_triangle&quot;, block: &quot;hollow_triangle&quot; },
+
+      { num_points: 48, point_size: 10, point_shape: &quot;plus&quot;, block: &quot;plus&quot; },
+
+      { num_points: 48, point_size: 10, point_shape: &quot;cross&quot;, block: &quot;cross&quot; },
+
+      { num_points: 48, mix_type: &quot;attribute&quot;, mix_data: { point_shape: [&quot;hollow_circle&quot;, &quot;hollow_triangle&quot;, &quot;plus&quot;, &quot;cross&quot;] }, point_size: 10, block: &quot;mix&quot; },
+    ],
+
+  multi_border_combined:
+    [
+      { num_points: 48, point_size: 20, borders: &quot;0&quot;, block: &quot;0&quot; },
+
+      { num_points: 48, point_size: 20, borders: &quot;2&quot;, block: &quot;2&quot; },
+
+      { num_points: 48, point_size: 20, borders: &quot;3U&quot;, block: &quot;3U&quot; },
+
+      { num_points: 48, point_size: 20, borders: &quot;3C&quot;, block: &quot;3C&quot; },
+
+      { num_points: 48, point_size: 20, borders: &quot;4&quot;, block: &quot;4&quot; },
+
+    ],
+
+  multi_luminance_scatter_combined:
+    [
+      { num_points: 48,  point_size: 20, point_color: &quot;#000000&quot;, block: &quot;#000000&quot; },
+
+      { num_points: 48,  point_size: 20, point_color: &quot;#808080&quot;, block: &quot;808080&quot; },
+
+      { num_points: 48,  point_size: 20, point_color: &quot;#404040&quot;, block: &quot;404040&quot; },
+
+      { num_points: 48,  point_size: 20, point_color: &quot;#bfbfbf&quot;, block: &quot;bfbfbf&quot; },
+
+      { num_points: 48,  point_size: 20, mix_type: &quot;attribute&quot;, mix_data: { point_color: [&quot;#000000&quot;, &quot;#808080&quot;, &quot;#404040&quot;, &quot;#bfbfbf&quot;] }, block: &quot;mix_by_attribute&quot; },
+
+    ],
+
+  multi_opacity_scatter_combined:
+    [
+      { num_points: 48, point_size: 20, point_color: &quot;#000000&quot;, block: &quot;#000000&quot; },
+
+      { num_points: 48, point_size: 20, point_color: &quot;#000000BF&quot;, block: &quot;#000000BF&quot; },
+
+      { num_points: 48, point_size: 20, point_color: &quot;#00000080&quot;, block: &quot;#00000080&quot; },
+
+      { num_points: 48, point_size: 20, point_color: &quot;#00000040&quot;, block: &quot;#00000040&quot; },
+
+      { num_points: 48, point_size: 20, mix_type: &quot;attribute&quot;, mix_data: { point_color: [&quot;#000000&quot;, &quot;#000000BF&quot;, &quot;#00000080&quot;, &quot;#00000040&quot;] }, block: &quot;mix_by_attribute&quot; },
+
+    ],
+
+  multi_size_scatter_combined:
+    [
+      { num_points: 48, point_size: 2.5, block: &quot;0.5&quot; },
+
+      { num_points: 48, point_size: 5, block: &quot;1.0&quot; },
+
+      { num_points: 48, point_size: 10, block: &quot;2.0&quot; },
+
+      { num_points: 48, point_size: 20, block: &quot;4.0&quot; },
+
+      { num_points: 48, mix_type: &quot;attribute&quot;, mix_data: { point_size: [2.5, 5, 10, 20] }, block: &quot;mixed_size&quot; },
+    ],
+
+  //TODO: Double Check intenteded Design
+  mix_point_styles:
+    [
+      { mix_type: &quot;attribute&quot;, mix_data: { point_shape: [&quot;hollow_circle&quot;, &quot;thin_hollow_circle&quot;, &quot;bullseye_circle&quot;, &quot;circle&quot;] } },
+
+      { mix_type: &quot;attribute&quot;, mix_data: { point_shape: [&quot;hollow_circle&quot;, &quot;thin_hollow_circle&quot;, &quot;bullseye_circle&quot;, &quot;circle&quot;] } },
+
+      { mix_type: &quot;attribute&quot;, mix_data: { point_shape: [&quot;hollow_circle&quot;, &quot;thin_hollow_circle&quot;, &quot;bullseye_circle&quot;, &quot;circle&quot;] } },
+
+      { mix_type: &quot;attribute&quot;, mix_data: { point_shape: [&quot;hollow_circle&quot;, &quot;thin_hollow_circle&quot;, &quot;bullseye_circle&quot;, &quot;circle&quot;] } },
+
+      { mix_type: &quot;attribute&quot;, mix_data: { point_shape: [&quot;hollow_circle&quot;, &quot;thin_hollow_circle&quot;, &quot;bullseye_circle&quot;, &quot;circle&quot;] } },
+
+    ],
+
+  point_styles_combined:
+    [
+      { point_shape: &quot;hollow_circle&quot;, block: &quot;hollow_circle&quot; },
+
+      { point_shape: &quot;thin_hollow_circle&quot;, block: &quot;thin_hollow_circle&quot; },
+
+      { point_shape: &quot;bullseye_circle&quot;, block: &quot;bullseye_circle&quot; },
+
+      { point_shape: &quot;circle&quot;, block: &quot;circle&quot; },
+
+      { mix_type: &quot;attribute&quot;, mix_data: { point_shape: [&quot;hollow_circle&quot;, &quot;thin_hollow_circle&quot;, &quot;bullseye_circle&quot;, &quot;circle&quot;] }, block: &quot;mix_by_attribute&quot; },
+
+    ],
+
+  decreasing_number_of_dots:
+    [
+      { block: &quot;100&quot; },
+
+      { num_points: 48, block: &quot;48&quot; },
+
+      { num_points: 24, block: &quot;24&quot; },
+
+      { num_points: 12, block: &quot;12&quot; },
+
+      { num_points: 6, block: &quot;6&quot; }
+
+    ],
+
+  increasing_number_of_dots:
+    [
+      { block: &quot;100&quot; },
+
+      { num_points: 150, block: &quot;150&quot; },
+
+      { num_points: 200, block: &quot;200&quot; },
+
+      { num_points: 250, block: &quot;250&quot; },
+
+      { num_points: 300, block: &quot;300&quot; }
+
+    ],
+
+  // Custom
+  multi_size_scatter_alternate:
+    [
+      { base_correlation: 0.3, num_points: 50, point_size: 6.25 },
+
+      { base_correlation: 0.55, num_points: 50, point_size: 6.25 },
+
+      { base_correlation: 0.8, num_points: 50, point_size: 6.25 },
+
+
+      { base_correlation: 0.3, num_points: 50, point_size: 12.5 },//mix_by_attribute: {point_size: [0.125, 0.25, 0.5, 1]}},
+
+      { base_correlation: 0.55, num_points: 50, point_size: 12.5 },
+
+      { base_correlation: 0.8, num_points: 50, point_size: 12.5 },
+
+
+      { base_correlation: 0.3, num_points: 50, point_size: 25},//mix_by_attribute: {point_size: [0.125, 0.25, 0.5, 1]}},
+
+      { base_correlation: 0.55, num_points: 50, point_size: 25},
+
+      { base_correlation: 0.8, num_points: 50, point_size: 25},
+
+
+      { base_correlation: 0.3, num_points: 50, point_size: 50},//mix_by_attribute: {point_size: [0.125, 0.25, 0.5, 1]}},
+
+      { base_correlation: 0.55, num_points: 50, point_size: 50},
+
+      { base_correlation: 0.8, num_points: 50, point_size: 50},
+
+
+      { base_correlation: 0.3, num_points: 50,  mix_type: &quot;targeted&quot;, mix_data: { point_size: [6.25, 12.25, 25, 50], num_target: 11 } },//mix_by_attribute: {point_size: [0.125, 0.25, 0.5, 1]}},
+
+      { base_correlation: 0.55, num_points: 50,  mix_type: &quot;targeted&quot;, mix_data: { point_size: [6.25, 12.25, 25, 50], num_target: 11 } },
+
+      { base_correlation: 0.8, num_points: 50,  mix_type: &quot;targeted&quot;, mix_data: { point_size: [6.25, 12.25, 25, 50], num_target: 11 } }
+    ],
+
+  // TODO: Check if Visual Masking should be combined into design
+  visual_masking: [
+    { base_correlation: 0.3, num_points: 48,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;middle&quot; },
+
+    { base_correlation: 0.6, num_points: 48,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;middle&quot; },
+
+    { base_correlation: 0.9, num_points: 48,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;middle&quot; },
+  ],
+
+  visual_masking_multi_size_half: [
+    { base_correlation: 0.3, num_points: 64,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;middle&quot;, visual_masking_ratio: 0.5 },
+
+    { base_correlation: 0.6, num_points: 64,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;middle&quot;, visual_masking_ratio: 0.5 },
+
+    { base_correlation: 0.9, num_points: 64,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;middle&quot;, visual_masking_ratio: 0.5 },
+  ],
+
+  visual_masking_multi_size_half_border: [
+    { base_correlation: 0.3, num_points: 64,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;middle&quot;, visual_masking_ratio: 0.5 },
+
+    { base_correlation: 0.6, num_points: 64,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;middle&quot;, visual_masking_ratio: 0.5 },
+
+    { base_correlation: 0.9, num_points: 64,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;middle&quot;, visual_masking_ratio: 0.5 },
+  ],
+
+  visual_masking_border: [
+    { base_correlation: 0.3, num_points: 48,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;middle&quot; },
+
+    { base_correlation: 0.6, num_points: 48,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;middle&quot; },
+
+    { base_correlation: 0.9, num_points: 48,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;middle&quot; },
+  ],
+
+  visual_masking_sides: [
+    { base_correlation: 0.3, num_points: 48,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;sides&quot; },
+
+    { base_correlation: 0.6, num_points: 48,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;sides&quot; },
+
+    { base_correlation: 0.9, num_points: 48,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;sides&quot; },
+  ],
+
+  visual_masking_sides_border: [
+    { base_correlation: 0.3, num_points: 48,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;sides&quot; },
+
+    { base_correlation: 0.6, num_points: 48,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;sides&quot; },
+
+    { base_correlation: 0.9, num_points: 48,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;sides&quot; },
+  ],
+
+  visual_masking_sides_multi_size_half_border: [
+    { base_correlation: 0.3, num_points: 64,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;sides&quot;, visual_masking_ratio: 0.5 },
+
+    { base_correlation: 0.6, num_points: 64,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;sides&quot;, visual_masking_ratio: 0.5 },
+
+    { base_correlation: 0.9, num_points: 64,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;sides&quot;, visual_masking_ratio: 0.5 },
+  ],
+
+  visual_masking_sides_multi_size_half: [
+    { base_correlation: 0.3, num_points: 64,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;sides&quot;, visual_masking_ratio: 0.5 },
+
+    { base_correlation: 0.6, num_points: 64,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;sides&quot;, visual_masking_ratio: 0.5 },
+
+    { base_correlation: 0.9, num_points: 64,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;sides&quot;, visual_masking_ratio: 0.5 },
+  ],
+
+  visual_masking_fence: [
+    { base_correlation: 0.3, num_points: 48,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;fence&quot; },
+
+    { base_correlation: 0.6, num_points: 48,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;fence&quot; },
+
+    { base_correlation: 0.9, num_points: 48,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;fence&quot; },
+  ],
+
+  visual_masking_fence_border: [
+    { base_correlation: 0.3, num_points: 48,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;fence&quot; },
+
+    { base_correlation: 0.6, num_points: 48,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;fence&quot; },
+
+    { base_correlation: 0.9, num_points: 48,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;fence&quot; },
+  ],
+
+  visual_masking_fence_multi_size_half_border: [
+    { base_correlation: 0.3, num_points: 64,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;fence&quot;, visual_masking_ratio: 0.5 },
+
+    { base_correlation: 0.6, num_points: 64,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;fence&quot;, visual_masking_ratio: 0.5 },
+
+    { base_correlation: 0.9, num_points: 64,  visual_masking_type: &quot;border&quot;, visual_masking_pos: &quot;fence&quot;, visual_masking_ratio: 0.5 },
+  ],
+
+  visual_masking_fence_multi_size_half: [
+    { base_correlation: 0.3, num_points: 64,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;fence&quot;, visual_masking_ratio: 0.5 },
+
+    { base_correlation: 0.6, num_points: 64,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;fence&quot;, visual_masking_ratio: 0.5 },
+
+    { base_correlation: 0.9, num_points: 64,  visual_masking_type: &quot;borderless&quot;, visual_masking_pos: &quot;fence&quot;, visual_masking_ratio: 0.5 },
+  ],
+
+  distractor_rainbow:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;RED&apos;, point_size: 6},  block: &apos;RED&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;GREEN&apos;, point_size: 6},  block: &apos;GREEN&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;BLUE&apos;, point_size: 6}, block: &apos;BLUE&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;YELLOW&apos;, point_size: 6},  block: &apos;YELLOW&apos; },
+
+    //{ dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;RED&apos;, point_size: 6}, block: &apos;RED&apos; }, // there were two Red blocks in original data
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_size: 6, mix_type: &quot;attribute&quot;, mix_data: {point_color: [&apos;RED&apos;, &apos;GREEN&apos;, &apos;BLUE&apos;, &apos;YELLOW&apos;]}}, block: &apos;MIX&apos; }
+  ],
+
+distractor_square_red_hue:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#d83862&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#cd4c32&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos;, block: &apos;#d83862&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#d54049&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#cd4c32&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos;, block: &apos;#d54049&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#c05819&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#cd4c32&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos;, block: &apos;#c05819&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#ae6500&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#cd4c32&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos;, block: &apos;#ae6500&apos; },
+
+    {  dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#cd4c32&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos;, block: &apos;#WHITE&apos; },
+
+  ],
+
+distractor_square_red_lum:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#9e210f&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#cd4c32&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos;, block: &apos;#d83862&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#b63821&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#cd4c32&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos;, block: &apos;#d54049&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#e45f43&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#cd4c32&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos;, block: &apos;#c05819&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#fe7657&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#cd4c32&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos;, block: &apos;#ae6500&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#cd4c32&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos;, block: &apos;#WHITE&apos; },
+
+  ],
+
+distractor_square_red_chrom:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#aa6453&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#cd4c32&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos;, block: &apos;#aa6453&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#bc5942&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#cd4c32&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos;, block: &apos;#bc5942&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#dc391f&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#cd4c32&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos;, block: &apos;#dc391f&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#eb1607&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#cd4c32&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos;, block: &apos;#eb1607&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#cd4c32&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos;, block: &apos;#WHITE&apos; },
+
+  ],
+
+distractor_square_yellow_hue:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#ffaf7d&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#dbc667&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos;, block: &apos;#ffaf7d&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#f4bc6a&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#dbc667&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos;, block: &apos;#f4bc6a&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#bfce6d&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#dbc667&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos;, block: &apos;#bfce6d&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#9fd57d&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#dbc667&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos;, block: &apos;#9fd57d&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#dbc667&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos;, block: &apos;#WHITE&apos; },
+  ],
+
+distractor_square_yellow_lum:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#b19e41&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#dbc667&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#c6b254&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#dbc667&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#f1da7a&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#dbc667&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#fff08e&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#dbc667&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#dbc667&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos; },
+  ],
+
+distractor_square_yellow_chrom:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#d1c6a3&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#dbc667&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos;, block: &apos;d1c6a3&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#d7c685&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#dbc667&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos;, block: &apos;d7c685&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#dec644&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#dbc667&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos;, block: &apos;dec644&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#dfc602&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#dbc667&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos;, block: &apos;d7c685&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#dbc667&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos;, block: &apos;d7c685&apos; },
+
+  ],
+
+distractor_square_blue_hue:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#008897&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#007ebc&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#0085ad&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#007ebc&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#5575bc&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#007ebc&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#816ab1&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#007ebc&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#007ebc&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos; },
+  ],
+
+distractor_square_blue_lum:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#005a95&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#007ebc&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#006ca9&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#007ebc&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#006ca9&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#007ebc&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#43a4e6&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#007ebc&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#007ebc&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos; },
+
+  ],
+
+distractor_square_blue_chrom:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#6a7887&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#007ebc&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#4d7ba1&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#007ebc&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#0081d9&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#007ebc&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#0085f7&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#007ebc&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#007ebc&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos; },
+  ],
+
+distractor_square_green_hue:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#6b7e21&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#20874a&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#4d8433&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#20874a&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#008a67&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#20874a&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#008a67&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#20874a&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#20874a&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;hue&apos; },
+
+  ],
+
+distractor_square_green_lum:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#006228&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#20874a&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#007438&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#20874a&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#399b5c&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#20874a&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#4eaf6e&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#20874a&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#20874a&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;lum&apos; },
+
+  ],
+
+distractor_square_green_chrom:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#5e7e66&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#20874a&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#468358&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#20874a&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#008d33&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#20874a&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#00920c&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#20874a&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos; },
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_shape: &apos;square&apos;}, point_color: &apos;#20874a&apos;, point_shape: &apos;square&apos;, point_size: 8, dimension: &apos;chro&apos; },
+  ],
+
+distractor_blue_shades:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#004078&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#2c6fad&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#69a3e5&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#a2d9ff&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+
+  ],
+
+distractor_red_shades:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#9f2b2a&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#bc4740&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#db6158&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#ff988a&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+  ],
+
+distractor_yellow_shades:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#d3c86a&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#9b9236&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#80781b&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;#f0e484&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+  ],
+
+distractor_control_shades:
+  [
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;WHITE&apos;, point_size: 6} , point_color: &apos;#699938&apos;},
+  ],
+
+distractor_ratio_pilot:
+  [
+    // 1:1 ratio
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 75, point_color: &apos;#dbc667&apos;}, num_points: 75, point_color: &apos;#007ebc&apos;, point_size: 4 },
+
+    // 1:5 ratio
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 150, point_color: &apos;#dbc667&apos;}, num_points: 30, point_color: &apos;#007ebc&apos;, point_size: 4 },
+
+    // 5:1 ratio
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 30, point_color: &apos;#dbc667&apos;}, num_points: 150,  point_color: &apos;#007ebc&apos;, point_size: 4 },
+
+    // 3:1 ratio
+    { dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 50, point_color: &apos;#dbc667&apos;}, num_points: 150,  point_color: &apos;#007ebc&apos;, point_size: 4 },
+
+    // 1:3 ratio
+    { dist_attributes: {correlation: 0.3, error: 0.0001,num_points: 150, point_color: &apos;#dbc667&apos;}, num_points: 50,  point_color: &apos;#007ebc&apos;, point_size: 4 },
+  ],
+
+  distractor_black_high_target:
+    [
+      { base_correlation: 0.5, dist_attributes: {dist_base: 0, dist_error: 0.0001, num_points: 0, point_color: &apos;WHITE&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.7, dist_attributes: {dist_base: 0, dist_error: 0.0001, num_points: 0, point_color: &apos;WHITE&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.9, dist_attributes: {dist_base: 0, dist_error: 0.0001, num_points: 0, point_color: &apos;WHITE&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.5, dist_attributes: {dist_base: 0.1, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.7, dist_attributes: {dist_base: 0.1, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.9, dist_attributes: {dist_base: 0.1, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.5, dist_attributes: {dist_base: 0.2, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.7, dist_attributes: {dist_base: 0.2, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.9, dist_attributes: {dist_base: 0.2, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.5, dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.7, dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.9, dist_attributes: {correlation: 0.3, error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.5, dist_attributes: {dist_base: 0.4, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.7, dist_attributes: {dist_base: 0.4, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.9, dist_attributes: {dist_base: 0.4, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 }
+    ],
+
+  distractor_black_low_target:
+    [
+      { base_correlation: 0.1, dist_attributes: {dist_base: 0, dist_error: 0.0001, num_points: 0, point_color: &apos;WHITE&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.3, dist_attributes: {dist_base: 0, dist_error: 0.0001, num_points: 0, point_color: &apos;WHITE&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.5, dist_attributes: {dist_base: 0, dist_error: 0.0001, num_points: 0, point_color: &apos;WHITE&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.1, dist_attributes: {dist_base: 0.6, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.3, dist_attributes: {dist_base: 0.6, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.5, dist_attributes: {dist_base: 0.6, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.1, dist_attributes: {dist_base: 0.7, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.3, dist_attributes: {dist_base: 0.7, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.5, dist_attributes: {dist_base: 0.7, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.1, dist_attributes: {dist_base: 0.8, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.3, dist_attributes: {dist_base: 0.8, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.5, dist_attributes: {dist_base: 0.8, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.1, dist_attributes: {dist_base: 0.9, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.3, dist_attributes: {dist_base: 0.9, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 },
+
+      { base_correlation: 0.5, dist_attributes: {dist_base: 0.9, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;}, point_color: &apos;BLACK&apos;, dist_point_size: 6 }
+    ],
+
+  devon_attribute_array_test:
+    [
+      { mix_type: &quot;attribute_array&quot;, mix_data: [{ point_size: 9, point_color: &apos;RED&apos; }, { point_size: 5, point_color: &apos;BLUE&apos; }, { point_size: 7, point_color: &quot;YELLOW&quot; }] },
+
+      { mix_type: &quot;attribute_array&quot;, mix_data: [{ point_size: 9, point_color: &apos;RED&apos; }, { point_size: 5, point_color: &apos;BLUE&apos; }, { point_size: 7, point_color: &quot;YELLOW&quot; }] },
+
+      { mix_type: &quot;attribute_array&quot;, mix_data: [{ point_size: 9, point_color: &apos;RED&apos; }, { point_size: 5, point_color: &apos;BLUE&apos; }, { point_size: 7, point_color: &quot;YELLOW&quot; }] },
+
+      { mix_type: &quot;attribute_array&quot;, mix_data: [{ point_size: 9, point_color: &apos;RED&apos; }, { point_size: 5, point_color: &apos;BLUE&apos; }, { point_size: 7, point_color: &quot;YELLOW&quot; }] },
+
+      { mix_type: &quot;attribute_array&quot;, mix_data: [{ point_size: 9, point_color: &apos;RED&apos; }, { point_size: 5, point_color: &apos;BLUE&apos; }, { point_size: 7, point_color: &quot;YELLOW&quot; }] },
+
+    ],
+
+  distractor_array_devon_test:
+    [
+      {
+        // TARGET CORRELATION: 0.1, DISTRACTOR CORRELATION: 0.3, TARGET MEAN SIZE: 6, DISTRACTOR MEAN SIZE: 13, CUE: color, PROBE: target - color
+        distribution_type: &quot;gaussian&quot;, base_correlation: 0.4, dist_base: 0.95, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, point_size: 6,
+        mix_by_target_array: [{ point_size: 2.053772973, point_color: &apos;BLUE&apos; }, { point_size: 3.421114072, point_color: &apos;BLUE&apos; }, { point_size: 7.861190731, point_color: &apos;BLUE&apos; }, { point_size: 9.893156312, point_color: &apos;BLUE&apos; }, { point_size: 3.585041759, point_color: &apos;BLUE&apos; }, { point_size: 3.335761252, point_color: &apos;BLUE&apos; }, { point_size: 2.880014644, point_color: &apos;BLUE&apos; }, { point_size: 4.577566474, point_color: &apos;BLUE&apos; }, { point_size: 10.18637813, point_color: &apos;BLUE&apos; }, { point_size: 5.334771186, point_color: &apos;BLUE&apos; }, { point_size: 9.270336586, point_color: &apos;BLUE&apos; }, { point_size: 11.56160563, point_color: &apos;BLUE&apos; }, { point_size: 3.430461747, point_color: &apos;BLUE&apos; }, { point_size: 3.824469792, point_color: &apos;BLUE&apos; }, { point_size: 1.564354613, point_color: &apos;BLUE&apos; }, { point_size: 3.417827757, point_color: &apos;BLUE&apos; }, { point_size: 6.745500644, point_color: &apos;BLUE&apos; }, { point_size: 2.451859684, point_color: &apos;BLUE&apos; }, { point_size: 6.892546258, point_color: &apos;BLUE&apos; }, { point_size: 3.60083425, point_color: &apos;BLUE&apos; }, { point_size: 6.033845866, point_color: &apos;BLUE&apos; }, { point_size: 6.523961198, point_color: &apos;BLUE&apos; }, { point_size: 7.80402273, point_color: &apos;BLUE&apos; }, { point_size: 3.948736395, point_color: &apos;BLUE&apos; }, { point_size: 1.234043284, point_color: &apos;BLUE&apos; }, { point_size: 17.20935663, point_color: &apos;BLUE&apos; }, { point_size: 2.081685208, point_color: &apos;BLUE&apos; }, { point_size: 3.8618955, point_color: &apos;BLUE&apos; }, { point_size: 4.629587094, point_color: &apos;BLUE&apos; }, { point_size: 3.840658293, point_color: &apos;BLUE&apos; }, { point_size: 6.535240975, point_color: &apos;BLUE&apos; }, { point_size: 2.029575736, point_color: &apos;BLUE&apos; }, { point_size: 2.656565568, point_color: &apos;BLUE&apos; }, { point_size: 3.774488132, point_color: &apos;BLUE&apos; }, { point_size: 4.952586906, point_color: &apos;BLUE&apos; }, { point_size: 4.558317905, point_color: &apos;BLUE&apos; }, { point_size: 14.16559231, point_color: &apos;BLUE&apos; }, { point_size: 1.77392573, point_color: &apos;BLUE&apos; }, { point_size: 15.48015925, point_color: &apos;BLUE&apos; }, { point_size: 8.175623918, point_color: &apos;BLUE&apos; }, { point_size: 10.10988668, point_color: &apos;BLUE&apos; }, { point_size: 8.341480233, point_color: &apos;BLUE&apos; }, { point_size: 9.980943976, point_color: &apos;BLUE&apos; }, { point_size: 13.96323627, point_color: &apos;BLUE&apos; }, { point_size: 0.812934712, point_color: &apos;BLUE&apos; }, { point_size: 5.528621049, point_color: &apos;BLUE&apos; }, { point_size: 1.760072093, point_color: &apos;BLUE&apos; }, { point_size: 5.103195282, point_color: &apos;BLUE&apos; }, { point_size: 3.975697912, point_color: &apos;BLUE&apos; }, { point_size: 13.26549867, point_color: &apos;BLUE&apos; }],
+        mix_by_distractor_array: [{ point_size: 3.917471736, point_color: &apos;ORANGE&apos; }, { point_size: 11.10545762, point_color: &apos;ORANGE&apos; }, { point_size: 16.83844198, point_color: &apos;ORANGE&apos; }, { point_size: 11.83051231, point_color: &apos;ORANGE&apos; }, { point_size: 20.52879959, point_color: &apos;ORANGE&apos; }, { point_size: 11.67736852, point_color: &apos;ORANGE&apos; }, { point_size: 11.27896325, point_color: &apos;ORANGE&apos; }, { point_size: 16.07439418, point_color: &apos;ORANGE&apos; }, { point_size: 14.22288807, point_color: &apos;ORANGE&apos; }, { point_size: 16.29414516, point_color: &apos;ORANGE&apos; }, { point_size: 15.83145066, point_color: &apos;ORANGE&apos; }, { point_size: 11.26879575, point_color: &apos;ORANGE&apos; }, { point_size: 14.73172047, point_color: &apos;ORANGE&apos; }, { point_size: 24.3540536, point_color: &apos;ORANGE&apos; }, { point_size: 14.56586823, point_color: &apos;ORANGE&apos; }, { point_size: 15.77838224, point_color: &apos;ORANGE&apos; }, { point_size: 11.21544198, point_color: &apos;ORANGE&apos; }, { point_size: 10.04750919, point_color: &apos;ORANGE&apos; }, { point_size: 12.09213714, point_color: &apos;ORANGE&apos; }, { point_size: 16.13186259, point_color: &apos;ORANGE&apos; }, { point_size: 17.64482009, point_color: &apos;ORANGE&apos; }, { point_size: 20.11973222, point_color: &apos;ORANGE&apos; }, { point_size: 12.46862065, point_color: &apos;ORANGE&apos; }, { point_size: 8.773662149, point_color: &apos;ORANGE&apos; }, { point_size: 10.10645803, point_color: &apos;ORANGE&apos; }, { point_size: 13.64724832, point_color: &apos;ORANGE&apos; }, { point_size: 13.48420708, point_color: &apos;ORANGE&apos; }, { point_size: 10.58651221, point_color: &apos;ORANGE&apos; }, { point_size: 12.18157651, point_color: &apos;ORANGE&apos; }, { point_size: 8.468899343, point_color: &apos;ORANGE&apos; }, { point_size: 12.98945071, point_color: &apos;ORANGE&apos; }, { point_size: 10.08112956, point_color: &apos;ORANGE&apos; }, { point_size: 15.55825003, point_color: &apos;ORANGE&apos; }, { point_size: 13.48582199, point_color: &apos;ORANGE&apos; }, { point_size: 10.87251639, point_color: &apos;ORANGE&apos; }, { point_size: 11.61961167, point_color: &apos;ORANGE&apos; }, { point_size: 15.89752811, point_color: &apos;ORANGE&apos; }, { point_size: 15.19474873, point_color: &apos;ORANGE&apos; }, { point_size: 10.74675586, point_color: &apos;ORANGE&apos; }, { point_size: 12.76371249, point_color: &apos;ORANGE&apos; }, { point_size: 8.488336441, point_color: &apos;ORANGE&apos; }, { point_size: 16.2864987, point_color: &apos;ORANGE&apos; }, { point_size: 18.63837664, point_color: &apos;ORANGE&apos; }, { point_size: 9.280755553, point_color: &apos;ORANGE&apos; }, { point_size: 9.89227944, point_color: &apos;ORANGE&apos; }, { point_size: 18.37818925, point_color: &apos;ORANGE&apos; }, { point_size: 5.356308326, point_color: &apos;ORANGE&apos; }, { point_size: 11.65915114, point_color: &apos;ORANGE&apos; }, { point_size: 4.152717877, point_color: &apos;ORANGE&apos; }, { point_size: 11.39046022, point_color: &apos;ORANGE&apos; }]
+      },
+      {
+        // TARGET CORRELATION: 0.1, DISTRACTOR CORRELATION: 0.3, TARGET MEAN SIZE: 6, DISTRACTOR MEAN SIZE: 13, CUE: color, PROBE: target - color
+        distribution_type: &quot;gaussian&quot;, base_correlation: 0.4, dist_base: 0.95, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, point_size: 6,
+        mix_by_target_array: [{ point_size: 2.053772973, point_color: &apos;BLUE&apos; }, { point_size: 3.421114072, point_color: &apos;BLUE&apos; }, { point_size: 7.861190731, point_color: &apos;BLUE&apos; }, { point_size: 9.893156312, point_color: &apos;BLUE&apos; }, { point_size: 3.585041759, point_color: &apos;BLUE&apos; }, { point_size: 3.335761252, point_color: &apos;BLUE&apos; }, { point_size: 2.880014644, point_color: &apos;BLUE&apos; }, { point_size: 4.577566474, point_color: &apos;BLUE&apos; }, { point_size: 10.18637813, point_color: &apos;BLUE&apos; }, { point_size: 5.334771186, point_color: &apos;BLUE&apos; }, { point_size: 9.270336586, point_color: &apos;BLUE&apos; }, { point_size: 11.56160563, point_color: &apos;BLUE&apos; }, { point_size: 3.430461747, point_color: &apos;BLUE&apos; }, { point_size: 3.824469792, point_color: &apos;BLUE&apos; }, { point_size: 1.564354613, point_color: &apos;BLUE&apos; }, { point_size: 3.417827757, point_color: &apos;BLUE&apos; }, { point_size: 6.745500644, point_color: &apos;BLUE&apos; }, { point_size: 2.451859684, point_color: &apos;BLUE&apos; }, { point_size: 6.892546258, point_color: &apos;BLUE&apos; }, { point_size: 3.60083425, point_color: &apos;BLUE&apos; }, { point_size: 6.033845866, point_color: &apos;BLUE&apos; }, { point_size: 6.523961198, point_color: &apos;BLUE&apos; }, { point_size: 7.80402273, point_color: &apos;BLUE&apos; }, { point_size: 3.948736395, point_color: &apos;BLUE&apos; }, { point_size: 1.234043284, point_color: &apos;BLUE&apos; }, { point_size: 17.20935663, point_color: &apos;BLUE&apos; }, { point_size: 2.081685208, point_color: &apos;BLUE&apos; }, { point_size: 3.8618955, point_color: &apos;BLUE&apos; }, { point_size: 4.629587094, point_color: &apos;BLUE&apos; }, { point_size: 3.840658293, point_color: &apos;BLUE&apos; }, { point_size: 6.535240975, point_color: &apos;BLUE&apos; }, { point_size: 2.029575736, point_color: &apos;BLUE&apos; }, { point_size: 2.656565568, point_color: &apos;BLUE&apos; }, { point_size: 3.774488132, point_color: &apos;BLUE&apos; }, { point_size: 4.952586906, point_color: &apos;BLUE&apos; }, { point_size: 4.558317905, point_color: &apos;BLUE&apos; }, { point_size: 14.16559231, point_color: &apos;BLUE&apos; }, { point_size: 1.77392573, point_color: &apos;BLUE&apos; }, { point_size: 15.48015925, point_color: &apos;BLUE&apos; }, { point_size: 8.175623918, point_color: &apos;BLUE&apos; }, { point_size: 10.10988668, point_color: &apos;BLUE&apos; }, { point_size: 8.341480233, point_color: &apos;BLUE&apos; }, { point_size: 9.980943976, point_color: &apos;BLUE&apos; }, { point_size: 13.96323627, point_color: &apos;BLUE&apos; }, { point_size: 0.812934712, point_color: &apos;BLUE&apos; }, { point_size: 5.528621049, point_color: &apos;BLUE&apos; }, { point_size: 1.760072093, point_color: &apos;BLUE&apos; }, { point_size: 5.103195282, point_color: &apos;BLUE&apos; }, { point_size: 3.975697912, point_color: &apos;BLUE&apos; }, { point_size: 13.26549867, point_color: &apos;BLUE&apos; }],
+        mix_by_distractor_array: [{ point_size: 3.917471736, point_color: &apos;ORANGE&apos; }, { point_size: 11.10545762, point_color: &apos;ORANGE&apos; }, { point_size: 16.83844198, point_color: &apos;ORANGE&apos; }, { point_size: 11.83051231, point_color: &apos;ORANGE&apos; }, { point_size: 20.52879959, point_color: &apos;ORANGE&apos; }, { point_size: 11.67736852, point_color: &apos;ORANGE&apos; }, { point_size: 11.27896325, point_color: &apos;ORANGE&apos; }, { point_size: 16.07439418, point_color: &apos;ORANGE&apos; }, { point_size: 14.22288807, point_color: &apos;ORANGE&apos; }, { point_size: 16.29414516, point_color: &apos;ORANGE&apos; }, { point_size: 15.83145066, point_color: &apos;ORANGE&apos; }, { point_size: 11.26879575, point_color: &apos;ORANGE&apos; }, { point_size: 14.73172047, point_color: &apos;ORANGE&apos; }, { point_size: 24.3540536, point_color: &apos;ORANGE&apos; }, { point_size: 14.56586823, point_color: &apos;ORANGE&apos; }, { point_size: 15.77838224, point_color: &apos;ORANGE&apos; }, { point_size: 11.21544198, point_color: &apos;ORANGE&apos; }, { point_size: 10.04750919, point_color: &apos;ORANGE&apos; }, { point_size: 12.09213714, point_color: &apos;ORANGE&apos; }, { point_size: 16.13186259, point_color: &apos;ORANGE&apos; }, { point_size: 17.64482009, point_color: &apos;ORANGE&apos; }, { point_size: 20.11973222, point_color: &apos;ORANGE&apos; }, { point_size: 12.46862065, point_color: &apos;ORANGE&apos; }, { point_size: 8.773662149, point_color: &apos;ORANGE&apos; }, { point_size: 10.10645803, point_color: &apos;ORANGE&apos; }, { point_size: 13.64724832, point_color: &apos;ORANGE&apos; }, { point_size: 13.48420708, point_color: &apos;ORANGE&apos; }, { point_size: 10.58651221, point_color: &apos;ORANGE&apos; }, { point_size: 12.18157651, point_color: &apos;ORANGE&apos; }, { point_size: 8.468899343, point_color: &apos;ORANGE&apos; }, { point_size: 12.98945071, point_color: &apos;ORANGE&apos; }, { point_size: 10.08112956, point_color: &apos;ORANGE&apos; }, { point_size: 15.55825003, point_color: &apos;ORANGE&apos; }, { point_size: 13.48582199, point_color: &apos;ORANGE&apos; }, { point_size: 10.87251639, point_color: &apos;ORANGE&apos; }, { point_size: 11.61961167, point_color: &apos;ORANGE&apos; }, { point_size: 15.89752811, point_color: &apos;ORANGE&apos; }, { point_size: 15.19474873, point_color: &apos;ORANGE&apos; }, { point_size: 10.74675586, point_color: &apos;ORANGE&apos; }, { point_size: 12.76371249, point_color: &apos;ORANGE&apos; }, { point_size: 8.488336441, point_color: &apos;ORANGE&apos; }, { point_size: 16.2864987, point_color: &apos;ORANGE&apos; }, { point_size: 18.63837664, point_color: &apos;ORANGE&apos; }, { point_size: 9.280755553, point_color: &apos;ORANGE&apos; }, { point_size: 9.89227944, point_color: &apos;ORANGE&apos; }, { point_size: 18.37818925, point_color: &apos;ORANGE&apos; }, { point_size: 5.356308326, point_color: &apos;ORANGE&apos; }, { point_size: 11.65915114, point_color: &apos;ORANGE&apos; }, { point_size: 4.152717877, point_color: &apos;ORANGE&apos; }, { point_size: 11.39046022, point_color: &apos;ORANGE&apos; }]
+      },
+      {
+        // TARGET CORRELATION: 0.1, DISTRACTOR CORRELATION: 0.3, TARGET MEAN SIZE: 6, DISTRACTOR MEAN SIZE: 13, CUE: color, PROBE: target - color
+        distribution_type: &quot;gaussian&quot;, base_correlation: 0.4, dist_base: 0.95, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, point_size: 6,
+        mix_by_target_array: [{ point_size: 2.053772973, point_color: &apos;BLUE&apos; }, { point_size: 3.421114072, point_color: &apos;BLUE&apos; }, { point_size: 7.861190731, point_color: &apos;BLUE&apos; }, { point_size: 9.893156312, point_color: &apos;BLUE&apos; }, { point_size: 3.585041759, point_color: &apos;BLUE&apos; }, { point_size: 3.335761252, point_color: &apos;BLUE&apos; }, { point_size: 2.880014644, point_color: &apos;BLUE&apos; }, { point_size: 4.577566474, point_color: &apos;BLUE&apos; }, { point_size: 10.18637813, point_color: &apos;BLUE&apos; }, { point_size: 5.334771186, point_color: &apos;BLUE&apos; }, { point_size: 9.270336586, point_color: &apos;BLUE&apos; }, { point_size: 11.56160563, point_color: &apos;BLUE&apos; }, { point_size: 3.430461747, point_color: &apos;BLUE&apos; }, { point_size: 3.824469792, point_color: &apos;BLUE&apos; }, { point_size: 1.564354613, point_color: &apos;BLUE&apos; }, { point_size: 3.417827757, point_color: &apos;BLUE&apos; }, { point_size: 6.745500644, point_color: &apos;BLUE&apos; }, { point_size: 2.451859684, point_color: &apos;BLUE&apos; }, { point_size: 6.892546258, point_color: &apos;BLUE&apos; }, { point_size: 3.60083425, point_color: &apos;BLUE&apos; }, { point_size: 6.033845866, point_color: &apos;BLUE&apos; }, { point_size: 6.523961198, point_color: &apos;BLUE&apos; }, { point_size: 7.80402273, point_color: &apos;BLUE&apos; }, { point_size: 3.948736395, point_color: &apos;BLUE&apos; }, { point_size: 1.234043284, point_color: &apos;BLUE&apos; }, { point_size: 17.20935663, point_color: &apos;BLUE&apos; }, { point_size: 2.081685208, point_color: &apos;BLUE&apos; }, { point_size: 3.8618955, point_color: &apos;BLUE&apos; }, { point_size: 4.629587094, point_color: &apos;BLUE&apos; }, { point_size: 3.840658293, point_color: &apos;BLUE&apos; }, { point_size: 6.535240975, point_color: &apos;BLUE&apos; }, { point_size: 2.029575736, point_color: &apos;BLUE&apos; }, { point_size: 2.656565568, point_color: &apos;BLUE&apos; }, { point_size: 3.774488132, point_color: &apos;BLUE&apos; }, { point_size: 4.952586906, point_color: &apos;BLUE&apos; }, { point_size: 4.558317905, point_color: &apos;BLUE&apos; }, { point_size: 14.16559231, point_color: &apos;BLUE&apos; }, { point_size: 1.77392573, point_color: &apos;BLUE&apos; }, { point_size: 15.48015925, point_color: &apos;BLUE&apos; }, { point_size: 8.175623918, point_color: &apos;BLUE&apos; }, { point_size: 10.10988668, point_color: &apos;BLUE&apos; }, { point_size: 8.341480233, point_color: &apos;BLUE&apos; }, { point_size: 9.980943976, point_color: &apos;BLUE&apos; }, { point_size: 13.96323627, point_color: &apos;BLUE&apos; }, { point_size: 0.812934712, point_color: &apos;BLUE&apos; }, { point_size: 5.528621049, point_color: &apos;BLUE&apos; }, { point_size: 1.760072093, point_color: &apos;BLUE&apos; }, { point_size: 5.103195282, point_color: &apos;BLUE&apos; }, { point_size: 3.975697912, point_color: &apos;BLUE&apos; }, { point_size: 13.26549867, point_color: &apos;BLUE&apos; }],
+        mix_by_distractor_array: [{ point_size: 3.917471736, point_color: &apos;ORANGE&apos; }, { point_size: 11.10545762, point_color: &apos;ORANGE&apos; }, { point_size: 16.83844198, point_color: &apos;ORANGE&apos; }, { point_size: 11.83051231, point_color: &apos;ORANGE&apos; }, { point_size: 20.52879959, point_color: &apos;ORANGE&apos; }, { point_size: 11.67736852, point_color: &apos;ORANGE&apos; }, { point_size: 11.27896325, point_color: &apos;ORANGE&apos; }, { point_size: 16.07439418, point_color: &apos;ORANGE&apos; }, { point_size: 14.22288807, point_color: &apos;ORANGE&apos; }, { point_size: 16.29414516, point_color: &apos;ORANGE&apos; }, { point_size: 15.83145066, point_color: &apos;ORANGE&apos; }, { point_size: 11.26879575, point_color: &apos;ORANGE&apos; }, { point_size: 14.73172047, point_color: &apos;ORANGE&apos; }, { point_size: 24.3540536, point_color: &apos;ORANGE&apos; }, { point_size: 14.56586823, point_color: &apos;ORANGE&apos; }, { point_size: 15.77838224, point_color: &apos;ORANGE&apos; }, { point_size: 11.21544198, point_color: &apos;ORANGE&apos; }, { point_size: 10.04750919, point_color: &apos;ORANGE&apos; }, { point_size: 12.09213714, point_color: &apos;ORANGE&apos; }, { point_size: 16.13186259, point_color: &apos;ORANGE&apos; }, { point_size: 17.64482009, point_color: &apos;ORANGE&apos; }, { point_size: 20.11973222, point_color: &apos;ORANGE&apos; }, { point_size: 12.46862065, point_color: &apos;ORANGE&apos; }, { point_size: 8.773662149, point_color: &apos;ORANGE&apos; }, { point_size: 10.10645803, point_color: &apos;ORANGE&apos; }, { point_size: 13.64724832, point_color: &apos;ORANGE&apos; }, { point_size: 13.48420708, point_color: &apos;ORANGE&apos; }, { point_size: 10.58651221, point_color: &apos;ORANGE&apos; }, { point_size: 12.18157651, point_color: &apos;ORANGE&apos; }, { point_size: 8.468899343, point_color: &apos;ORANGE&apos; }, { point_size: 12.98945071, point_color: &apos;ORANGE&apos; }, { point_size: 10.08112956, point_color: &apos;ORANGE&apos; }, { point_size: 15.55825003, point_color: &apos;ORANGE&apos; }, { point_size: 13.48582199, point_color: &apos;ORANGE&apos; }, { point_size: 10.87251639, point_color: &apos;ORANGE&apos; }, { point_size: 11.61961167, point_color: &apos;ORANGE&apos; }, { point_size: 15.89752811, point_color: &apos;ORANGE&apos; }, { point_size: 15.19474873, point_color: &apos;ORANGE&apos; }, { point_size: 10.74675586, point_color: &apos;ORANGE&apos; }, { point_size: 12.76371249, point_color: &apos;ORANGE&apos; }, { point_size: 8.488336441, point_color: &apos;ORANGE&apos; }, { point_size: 16.2864987, point_color: &apos;ORANGE&apos; }, { point_size: 18.63837664, point_color: &apos;ORANGE&apos; }, { point_size: 9.280755553, point_color: &apos;ORANGE&apos; }, { point_size: 9.89227944, point_color: &apos;ORANGE&apos; }, { point_size: 18.37818925, point_color: &apos;ORANGE&apos; }, { point_size: 5.356308326, point_color: &apos;ORANGE&apos; }, { point_size: 11.65915114, point_color: &apos;ORANGE&apos; }, { point_size: 4.152717877, point_color: &apos;ORANGE&apos; }, { point_size: 11.39046022, point_color: &apos;ORANGE&apos; }]
+      },
+      {
+        // TARGET CORRELATION: 0.1, DISTRACTOR CORRELATION: 0.3, TARGET MEAN SIZE: 6, DISTRACTOR MEAN SIZE: 13, CUE: color, PROBE: target - color
+        distribution_type: &quot;gaussian&quot;, base_correlation: 0.4, dist_base: 0.95, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, point_size: 6,
+        mix_by_target_array: [{ point_size: 2.053772973, point_color: &apos;BLUE&apos; }, { point_size: 3.421114072, point_color: &apos;BLUE&apos; }, { point_size: 7.861190731, point_color: &apos;BLUE&apos; }, { point_size: 9.893156312, point_color: &apos;BLUE&apos; }, { point_size: 3.585041759, point_color: &apos;BLUE&apos; }, { point_size: 3.335761252, point_color: &apos;BLUE&apos; }, { point_size: 2.880014644, point_color: &apos;BLUE&apos; }, { point_size: 4.577566474, point_color: &apos;BLUE&apos; }, { point_size: 10.18637813, point_color: &apos;BLUE&apos; }, { point_size: 5.334771186, point_color: &apos;BLUE&apos; }, { point_size: 9.270336586, point_color: &apos;BLUE&apos; }, { point_size: 11.56160563, point_color: &apos;BLUE&apos; }, { point_size: 3.430461747, point_color: &apos;BLUE&apos; }, { point_size: 3.824469792, point_color: &apos;BLUE&apos; }, { point_size: 1.564354613, point_color: &apos;BLUE&apos; }, { point_size: 3.417827757, point_color: &apos;BLUE&apos; }, { point_size: 6.745500644, point_color: &apos;BLUE&apos; }, { point_size: 2.451859684, point_color: &apos;BLUE&apos; }, { point_size: 6.892546258, point_color: &apos;BLUE&apos; }, { point_size: 3.60083425, point_color: &apos;BLUE&apos; }, { point_size: 6.033845866, point_color: &apos;BLUE&apos; }, { point_size: 6.523961198, point_color: &apos;BLUE&apos; }, { point_size: 7.80402273, point_color: &apos;BLUE&apos; }, { point_size: 3.948736395, point_color: &apos;BLUE&apos; }, { point_size: 1.234043284, point_color: &apos;BLUE&apos; }, { point_size: 17.20935663, point_color: &apos;BLUE&apos; }, { point_size: 2.081685208, point_color: &apos;BLUE&apos; }, { point_size: 3.8618955, point_color: &apos;BLUE&apos; }, { point_size: 4.629587094, point_color: &apos;BLUE&apos; }, { point_size: 3.840658293, point_color: &apos;BLUE&apos; }, { point_size: 6.535240975, point_color: &apos;BLUE&apos; }, { point_size: 2.029575736, point_color: &apos;BLUE&apos; }, { point_size: 2.656565568, point_color: &apos;BLUE&apos; }, { point_size: 3.774488132, point_color: &apos;BLUE&apos; }, { point_size: 4.952586906, point_color: &apos;BLUE&apos; }, { point_size: 4.558317905, point_color: &apos;BLUE&apos; }, { point_size: 14.16559231, point_color: &apos;BLUE&apos; }, { point_size: 1.77392573, point_color: &apos;BLUE&apos; }, { point_size: 15.48015925, point_color: &apos;BLUE&apos; }, { point_size: 8.175623918, point_color: &apos;BLUE&apos; }, { point_size: 10.10988668, point_color: &apos;BLUE&apos; }, { point_size: 8.341480233, point_color: &apos;BLUE&apos; }, { point_size: 9.980943976, point_color: &apos;BLUE&apos; }, { point_size: 13.96323627, point_color: &apos;BLUE&apos; }, { point_size: 0.812934712, point_color: &apos;BLUE&apos; }, { point_size: 5.528621049, point_color: &apos;BLUE&apos; }, { point_size: 1.760072093, point_color: &apos;BLUE&apos; }, { point_size: 5.103195282, point_color: &apos;BLUE&apos; }, { point_size: 3.975697912, point_color: &apos;BLUE&apos; }, { point_size: 13.26549867, point_color: &apos;BLUE&apos; }],
+        mix_by_distractor_array: [{ point_size: 3.917471736, point_color: &apos;ORANGE&apos; }, { point_size: 11.10545762, point_color: &apos;ORANGE&apos; }, { point_size: 16.83844198, point_color: &apos;ORANGE&apos; }, { point_size: 11.83051231, point_color: &apos;ORANGE&apos; }, { point_size: 20.52879959, point_color: &apos;ORANGE&apos; }, { point_size: 11.67736852, point_color: &apos;ORANGE&apos; }, { point_size: 11.27896325, point_color: &apos;ORANGE&apos; }, { point_size: 16.07439418, point_color: &apos;ORANGE&apos; }, { point_size: 14.22288807, point_color: &apos;ORANGE&apos; }, { point_size: 16.29414516, point_color: &apos;ORANGE&apos; }, { point_size: 15.83145066, point_color: &apos;ORANGE&apos; }, { point_size: 11.26879575, point_color: &apos;ORANGE&apos; }, { point_size: 14.73172047, point_color: &apos;ORANGE&apos; }, { point_size: 24.3540536, point_color: &apos;ORANGE&apos; }, { point_size: 14.56586823, point_color: &apos;ORANGE&apos; }, { point_size: 15.77838224, point_color: &apos;ORANGE&apos; }, { point_size: 11.21544198, point_color: &apos;ORANGE&apos; }, { point_size: 10.04750919, point_color: &apos;ORANGE&apos; }, { point_size: 12.09213714, point_color: &apos;ORANGE&apos; }, { point_size: 16.13186259, point_color: &apos;ORANGE&apos; }, { point_size: 17.64482009, point_color: &apos;ORANGE&apos; }, { point_size: 20.11973222, point_color: &apos;ORANGE&apos; }, { point_size: 12.46862065, point_color: &apos;ORANGE&apos; }, { point_size: 8.773662149, point_color: &apos;ORANGE&apos; }, { point_size: 10.10645803, point_color: &apos;ORANGE&apos; }, { point_size: 13.64724832, point_color: &apos;ORANGE&apos; }, { point_size: 13.48420708, point_color: &apos;ORANGE&apos; }, { point_size: 10.58651221, point_color: &apos;ORANGE&apos; }, { point_size: 12.18157651, point_color: &apos;ORANGE&apos; }, { point_size: 8.468899343, point_color: &apos;ORANGE&apos; }, { point_size: 12.98945071, point_color: &apos;ORANGE&apos; }, { point_size: 10.08112956, point_color: &apos;ORANGE&apos; }, { point_size: 15.55825003, point_color: &apos;ORANGE&apos; }, { point_size: 13.48582199, point_color: &apos;ORANGE&apos; }, { point_size: 10.87251639, point_color: &apos;ORANGE&apos; }, { point_size: 11.61961167, point_color: &apos;ORANGE&apos; }, { point_size: 15.89752811, point_color: &apos;ORANGE&apos; }, { point_size: 15.19474873, point_color: &apos;ORANGE&apos; }, { point_size: 10.74675586, point_color: &apos;ORANGE&apos; }, { point_size: 12.76371249, point_color: &apos;ORANGE&apos; }, { point_size: 8.488336441, point_color: &apos;ORANGE&apos; }, { point_size: 16.2864987, point_color: &apos;ORANGE&apos; }, { point_size: 18.63837664, point_color: &apos;ORANGE&apos; }, { point_size: 9.280755553, point_color: &apos;ORANGE&apos; }, { point_size: 9.89227944, point_color: &apos;ORANGE&apos; }, { point_size: 18.37818925, point_color: &apos;ORANGE&apos; }, { point_size: 5.356308326, point_color: &apos;ORANGE&apos; }, { point_size: 11.65915114, point_color: &apos;ORANGE&apos; }, { point_size: 4.152717877, point_color: &apos;ORANGE&apos; }, { point_size: 11.39046022, point_color: &apos;ORANGE&apos; }]
+      },
+      {
+        // TARGET CORRELATION: 0.1, DISTRACTOR CORRELATION: 0.3, TARGET MEAN SIZE: 6, DISTRACTOR MEAN SIZE: 13, CUE: color, PROBE: target - color
+        distribution_type: &quot;gaussian&quot;, base_correlation: 0.4, dist_base: 0.95, dist_error: 0.0001, num_points: 100, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;, point_size: 6,
+        mix_by_target_array: [{ point_size: 2.053772973, point_color: &apos;BLUE&apos; }, { point_size: 3.421114072, point_color: &apos;BLUE&apos; }, { point_size: 7.861190731, point_color: &apos;BLUE&apos; }, { point_size: 9.893156312, point_color: &apos;BLUE&apos; }, { point_size: 3.585041759, point_color: &apos;BLUE&apos; }, { point_size: 3.335761252, point_color: &apos;BLUE&apos; }, { point_size: 2.880014644, point_color: &apos;BLUE&apos; }, { point_size: 4.577566474, point_color: &apos;BLUE&apos; }, { point_size: 10.18637813, point_color: &apos;BLUE&apos; }, { point_size: 5.334771186, point_color: &apos;BLUE&apos; }, { point_size: 9.270336586, point_color: &apos;BLUE&apos; }, { point_size: 11.56160563, point_color: &apos;BLUE&apos; }, { point_size: 3.430461747, point_color: &apos;BLUE&apos; }, { point_size: 3.824469792, point_color: &apos;BLUE&apos; }, { point_size: 1.564354613, point_color: &apos;BLUE&apos; }, { point_size: 3.417827757, point_color: &apos;BLUE&apos; }, { point_size: 6.745500644, point_color: &apos;BLUE&apos; }, { point_size: 2.451859684, point_color: &apos;BLUE&apos; }, { point_size: 6.892546258, point_color: &apos;BLUE&apos; }, { point_size: 3.60083425, point_color: &apos;BLUE&apos; }, { point_size: 6.033845866, point_color: &apos;BLUE&apos; }, { point_size: 6.523961198, point_color: &apos;BLUE&apos; }, { point_size: 7.80402273, point_color: &apos;BLUE&apos; }, { point_size: 3.948736395, point_color: &apos;BLUE&apos; }, { point_size: 1.234043284, point_color: &apos;BLUE&apos; }, { point_size: 17.20935663, point_color: &apos;BLUE&apos; }, { point_size: 2.081685208, point_color: &apos;BLUE&apos; }, { point_size: 3.8618955, point_color: &apos;BLUE&apos; }, { point_size: 4.629587094, point_color: &apos;BLUE&apos; }, { point_size: 3.840658293, point_color: &apos;BLUE&apos; }, { point_size: 6.535240975, point_color: &apos;BLUE&apos; }, { point_size: 2.029575736, point_color: &apos;BLUE&apos; }, { point_size: 2.656565568, point_color: &apos;BLUE&apos; }, { point_size: 3.774488132, point_color: &apos;BLUE&apos; }, { point_size: 4.952586906, point_color: &apos;BLUE&apos; }, { point_size: 4.558317905, point_color: &apos;BLUE&apos; }, { point_size: 14.16559231, point_color: &apos;BLUE&apos; }, { point_size: 1.77392573, point_color: &apos;BLUE&apos; }, { point_size: 15.48015925, point_color: &apos;BLUE&apos; }, { point_size: 8.175623918, point_color: &apos;BLUE&apos; }, { point_size: 10.10988668, point_color: &apos;BLUE&apos; }, { point_size: 8.341480233, point_color: &apos;BLUE&apos; }, { point_size: 9.980943976, point_color: &apos;BLUE&apos; }, { point_size: 13.96323627, point_color: &apos;BLUE&apos; }, { point_size: 0.812934712, point_color: &apos;BLUE&apos; }, { point_size: 5.528621049, point_color: &apos;BLUE&apos; }, { point_size: 1.760072093, point_color: &apos;BLUE&apos; }, { point_size: 5.103195282, point_color: &apos;BLUE&apos; }, { point_size: 3.975697912, point_color: &apos;BLUE&apos; }, { point_size: 13.26549867, point_color: &apos;BLUE&apos; }],
+        mix_by_distractor_array: [{ point_size: 3.917471736, point_color: &apos;ORANGE&apos; }, { point_size: 11.10545762, point_color: &apos;ORANGE&apos; }, { point_size: 16.83844198, point_color: &apos;ORANGE&apos; }, { point_size: 11.83051231, point_color: &apos;ORANGE&apos; }, { point_size: 20.52879959, point_color: &apos;ORANGE&apos; }, { point_size: 11.67736852, point_color: &apos;ORANGE&apos; }, { point_size: 11.27896325, point_color: &apos;ORANGE&apos; }, { point_size: 16.07439418, point_color: &apos;ORANGE&apos; }, { point_size: 14.22288807, point_color: &apos;ORANGE&apos; }, { point_size: 16.29414516, point_color: &apos;ORANGE&apos; }, { point_size: 15.83145066, point_color: &apos;ORANGE&apos; }, { point_size: 11.26879575, point_color: &apos;ORANGE&apos; }, { point_size: 14.73172047, point_color: &apos;ORANGE&apos; }, { point_size: 24.3540536, point_color: &apos;ORANGE&apos; }, { point_size: 14.56586823, point_color: &apos;ORANGE&apos; }, { point_size: 15.77838224, point_color: &apos;ORANGE&apos; }, { point_size: 11.21544198, point_color: &apos;ORANGE&apos; }, { point_size: 10.04750919, point_color: &apos;ORANGE&apos; }, { point_size: 12.09213714, point_color: &apos;ORANGE&apos; }, { point_size: 16.13186259, point_color: &apos;ORANGE&apos; }, { point_size: 17.64482009, point_color: &apos;ORANGE&apos; }, { point_size: 20.11973222, point_color: &apos;ORANGE&apos; }, { point_size: 12.46862065, point_color: &apos;ORANGE&apos; }, { point_size: 8.773662149, point_color: &apos;ORANGE&apos; }, { point_size: 10.10645803, point_color: &apos;ORANGE&apos; }, { point_size: 13.64724832, point_color: &apos;ORANGE&apos; }, { point_size: 13.48420708, point_color: &apos;ORANGE&apos; }, { point_size: 10.58651221, point_color: &apos;ORANGE&apos; }, { point_size: 12.18157651, point_color: &apos;ORANGE&apos; }, { point_size: 8.468899343, point_color: &apos;ORANGE&apos; }, { point_size: 12.98945071, point_color: &apos;ORANGE&apos; }, { point_size: 10.08112956, point_color: &apos;ORANGE&apos; }, { point_size: 15.55825003, point_color: &apos;ORANGE&apos; }, { point_size: 13.48582199, point_color: &apos;ORANGE&apos; }, { point_size: 10.87251639, point_color: &apos;ORANGE&apos; }, { point_size: 11.61961167, point_color: &apos;ORANGE&apos; }, { point_size: 15.89752811, point_color: &apos;ORANGE&apos; }, { point_size: 15.19474873, point_color: &apos;ORANGE&apos; }, { point_size: 10.74675586, point_color: &apos;ORANGE&apos; }, { point_size: 12.76371249, point_color: &apos;ORANGE&apos; }, { point_size: 8.488336441, point_color: &apos;ORANGE&apos; }, { point_size: 16.2864987, point_color: &apos;ORANGE&apos; }, { point_size: 18.63837664, point_color: &apos;ORANGE&apos; }, { point_size: 9.280755553, point_color: &apos;ORANGE&apos; }, { point_size: 9.89227944, point_color: &apos;ORANGE&apos; }, { point_size: 18.37818925, point_color: &apos;ORANGE&apos; }, { point_size: 5.356308326, point_color: &apos;ORANGE&apos; }, { point_size: 11.65915114, point_color: &apos;ORANGE&apos; }, { point_size: 4.152717877, point_color: &apos;ORANGE&apos; }, { point_size: 11.39046022, point_color: &apos;ORANGE&apos; }]
+      },
+    ],
+
+  test_hybrid_scatter:
+    [
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.1, num_points: 48, point_size: 12.5, point_color: &apos;GREY&apos;, SD: 0.2 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.2, num_points: 48, point_size: 12.5, point_color: &apos;GREY&apos;, SD: 0.2 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.3, num_points: 48, point_size: 12.5, point_color: &apos;GREY&apos;, SD: 0.2 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.4, num_points: 48, point_size: 12.5, point_color: &apos;GREY&apos;, SD: 0.2 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.5, num_points: 48, point_size: 12.5, point_color: &apos;GREY&apos;, SD: 0.2 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.6, num_points: 48, point_size: 12.5, point_color: &apos;GREY&apos;, SD: 0.2 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.6, num_points: 48, point_size: 12.5, point_color: &apos;GREY&apos;, SD: 0.2 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.7, num_points: 48, point_size: 12.5, point_color: &apos;GREY&apos;, SD: 0.2 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.8, num_points: 48, point_size: 12.5, point_color: &apos;GREY&apos;, SD: 0.2 },
+
+      { distribution_type: &quot;gaussian&quot;, base_correlation: 0.9, num_points: 48, point_size: 12.5, point_color: &apos;GREY&apos;, SD: 0.2 },
+
+    ],
+
+    hybrid_multi_luminance_scatter:
+    [
+      { num_points: 48, point_size: 20, point_color: &quot;#000000&quot;, block: &quot;#000000&quot; },
+    
+      { num_points: 48, point_size: 20, point_color: &quot;#747474&quot;, block: &quot;#747474&quot; },
+    
+      { num_points: 48, point_size: 20, point_color: &quot;#a3a3a3&quot;, block: &quot;#a3a3a3&quot; },
+
+      { num_points: 48, point_size: 20, point_color: &quot;#d7d7d7&quot;, block: &quot;#d7d7d7&quot; },
+    
+      { num_points: 48, point_size: 20, mix_type: &quot;attribute&quot;, mix_data: { point_color: [&quot;#000000&quot;, &quot;#747474&quot;, &quot;#a3a3a3&quot;, &quot;#d7d7d7&quot;] }, block: &quot;mix_by_attribute&quot; },
+    ],
+
+}</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

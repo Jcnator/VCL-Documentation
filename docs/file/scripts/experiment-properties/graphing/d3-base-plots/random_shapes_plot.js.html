@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../">
+  <title data-ice="title">scripts/experiment-properties/graphing/d3-base-plots/random_shapes_plot.js | VCL-Web-Framework</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<script src="./inject/script/0-conditions-config.js"></script><script src="./inject/script/0-experiments-config.js"></script><script src="./inject/script/0-graphing-config.js"></script><script src="./inject/script/0-trial-structure-config.js"></script><script src="./inject/script/0-balancing-config.js"></script><script src="./inject/script/0-view-controller.js"></script><script src="./inject/script/0-experiments-renderer.js"></script><script src="./inject/script/0-conditions-renderer.js"></script><script src="./inject/script/0-supported-properties-renderer.js"></script><link rel="stylesheet" href="./inject/css/0-styles.css"><meta name="description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="VCL-Web-Framework"><meta property="twitter:description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/UBC-VCL/VCLWebFramework.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing">experiment-properties/balancing</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-balance_subconditions">balance_subconditions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing-generators">experiment-properties/balancing/generators</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_latin_square">initialize_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_random_order">initialize_random_order</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-data">experiment-properties/data</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_subconditions">get_subconditions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_condition_dataset">create_condition_dataset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_data">get_data</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_data_subset">get_data_subset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CUSTOM_TRIAL_STRUCTURE_CONDITIONS">CUSTOM_TRIAL_STRUCTURE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_BASES">EXPERIMENT_BASES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_CONDITIONS">EXPERIMENT_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-data-constants">experiment-properties/data/constants</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ESTIMATION_BASE">ESTIMATION_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_BASE">JND_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_CONDITIONS">JND_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_BASE">JND_RADIUS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_CONDITIONS">JND_RADIUS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_BASE">NUMEROSITY_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_CONDITIONS">NUMEROSITY_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_BASE">STEVENS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_CONDITIONS">STEVENS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing">experiment-properties/graphing</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-is_custom_plot">is_custom_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_custom_plot">prepare_custom_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_distributions">plot_distributions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-base-plots">experiment-properties/graphing/d3-base-plots</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_scatter_plot">create_scatter_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_scatter_points">plot_scatter_points</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_ring_plot">create_ring_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_scatter_plot">create_scatter_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_scatter_points">plot_scatter_points</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_shape_plot">create_shape_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_strip_plot">create_strip_plot</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-custom-plots">experiment-properties/graphing/d3-custom-plots</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_distractor_scatter_plot">create_distractor_scatter_plot</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-instructions">experiment-properties/instructions</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_instructions">get_instructions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-estimation">experiments/estimation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/estimation/estimation.js~Estimation.html">Estimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-estimation_exp">estimation_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-jnd">experiments/jnd</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/jnd/jnd.js~JND.html">JND</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_exp">jnd_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-jnd-radius">experiments/jnd_radius</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/jnd_radius/jnd_radius.js~JND_Radius.html">JND_Radius</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_radius_exp">jnd_radius_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-numerosity">experiments/numerosity</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/numerosity/numerosity.js~Numerosity.html">Numerosity</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-numerosity_exp">numerosity_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-stevens">experiments/stevens</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/stevens/stevens.js~Stevens.html">Stevens</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-stevens_exp">stevens_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers">helpers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-force_greater_right_position">force_greater_right_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_position">randomize_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_radius_position">randomize_radius_position</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">scripts/experiment-properties/graphing/d3-base-plots/random_shapes_plot.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export {create_scatter_plot, plot_scatter_points};
+
+var BUFFER = 60;
+var RANGE_ADJUSTMENT = 15;
+
+/**
+ * D3 code for setting up scatter plot chart area
+ *
+ * @param {object}   attributes
+ */
+function create_scatter_plot(attributes) {
+
+    let dataset = attributes[&quot;dataset&quot;];
+    let properties = attributes[&quot;graph_attributes&quot;];
+
+    // Size of the graph
+    let height = window.innerHeight * 0.65;
+    let width = height/2;
+
+    // Create scales:
+    // ** D3 creates a function that takes in input between [0, 100] and 
+    //    outputs between [0, width].
+    //    Basically, domain = input, range = ouput. 
+    let xscale = d3.scaleLinear()
+                   .domain([0, 1]) 
+                   .range([0, width - RANGE_ADJUSTMENT]); 
+
+    let yscale = d3.scaleLinear()
+                   .domain([-1, 0]) // !!! NOTE: this is the hack b/c we flipped the y-values 
+                                    //     to be negative --&gt; graph is now positive correlation
+                                    //     but on 4th quadrant --&gt; force domain to be from 
+                                    //     [-1, 0] to move it to 1st quadrant 
+                   .range([height/2, 0 + RANGE_ADJUSTMENT]);
+
+    // Create axes: 
+    let x_axis = d3.axisBottom()
+                   .scale(xscale)
+                   .tickSize([0]);
+
+    let y_axis = d3.axisLeft()
+                   .scale(yscale)
+                   .tickSize([0]);
+
+    // Append SVG into graph div
+    let chart = d3.select(&quot;#graph&quot;)
+                  .append(&quot;svg&quot;) 
+                    .attr(&quot;width&quot;, width + BUFFER)
+                    .attr(&quot;height&quot;, height)
+                    .attr(&quot;style&quot;, `margin-right: ${width/2}; margin-top: 25vh; margin-left: ${BUFFER}`);
+                    
+    // Creating transform SVG elements + append to SVG: 
+    let yAxisElements = chart.append(&quot;g&quot;)
+                             .attr(&quot;transform&quot;, &quot;translate(50, 10)&quot;)
+                             .call(y_axis);
+
+    let xAxisTranslate = height/2 + 10;
+
+    let xAxisElements = chart.append(&quot;g&quot;)
+                              .attr(&quot;transform&quot;, &quot;translate(50, &quot; + xAxisTranslate  +&quot;)&quot;)
+                              .call(x_axis)
+
+    // Check if is a mix subcondition
+    if (Object.keys(properties[&quot;mix_by_attribute&quot;]).length !== 0){
+      prepare_mix_graph(chart, xscale, yscale, dataset, properties);
+    } else {
+      plot_scatter_points(chart, xscale, yscale, dataset, properties);    
+    }
+        
+    // Set axis color
+    chart.selectAll(&quot;path&quot;)
+         .attr(&quot;stroke&quot;, properties[&quot;axis_color&quot;]);
+
+    // Remove tick labels
+    chart.selectAll(&quot;text&quot;).remove();     
+
+}
+
+/**
+ * Will plot points depending on what is defined as the mix attribute,
+ * and will sample (w/o replacement) from the dataset to display points
+ * with all defined values for the mix attribute.
+ *
+ * E.g. if properties[&quot;mix_by_attribute&quot;] = {&quot;point_size&quot; = [1, 2, 3, 4]}
+ *      and there are 100 points in the dataset, will plot 25 points with
+ *      point_size = 1, 25 points with point_size = 2, etc...
+ *
+ * @param {object}         chart
+ * @param {function}       xscale
+ * @param {function}       yscale
+ * @param {array}          dataset ([x_value, y_value])
+ * @param {assoc. array}   e.g. {&quot;point_shape&quot;: &quot;square&quot;, &quot;point_size&quot;: 5 .... }
+ */
+function prepare_mix_graph(chart, xscale, yscale, dataset, properties) {
+
+  let mix_attrib = Object.keys(properties[&quot;mix_by_attribute&quot;])[0];
+  let NUM_GROUPS = properties[&quot;mix_by_attribute&quot;][mix_attrib].length;
+  let POINTS_PER_GROUP = dataset.length / NUM_GROUPS;
+
+  for (let i = 0; i &lt; NUM_GROUPS; i++) {
+
+    let grouped_dataset = [];
+
+    for (let j = 0; j &lt; POINTS_PER_GROUP; j++) {
+      let rand_index = Math.floor(Math.random() * dataset.length);
+      grouped_dataset.push(dataset[rand_index]);
+
+      // Remove from dataset
+      dataset.splice(rand_index, 1);
+    }
+
+    // Override the property if it is a mix attribute
+    properties[mix_attrib] = properties[&quot;mix_by_attribute&quot;][mix_attrib][i];
+
+    // Plot this group of points with the ith value for the mix attribute
+    plot_scatter_points(chart, xscale, yscale, grouped_dataset, properties);
+  }
+
+}
+
+/**
+ * D3 code for appending data to the graph depending on point shape type.
+ *
+ * @param {object}         chart
+ * @param {function}       xscale
+ * @param {function}       yscale
+ * @param {array}          data ([x_value, y_value])
+ * @param {assoc. array}   properties e.g. {&quot;point_shape&quot;: &quot;square&quot;, &quot;point_size&quot;: 5 .... }
+ */
+function plot_scatter_points(chart, xscale, yscale, data, properties) {
+
+  // var GRAPH_TYPES comes from /config/graphing-config.js
+  if (!GRAPH_TYPES[&quot;scatter&quot;][&quot;attributes&quot;][&quot;point_shape&quot;][&quot;valid_inputs&quot;].includes(properties[&quot;point_shape&quot;])){
+    throw Error(&quot;Point shape &quot; + properties[&quot;point_shape&quot;] + &quot; is not a valid shape for graph type scatter.&quot;);
+  }
+
+  switch(properties[&quot;point_shape&quot;]){
+    case &quot;square&quot;:
+      chart.selectAll(&quot;square_data&quot;)
+                 .data(data)
+                  .enter()
+                  .append(&quot;rect&quot;) 
+                  .attr(&quot;x&quot;, function (d){
+                    return xscale(d[0]) + BUFFER;
+                  })
+                  .attr(&quot;y&quot;, function (d){
+                    return yscale(d[1]);
+                  })
+                  .attr(&quot;width&quot;, properties[&quot;point_size&quot;])
+                  .attr(&quot;height&quot;, properties[&quot;point_size&quot;])
+                  .style(&apos;fill&apos;, properties[&quot;point_color&quot;]);
+      break;
+
+    case &quot;diamond&quot;:
+      chart.selectAll(&quot;square_data&quot;)
+                 .data(data)
+                  .enter()
+                  .append(&quot;rect&quot;) 
+                  .attr(&quot;x&quot;, function (d){
+                    return xscale(d[0]) + BUFFER;
+                  })
+                  .attr(&quot;y&quot;, function (d){
+                    return yscale(d[1]);
+                  })
+                  .attr(&quot;width&quot;, properties[&quot;point_size&quot;])
+                  .attr(&quot;height&quot;, properties[&quot;point_size&quot;])
+                  .style(&apos;fill&apos;, properties[&quot;point_color&quot;])
+                  .attr(&apos;transform&apos;, function(d){
+                    // Adapted from: https://stackoverflow.com/questions/44817414/rotate-svg-in-place-using-d3-js
+                    var x1 = xscale(d[0]) + BUFFER + properties[&quot;point_size&quot;]/2; //the center x about which you want to rotate
+                    var y1 = yscale(d[1]) + properties[&quot;point_size&quot;]/2; //the center y about which you want to rotate
+
+                    return `rotate(45, ${x1}, ${y1})`; //rotate 180 degrees about x and y
+                }); 
+      break;
+
+    case &quot;circle&quot;:
+      chart.selectAll(&quot;circle_data&quot;)
+                 .data(data)
+                  .enter()
+                  .append(&quot;circle&quot;) // Creating the circles for each entry in data set 
+                  .attr(&quot;cx&quot;, function (d) { // d is a subarray of the dataset i.e coordinates [5, 20]
+                    return xscale(d[0]) + BUFFER; // +60 is for buffer (points going -x, even if they are positive)
+                  })
+                  .attr(&quot;cy&quot;, function (d) {
+                    return yscale(d[1]);
+                  })
+                  .attr(&quot;r&quot;, function () {
+                    if (properties[&quot;convert_size_cm_to_pixel&quot;]){
+                      return (properties[&quot;point_size&quot;] * properties[&quot;pixels_per_cm&quot;]) / 2
+                    }
+                    return properties[&quot;point_size&quot;]/2;
+                  })
+                  .attr(&quot;fill&quot;, properties[&quot;point_color&quot;]);
+      break;
+	
+  	case &quot;hollow_circle&quot;:
+      chart.selectAll(&quot;circle_data&quot;)
+                 .data(data)
+                  .enter()
+                  .append(&quot;circle&quot;) // Creating the circles for each entry in data set 
+                  .attr(&quot;cx&quot;, function (d) { // d is a subarray of the dataset i.e coordinates [5, 20]
+                    return xscale(d[0]) + BUFFER; // +60 is for buffer (points going -x, even if they are positive)
+                  })
+                  .attr(&quot;cy&quot;, function (d) {
+                    return yscale(d[1]);
+                  })
+                  .attr(&quot;r&quot;, properties[&quot;point_size&quot;]/2).style(&quot;fill&quot;, &quot;none&quot;).style(&quot;stroke&quot;, properties[&quot;point_color&quot;]).style(&quot;stroke-width&quot;, &quot;3&quot;);
+      break;
+	
+	  case &quot;bullseye_circle&quot;:
+      chart.selectAll(&quot;circle_data&quot;)
+                 .data(data)
+                  .enter()
+                  .append(&quot;circle&quot;) // Creating the circles for each entry in data set 
+                  .attr(&quot;cx&quot;, function (d) { // d is a subarray of the dataset i.e coordinates [5, 20]
+                    return xscale(d[0]) + BUFFER; // +60 is for buffer (points going -x, even if they are positive)
+                  })
+                  .attr(&quot;cy&quot;, function (d) {
+                    return yscale(d[1]);
+                  })
+                  .attr(&quot;r&quot;, properties[&quot;point_size&quot;]/4).style(&quot;fill&quot;, properties[&quot;point_color&quot;]);
+				  
+      chart.selectAll(&quot;circle_data&quot;)
+                 .data(data)
+                  .enter()
+                  .append(&quot;circle&quot;) // Creating the circles for each entry in data set 
+                  .attr(&quot;cx&quot;, function (d) { // d is a subarray of the dataset i.e coordinates [5, 20]
+                    return xscale(d[0]) + BUFFER; // +60 is for buffer (points going -x, even if they are positive)
+                  })
+                  .attr(&quot;cy&quot;, function (d) {
+                    return yscale(d[1]);
+                  })
+                  .attr(&quot;r&quot;, properties[&quot;point_size&quot;]/2).style(&quot;fill&quot;, &quot;none&quot;).style(&quot;stroke&quot;, properties[&quot;point_color&quot;]).style(&quot;stroke-width&quot;, &quot;1&quot;);
+      break;
+	  
+  	case &quot;thin_hollow_circle&quot;:
+      chart.selectAll(&quot;circle_data&quot;)
+                 .data(data)
+                  .enter()
+                  .append(&quot;circle&quot;) // Creating the circles for each entry in data set 
+                  .attr(&quot;cx&quot;, function (d) { // d is a subarray of the dataset i.e coordinates [5, 20]
+                    return xscale(d[0]) + BUFFER; // +60 is for buffer (points going -x, even if they are positive)
+                  })
+                  .attr(&quot;cy&quot;, function (d) {
+                    return yscale(d[1]);
+                  })
+                  .attr(&quot;r&quot;, properties[&quot;point_size&quot;]/2).style(&quot;fill&quot;, &quot;none&quot;).style(&quot;stroke&quot;, properties[&quot;point_color&quot;]).style(&quot;stroke-width&quot;, &quot;1&quot;);
+      break;
+
+      case &quot;line&quot;:
+      chart.selectAll(&quot;square_data&quot;)
+                 .data(data)
+                  .enter()
+                  .append(&quot;rect&quot;) 
+                  .attr(&quot;x&quot;, function (d){
+                    return xscale(d[0]) + BUFFER;
+                  })
+                  .attr(&quot;y&quot;, function (d){
+                    return yscale(d[1]);
+                  })
+                  .attr(&quot;width&quot;, 1)
+                  .attr(&quot;height&quot;, 4)
+                  .style(&apos;fill&apos;, properties[&quot;point_color&quot;]);
+      break;
+  }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

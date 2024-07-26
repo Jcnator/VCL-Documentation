@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="./">
+  <title data-ice="title">Manual | vcl-web-framework</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<script src="./inject/script/0-conditions-config.js"></script><script src="./inject/script/0-experiments-config.js"></script><script src="./inject/script/0-graphing-config.js"></script><script src="./inject/script/0-trial-structure-config.js"></script><script src="./inject/script/0-balancing-config.js"></script><script src="./inject/script/0-view-controller.js"></script><script src="./inject/script/0-experiments-renderer.js"></script><script src="./inject/script/0-conditions-renderer.js"></script><script src="./inject/script/0-supported-properties-renderer.js"></script><link rel="stylesheet" href="./inject/css/0-styles.css"><meta name="description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="vcl-web-framework"><meta property="twitter:description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."></head>
+<body class="layout-container manual-root manual-index" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/UBC-VCL/VCLWebFramework.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.html"><a href="manual/README.html" data-ice="link">VCL Web Framework</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html"><a href="manual/README.html#set-up" data-ice="link">Set Up</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/README.html"><a href="manual/README.html#-1--git-clone-the-repository" data-ice="link">(1) Git clone the repository</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/README.html"><a href="manual/README.html#-2--install-node" data-ice="link">(2) Install Node</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/README.html"><a href="manual/README.html#-3--install-dependencies" data-ice="link">(3) Install Dependencies</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.html"><a href="manual/README.html#-4--set-up-the-environment-variables" data-ice="link">(4) Set Up the Environment Variables</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/README.html"><a href="manual/README.html#-5--run-the-application" data-ice="link">(5) Run the Application</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html"><a href="manual/README.html#codebase-primers" data-ice="link">Codebase Primers</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.html"><a href="manual/README.html#overview" data-ice="link">Overview</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.html"><a href="manual/README.html#practice-condition" data-ice="link">Practice Condition</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/terminology.html"><a href="manual/terminology.html" data-ice="link">Terminology</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/terminology.html"><a href="manual/terminology.html#describing-an-experiment" data-ice="link">Describing an Experiment</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/terminology.html"><a href="manual/terminology.html#-strong-task--strong-" data-ice="link">Task</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/terminology.html"><a href="manual/terminology.html#-strong-method--strong-" data-ice="link">Method</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/terminology.html"><a href="manual/terminology.html#-strong-properties--strong-" data-ice="link">Properties</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/terminology.html"><a href="manual/terminology.html#condition-identifiers" data-ice="link">Condition Identifiers</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/terminology.html"><a href="manual/terminology.html#-strong-base-experiment--strong-" data-ice="link">Base Experiment</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/terminology.html"><a href="manual/terminology.html#-strong-trial-structure--strong-" data-ice="link">Trial Structure</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/terminology.html"><a href="manual/terminology.html#-strong-balancing--strong-" data-ice="link">Balancing</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/terminology.html"><a href="manual/terminology.html#-strong-graph-types--strong-" data-ice="link">Graph Types</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/terminology.html"><a href="manual/terminology.html#-strong-attributes--strong-" data-ice="link">Attributes</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/architecture.html"><a href="manual/architecture.html" data-ice="link">Architecture</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/architecture.html"><a href="manual/architecture.html#stack" data-ice="link">Stack</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/architecture.html"><a href="manual/architecture.html#structure" data-ice="link">Structure</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/experiments.html"><a href="manual/experiments.html" data-ice="link">Experiments</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/code_review.html"><a href="manual/code_review.html" data-ice="link">Code Review Process</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/code_review.html"><a href="manual/code_review.html#primary-code-reviewers" data-ice="link">Primary Code Reviewers</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/code_review.html"><a href="manual/code_review.html#peer-code-reviewers" data-ice="link">Peer Code Reviewers</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/code_review.html"><a href="manual/code_review.html#senior-peers" data-ice="link">Senior Peers</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/code_review.html"><a href="manual/code_review.html#junior-peers" data-ice="link">Junior Peers</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/code_review.html"><a href="manual/code_review.html#stakeholders" data-ice="link">Stakeholders</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/code_review.html"><a href="manual/code_review.html#code-review-format" data-ice="link">Code Review Format</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/code_review.html"><a href="manual/code_review.html#environment" data-ice="link">Environment</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/code_review.html"><a href="manual/code_review.html#before-the-review" data-ice="link">Before the Review</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/code_review.html"><a href="manual/code_review.html#for-conditions" data-ice="link">For Conditions</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/code_review.html"><a href="manual/code_review.html#for-features-changes-to-back-end-code" data-ice="link">For Features/Changes to Back-End Code</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/code_review.html"><a href="manual/code_review.html#the-stakeholder-review" data-ice="link">The Stakeholder Review</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/code_review.html"><a href="manual/code_review.html#the-code-review-itself" data-ice="link">The Code Review Itself</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/code_review.html"><a href="manual/code_review.html#for-the-reviewer-" data-ice="link">For the Reviewer:</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/code_review.html"><a href="manual/code_review.html#practices-to-enforce" data-ice="link">Practices to Enforce</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/code_review.html"><a href="manual/code_review.html#logistical-practices" data-ice="link">Logistical Practices</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/code_review.html"><a href="manual/code_review.html#github-issues" data-ice="link">Github Issues</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/code_review.html"><a href="manual/code_review.html#branch-naming" data-ice="link">Branch naming</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/code_review.html"><a href="manual/code_review.html#branch-merging" data-ice="link">Branch merging</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/code_review.html"><a href="manual/code_review.html#coding-practices" data-ice="link">Coding Practices</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/code_review.html"><a href="manual/code_review.html#quick-code" data-ice="link">Quick code</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/code_review.html"><a href="manual/code_review.html#readable-code" data-ice="link">Readable code</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/code_review.html"><a href="manual/code_review.html#self-documenting-code" data-ice="link">Self-documenting Code</a></li>
+<li data-ice="manualNav" class="indent-h5" data-link="manual/code_review.html"><a href="manual/code_review.html#all-new-functions-need-a-description-in-the-preamble" data-ice="link">All new functions need a description in the preamble</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/code_review.html"><a href="manual/code_review.html#documented-mark-down-files" data-ice="link">Documented Mark-Down Files</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/jnd.html"><a href="manual/jnd.html" data-ice="link">&gt;&gt; JND</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/jnd.html"><a href="manual/jnd.html#specifications" data-ice="link">Specifications</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/jnd.html"><a href="manual/jnd.html#practice-procedure" data-ice="link">Practice Procedure</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/jnd.html"><a href="manual/jnd.html#test-procedure" data-ice="link">Test Procedure</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/jnd.html"><a href="manual/jnd.html#jspsych-timeline" data-ice="link">JsPsych Timeline</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/jnd.html"><a href="manual/jnd.html#general-timeline" data-ice="link">General Timeline</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/jnd.html"><a href="manual/jnd.html#trial-logic" data-ice="link">Trial Logic</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/jnd.html"><a href="manual/jnd.html#adjusted-correlation" data-ice="link">Adjusted Correlation</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/jnd.html"><a href="manual/jnd.html#constants" data-ice="link">Constants</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/jnd_radius.html"><a href="manual/jnd_radius.html" data-ice="link">&gt;&gt; JND Radius</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/jnd_radius.html"><a href="manual/jnd_radius.html#specifications" data-ice="link">Specifications</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/jnd_radius.html"><a href="manual/jnd_radius.html#test-procedure" data-ice="link">Test Procedure</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/jnd_radius.html"><a href="manual/jnd_radius.html#constants" data-ice="link">Constants</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/stevens.html"><a href="manual/stevens.html" data-ice="link">&gt;&gt; Stevens</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/stevens.html"><a href="manual/stevens.html#specifications" data-ice="link">Specifications</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/stevens.html"><a href="manual/stevens.html#practice-procedure" data-ice="link">Practice Procedure</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/stevens.html"><a href="manual/stevens.html#test-procedure" data-ice="link">Test Procedure</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/stevens.html"><a href="manual/stevens.html#jspsych-timeline" data-ice="link">JsPsych Timeline</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/stevens.html"><a href="manual/stevens.html#trial-logic" data-ice="link">Trial Logic</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/stevens.html"><a href="manual/stevens.html#estimated-correlation" data-ice="link">Estimated Correlation</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/stevens.html"><a href="manual/stevens.html#constants" data-ice="link">Constants</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/estimation.html"><a href="manual/estimation.html" data-ice="link">&gt;&gt; Estimation</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/estimation.html"><a href="manual/estimation.html#specifications" data-ice="link">Specifications</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/estimation.html"><a href="manual/estimation.html#summer-2019-updates" data-ice="link">Summer 2019 Updates</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/estimation.html"><a href="manual/estimation.html#code-updates" data-ice="link">Code Updates</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/supported_properties.html"><a href="manual/supported_properties.html" data-ice="link">Supported Properties</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/supported_properties.html"><a href="manual/supported_properties.html#identifiers" data-ice="link">Identifiers</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/supported_properties.html"><a href="manual/supported_properties.html#base-experiment" data-ice="link">Base Experiment</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/supported_properties.html"><a href="manual/supported_properties.html#trial-structure" data-ice="link">Trial Structure</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/supported_properties.html"><a href="manual/supported_properties.html#graph-types" data-ice="link">Graph Types</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/supported_properties.html"><a href="manual/supported_properties.html#subcondition-attributes" data-ice="link">Subcondition Attributes</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/supported_properties.html"><a href="manual/supported_properties.html#experimental-attributes" data-ice="link">Experimental Attributes</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/supported_properties.html"><a href="manual/supported_properties.html#graphical-attributes" data-ice="link">Graphical Attributes</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/conditions.html"><a href="manual/conditions.html" data-ice="link">Conditions</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/developing_new_conditions.html"><a href="manual/developing_new_conditions.html" data-ice="link">Developing New Conditions</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/developing_new_conditions.html"><a href="manual/developing_new_conditions.html#for-researchers" data-ice="link">For Researchers</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/developing_new_conditions.html"><a href="manual/developing_new_conditions.html#example" data-ice="link">Example</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/developing_new_conditions.html"><a href="manual/developing_new_conditions.html#for-developers" data-ice="link">For Developers</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/developing_new_conditions.html"><a href="manual/developing_new_conditions.html#-1--add-to-config" data-ice="link">(1) Add to config</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/developing_new_conditions.html"><a href="manual/developing_new_conditions.html#-2--add-subconditions" data-ice="link">(2) Add subconditions</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/developing_new_conditions.html"><a href="manual/developing_new_conditions.html#-3--update-instructions" data-ice="link">(3) Update instructions</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/developing_new_conditions.html"><a href="manual/developing_new_conditions.html#-4--update-docs" data-ice="link">(4) Update docs</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/developing_new_properties.html"><a href="manual/developing_new_properties.html" data-ice="link">Developing New Properties</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/developing_new_properties.html"><a href="manual/developing_new_properties.html#trial-structures" data-ice="link">Trial Structures</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/developing_new_properties.html"><a href="manual/developing_new_properties.html#balancing-types" data-ice="link">Balancing Types</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/developing_new_properties.html"><a href="manual/developing_new_properties.html#graph-related" data-ice="link">Graph-Related</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/developing_new_properties.html"><a href="manual/developing_new_properties.html#graphical-attributes" data-ice="link">Graphical Attributes</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/developing_new_properties.html"><a href="manual/developing_new_properties.html#graph-types" data-ice="link">Graph Types</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/developing_new_properties.html"><a href="manual/developing_new_properties.html#point-shape-types" data-ice="link">Point/Shape Types</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/developing_new_properties.html"><a href="manual/developing_new_properties.html#adding-experiments" data-ice="link">Adding Experiments</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/developing_new_properties.html"><a href="manual/developing_new_properties.html#overriding" data-ice="link">Overriding</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/developing_new_properties.html"><a href="manual/developing_new_properties.html#custom-plots" data-ice="link">Custom Plots</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/developing_new_properties.html"><a href="manual/developing_new_properties.html#subcondition-generation" data-ice="link">Subcondition Generation</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/updating_documentation.html"><a href="manual/updating_documentation.html" data-ice="link">Updating Documentation</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/updating_documentation.html"><a href="manual/updating_documentation.html#project-structure-of-the-docs" data-ice="link">Project Structure of the Docs</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/updating_documentation.html"><a href="manual/updating_documentation.html#dynamic-sections" data-ice="link">Dynamic Sections</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/updating_documentation.html"><a href="manual/updating_documentation.html#creating-new-pages" data-ice="link">Creating New Pages</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/updating_documentation.html"><a href="manual/updating_documentation.html#updating-pages-or-scripts" data-ice="link">Updating Pages or Scripts</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown">
+  <div class="manual-user-index" data-ice="manualUserIndex"><h1 id="vcl-web-framework">VCL Web Framework</h1><p>This is a Node.js application that runs correlation-related experiments of the VCL Lab.</p>
+<p>Documentation for the framework is on the git pages <a href="https://ubc-vcl.github.io/VCLWebFramework/">here.</a></p>
+<h2 id="set-up">Set Up</h2><h4 id="-1--git-clone-the-repository">(1) Git clone the repository</h4><h4 id="-2--install-node">(2) Install Node</h4><p>Visit the following link to download Node: <a href="https://nodejs.org/en/">here.</a></p>
+<h4 id="-3--install-dependencies">(3) Install Dependencies</h4><p>Navigate into the folder:</p>
+<pre><code><code class="source-code prettyprint">cd VCLWebFramework</code>
+</code></pre><p>Then run:</p>
+<pre><code><code class="source-code prettyprint">npm install</code>
+</code></pre><h3 id="-4--set-up-the-environment-variables">(4) Set Up the Environment Variables</h3><p>Contact your Project Leader or an available teammember to obtain the environment variables. </p>
+<p>Create a file named</p>
+<pre><code><code class="source-code prettyprint">.env</code>
+</code></pre><p>Paste the environment variables into the .env file and save</p>
+<h4 id="-5--run-the-application">(5) Run the Application</h4><pre><code><code class="source-code prettyprint">node app.js</code>
+</code></pre><p>Or alternatively, with nodemon:</p>
+<pre><code><code class="source-code prettyprint">nodemon app.js</code>
+</code></pre><p>The app is available at <a href="localhost:8080">localhost:8080</a>. If you want to access it at a different port, change the port number in app.js (line 57).</p>
+<h2 id="codebase-primers">Codebase Primers</h2><h3 id="overview">Overview</h3><p><a href="https://docs.google.com/presentation/d/1PMx1mmkiOtk_3nz9Ud58A2pk7Q5Inadwpw4vgKMSTsM/edit?usp=sharing">https://docs.google.com/presentation/d/1PMx1mmkiOtk_3nz9Ud58A2pk7Q5Inadwpw4vgKMSTsM/edit?usp=sharing</a></p>
+<h3 id="practice-condition">Practice Condition</h3><p><a href="https://drive.google.com/open?id=1AWqYALW9iogxvZk3D1-PzxgOS-yWMcio">https://drive.google.com/open?id=1AWqYALW9iogxvZk3D1-PzxgOS-yWMcio</a>
+Refer to Developing New Conditions tab on wiki</p>
+</div>
+
+  
+
+  <div class="manual-cards">
+    
+  <div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>VCL Web Framework</h1><p>This is a Node.js application that runs correlation-related experiments of the VCL Lab.</p><p>Documentation for the framework is on the git pages <a href="https://ubc-vcl.github.io/VCLWebFramework/">here.</a></p><h2>Set Up</h2><h4>(1) Git clone the repository</h4><h4>(2) Install Node</h4><p>Visit the following link to download Node: <a href="https://nodejs.org/en/">here.</a></p><h4>(3) Install Dependencies</h4><p>Navigate into the folder:</p><pre><code><code class="source-code prettyprint">cd VCLWebFramework</code>
+</code></pre><p>Then run:</p><pre><code><code class="source-code prettyprint">npm install</code>
+</code></pre><h3>(4) Set Up the Environment Variables</h3><p>Contact your Project Leader or an available teammember to obtain the environment variables. </p><p>Create a file named</p><pre><code><code class="source-code prettyprint">.env</code>
+</code></pre><p>Paste the environment variables into the .env file and save</p><h4>(5) Run the Application</h4><pre><code><code class="source-code prettyprint">node app.js</code>
+</code></pre><p>Or alternatively, with nodemon:</p><pre><code><code class="source-code prettyprint">nodemon app.js</code>
+</code></pre><p>The app is available at <a href="./manual/localhost:8080">localhost:8080</a>. If you want to access it at a different port, change the port number in app.js (line 57).</p><h2>Codebase Primers</h2><h3>Overview</h3><p><a href="https://docs.google.com/presentation/d/1PMx1mmkiOtk_3nz9Ud58A2pk7Q5Inadwpw4vgKMSTsM/edit?usp=sharing">https://docs.google.com/presentation/d/1PMx1mmkiOtk_3nz9Ud58A2pk7Q5Inadwpw4vgKMSTsM/edit?usp=sharing</a></p><h3>Practice Condition</h3><p><a href="https://drive.google.com/open?id=1AWqYALW9iogxvZk3D1-PzxgOS-yWMcio">https://drive.google.com/open?id=1AWqYALW9iogxvZk3D1-PzxgOS-yWMcio</a>
+Refer to Developing New Conditions tab on wiki</p></div>
+        <a data-ice="link" href="manual/README.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Terminology</h1><p>Below is common terminology the lab uses when describing experiments.</p><h2>Describing an Experiment</h2><p>Every experiment has the following:</p><ul>
+<li><strong>Experiment</strong> : the type of task to be performed.</li>
+<li><strong>Condition</strong> : dictated by the task, the method(s) used, and the stimuli type.</li>
+<li><strong>Subcondition</strong> : a set of stable constants.</li>
+<li><strong>Trial</strong> : marked by the user making a meaningful response/input that is purposely recorded.<ul>
+<li>E.g. I am trying to adjust the correlation of a specific plot to be the midpoint between a plot with a high correlation, and a plot with a lower correlation. The final correlation that I have adjusted marks the relevant trial data to be saved.</li>
+</ul>
+</li>
+<li><strong>Action</strong> : the actions a user can make within a trial.<ul>
+<li>E.g. In the above trial example, I can be taking actions to increase or decrease my correlation.</li>
+</ul>
+</li>
+</ul><h3><strong>Task</strong></h3><p>The decision task defined in terms of the stimuli and question posed.</p><ul>
+<li><strong>Detection</strong> : &quot;there may be any number of alternative stimuli, but one is blank, and the observer is asked only to distinguish between the blank and the other stimuli.&quot;</li>
+<li><strong>Discrimination</strong> : &quot;there are any number of alternative stimuli, but one of the stimuli (which need not be blank), is designated as the reference, and the observer is asked only to distinguish between the reference and other stimuli.&quot;</li>
+</ul><h3><strong>Method</strong></h3><ul>
+<li><strong>Forced Choice</strong> : &quot;traditionally characterized by two separate stimulus presentations, one blank and one nonblank, in random order. The two stimuli may be presented successively or side by side. The observer is asked whether the nonblank stimulus was first or second (or on the left or right).&quot;</li>
+<li><strong>Matching</strong> : &quot;two stimuli are presented, and the observer is asked to adjust one to match the other.&quot;</li>
+<li><strong>Staircase</strong> : &quot;for difference thresholds, a variable stimulus is adjusted to increase its absolute difference from a standard stimulus whenever the difference is not discriminated or is adjusted to decrease its absolute difference from the standard stimulus whenever the difference is discriminated.&quot;<ul>
+<li><em><strong>E.g.</strong></em> We have two scatter plots side by side. Let us say plot A has r = 0.5 and plot B has r = 0.8. The task is to pick the plot with the higher correlation.<ul>
+<li><em>You correctly pick plot B:</em> So the next trial will be harder, in that the correlations of the two plots are now closer together. For example, plot A would have r = 0.5 and plot B would have r = 0.7.  </li>
+<li><em>You incorrectly pick plot A:</em> So the next trial will be easier, in that the correlations of the two plots are now wider apart. For example, plot A would have r = 0.5 and plot B would have r = 0.9.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h3><strong>Properties</strong></h3><ul>
+<li><strong>Balancing</strong> : the ways in which the subconditions for a given condition are ordered.<ul>
+<li>Random</li>
+<li>Latin-Square</li>
+</ul>
+</li>
+<li><strong>Graph Type</strong> : e.g. scatter plots, ring plots, strip plots, shapes </li>
+<li><strong>Graphical Manipulation</strong>: <ul>
+<li>May be on how the points are plotted e.g. for strip plots, a y coordinate defines the horizontal translation of the &quot;strip&quot; and x coordinate defines the height of the &quot;strip&quot;.</li>
+<li>May be in terms of how many distributions are plotted on the same graph e.g. on the same axes, we can have TWO scatter plots with different correlations.</li>
+</ul>
+</li>
+</ul><hr><p>Definitions adapted from:</p><p><em>D. G., &amp; Farell, B. (lOlD). Psychophysical methods. In M. Bass, C. DeCusatis. J. Enoch, V. Lakshmit1arayanan. G. U, C. MacDonald, V. Mahajan &amp; E. V. Stryland (Eds,), Handbook 01 Optics. Third Edition, VDlume III: Visioo and Vision Optics (w. 3.1-3.12). New Yori&lt;: McGraw+liR. http:// psych.nyu,edu/pelilpubslpelIi20 IOpsychophysical-methods,pdt</em></p><h2>Condition Identifiers</h2><p>Each condition is uniquely defined by 4 properties.</p><h3><strong>Base Experiment</strong></h3><p>Defines the underlying procedural logic of the experiment.</p><ul>
+<li>JND</li>
+<li>Stevens</li>
+<li>Equalizer</li>
+<li>Estimation</li>
+</ul><h3><strong>Trial Structure</strong></h3><p>The trial structure represents the range or pattern of correlation values, and defines a set of constants for each subcondition. Each condition can follow these pattern of values, or use it&apos;s own custom structure.</p><p>The two main types of patterns are Design or Foundational.</p><ul>
+<li>Foundational : 17 subconditions, base correlation is in the range of [0.0, 0.9] in 0.1 increments.</li>
+<li>Design       : 15 subconditions, grouped into five sets with base correlation values set at 0.3, 0.6, 0.9.</li>
+<li>Estimation</li>
+<li>Custom       : used when a condition does not follow any of the above structures.</li>
+</ul><h3><strong>Balancing</strong></h3><p>How subconditions in a given condition get ordered.</p><ul>
+<li>Randomized</li>
+<li>Latin Square</li>
+</ul><h3><strong>Graph Types</strong></h3><p>The type of graph used in the visualization.</p><ul>
+<li>Scatter</li>
+<li>Strip</li>
+<li>Ring</li>
+<li>Shapes</li>
+</ul><h3><strong>Attributes</strong></h3><p>Any given condition will always have a base, trial structure, balancing and graph type. However, they will also have a set of variables that manipulate different aspects of the distribution, graphical properties of the visualization, and non-graphical properties such as having a custom instruction set. </p><p>Here is a non-comprehensive list of properties that could be manipulated by a condition.</p><ul>
+<li>Experimental attributes:<ul>
+<li>Distribution type</li>
+<li>Base correlation of the reference plot</li>
+<li>Whether the correlation converges from above or below</li>
+<li>Complete list of experimental attributes <a href="/VCLWebFramework/manual/supported_properties.html#experimental-attributes">here</a></li>
+</ul>
+</li>
+<li>Graphical attributes: <ul>
+<li>Some examples if <code>plot type = scatter</code>:<ul>
+<li>Point shape</li>
+<li>Point color</li>
+<li>Point size</li>
+</ul>
+</li>
+<li>Some examples if <code>plot type = strip</code>:<ul>
+<li>Line length</li>
+<li>Line width</li>
+</ul>
+</li>
+<li>Complete list of graphical attributes <a href="/VCLWebFramework/manual/supported_properties.html#experimental-attributes">here</a>   </li>
+</ul>
+</li>
+</ul></div>
+        <a data-ice="link" href="manual/terminology.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Architecture</h1><p>The framework runs on a web-based stack, using JsPsych for experimental logic support and D3 for visualization.</p><h2>Stack</h2><ul>
+<li>Javascript</li>
+<li>Node.js</li>
+<li>Express.js</li>
+<li>JsPsych</li>
+<li>D3.js</li>
+<li>ESDoc (for documentation)</li>
+</ul><h2>Structure</h2><p>Below is a very high-level overview of the entire structure. Basically:</p><ol>
+<li><code>conditions.js</code> feeds into the index to generate the UI, and send the correct identifiers for that condition.</li>
+<li>Upon user input on UI, we do a GET request to obtain the correct HTML based on <code>base experiment</code>. </li>
+<li>The experiment HTML is linked to an <strong>experiment timeline</strong> and <strong>model singleton class</strong>. <ul>
+<li>The timeline uses JsPsych, which helps order the presentation of what is displayed to the user.</li>
+<li>The singleton class extracts the right data, balances subconditions, does any calculations necessary on a trial-by-trial basis, and sends what needs to be presented to the timeline and to the <code>trial HTML</code>, which displays all trial presentations.</li>
+</ul>
+</li>
+<li>Experimental properties, such as graphing, constants used, balancing, or the type of distribution, are fed into the singleton or into the trial HTML (since it is doing the displaying).</li>
+</ol><p><img src="/VCLWebFramework/manual/img/architecture.png" alt="image of architecture"></p></div>
+        <a data-ice="link" href="manual/architecture.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Experiments</h1><p>These are the following experiments supported by our framework. The table lists the values for the different identifiers used.</p><p>For the Madison&apos;s multiple ensemble experiments from December 2018, it is in the repo <a href="https://github.com/Wongelawit/Correlation_MultipleEnsemble">here</a> - you need to pull the <code>Numerosity-Task</code> and <code>visualSearch</code> branches independently. (So the experiments are <strong>NOT</strong> on master.)</p><p>Look <a href="/VCLWebFramework/manual/terminology.html#condition-identifiers">here</a> to understand what identifiers are.</p></div>
+        <a data-ice="link" href="manual/experiments.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Code Review Process</h1><p>Below is the process the lab&apos;s developers use when reviewing new coded features and conditions to ensure correct functionality and coding standards</p><h2>Primary Code Reviewers</h2><p>Below are the people listed as code reviewers for major/critical new features and conditions. Their task is to ensure the code written fits the lab&apos;s coding standards and does not introduce new bugs into the framework</p><ul>
+<li><strong>Madison</strong></li>
+<li><strong>Kevin</strong></li>
+<li><strong>Kyle</strong></li>
+</ul><h2>Peer Code Reviewers</h2><p>For simpler features and conditions that are not time-sensitive and critical to the functionality of the lab. Peer developers will be done in pairs consisting of a senior and junior lab developer.</p><h3>Senior Peers</h3><p>Those who have implemented one or more new conditions or features within the framework</p><h3>Junior Peers</h3><p>Those who have just started out in the lab</p><h2>Stakeholders</h2><p>Stakeholders are the lab members who requested the new feature/condition. Once the developer is done coding the requested feature/condition, they should confirm with the stakeholder that the code fits their requirements before requesting a code review.</p><p>Possible stakeholders are listed below</p><ul>
+<li><strong>Prof. Ronald Rensink</strong></li>
+<li><strong>Madison</strong></li>
+<li><strong>Jessica</strong></li>
+<li><strong>Any researcher at the lab</strong></li>
+</ul><h2>Code Review Format</h2><h3>Environment</h3><ul>
+<li>For non-critical features/conditions, code reviews can be conducted through Google Hangouts and screen shares due to differing schedules </li>
+<li>For critical features relevant to current research, in-person code reviews are recommended</li>
+</ul><h3>Before the Review</h3><p>Developers must be able to test the new feature/condition and ensure it&apos;s working to stakeholder requirements</p><h4>For Conditions</h4><ul>
+<li>Are all subcondition variable combinations tested?</li>
+<li>Does the data properly save to the csv?</li>
+<li>Are all attributes needed by researchers printed out?</li>
+<li>Did the developer run the esdoc bin update command?</li>
+</ul><h4>For Features/Changes to Back-End Code</h4><ul>
+<li>Does the feature actually work without bugs?</li>
+<li>Were there compromises that were made?</li>
+<li>Is the workflow of the application disrupted in some way?</li>
+<li>Does it do what we want it to do?</li>
+</ul><h4>The Stakeholder Review</h4><p>Developers should meet with the stakeholder online/in-person and show the new condition/feature in action.
+Once the stakeholder gives the approval, the developer can make a pull request and request a code review.</p><h3>The Code Review Itself</h3><p>The code review is a meeting between a code-reviewer and a developer. The developer shows the feature in action and the code reviewer and developer look at the actual code to ensure quality.</p><h4>For the Reviewer:</h4><ul>
+<li>Are variables/functions properly named/documented?</li>
+<li>Is there code being repeated? Lots of if cases or functions that seem to do the same thing with only minor differences?</li>
+<li>Are functions too long? If so, make them into helper functions</li>
+<li>Does the new features actually work?</li>
+<li>Potential edge cases?</li>
+</ul><p>If additional fixes are needed, the code reviewer <strong>must document the requested changes on the created pull request.</strong></p><p>Once developer makes additional changes, they must schedule another code review (This one can be shorter or done with image sharing).</p><p>Once the code review is complete, the issue can be closed and the pull request merged in.</p><h2>Practices to Enforce</h2><p>To ensure consistency and ease of reference for future lab members, it&apos;s important to make sure code and documentation follows the same format.</p><h3>Logistical Practices</h3><h4>Github Issues</h4><p>This will be primary place to document and assign wanted features/conditions/bugs/experiment types etc
+ALL requirements, feedback, complications, related issues must be documented in Github Issues</p><h4>Branch naming</h4><p>MUST HAVE CONSISTENT NAMING: <code>&lt;issue name&gt;_&lt;developer&gt;</code></p><h4>Branch merging</h4><ul>
+<li>This requires a pipeline to know which features are ready in the same time frame.</li>
+<li>Group issues together by completion date (Github milestones)</li>
+<li>Constant git pulls. If features take more than a week to implement, <strong>must remind them to git pull or rebase from master to update their working copy</strong> so they don&#x2019;t try to merge in outdated code.</li>
+</ul><h3>Coding Practices</h3><h4>Quick code</h4><ul>
+<li>Reduce nested for-loops if possible</li>
+<li>Ensure performance doesn&apos;t take a hit</li>
+</ul><h4>Readable code</h4><ul>
+<li>If a function is too bloated move parts into separate helper functions</li>
+<li>If code is repeated across different cases with minimal differences, try combining them into one function</li>
+</ul><h4>Self-documenting Code</h4><ul>
+<li>Variables and functions properly named (no <em>var x = 0;</em>)</li>
+<li>Comments if needed<h5 id="all-new-functions-need-a-description-in-the-preamble">All new functions need a description in the preamble</h5></li>
+<li>Describe what the function does</li>
+<li>Describe arguments taken in</li>
+<li>Describe in what format the function outputs</li>
+<li>Example input/output if necessary</li>
+</ul><h4>Documented Mark-Down Files</h4><ul>
+<li>Refer to wiki for how-to</li>
+<li>For new experiments or properties</li>
+<li>E.g. since we have new dot types (outlines) these properties need to be documented.</li>
+</ul></div>
+        <a data-ice="link" href="manual/code_review.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>&gt;&gt; JND</h1><ul>
+<li><strong>Task</strong>: Discrimination</li>
+<li><strong>Method</strong>: Forced choice with Staircase</li>
+</ul><h2>Specifications</h2><p><strong>_</strong>Note that all CAPPED variables are constants taken from the excel sheets/data file.<strong>_</strong></p><ul>
+<li>For a given subcondition, there are at minimum 24 trials and at maximum 52. Once a user has reached the 24th trial, we start computing for convergence by calculating an F-value to see if it is lower than the threshold. <ul>
+<li>If the F-value is &lt; <code>(1-CONVERGENCE_THRESHOLD)</code>, then the current subcondition ends, and proceeds to the next subcondition.</li>
+<li>If the F-value is &gt;= <code>(1-CONVERGENCE_THRESHOLD)</code>, then the trials continue.</li>
+</ul>
+</li>
+</ul><h3>Practice Procedure</h3><ul>
+<li>We choose 4 subconditions randomly, and let the participant run through those. It otherwise follows the same procedure like the test detailed below.</li>
+</ul><h3>Test Procedure</h3><ul>
+<li>For a given subcondition&apos;s trial:<ul>
+<li>The BASE_CORRELATION for that subcondition will be used to calculate the distribution of one plot, but we need to calculate the adjusted correlation on a trial-by-trial basis.<ul>
+<li><em>At the first presentation of a trial</em>, there is a need to compute the adjusted correlation. <ul>
+<li>If converging from above, we calculate it by: <code>Math.min(MAX_CORRELATION, BASE_CORRELATION + INITIAL_DIFFERENCE)</code></li>
+<li>If converging from below, we calculate it by: <code>Math.max(MAX_CORRELATION, BASE_CORRELATION - INITIAL_DIFFERENCE)</code></li>
+</ul>
+</li>
+<li><em>If this is NOT the first presentation of a trial</em>, then use the <strong>staircase method</strong> to calculate the adjusted correlation. <ul>
+<li>If converging from above:<ul>
+<li>If the <strong>previous</strong> trial was correct, adjusted correlation = <code>Math.max(INITIAL_DIFFERENCE, previous adjusted correlation - MAX_STEP_SIZE)</code></li>
+<li>If the <strong>previous</strong> trial was incorrect, adjusted correlation = <code>Math.min(MAX_CORRELATION, previous adjusted correlation + MAX_STEP_SIZE * INCORRECT_MULTIPLIER)</code></li>
+</ul>
+</li>
+<li>If converging from below:<ul>
+<li>If the <strong>previous</strong> trial was correct, adjusted correlation = <code>Math.min(INITIAL_DIFFERENCE, previous adjusted correlation + MAX_STEP_SIZE)</code></li>
+<li>If the <strong>previous</strong> trial was incorrect, adjusted correlation = <code>Math.max(MIN_CORRELATION, previous adjusted correlation - MAX_STEP_SIZE * INCORRECT_MULTIPLIER)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Generate a gaussian distribution using the BASE_CORRELATION and adjusted correlation.</li>
+<li>Plot each distribution onto a separate plot, and randomize whether the right/left plots get the base or adjusted correlation. The manner in which the distribution is plotted varies depending on the type of plot. For example:<ul>
+<li>For a conventional strip, the x coordinate defines the horizontal translation while the y coordinate determines the height of the &quot;strip&quot;.</li>
+<li>For a conventional ring, the x coordinate defines the horizontal translation while the y coordinate determines the radius of the &quot;ring&quot;.</li>
+</ul>
+</li>
+<li>A user can make keyboard inputs with the &quot;z&quot; or &quot;m&quot; keys. &quot;z&quot; corresponds to the left graph, &quot;m&quot; corresponds to the right graph.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h2>JsPsych Timeline</h2><h3>General Timeline</h3><pre><code><code class="source-code prettyprint">- Display instructions
+- Ready screen
+- Display JND practice trials {
+    For a given JND experiment, continue to display trials if: 
+    - There are still more practice subconditions
+  }  
+- Stop screen
+- Ready screen
+- Display JND test trials {
+    For a given JND experiment, continue to display trials if: 
+    - There are still more test subconditions
+  }  
+- Stop screen with data download options</code>
+</code></pre><h3>Trial Logic</h3><p>Within the trial object, all computations for distributions and constants are performed in the <code>on_start()</code> function. This means that prior to a trial executing, we perform ALL operations detailed in this function. This trial object can be found on line 120 in <code>scripts/experiments/jnd.js</code>. </p><p>In general, this is what is executed:</p><pre><code class="lang-javascript"><code class="source-code prettyprint">on_start: function(){
+
+  // Retrieve the constants (i.e variables listed in the section below) for the given subcondition index i
+  var constants = get_constants_for_subcondition(i); 
+
+  // Calculate adjusted correlation
+  // (Refer to next section for pseudocode of this function)
+  var adjusted_correlation = calculate_adjusted_correlation(constants);
+
+  // Save all relevant constants of this trial to the JsPsych data object
+  handle_data_saving(constants); 
+
+  var base_coordinates = generate_distribution(constants.BASE_CORRELATION, 
+                                               constants.ERROR, 
+                                               constants.NUM_POINTS, 
+                                               constants.NUM_SD, 
+                                               constants.MEAN,
+                                               constants.SD);
+
+  var adjusted_coordinates = generate_distribution(adjusted_correlation, 
+                                               constants.ERROR, 
+                                               constants.NUM_POINTS, 
+                                               constants.NUM_SD, 
+                                               constants.MEAN,
+                                               constants.SD);
+
+  // Randomize position of the base/adjusted correlations to be either left/right
+  // and keep these positions constant for a given subcondition
+  var result = randomize_position(base_coordinates, adjusted_coordinates);
+
+  // Set these correlations to the global D3 variables used for plotting
+  left_coordinates = result.left;
+  right_coordinates = result.right; 
+
+} </code>
+</code></pre><h3>Adjusted Correlation</h3><p>Below is the pseudocode for how the adjusted correlation value is generated for a given trial. </p><pre><code class="lang-javascript"><code class="source-code prettyprint">
+var MIN_CORRELATION = 0.0;
+var MAX_CORRELATION = 1.0;
+var INCORRECT_MULTIPLIER = 3;
+
+function calculate_adjusted_correlation(constants){
+
+   // If first trial, compute solely using constants:
+   if (this_is_the_first_trial()){
+      var adjusted_correlation = initialize_adjusted_statistic(constants.CONVERGE_FROM_ABOVE,
+                                                               constants.BASE_CORRELATION, 
+                                                               constants.INITIAL_DIFFERENCE);
+   }
+   // If not first trial, data from previous trial is needed:
+   else{
+     var last_JND_trial = get_data_from_last_trial();
+
+     var adjusted_correlation = get_next_adjusted_statistic(last_JND_trial.correct,
+                                                            constants.CONVERGE_FROM_ABOVE,
+                                                            last_JND_trial.adjusted_correlation,
+                                                            constants.BASE_CORRELATION,
+                                                            constants.MAX_STEP_SIZE);
+   }
+   return adjusted_correlation;
+}
+
+function initialize_adjusted_statistic(converge_from_above, base_correlation, initial_difference){
+
+  var adjusted_correlation;
+
+  if (converge_from_above){
+    adjusted_correlation = Math.min(MAX_CORRELATION, base_correlation + initial_difference); }
+  else{
+    adjusted_correlation = Math.max(MIN_CORRELATION, base_correlation - initial_difference);
+  };
+
+  return adjusted_correlation;
+}
+
+function get_next_adjusted_statistic(correct, converge_from_above, adjusted_quantity, base_correlation, max_step_size){
+
+  var next_adjusted_statistic;
+
+  var initial_difference = base_correlation;
+
+  if (converge_from_above) {
+    if (correct) {
+      next_adjusted_statistic = Math.max(initial_difference, adjusted_quantity - max_step_size);
+    } else {
+      next_adjusted_statistic = Math.min(MAX_CORRELATION, adjusted_quantity + max_step_size
+                                * INCORRECT_MULTIPLIER);
+    }
+  } else {
+    if (correct) {
+      next_adjusted_statistic = Math.min(initial_difference, adjusted_quantity + max_step_size);
+    } else {
+      next_adjusted_statistic = Math.max(MIN_CORRELATION, adjusted_quantity - max_step_size
+                                * INCORRECT_MULTIPLIER);
+    }
+  }
+
+  return next_adjusted_statistic;
+}</code>
+</code></pre><h3>Constants</h3><p>These are the constants extracted from the input excel sheets. The values of these constants differ for each sub condition.</p><ul>
+<li>BASE_CORRELATION</li>
+<li>ERROR</li>
+<li>MAX_STEP_SIZE</li>
+<li>CONVERGE_FROM_ABOVE</li>
+<li>INITIAL_DIFFERENCE</li>
+<li>NUM_POINTS</li>
+<li>MEAN</li>
+<li>SD</li>
+<li>NUM_SD</li>
+</ul></div>
+        <a data-ice="link" href="manual/jnd.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>&gt;&gt; JND Radius</h1><ul>
+<li><strong>Task</strong>: Discrimination</li>
+<li><strong>Method</strong>: Forced choice with Staircase</li>
+</ul><h2>Specifications</h2><p><strong>_</strong>Note that all CAPPED variables are constants taken from the excel sheets/data file.<strong>_</strong></p><ul>
+<li>For a given subcondition, there are at minimum 24 trials and at maximum 52. Once a user has reached the 24th trial, we start computing for convergence by calculating an F-value to see if it is lower than the threshold. <ul>
+<li>If the F-value is &lt; <code>(1-CONVERGENCE_THRESHOLD)</code>, then the current subcondition ends, and proceeds to the next subcondition.</li>
+<li>If the F-value is &gt;= <code>(1-CONVERGENCE_THRESHOLD)</code>, then the trials continue.</li>
+</ul>
+</li>
+</ul><h3>Test Procedure</h3><ul>
+<li>For a given subcondition&apos;s trial:<ul>
+<li>The BASE_RADIUS for that subcondition will be used to calculate the distribution of one plot, but we need to calculate the adjusted radius on a trial-by-trial basis.<ul>
+<li><em>At the first presentation of a trial</em>, there is a need to compute the adjusted radius. <ul>
+<li>If converging from above, we calculate it by: <code>BASE_RADIUS + INITIAL_DIFFERENCE</code></li>
+<li>If converging from below, we calculate it by: <code>BASE_RADIUS - INITIAL_DIFFERENCE</code></li>
+</ul>
+</li>
+<li><em>If this is NOT the first presentation of a trial</em>, then use the <strong>staircase method</strong> to calculate the adjusted radius. <ul>
+<li>If converging from above:<ul>
+<li>If the <strong>previous</strong> trial was correct, adjusted radius = <code>previous adjusted radius - 0.002</code></li>
+<li>If the <strong>previous</strong> trial was incorrect, adjusted correlation = <code>previous adjusted radius + 0.006</code></li>
+</ul>
+</li>
+<li>If converging from below:<ul>
+<li>If the <strong>previous</strong> trial was correct, adjusted correlation = <code>previous adjusted radius + 0.002</code></li>
+<li>If the <strong>previous</strong> trial was incorrect, adjusted correlation = <code>previous adjusted radius - 0.006</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Generate the shape using the BASE_RADIUS and adjusted radius.</li>
+<li>Plot each shape side by side, and randomize whether the right/left areas get the base or adjusted shapes.</li>
+<li>A user can make keyboard inputs with the &quot;z&quot; or &quot;m&quot; keys. &quot;z&quot; corresponds to the left graph, &quot;m&quot; corresponds to the right graph.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h3>Constants</h3><p>These are the constants extracted from the input excel sheets. The values of these constants differ for each sub condition.</p><ul>
+<li>BASE_RADIUS</li>
+<li>CONVERGE_FROM_ABOVE</li>
+<li>INITIAL_DIFFERENCE</li>
+</ul></div>
+        <a data-ice="link" href="manual/jnd_radius.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>&gt;&gt; Stevens</h1><ul>
+<li><strong>Task</strong>: Discrimination</li>
+<li><strong>Method</strong>: Estimation w/ Bisection</li>
+</ul><h2>Specifications</h2><p><strong>_</strong>Note that all CAPPED variables are constants taken from the excel sheets/data file.<strong>_</strong></p><h3>Practice Procedure</h3><ul>
+<li>We choose the first <strong>4</strong> subconditions of the data constants (prior to any balancing being done on the subconditions). It otherwise follows the same procedure like the test detailed below.</li>
+<li>Exclusion criteria is calculated during the practice procedure. 2 values are calculated at the end of every subcondition, then stored to be displayed to the researcher who will then determine whether the participant should be excluded or not. <ul>
+<li>We calculate standard deviation using the estimated correlations at the end of a trial (e.g. the value when the user hits space bar).</li>
+<li>To calculate anchoring, summate the final estimated correlation values for when the trial started with the LOW_REF for the middle plot, and the values for when the trial started with the HIGH_REF for the middle plot. So there would be 2 values for when the user started on LOW_REF, and 2 values for when the user started on HIGH_REF. Then take the absolute difference between these 2 sums.<ul>
+<li><code>anchoring_value = Math.abs(high_ref_trial_sum - low_ref_trial_sum)</code></li>
+</ul>
+</li>
+<li>So essentially, there will be 4 sets of anchoring and standard deviation values. </li>
+<li>A subcondition is flagged if the anchoring value &gt; 0.5 or if the standard deviation is &gt; 0.2. </li>
+</ul>
+</li>
+</ul><h3>Test Procedure</h3><ul>
+<li>A subcondition&apos;s structure is &quot;nested&quot; in a sense, in which the user has <strong>4</strong> tries (TRIALS_PER_ROUND) to set the middle graph to be the midpoint between the two other plots. <ul>
+<li>For example: let us say a subcondition is defined to have a high correlation (HIGH_REF) of 1.0 and a low correlation (LOW_REF) of 0. These are the R values for the two comparison plots. However, the starting value for the middle plot (the one that participants adjust) will alternate between starting off as the HIGH_REF or LOW_REF.<ul>
+<li>Trial 1: middle graph&apos;s starting correlation = LOW_REF</li>
+<li>Trial 2: middle graph&apos;s starting correlation = HIGH_REF</li>
+<li>Trial 3: middle graph&apos;s starting correlation = LOW_REF</li>
+<li>Trial 4: middle graph&apos;s starting correlation = HIGH_REF</li>
+</ul>
+</li>
+<li>A trial is defined as a series of presentations using the HIGH_REF and LOW_REF values, in which the position of the HIGH_REF and LOW_REF distributions are constant (e.g. in Round 1: right graph = HIGH_REF, left graph = LOW_REF). The positioning of whether the left/right plots get which distribution is random <strong>across</strong> trials, but <strong>consistent</strong> within a trial. So Round 2 might have the right graph = LOW_REF and left graph = HIGH_REF instead.<ul>
+<li>Within a given trial, the user can use the &quot;z&quot; or &quot;m&quot; keys to decrease or increase respectively the correlation of the middle graph. Once the user believes that their middle correlation is a midpoint between the two straddling graphs, they hit <em>spacebar</em> to lock in their answer. So this process happens 4 times, with (a) the middle graph alternating between taking the LOW or HIGH_REF, and (b) the straddling graphs randomizing in position in terms of whether the left or right get the HIGH and LOW_REF correlations.<ul>
+<li>To calculate the estimated correlation with respect to the key press (e.g. they want to increase or decrease the correlation), the following formulas apply:</li>
+</ul>
+</li>
+<li><code>step_size = (HIGH_REF - LOW_REF) / MAX_STEP_INTERVAL</code></li>
+<li>If increasing the correlation, <code>estimated_correlation = Math.min(HIGH_REF, last trial&apos;s estimated correlation + (Math.random() * step_size)</code></li>
+<li>If decreasing the correlation, <code>estimated_correlation = Math.max(LOW_REF, last trial&apos;s estimated correlation - (Math.random() * step_size)</code><ul>
+<li>Within a given trial, all the distributions will <strong>refresh</strong> (e.g. new distributions will be generated using the HIGH_REF, LOW_REF and estimated correlation values) with a refresh rate defined by REGEN_RATE. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Distributions used are gaussian. The manner in which the distribution is plotted varies depending on the type of plot. For example:<ul>
+<li>For a conventional strip, the x coordinate defines the horizontal translation while the y coordinate determines the height of the &quot;strip&quot;.</li>
+<li>For a conventional ring, the x coordinate defines the horizontal translation while the y coordinate determines the radius of the &quot;ring&quot;.</li>
+</ul>
+</li>
+</ul><h2>JsPsych Timeline</h2><pre><code><code class="source-code prettyprint">- Display instructions
+- Ready screen
+- Display Stevens practice trials {
+    For a given Stevens experiment, continue to display trials if: 
+    - The person has inputted less than the value of TRIALS_PER_ROUND for a given subcondition, or, 
+    - There are still more subconditions to show, or
+    - The person&apos;s performance has not passed the exclusion criteria
+  }  
+- Stop screen
+- Ready screen
+- Display Stevens test trials {
+    For a given Stevens experiment, continue to display trials if: 
+    - The person has inputted less than the value of TRIALS_PER_ROUND for a given subcondition, or, 
+    - There are still more subconditions to show
+  }  
+- Stop screen with data download options</code>
+</code></pre><h3>Trial Logic</h3><p>Within the trial object, all computations for distributions and constants are performed in the <code>on_start()</code> function. This means that prior to a trial executing, we perform ALL operations detailed in this function. This trial object can be found on line 123 in <code>scripts/experiments/stevens.js</code>. </p><p>In general, this is what is executed:</p><pre><code class="lang-javascript"><code class="source-code prettyprint">on_start: function(){
+
+  // Retrieve the constants (i.e variables listed in the section below) for the given subcondition index i
+  var constants = get_constants_for_subcondition(i); 
+
+  // Save all relevant constants of this trial to the JsPsych data object
+  handle_data_saving(constants); 
+
+  // Update the estimated correlation
+  // (Refer to next section for pseudocode of this function)
+  var estimated_correlation = update_estimated_correlation(this.trial, constants, last_trial); 
+
+  // Generate the gaussian distributions
+  var high_coordinates = generate_distribution(constants.HIGH_REF, 
+                                               constants.ERROR, 
+                                               constants.NUM_POINTS, 
+                                               constants.NUM_SD, 
+                                               constants.MEAN,
+                                               constants.SD);
+
+  var high_coordinates = generate_distribution(constants.LOW_REF, 
+                                               constants.ERROR, 
+                                               constants.NUM_POINTS, 
+                                               constants.NUM_SD, 
+                                               constants.MEAN,
+                                               constants.SD);
+
+  var estimated_coordinates = generate_distribution(estimated_correlation, 
+                                               constants.ERROR, 
+                                               constants.NUM_POINTS, 
+                                               constants.NUM_SD, 
+                                               constants.MEAN,
+                                               constants.SD);
+
+  // Randomize position of the low/high correlations to be either left/right
+  // and keep these positions constant for a given subcondition
+  if (is_last_trial_of_subcondition(i)){
+    var result = randomize_position(high_coordinates, low_coordinates);
+  }
+
+  // Set these correlations to the global D3 variables used for plotting
+  left_coordinates = result.left;
+  right_coordinates = result.right; 
+  middle_coordinates = estimated_coordinates;
+
+} </code>
+</code></pre><h3>Estimated Correlation</h3><p>Below is the pseudocode for how the estimated correlation value is generated for a given trial. </p><pre><code class="lang-javascript"><code class="source-code prettyprint">var MAX_STEP_INTERVAL = 10;
+
+function update_estimated_correlation(trial, constants, last_trial){
+
+  var estimated_correlation;
+
+  // If this is the first trial, we need to initialize the middle correlation value
+  if (this_is_the_first_trial()){
+    estimated_correlation = Math.random() &lt; 0.5 ? constants.LOW_REF : constants.HIGH_REF;
+    trial.data.step_size = (constants.HIGH_REF - constants.LOW_REF) / MAX_STEP_INTERVAL;
+  }
+
+  // If there was a key press in the last value, we set this current trial&apos;s middle correlation value
+  // to be based on that input
+  else if (last_trial.key_press != null &amp;&amp; last_trial.key_press.is_valid_value){
+    if (last_trial.key_press == UP_VALUE){
+      estimated_correlation = Math.min(constants.HIGH_REF, last_trial.estimated_correlation + (Math.random() * 
+      last_trial.step_size));
+    }
+    else if (last_trial.key_press == DOWN_VALUE){
+      estimated_correlation = Math.max(constants.LOW_REF, last_trial.estimated_correlation - (Math.random() * 
+      last_trial.step_size));
+    }
+  }
+
+  // If there was no input in the last trial
+  else {
+    estimated_correlation = last_trial.estimated_correlation;
+  }
+
+  return estimated_correlation;
+}</code>
+</code></pre><h3>Constants</h3><p>These are the constants extracted from the input excel sheets. The values of these constants differ for each sub condition.</p><ul>
+<li>DISTRIBUTION_TYPE</li>
+<li>ROUND_TYPE</li>
+<li>TRIALS_PER_ROUND</li>
+<li>HIGH_REF</li>
+<li>LOW_REF</li>
+<li>ERROR</li>
+<li>NUM_POINTS</li>
+<li>POINT_SIZE</li>
+<li>POINT_COLOR</li>
+<li>BACKGROUND_COLOR</li>
+<li>TEXT_COLOR</li>
+<li>AXIS_COLOR</li>
+<li>REGEN_RATE</li>
+<li>MEAN</li>
+<li>SD</li>
+<li>NUM_SD</li>
+</ul></div>
+        <a data-ice="link" href="manual/stevens.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>&gt;&gt; Estimation</h1><ul>
+<li><strong>Task</strong>: Discrimination</li>
+<li><strong>Method</strong>: Estimation w/ Bisection</li>
+</ul><h2>Specifications</h2><ul>
+<li>This task presents 2 shapes side by side. One shape is the reference shape, while the other is the modifiable shape, in which the user can increase or decrease the size of the shape (by pressing the M or Z keys). The goal is that the user will adjust the size of the modifiable shape so that it is as equal as possible to the reference shape&apos;s area. </li>
+<li>Subconditions:<ul>
+<li>3 types of shapes - circle, square, or triangle<ul>
+<li>So there are 3 x 3 = 9 different permutations of paired shapes (e.g. circle-circle, circle-square, circle-triangle etc.) - duplicates (3) = 6 permutations</li>
+</ul>
+</li>
+<li>3 sizes that the reference shape can start on - 2cm, 4cm or 6 cm</li>
+<li>2 ways the modifiable shape can &quot;start&quot; on e.g. they can be either <em>smaller</em> or <em>larger</em> in size than the reference shape<ul>
+<li>For 2cm reference shape, low = 1.2, high = 3</li>
+<li>For 4cm reference shape, low = 3.1, high = 5.3</li>
+<li>For 6cm reference shape, low = 5.0, high = 6.5</li>
+</ul>
+</li>
+<li><strong>Total number of subconditions</strong> = 6 [permutation of pairs] x 3 [possible reference sizes] = 18 subconditions</li>
+</ul>
+</li>
+<li>Randomize the order of the 18 subconditions.</li>
+<li><p>On a given subcondition:</p>
+<ul>
+<li>The reference and modifiable shape positions can be either left or right (randomized). So before a subcondition starts, there will be text like &quot;Adjust the shape on the <em>left/right</em> so that its size equals that of the other shape.&quot;</li>
+<li>For a given subcondition, there are 4 trials. In each trial, the user basically has to make the modifiable shape the same as the reference shape. On a given trial:<ul>
+<li>For trials 1 and 3, the modifiable shape&apos;s size will start on the low value as specified above (e.g. if 2cm is the reference shape, then modifiable shape&apos;s size is 1.2)</li>
+<li>For trials 2 and 4, the modifiable shape&apos;s size will start on the high value as specified above.</li>
+<li>The y position of the shapes relative to each other should be slightly jittered (e.g. if have a circle and square, the circle is not completely aligned with the square, so could be a few pixels higher or lower etc.) - the degree of jitter can be randomized.</li>
+<li>The user can press the z [make shape bigger] or m [make shape smaller] keys.<ul>
+<li>The step size of the adjustment will be randomized (so not constant).</li>
+</ul>
+</li>
+<li>They can adjust for an unlimited amount of times.</li>
+<li>Once satisfied, they hit space bar, which then records the size of their modified shape.</li>
+<li>This happens 3 more times (for the same subcondition).</li>
+</ul>
+</li>
+<li>After the 4 trials for a given subcondition, experiment then moves to the next subcondition.</li>
+</ul>
+<h2 id="summer-2019-updates">Summer 2019 Updates</h2><p>We implemented a series of new estimation conditions to do with measuring area ratios. Tina&apos;s pdf spec is <a href="/VCLWebFramework/manual/files/Estimation-Interference-Spec.pdf">here</a>.</p>
+<ul>
+<li>List of new conditions:<ul>
+<li>Square, Circle Interference</li>
+<li>Circle Interference</li>
+<li>Multi Square Interference</li>
+<li>Multi Shape Interference</li>
+<li>Multi Fan Interference</li>
+<li>Absolute Area Ratio</li>
+<li>Absolute Area Ratio Bisection (Variant A)</li>
+<li>Absolute Area Ratio Bisection (Variant B)</li>
+<li>Multi Fan Interference (Part B)</li>
+<li>Multi Square Cutout Interference</li>
+<li>Absolute Area Ratio Flicker</li>
+<li>Absolute Area Ratio Bisection (Variant A) Flicker</li>
+<li>Multi Fan Interference (Part B) Flicker</li>
+<li>Multi Square Cutout Interference Flicker </li>
+</ul>
+</li>
+<li>** All the flicker conditions are identical to the original condition of the same name, except there is 1000 ms on and 1000 off duration on the ref shapes.</li>
+</ul>
+<h3 id="code-updates">Code Updates</h3><ul>
+<li>There are 4 different kinds of configurations:<ul>
+<li><strong>Single-single</strong> : one shape on ref side and one on mod side (e.g. anything done before the interference conditions)</li>
+<li><strong>Multi-multi</strong> : 2 shapes on ref side and 2 shapes on mod side. On mod side, ONE shape is the one getting modified (e.g. Multi Square Interference, Multi Fan Interference etc.)<ul>
+<li>Attributes <code>mod_side_alignment</code> and <code>ref_side_alignment</code> define the types of alignment on mod/ref side, as sometimes alignment is not the same for both.</li>
+<li>Attributes <code>mod_side_shapes</code> and <code>ref_side_shapes</code> need to be defined to tell framework what kinds of shapes are on each side.</li>
+<li>Attributes <code>mod_ratio</code> and <code>ref_ratio</code> need to be defined so the framework knows what area ratio needs to be maintained on each side.</li>
+</ul>
+</li>
+<li><strong>Bisection</strong> : the modi shape is in the center, straddled by 2 ref shapes on left and right. Acts similarly to stevens (e.g. Absolute Area Ratio Bisection)<ul>
+<li>Attribute <code>ref_size</code> now takes in array of TWO numbers (since there are 2 ref shapes)</li>
+</ul>
+</li>
+<li><strong>Interference</strong> : one shape on ref side and one on mod side - but the shape on the mod side is a compound shape (e.g. Circle, Square Interference) (AKA a triangle is embedded inside a circle, and the whole thing scales with user input)</li>
+</ul>
+</li>
+<li>All the graphical code previously in model level AKA <code>estimation.js</code> now lives inside the graphing component as a custom script (<code>estimation_plot.js</code>).</li>
+<li>All computations for shape properties like size, x_pos, y_pos etc. is done at model level due to complexity.</li>
+<li>New shapes are the fan and cutout-square shapes, otherwise everything else uses Zoe&apos;s D3 code.</li>
+<li>Flicker capability is added on reference shapes - can control duration of how long shapes show, and how long shapes don&apos;t show. This essentially then loops e.g. if <code>duration_on</code> = 1000ms and <code>duration_off</code> = 1500ms, flicker will be: show shapes for 1000ms, then off for 1500ms, then on for 1000ms etc. </li>
+<li>Initially all the subconditions were programmatically generated as per Zoe&apos;s original code. It was becoming tricky to extend because new conditions did not necessarily generate subconditions in the same way, so to make it easier for Tina to customize her values, I refactored  <code>estimation_data.js</code> to be similar to <code>jnd_data.js</code> where every subcondition attribute is defined (so no longer generated programmatically).</li>
+</ul>
+</li>
+</ul></div>
+        <a data-ice="link" href="manual/estimation.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Supported Properties</h1><h2>Identifiers</h2><p>Below are all the supported values for each of the four identifiers. </p><h3>Base Experiment</h3><h3>Trial Structure</h3><p>### </p><h3>Graph Types</h3><h2>Subcondition Attributes</h2><p>Below are each of the attributes used to define a subcondition. For experimental attributes, some attributes 
+MUST be defined depending on the experiment. Usually, if you are adding a new condition that uses a pre-existing trial structure, the base subconditions from the trial structure already define all these attributes.</p><p>Depending on the graph type of the condition, certain graphical attributes can be customized. They will default 
+to a specific value if they are not defined in your new condition.</p><h3>Experimental Attributes</h3><h3>Graphical Attributes</h3></div>
+        <a data-ice="link" href="manual/supported_properties.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Conditions</h1><p>Below is a list of all supported conditions in the framework organized by experiment.</p><p>** 1/2/2019 - Madison&apos;s Visual Search + Numerosity experiments from December 2018 can be found <a href="https://github.com/Wongelawit/Correlation_MultipleEnsemble/tree/Numerosity-Task">here.</a></p></div>
+        <a data-ice="link" href="manual/conditions.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Developing New Conditions</h1><h2>For Researchers</h2><p>If you are planning to add a new condition that uses the base experiments already supported, please provide the following information.</p><p>To see what identifiers are supported, refer to the page <a href="/VCLWebFramework/manual/supported_properties.html">here</a>.</p><ul>
+<li><strong>Condition Name</strong></li>
+<li><strong>High-Level Description of Condition</strong></li>
+<li><strong>Identifiers</strong><ul>
+<li><strong>Base Experiment</strong></li>
+<li><strong>Trial Structure</strong></li>
+<li><strong>Balancing</strong></li>
+<li><strong>Graph Type</strong></li>
+</ul>
+</li>
+<li><strong>Subconditions</strong><ul>
+<li><strong>How many subconditions?</strong></li>
+<li><strong>What is changing on each subcondition? List all variables.</strong></li>
+<li><strong>How are each of the variables being changed? List all equations/computations needed if changing on a trial-by-trial basis.</strong></li>
+</ul>
+</li>
+</ul><h3>Example</h3><p>Let us say you want to make a new condition for a JND Design experiment that changes point size on each grouping of the Design trial structure. This is what your information would look like:</p><ul>
+<li><strong>Condition Name</strong>: small_point_sizes</li>
+<li><strong>High-Level Description of Condition</strong>: Standard JND scatter plot condition, except point sizes vary between 5 - 13 pixels for each 0.3, 0.6, 0.9 base correlation grouping.</li>
+<li><strong>Identifiers</strong><ul>
+<li><strong>Base Experiment</strong>: JND</li>
+<li><strong>Trial Structure</strong>: Design</li>
+<li><strong>Balancing</strong>: Latin Square</li>
+<li><strong>Graph Type</strong>: Scatter</li>
+</ul>
+</li>
+<li><strong>Subconditions</strong><ul>
+<li><strong>How many subconditions?</strong>: 15</li>
+<li><strong>What is changing on each subcondition? List all variables.</strong>: Point size</li>
+<li><strong>How are each of the variables being changed on each subcondition? List all equations/computations needed if changing on trial-by-trial basis.</strong>: The design trial structure has 5 groupings of the base_correlation = 0.3, 0.6, 0.9, making 15 total subconditions. For each group, point size is different.<ul>
+<li>Group 1 point size = 5 px</li>
+<li>Group 2 point size = 7 px</li>
+<li>Group 3 point size = 9 px</li>
+<li>Group 4 point size = 11 px</li>
+<li>Group 5 point size = 13 px</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h2>For Developers</h2><h3>(1) Add to config</h3><ul>
+<li>Under <code>public/config/conditions-config</code>, add a new key and javascript object at the bottom. The object should something like below.<ul>
+<li>Refer <a href="/VCLWebFramework/manual/supported_properties.html#identifiers">here</a> for what is supported on each identifier (experiment, graph type, trial structure, balancing).</li>
+</ul>
+</li>
+</ul><pre><code><code class="source-code prettyprint">name_of_new_condition: {
+    experiment: [],
+    graph_type: [],
+    trial_structure: [],
+    balancing: &quot;&quot;,
+    display_name: &quot;New condition name&quot;,
+    display_info: {
+        description: &quot;&quot;,
+        researcher: &quot;&quot;,
+        developer: &quot;&quot;
+    }
+}    </code>
+</code></pre><ul>
+<li>Check that when you load the UI, your condition is visible with the identifiers specified.</li>
+<li>Note that <code>experiment</code>, <code>graph_type</code> and <code>trial_structure</code> can take multiple strings (in an array). So you can have the SAME condition name, with the same kind of subcondition-level manipulation, but different underlying base experiment, different graph type, or different trial structure. Good examples of these are the base experiments that run across JND and Stevens.</li>
+</ul><p>If we use the example from above, the JS object looks like this:</p><pre><code><code class="source-code prettyprint">small_point_sizes: {
+    experiment: [&quot;jnd&quot;],
+    graph_type: [&quot;scatter&quot;],
+    trial_structure: [&quot;design&quot;],
+    balancing: &quot;latin_square&quot;,
+    display_name: &quot;Small Point Sizes&quot;,
+    display_info: {
+        description: &quot;Standard JND scatter plot condition, except point sizes vary between&quot; +  
+                     &quot;5 - 13 pixels for each 0.3, 0.6, 0.9 base correlation grouping.&quot;,
+        researcher: &quot;Caitlin Coyiuto&quot;,
+        developer: &quot;Caitlin Coyiuto&quot;
+    }
+}</code>
+</code></pre><h3>(2) Add subconditions</h3><ul>
+<li>Open the right data file for the experiment - they are under <code>public/scripts/experiment-properties/data/constants</code>.<ul>
+<li>How the subconditions work is that for a given trial structure, the application <strong>MERGES</strong> all attributes defined in the <code>BASE</code> object with all attributes defined in the <code>CONDITIONS</code> object. From the example, <code>small_point_sizes</code> is a JND condition using a design trial structure. So the app generates the subconditions for <code>small_point_sizes</code> by merging the attributes from <code>JND_BASE[&quot;design&quot;]</code> and <code>JND_CONDITIONS[&quot;small_point_sizes&quot;]</code>.</li>
+</ul>
+</li>
+<li>If the trial structure is already supported, you would only need to add all subconditions in a <code>key: []</code> structure to the <code>CONDITIONS</code> object.<ul>
+<li>Add a new key-value pair into the object for <code>CONDITIONS</code>, with key being the <code>condition_name</code> and the value being an array of associative arrays. <ul>
+<li>Each associative array = one subcondition. </li>
+</ul>
+</li>
+<li>The keys for each associative array are any of the attributes found <a href="/VCLWebFramework/manual/supported_properties.html#subcondition-attributes">here</a>.</li>
+<li>Some notes:<ul>
+<li>The number of entries in the array <strong>must match</strong> the number of entries in the trial structure array. (E.g. if the design trial structure has 15 subconditions/rows, then the new array under <code>CONDITIONS</code> must also have 15 rows).</li>
+<li>You can <strong>OVERRIDE</strong> any of the attributes found in the base subconditions. E.g. you can redefine &quot;point_size&quot; in your subcondition if you are changing it on a subcondition-basis.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><p>An example of a new object holding all subconditions should look something like this:</p><pre><code><code class="source-code prettyprint">name_of_new_condition:
+[
+    {attribute1: ___, attribute2: ____}, //first subcondition
+
+    {attribute1: ___, attribute2: ____}, //second subcondition
+
+    {attribute1: ___, attribute2: ____}, //third...
+
+    {attribute1: ___, attribute2: ____},
+
+    .....                                //Number of rows = number of rows or subconditions in trial structure
+]</code>
+</code></pre><p>Using the example from above, we are just changing <code>point_size</code>, so we need to define each of the sizes on every subcondition.
+Note that the subconditions for a JND Design already has <code>point_size</code> (look at <code>JND_BASE[&quot;design&quot;]</code>). By re-defining the <code>point_size</code>
+attribute here, you are <strong>OVERRIDING</strong> the <code>point_size</code> variable in the base. Also note that the number of rows below are equal to the number of rows in <code>JND_BASE[&quot;design&quot;]</code>.</p><pre><code><code class="source-code prettyprint">small_point_sizes:
+    [
+    {point_size: 5},
+
+    {point_size: 5},
+
+    {point_size: 5},
+
+    {point_size: 7},
+
+    {point_size: 7},
+
+    {point_size: 7},
+
+    {point_size: 9},
+
+    {point_size: 9},
+
+    {point_size: 9},
+
+    {point_size: 11},
+
+    {point_size: 11},
+
+    {point_size: 11},
+
+    {point_size: 13},
+
+    {point_size: 13},
+
+    {point_size: 13},
+    ]</code>
+</code></pre><p>Again, depending on your trial structure, the application will merge the constants you define in <code>CONDITIONS</code> with any that are defined in the <code>BASE</code> to get all attributes for the subconditions. So for this example, all the subconditions for <code>small_point_sizes</code> is whatever is listed in the <code>JND_BASE[&quot;design&quot;]</code>, plus whatever is defined in the <code>CONDITIONS</code> variable. </p><pre><code><code class="source-code prettyprint">[
+    {distribution_type: &quot;gaussian&quot;, base_correlation: 0.3, error: 0.0001, max_step_size: 0.01, 
+    converge_from_above: true, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, 
+    num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, 
+    feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 5}, // &lt;-- point_size is now   
+                                                                                   // overriden (usually for JND 
+                                                                                   // design, point_size = 6)
+
+    {distribution_type: &quot;gaussian&quot;, base_correlation: 0.6, error: 0.0001, max_step_size: 0.01, 
+    converge_from_above: true, initial_difference: 0.1, num_points: 100, mean: 0.5, SD: 0.2, 
+    num_SD: 2.5, point_color: &apos;BLACK&apos;, axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, 
+    feedback_background_color: &apos;WHITE&apos;, background_color: &apos;WHITE&apos;, point_size: 5},
+    .....
+]</code>
+</code></pre><h3>(3) Update instructions</h3><p>Automatically, the application will use the default instructions specified for each experiment in <code>experiments-config.js</code> if no instructions are specified for the condition. For example, for JND:</p><pre><code><code class="source-code prettyprint">  jnd : {
+    .....
+    instructions: {
+      default_images: [&quot;scatter_1.png&quot;, &quot;scatter_2.png&quot;],
+      default_html: `
+        &lt;div align = &apos;center&apos; style=&apos;display: block&apos; &gt; 
+          &lt;p&gt;In this experiment, two graphs will appear side-by-side.
+                &lt;br&gt; Indicate which graph is more correlated by pressing the Z or M key. 
+                &lt;br&gt; Press any key to continue.
+                &lt;/p&gt;
+                &lt;div style=&apos;float: left; margin-right: 5vw&apos;&gt;
+                  &lt;img style= &apos;width: 20vw&apos; src=&apos;${ADDRESS}/img/instructions/jnd/image1.png&apos;&gt;&lt;/img&gt;
+                  &lt;p class=&apos;small&apos;&gt;&lt;strong&gt;Press the Z key&lt;/strong&gt;&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div style=&apos;float:right; margin-left: 5vw&apos;&gt;
+                  &lt;img style= &apos;width: 20vw&apos; src=&apos;${ADDRESS}/img/instructions/jnd/image2.png&apos;&gt;&lt;/img&gt;
+                  &lt;p class=&apos;small&apos;&gt;&lt;strong&gt;Press the M key&lt;/strong&gt;&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/div&gt; 
+            `    
+    },
+    ......
+</code>
+</code></pre><p>The default images are <code>scatter_1.png</code> and <code>scatter_2.png</code>, which replace <code>image1.png</code> and <code>image2.png</code>.</p><p>If you do not want to use the default images or default html, you will need to tack on an additional <code>instructions</code> key to the conditions object in <code>conditions-config.js</code>.</p><pre><code><code class="source-code prettyprint">name_of_new_condition: {
+  experiment: [],
+  graph_type: [],
+  trial_structure: [],
+  balancing: &quot;&quot;,
+  display_name: &quot;New condition name&quot;,
+  display_info: {
+    description: &quot;&quot;,
+    researcher: &quot;&quot;,
+    developer: &quot;&quot;
+  },
+  instructions: {
+    name_of_experiment: {
+      custom_html: ``
+      // OR 
+      custom_images: [&apos;image1.png&apos;, &apos;image2.png&apos; ... ]
+    }
+  }
+} </code>
+</code></pre><p>Inside the <code>instructions</code> object, you must supply either: </p><ul>
+<li>(a) <code>custom_html</code>, which takes in raw HTML, and will override the <code>default_html</code> and <code>default_images</code> inside <code>experiments-config.js</code>, OR</li>
+<li>(b) <code>custom_images</code>, which allows you to replace ONLY the <code>default_images</code> specified in the <code>experiments-config.js</code>. <ul>
+<li>All instruction images are inside <code>public/img/instructions</code>. Add your images into the <strong>corresponding experiment folder.</strong></li>
+<li>Make sure that the number of <code>custom_images</code> supplied equals the number of <code>default_images</code> listed inside <code>experiments-config.js</code>. E.g. if the default uses 2, then you need to supply 2 custom images.</li>
+</ul>
+</li>
+</ul><p>Using the <code>small_point_sizes</code> example:</p><pre><code><code class="source-code prettyprint">small_point_sizes: {
+  experiment: [&quot;jnd&quot;],
+  graph_type: [&quot;scatter&quot;],
+  trial_structure: [&quot;design&quot;],
+  balancing: &quot;latin_square&quot;,
+  display_name: &quot;Small Point Sizes&quot;,
+  display_info: {
+    description: &quot;Standard JND scatter plot condition, except point sizes vary between&quot; +  
+           &quot;5 - 13 pixels for each 0.3, 0.6, 0.9 base correlation grouping.&quot;,
+    researcher: &quot;Caitlin Coyiuto&quot;,
+    developer: &quot;Caitlin Coyiuto&quot;
+  },
+  instructions: {
+    jnd: {
+      custom_images: [&apos;small_point_1.png&apos;, &apos;small_point_2.png&apos;]
+    }
+  }
+}</code>
+</code></pre><h3>(4) Update docs</h3><p> The docs dynamically gets all the condition data specified in the config files. However, it needs to be compiled to be re-updated.</p><p> Run this in the command line:</p><p> <code>./node_modules/.bin/esdoc</code></p><p> And check that your condition exists in the <a href="/VCLWebFramework/manual/conditions.html">Conditions tab</a>.</p></div>
+        <a data-ice="link" href="manual/developing_new_conditions.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Developing New Properties</h1><p>Sometimes, new conditions require new properties to be added to the framework. This section goes through how to add new properties for each identifier.</p><h2>Trial Structures</h2><p>To add a new trial structure to an <strong>existing</strong> experiment:</p><ol>
+<li>In <code>public/config/trial-structure-config.js</code>, add a new key-object pair. Add the relevant doc information like the pre-existing trial structures.</li>
+<li>Make sure that the base experiment supports the new structure:</li>
+<li>In <code>public/config/experiments-config.js</code>, add the name of the new trial structure under the <code>trial_structure</code> key for the correct base experiment.</li>
+<li><p>Navigate to the right <code>public/scripts/data/constants/___data.js</code> file for the base experiment. Determine how many subconditions the structure will support, and add the new key-array object under the <code>&lt;experiment_name&gt;_BASE</code> object. For example:</p>
+<pre><code><code class="source-code prettyprint">const JND_BASE = {
+  ....
+
+  new_trial_structure: // &lt;--
+  [
+      { ... }
+      { ... }
+      etc. 
+  ]
+}</code>
+</code></pre><p>When adding the attributes, make sure you add <strong>all attributes that the experiment needs to run</strong>. Look at the attributes required for each experiment <a href="/VCLWebFramework/manual/supported_properties.html#experimental-attributes">here</a>.</p>
+</li>
+<li><p>In <code>public/scripts/data/custom_subcondition_generator.js</code>, add a new key-object pair under <code>CUSTOM_TRIAL_STRUCTURE_CONDITIONS</code>. </p>
+<pre><code><code class="source-code prettyprint">var CUSTOM_TRIAL_STRUCTURE_CONDITIONS = {
+ foundational : [],
+ ...
+
+ new_structure: [] // &lt;-- 
+}</code>
+</code></pre></li>
+</ol><h2>Balancing Types</h2><p>If you want to add a new way to balance subconditions:</p><ol>
+<li>In <code>public/config/balancing-config.js</code>, add a new key-object pair. Add the relevant doc information like the pre-existing balancing types.</li>
+<li>Create a new generator file inside <code>scripts/experiment-properties/balancing/generators</code>. It should take <strong>the length of the dataset array, and return the ordered indices of the subconditions.</strong> E.g., if the dataset has 4 subconditions, the random generator will give back [2, 0, 1, 3] AKA randomize the order of the indices.</li>
+<li>Make sure the balancing controller supports the new type. In <code>scripts/experiment-properties/balancing/balancing_controllers.js</code>, import the function from your generator js, then add another case in the switch statement.</li>
+<li>Make sure that the base experiment supports the new structure. In <code>public/config/experiments-config.js</code>, add the name of the new balancing type under the <code>balancing_type</code> key for the correct base experiment.</li>
+</ol><h2>Graph-Related</h2><p>In terms of graph-related properties, you could either be adding attributes to an <strong>already existing graph type</strong>, or adding an entire new type of <strong>plot or graph type</strong>. </p><h3>Graphical Attributes</h3><p>This assumes that you are adding to a <strong>pre-existing graph type</strong>. E.g. if you want to add <code>stroke_width</code> to the <code>scatter</code> graph type.</p><ol>
+<li>In <code>public/config/graphing-config.js</code> add a key-object pair under the <code>attributes</code> of the graph type. Fill in the doc information, and what the default value is. If the attribute only takes in a <strong>fixed</strong> set of inputs, add a key called <code>valid_inputs: [input1, input2 .... ]</code>.</li>
+<li>Add d3 code to handle the new attribute. Open the right js file corresponding to the graph type in <code>public/scripts/graphing/d3-base-plots</code>. </li>
+</ol><h3>Graph Types</h3><p>If you want to add a <strong>completely new graph type</strong> (AKA plot):</p><ol>
+<li>In <code>public/config/graphing-config.js</code>, add a new key-object pair for the graph type. Add the doc information, and all the attributes that can be manipulatable by subconditions.</li>
+<li>In <code>public/config/experiments-config.js</code>, add the name of the graph type under the experiment that it will support.</li>
+<li>In <code>public/scripts/experiment-properties/graphing/graphing_controller.js</code>:<ul>
+<li>Add a new switch case in <code>plot_distributions</code>. </li>
+<li>Add a new &quot;prepare&quot; function - it can be modelled after <code>prepare_scatter_plot</code>, but in the event that you need to pass additional params which are dependent on the trial data, you can add those in your <code>attributes</code> object too (look at <code>prepare_shapes_plot</code>). Basically, the prepare function sets up all the data and attributes needed for a <strong>single</strong> plot, and passes it into the d3 script that will actually generate the plot.</li>
+</ul>
+</li>
+<li>Now you need to write the d3 code, which will take in the the <code>attributes</code> object created in your <code>prepare</code> function.<ul>
+<li>Create a new js file named after the graph type inside <code>d3-base-plots</code>. </li>
+<li>Write your d3 code. You will be appending the chart to a div with id = <code>graph</code>. So you would be doing something like:<pre><code><code class="source-code prettyprint">let chart = d3.select(&quot;#graph&quot;)
+         .append(&quot;svg&quot;)
+            ......</code>
+</code></pre></li>
+</ul>
+</li>
+</ol><h3>Point/Shape Types</h3><p>For some conditions, there may be a need to simply add a new kind of <code>point_type</code> (belonging to <code>scatter</code> graph type) or a new type of shape taken inside the <code>shapes</code> array (belonging to <code>shapes</code> graph type).</p><ol>
+<li>In <code>public/config/graphing-config.js</code>, add the name of the new kind of point or shape type, either under the <code>valid_inputs</code> key of scatter&apos;s <code>point_type</code>, or shapes&apos; <code>shapes</code>. </li>
+<li>Add the relevant d3 code in the <code>public/scripts/experiment-properties/graphing/d3-base-plots</code>. </li>
+<li>If adding a new <code>point-type</code>, open <code>scatter_plot.js</code>, and add a switch case with the d3 code in <code>plot_scatter_points</code>. </li>
+<li>If adding a new shape type for <code>shapes</code>, open <code>shape_plot.js</code>, and add a switch case inside <code>create_shape_plot</code>. Write the d3 function to handle that case.</li>
+</ol><h2>Adding Experiments</h2><p>In the case you are building an entirely new experiment, you will have to do all of the above, plus build the jsPsych timeline and model object to support the timeline. If you haven&apos;t read up on <a href="https://www.jspsych.org/">JsPsych</a>, I would suggest you do that first, and at least do the <a href="https://www.jspsych.org/tutorials/rt-task/">reaction time tutorial</a>.</p><ol>
+<li>In <code>public/config/experiments-config.js</code>, add a new key-object inside <code>EXPERIMENTS</code>. You need to provide the <code>trial_structure</code>, <code>graph_type</code>, <code>balancing_type</code>, <code>docs</code>, and all <code>attributes</code> the experiment supports. Refer to the above ^^ instructions if you are adding any new properties for the identifiers.</li>
+<li><p>Create the <strong>relevant html files</strong> that (a) holds the jsPsych timeline, and (b) displays the trials. E.g. look under <code>public/views/jnd</code> - there is an HTML for jnd_experiment.html and jnd_trial_display.html.</p>
+<ul>
+<li>Create a new folder with the same name as your experiment under <code>public/views</code> for your experiment.</li>
+<li>Add an HTML file called <code>&lt;experiment_name&gt;_experiment.html</code> and <code>&lt;experiment_name&gt;_trial_display.html</code>. </li>
+<li><p>Inside the experiment HTML, you will pass the routing params from the server side. Literally copy and paste below and change all the <code>&lt;Experiment Name&gt;</code> tags to the new experiment.</p>
+<pre><code><code class="source-code prettyprint">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+
+   &lt;title&gt;VCL: &lt;Experiment Name&gt; Experiment&lt;/title&gt;
+
+   &lt;%- include(&apos;../header&apos;); %&gt;
+
+   &lt;script type=&quot;text/javascript&quot;&gt;
+
+     // Routing params from EJS:
+     var params = {&quot;trial_structure&quot;: &quot;&lt;%= trial_structure %&gt;&quot;,
+                   &quot;condition&quot;: &quot;&lt;%= condition %&gt;&quot;,
+                   &quot;graph_type&quot;: &quot;&lt;%= graph_type %&gt;&quot;,
+                   &quot;balancing&quot;: &quot;&lt;%= balancing %&gt;&quot;,
+                   &quot;subject_id&quot;: &quot;&lt;%= subject_id %&gt;&quot;,
+                   &quot;subject_initials&quot;: &quot;&lt;%= subject_initials %&gt;&quot;};
+
+   &lt;/script&gt;
+
+   &lt;script type=&quot;module&quot; src=&quot;/scripts/experiments/&lt;experiment_name&gt;/&lt;experiment_name&gt;_timeline.js&quot; &gt;&lt;/script&gt;
+
+ &lt;/head&gt;
+
+ &lt;body&gt;
+ &lt;/body&gt;
+
+&lt;/html&gt;</code>
+</code></pre></li>
+<li><p>Inside the trial display HTML, we need to call the function to plot the graphs. Copy and paste below, and change the <code>&lt;experiment name&gt;</code> tags.</p>
+<pre><code><code class="source-code prettyprint">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;link rel=&quot;icon&quot; href=&quot;./img/VCL_favicon.png&quot;&gt;
+
+   &lt;!-- Scripts: --&gt;
+
+   &lt;!-- D3: --&gt;
+   &lt;script src = &quot;https://d3js.org/d3.v4.min.js&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;https://d3js.org/d3-selection-multi.v0.4.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+ &lt;div align = &quot;center&quot;&gt;
+
+   &lt;!-- D3 graph goes here: --&gt;
+   &lt;div id=&quot;graph&quot;&gt;
+   &lt;/div&gt;
+
+   &lt;script type=&quot;module&quot;&gt;
+
+       import { &lt;experiment_name&gt;_exp } from &quot;/scripts/experiments/&lt;experiment_name&gt;/&lt;experiment_name&gt;_timeline.js&quot;;
+       import { plot_distributions } from &quot;/scripts/experiment-properties/graphing/graphing_controller.js&quot;;
+
+       plot_distributions(&lt;experiment_name&gt;_exp);
+
+   &lt;/script&gt;
+ &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</code></pre></li>
+</ul>
+</li>
+<li>Add your <strong>data</strong> for the experiment. <ul>
+<li>In <code>/scripts/data/constants</code> add a new js file called <code>&lt;experiment_name&gt;_data.js</code>. </li>
+<li>Add all your subcondition data for the trial structure it supports, and any new conditions. Refer <a href="/VCLWebFramework/manual/developing_new_properties.html#trial-structures">here</a> if you&apos;re making a new trial structure, and <a href="/VCLWebFramework/manual/developing_new_conditions.html">part 2 of here</a> for the new conditions.</li>
+<li>In <code>/scripts/data/data_controller.js</code>, import your <code>BASE</code> and <code>CONDITIONS</code> variables your data js file. <ul>
+<li>Add the new base experiment to <code>EXPERIMENT_BASES</code> and <code>EXPERIMENT_CONDITIONS</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Update <strong>server-side routing</strong>. Open <code>app.js</code> under root, and add another <code>else if</code> statement. Make the response render the <code>&lt;experiment_name&gt;_experiment.html</code> that you recently created. </li>
+<li>Add the <strong>experimental logic</strong>. You need to build: <strong>(a) the JsPsych timeline,</strong> and <strong>(b) a model class to support the timeline.</strong> You <strong>MAY</strong> not need a new model class, especially if your experiment is simple enough and doesn&apos;t have a lot trial-by-trial dependencies (e.g. look at the visualSearch branch from <a href="https://github.com/Wongelawit/Correlation_MultipleEnsemble">here</a>). I would suggest using <code>JND_Radius</code> as a base, it is the simplest among the experiments.<ul>
+<li>Add a new folder under <code>public/scripts/experiments</code>.</li>
+<li>Add two js files, (or one if you don&apos;t need the model class), called <code>&lt;experiment_name&gt;.js</code> and <code>&lt;experiment_name&gt;_timeline.js</code>. </li>
+<li>For the timeline, there should be blocks for:<ul>
+<li>The welcome page</li>
+<li>Instructions</li>
+<li>Feedback (if any after a trial)</li>
+<li>Experimental trial</li>
+<li>The end page</li>
+</ul>
+</li>
+<li>For the model class, you need to be able to:<ul>
+<li>Retrieve the right data from the /constants folder</li>
+<li>Balance the data</li>
+<li>Make the trial block (e.g. <code>generate_trial</code> jsPsych object)</li>
+<li>Save any variables that the researchers want saved on a trial-by-trial basis</li>
+<li>Determine what is a correct/incorrect response, and change the next trial&apos;s presentation (if the experiment demands it)</li>
+<li>Export the data once the experiment ends</li>
+</ul>
+</li>
+<li>There is no template for the model class, though there are some functions that you can probably re-use from <code>JND_Radius</code> (aka <code>prepare_experiment</code>), but a lot of the constants are subject to whatever the experiment needs, and the <code>generate_trial</code> object is task-dependent.   </li>
+</ul>
+</li>
+</ol><h2>Overriding</h2><p>There are instances where new conditions or plots cannot be supported naturally by the framework. These usually are <strong>unconventional</strong> instances. A good example are all the conditions prefixed with <code>distractor_&lt;color&gt;_shades</code>. These conditions plot <strong>TWO</strong> distributions onto a scatter graph, and additionally do not follow any of the supported trial structures. There is therefore a way to <strong>NOT USE</strong> the base plots (e.g. anything in <code>d3-base-plots</code>) and to not be dependent on any of the trial structures, so you can create your subconditions dynamically instead of declaring them inside <code>/data/constants</code>. </p><h3>Custom Plots</h3><p>Assuming that you have a plot that can be categorized under one of the main graph types, but there is some <strong>unconventional</strong> set-up involved that may likely break or cause the main base plot code to become messy, create a custom d3 script. </p><p>For example, the <code>distractor</code> conditions plot two distributions onto a single scatter plot, and also have a very specific way of plotting points to allow equal occlusion between the distributions. Adding this into this functionality into the <code>d3-base-plots/scatter_plot.js</code> will likely make things very messy. So we created a custom D3 script for it instead (<code>d3-custom-plots/distractor_scatter_plot.js</code>).</p><ol>
+<li>Inside <code>/scripts/experiment-properties/graphing/custom_graphing_controller.js</code>. <ul>
+<li>Add an if-else clause inside the function <code>is_custom_plot</code>. Basically should return true for your condition.</li>
+<li>Add an if-else clause inside <code>prepare_custom_plot</code>, and create a new function that sets up the attributes to be sent to your d3 function.</li>
+<li>Import that function at the top of this script.</li>
+</ul>
+</li>
+<li>Create the d3 script. Add a new custom plot script inside <code>/d3-custom-plots</code>.</li>
+<li>Lastly, although the d3 code is customized for your condition, the framework still assumes that your condition uses one of the base plots (e.g scatter, strip etc.). If the new plot doesn&apos;t fit &quot;naturally&quot; into these types, then you might as well create a <a href="/VCLWebFramework/manual/developing_new_properties.html#graph-types">new graph type</a>.</li>
+</ol><h3>Subcondition Generation</h3><p>There are two instances where you can have custom code for your subconditions: (1) you want to write code that programmatically generates the subconditions instead of writing your data manually inside <code>/data/constants</code> (so this <strong>still means you are following a certain trial structure</strong>), or (2) you are <strong>NOT following any trial structure</strong> altogether, so the <strong>trial structure is <code>custom</code></strong>. </p><p>Inside <code>/scripts/data/custom_subcondition_generator.js</code>:</p><ul>
+<li>For (1): Add your condition name inside <code>CUSTOM_TRIAL_STRUCTURE_CONDITIONS</code>, under <code>custom</code> key.</li>
+<li>For (2): Add your condition name inside <code>CUSTOM_TRIAL_STRUCTURE_CONDITIONS</code>, under the trial structure it follows.</li>
+<li>Then:<ol>
+<li>Add an if-else inside <code>get_subconditions</code> to route it to your custom generator function.</li>
+<li>Write the function below to generate the subconditions.</li>
+</ol>
+</li>
+</ul></div>
+        <a data-ice="link" href="manual/developing_new_properties.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Updating Documentation</h1><p>This documentation is generated using <a href="https://esdoc.org/">ESDoc</a>, which automatically detects and generates documentation for methods, constants, functions etc. in the framework. This is under tabs <strong>Reference</strong> and <strong>Source</strong> at the top.</p><p>This manual also has custom pages (AKA under tab <strong>Home</strong> and what is on the left sidebar). These pages are generated using ESDoc&apos;s markdown -&gt; HTML conversion feature, but some pages also use javascript to draw from config files in the framework in order to display all conditions, attributes etc. </p><p>These sections will describe how these custom pages work, and how to create new pages.</p><h2>Project Structure of the Docs</h2><ul>
+<li>At root level:<ul>
+<li><code>docs</code> folder - this is basically where everything documentation-related goes.</li>
+<li><code>.esdoc.json</code> - this is the config file for ESDoc. This file must be updated whenever you&apos;re adding new pages or new scripts.<ul>
+<li>There are three plugins:<ul>
+<li><code>esdoc-standard-plugin</code> - adding the address of the md file into the <code>files</code> array will let ESDoc convert the md file into html.</li>
+<li><code>esdoc-inject-script-plugin</code> - adding the address of any scripts into the <code>scripts</code> array will let ESDoc run these scripts across ALL html files. </li>
+<li><code>esdoc-inject-style-plugin</code> - adding the address of any style scripts into the <code>styles</code> array will make the CSS available across ALL html files.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Inside <code>docs</code> folder:<ul>
+<li><code>manual</code> folder - this is where we add any new css, images, pages, or scripts.</li>
+<li>You can IGNORE everything else, we are only touching the <code>manual</code> folder as everything else is automatically generated by ESDoc.</li>
+</ul>
+</li>
+</ul><h3>Dynamic Sections</h3><p>Some creative hacking was involved to get ESDoc to draw from the data from the <code>config</code> files in the framework. This means that as devs add new conditions, attributes etc. into the config files, the documentation will also get automatically updated. </p><ol>
+<li>The main .md files that draw from <code>config</code> are <code>conditions.md</code>, <code>experiments.md</code> and <code>supported_properties.md</code> inside <code>docs/manual/pages</code>. These files just have the skeleton text (e.g. no tables).</li>
+<li>The <code>docs/manual/scripts/view-controller.js</code> script:<ul>
+<li>Forcibly injects CDN JQuery + Bootstrap (which ESDoc could not do naturally)</li>
+<li>Calls the renderer scripts depending on HTML id tag </li>
+</ul>
+</li>
+<li>Anything ending in <code>-renderer.js</code> inside <code>docs/manual/scripts</code> draws from the <code>config</code> files, creates all HTML tables and appends them to the page.</li>
+<li>Note that in <code>.esdoc.json</code>, under the <code>esdoc-inject-script-plugin</code>, we include the config AND renderer scripts so they can be run throughout the docs. </li>
+</ol><h2>Creating New Pages</h2><ol>
+<li>Inside <code>docs/manual/pages</code> create a new markdown file. Write all your content using markdown syntax.</li>
+<li>In <code>.esdoc.json</code>, add the page address into the array of <code>files</code> under the object with plugin name <code>esdoc-standard-plugin</code>. </li>
+<li>ESDoc can now convert the markdown file into HTML. Run: <code>./node_modules/.bin/esdoc</code>.</li>
+</ol><h2>Updating Pages or Scripts</h2><p>If you are changing ANY of the content inside <code>docs/manual</code>, or the <code>config</code> files from the framework have been updated, <strong>you must run this script so the documentation updates</strong>:</p><p><code>./node_modules/.bin/esdoc</code></p></div>
+        <a data-ice="link" href="manual/updating_documentation.html"></a>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

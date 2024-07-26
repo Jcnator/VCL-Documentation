@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js | vcl-web-framework</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<script src="./inject/script/0-conditions-config.js"></script><script src="./inject/script/0-experiments-config.js"></script><script src="./inject/script/0-graphing-config.js"></script><script src="./inject/script/0-trial-structure-config.js"></script><script src="./inject/script/0-balancing-config.js"></script><script src="./inject/script/0-view-controller.js"></script><script src="./inject/script/0-experiments-renderer.js"></script><script src="./inject/script/0-conditions-renderer.js"></script><script src="./inject/script/0-supported-properties-renderer.js"></script><link rel="stylesheet" href="./inject/css/0-styles.css"><meta name="description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="vcl-web-framework"><meta property="twitter:description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/UBC-VCL/VCLWebFramework.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing">experiment-properties/balancing</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-balance_subconditions">balance_subconditions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing-balancing-helpers">experiment-properties/balancing/balancing_helpers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_index_array">generate_index_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_any_array">get_any_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_any_array_repeated">get_any_array_repeated</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_permutation">get_permutation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_remaining_elements">get_remaining_elements</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-heapsPermute">heapsPermute</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reorder">reorder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffle">shuffle</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing-generators">experiment-properties/balancing/generators</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_blocked_latin_square">initialize_blocked_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-innitialize_custom_latin_square">innitialize_custom_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_counter_balanced_order">generate_counter_balanced_order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-innitialize_custom_order">innitialize_custom_order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_latin_square">initialize_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_random_order">initialize_random_order</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-counter">experiment-properties/counter</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-print_curr_trial">print_curr_trial</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-data">experiment-properties/data</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_custom_subcondition">get_custom_subcondition</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_condition_dataset">create_condition_dataset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_design_condition_dataset">create_design_condition_dataset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_data">get_data</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_data_subset">get_data_subset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CUSTOM_TRIAL_STRUCTURE_CONDITIONS">CUSTOM_TRIAL_STRUCTURE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_BASES">EXPERIMENT_BASES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_CONDITIONS">EXPERIMENT_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-data-constants">experiment-properties/data/constants</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENSEMBLE_AVERAGE_BASE">ENSEMBLE_AVERAGE_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENSEMBLE_AVERAGE_CONDITIONS">ENSEMBLE_AVERAGE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ESTIMATION_CONDITIONS">ESTIMATION_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HYBRID_BASE">HYBRID_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HYBRID_CONDITIONS">HYBRID_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_BASE">JND_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_CONDITIONS">JND_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_BASE">JND_RADIUS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_CONDITIONS">JND_RADIUS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_BASE">NUMEROSITY_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_CONDITIONS">NUMEROSITY_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_BASE">SEQUENCING_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_CONDITIONS">SEQUENCING_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SIDE_BY_SIDE_BASE">SEQUENCING_SIDE_BY_SIDE_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SIDE_BY_SIDE_CONDITIONS">SEQUENCING_SIDE_BY_SIDE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SYMBOLS_BASE">SEQUENCING_SYMBOLS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SYMBOLS_CONDITIONS">SEQUENCING_SYMBOLS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_BASE">STEVENS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_CONDITIONS">STEVENS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-VISUAL_SEARCH_BASE">VISUAL_SEARCH_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-VISUAL_SEARCH_CONDITIONS">VISUAL_SEARCH_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-distribution">experiment-properties/distribution</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_adjusted_distribution">generate_adjusted_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_initial_distribution">generate_initial_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_random_distribution">generate_random_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-correlationNotWithinError">correlationNotWithinError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateDistribution">generateDistribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomGaussian">generateRandomGaussian</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getPearsonCorrelation">getPearsonCorrelation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointNotWithinRequiredStdDevs">pointNotWithinRequiredStdDevs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_coordinates">prepare_coordinates</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-random_bm">random_bm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readjustPoints">readjustPoints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformPoints">transformPoints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomDistribution">generateRandomDistribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomUniform">generateRandomUniform</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUniformDistribution">generateUniformDistribution</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing">experiment-properties/graphing</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_color">generate_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_color_hex">generate_color_hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-is_custom_plot">is_custom_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_custom_plot">prepare_custom_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-add_graph_features">add_graph_features</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_attributes_object">generate_attributes_object</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_distributions">plot_distributions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-base-plots">experiment-properties/graphing/d3-base-plots</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_parallel_plot">create_parallel_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_ring_plot">create_ring_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_scatter_plot">create_scatter_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_scatter_points">plot_scatter_points</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_shape_plot">create_shape_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_strip_plot">create_strip_plot</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-custom-plots">experiment-properties/graphing/d3-custom-plots</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_distractor_scatter_plot">create_distractor_scatter_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_bisection_plot">create_estimation_bisection_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_interference_plot">create_estimation_interference_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_multi_interference_plot">create_estimation_multi_interference_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_plot">create_estimation_plot</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-plot-features">experiment-properties/graphing/d3-plot-features</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-combine_target_and_distractor">combine_target_and_distractor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_mixed_attribute_graph">plot_mixed_attribute_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_array_mix_graph">prepare_array_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_mix_graph">prepare_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_targeted_mix_graph">prepare_targeted_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_visual_mask_graph">prepare_visual_mask_graph</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-instructions">experiment-properties/instructions</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_subcond_instruction_block">generate_subcond_instruction_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_instructions">get_instructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_jspsych_instructions">get_jspsych_instructions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-instruction-screen">experiment-timeline/instruction_screen</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_instructions">generate_instructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_ready_screen">generate_ready_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_sitting_distance_screen">generate_sitting_distance_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_welcome">generate_welcome</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-resolution-scaling">experiment-timeline/resolution_scaling</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-manual_resolution_scaling">manual_resolution_scaling</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resolution_scaling">resolution_scaling</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-screening">experiment-timeline/screening</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningInstructions">screeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningPCPInverted">screeningPCPInverted</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-instructionsRegression">instructionsRegression</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningCorrelationSelect">screeningCorrelationSelect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningCorrelationSort">screeningCorrelationSort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningInstructions">screeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningQuestions">screeningQuestions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningRegressionSelect">screeningRegressionSelect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-colorScreeningInstructions">colorScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ignoreScreeningInstructions">ignoreScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-luminanceScreeningInstructions">luminanceScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-orientationScreeningInstructions">orientationScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningStripColorYellowBlue">screeningStripColorYellowBlue</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screenningStripLuminanceSort">screenningStripLuminanceSort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screenningStripOrientationSort">screenningStripOrientationSort</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-ensemble-average">experiments/ensemble_average</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/ensemble_average/ensemble_average.js~Ensemble_Average.html">Ensemble_Average</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ensemble_avg_exp">ensemble_avg_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-estimation">experiments/estimation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/estimation/estimation.js~Estimation.html">Estimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-estimation_exp">estimation_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-hybrid">experiments/hybrid</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/hybrid/hybrid.js~Hybrid.html">Hybrid</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-hybrid_exp">hybrid_exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_exp">jnd_exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-stevens_exp">stevens_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-jnd">experiments/jnd</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/jnd/jnd.js~JND.html">JND</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_block">generate_experiment_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_end">generate_experiment_end</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_screen">generate_feedback_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_block">generate_practice_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_ready_experiment">generate_ready_experiment</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_stop_block">generate_stop_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_exp">jnd_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-jnd-radius">experiments/jnd_radius</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/jnd_radius/jnd_radius.js~JND_Radius.html">JND_Radius</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_radius_exp">jnd_radius_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-numerosity">experiments/numerosity</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/numerosity/numerosity.js~Numerosity.html">Numerosity</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-numerosity_exp">numerosity_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing">experiments/sequencing</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing/sequencing.js~Sequencing.html">Sequencing</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-IMAGE_PATH">IMAGE_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_exp">sequencing_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing-side-by-side">experiments/sequencing_side_by_side</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js~Sequencing_Side_by_Side.html">Sequencing_Side_by_Side</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-IMAGE_PATH">IMAGE_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_side_by_side_exp">sequencing_side_by_side_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing-symbols">experiments/sequencing_symbols</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing_symbols/sequencing_symbols.js~Sequencing_Symbols.html">Sequencing_Symbols</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment">generate_experiment</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_end">generate_experiment_end</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_screen">generate_feedback_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_wrapper">generate_feedback_wrapper</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_block">generate_practice_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_instruction_block">generate_practice_instruction_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_stop_practice_trials">generate_stop_practice_trials</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RECTANGLE_MASK_PATH">RECTANGLE_MASK_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SQUARE_MASK_PATH">SQUARE_MASK_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_symbols_exp">sequencing_symbols_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-stevens">experiments/stevens</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/stevens/stevens.js~Stevens.html">Stevens</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-stevens_exp">stevens_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-visual-search">experiments/visual_search</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/visual_search/visual_search_timeline.js~Visual_Search.html">Visual_Search</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_color_paths">get_color_paths</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex_to_color">hex_to_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-visual_search_exp">visual_search_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers">helpers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/helpers/correlation_dependencies.js~Correlation_Dependencies.html">Correlation_Dependencies</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-above_and_below_generate_random_trial_array">above_and_below_generate_random_trial_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bundle_z_values">bundle_z_values</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-check_params">check_params</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-force_greater_right_position">force_greater_right_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feature_search_trials">generate_feature_search_trials</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_timeline_screen">generate_timeline_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-genereate_hybrid_instruction">genereate_hybrid_instruction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getScreenHeight">getScreenHeight</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_mixed_graph_styles">get_mixed_graph_styles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_mixed_masks">get_mixed_masks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_num_blocks">get_num_blocks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_running_average">get_running_average</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_single_graph_style">get_single_graph_style</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_single_mask">get_single_mask</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-is_converged_in_window">is_converged_in_window</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nova_variables">nova_variables</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_graph_attributes_mixed">randomize_graph_attributes_mixed</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_position">randomize_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_position_symmetric">randomize_position_symmetric</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_radius_position">randomize_radius_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-repeat_y_values">repeat_y_values</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffleArray">shuffleArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-correlation_dependencies">correlation_dependencies</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { balance_subconditions } from &apos;/scripts/experiment-properties/balancing/balancing_controller.js&apos;
+import { initialize_random_order } from &apos;/scripts/experiment-properties/balancing/generators/random_generator.js&apos;
+import { get_data } from &apos;/scripts/experiment-properties/data/data_controller.js&apos;
+import { generate_initial_distribution } from &apos;/scripts/experiment-properties/distribution/distribution_controller.js&apos;
+import { generate_adjusted_distribution} from &apos;/scripts/experiment-properties/distribution/distribution_controller.js&apos;
+import { randomize_position } from &apos;/scripts/helpers/experiment_helpers.js&apos;
+import { EXPERIMENTS } from &quot;/config/experiments-config.js&quot;;
+
+export { IMAGE_PATH };
+
+
+const IMAGE_PATH = location.protocol + &quot;//&quot; + location.hostname + &quot;:&quot; + location.port + &apos;/scripts/experiments/sequencing_side_by_side/img/noisemask.png&apos;;
+
+export default class Sequencing_Side_by_Side {
+  /**
+   * Initializes a Sequencing experiment object.
+   *
+   * @param  {assoc array}  Parameters passed from routing.
+   */
+  constructor(params) {
+    console.log(&quot;Entered constructor&quot;)
+    let trial_structure = params[&quot;trial_structure&quot;];
+    let condition_name = params[&quot;condition&quot;];
+    let graph_type = params[&quot;graph_type&quot;];
+    let balancing_type = params[&quot;balancing&quot;];
+    let conversion_factor = params[&quot;conversion_factor&quot;];
+
+    this.condition_name = condition_name;
+    this.condition_group = this.condition_name.split(&apos;_&apos;)[0]; // Mostly to handle &quot;distractor&quot; conditions.
+                                                              // TODO: Should have a better flag for it.
+    this.subject_id = params[&quot;subject_id&quot;];
+    this.subject_initials = params[&quot;subject_initials&quot;];
+    this.auto_mode = false;
+
+    // ========================================
+    // PARAMETER CHECKING
+
+    // **NOTE: EXPERIMENTS variable comes from /public/config/experiments-config.js
+    if (!EXPERIMENTS[&quot;sequencing_side_by_side&quot;][&quot;trial_structure&quot;].includes(trial_structure)) {
+      throw Error(trial_structure + &quot; is not supported.&quot;);}
+    else {
+      this.trial_structure = trial_structure;
+    }
+
+    if (!EXPERIMENTS[&quot;sequencing_side_by_side&quot;][&quot;graph_type&quot;].includes(graph_type)){
+      throw Error(graph_type + &quot; is not supported.&quot;)}
+    else {
+      this.graph_type = graph_type;
+    };
+
+    if (!EXPERIMENTS[&quot;sequencing_side_by_side&quot;][&quot;balancing_type&quot;].includes(balancing_type)) {
+      throw Error(balancing_type + &quot; is not supported.&quot;) }
+    else {
+      this.balancing_type = balancing_type;
+    }
+
+    // ========================================
+    // EXPERIMENT CONSTANTS
+
+    this.PIXELS_PER_CM = conversion_factor;
+    this.MIN_CORRELATION = 0.0;
+    this.MAX_CORRELATION = 1.0;
+    this.MIN_TRIALS = 24;
+    this.MAX_TRIALS = 52;
+    this.WINDOW_SIZE = 24;
+    this.WINDOW_INTERVAL = 3;
+    this.CONVERGENCE_THRESHOLD = 0.75;
+    this.INCORRECT_MULTIPLIER = 3;
+    this.MAX_REPETITIONS = 5;
+    this.SCREEN_HEIGHT = this.getScreenHeight();
+
+
+    // ========================================
+    // PRACTICE EXPERIMENT VARIABLES
+
+    this.MAX_PRACTICE_TRIALS = 50;
+    this.PRACTICE_CORRELATION = 0.6;
+    this.PRACTICE_STIMULUS_DURATION = 800;
+    this.practice_conditions_constants;
+    this.current_practice_condition_index;
+    this.practice_selection_matrix = [];
+    this.adjusted_quantity_practice = [];
+    this.PRACTICE_PARAMTERS = {distribution_type: &quot;gaussian&quot;, base_correlation: 0.6,
+                               stimulus_duration:500 , distractor_duration:200, error: 0.0001,
+                               max_step_size: 0.01, converge_from_above: false, initial_difference: 0.1,
+                               num_points: 100, mean: 0.5, SD: 0.2, num_SD: 2.5, point_color: &apos;BLACK&apos;,
+                               axis_color: &apos;BLACK&apos;, text_color: &apos;BLACK&apos;, feedback_background_color: &apos;WHITE&apos;,
+                               background_color: &apos;WHITE&apos;, point_size: 6};
+
+    // ========================================
+    // TEST EXPERIMENT VARIABLES
+
+    this.first_trial_of_sub_condition = true;
+    //this.converged = false;
+    this.sub_condition_order;
+    this.sub_conditions_constants;
+    this.current_sub_condition_index;     // Index used to keep track of the current subcondition. Starts at 0, goes to 8
+    this.adjusted_quantity_matrix = {};   // The matrix is in this format:
+                                          // { sub_condition_index : [adjusted_quantity1, adjusted_quantity2 ... ] }
+
+    // ========================================
+    // DEBUG VARIABLES
+    this.end_sub_condition_debug = false;
+
+    // ========================================
+    // CURRENT TRIAL DATA
+
+    // Plotting-related vars
+    this.left_coordinates = &quot;&quot;;
+    this.right_coordinates = &quot;&quot;;
+    this.distractor_coordinates = &quot;&quot;;
+
+    // JsPsych trial_data for the current trial
+    this.trial_data = &quot;&quot;;
+
+    // ========================================
+    // PREPARE EXPERIMENT
+
+    // Extract raw constants
+    this.raw_constants = get_data(this);
+
+    // Prepare experiment + practice data
+    this.prepare_experiment();
+    this.prepare_practice();
+
+    // ========================================
+    // Adjusted Statistic Values
+    // ** Previously were set inside the get_next_adjusted_statistic method.
+    // ** Replacing constants into variables to be set inside the method.
+    let correct_statistic_increment;
+    let incorrect_statistic_increment;
+    console.log(&quot;Finished constructor&quot;)
+  }
+
+
+  /**
+   * Orders the input data according to balancing type and
+   * initializes the Sequencing object&apos;s variables.
+   *
+   * @param  balancing_type {string}                             Type of balancing. Currently only latin_square
+   *                                                             is supported.
+   *         dataset {[{assoc array}, {assoc array}, ... ]}      The data to be ordered.
+   */
+  prepare_experiment() {
+    console.log(&quot;Entered prepare_experiment()&quot;)
+    let dataset = this.raw_constants;
+    // it gets scrambled for some reason.  put it back in order, according to the hardcoded subcond numbers
+
+    this.sub_condition_order = balance_subconditions(this.balancing_type, this.constructor.name.toLowerCase(), dataset.length, dataset, &quot;stimulus_duration&quot;);
+
+    var ordered_dataset = [];
+
+    // Order the data set according to the latin square
+    // Initialize adjusted_quantity_matrix size
+    for (let i=0; i &lt; this.sub_condition_order.length; i++){
+      ordered_dataset[i] = dataset[this.sub_condition_order[i]];
+      this.adjusted_quantity_matrix[i] = [];
+    }
+
+    // Set experiment trials
+    this.sub_conditions_constants = ordered_dataset;
+    this.current_sub_condition_index = 0;
+    console.log(&quot;Finished prepare_experiment()&quot;)
+  }
+
+  /**
+   * Orders the input dataset by randomizing it, and initializes the practice variables.
+   *
+   * @param  dataset {[{assoc array}, {assoc array}, ... ]}   The data to be ordered.
+   */
+  prepare_practice() {
+
+    let dataset = this.raw_constants;
+
+    this.sub_condition_order = initialize_random_order(dataset.length);
+    let practice_dataset = [];
+    practice_dataset[0] = this.PRACTICE_PARAMTERS;
+    // // Order the data set according to the latin square
+    // // Initialize adjusted_quantity_matrix size
+    // for (let i=0; i &lt; this.sub_condition_order.length; i++){
+    //   console.log(&apos;subcondition order length &apos; + this.sub_condition_order.length)
+    //   practice_dataset[i] = dataset[this.sub_condition_order[i]];
+    // }
+
+    //practice_dataset[this.sub_condition_order.length] = dataset[this.sub_condition_order[1]]
+    console.log(&apos;practice_dataset&apos;, practice_dataset)
+
+    // Set practice trials
+    this.practice_conditions_constants = practice_dataset;
+    this.current_practice_condition_index = 0;
+  }
+
+
+  /**
+   * Generates a Sequencing trial object for use in the JsPsych timeline.
+   *
+   * @param  type {string}             &quot;test&quot; or &quot;practice&quot;
+   * @return trial {object}
+   */
+  generate_trial(block_type) {
+
+    if ((block_type !== &quot;test&quot;) &amp;&amp; (block_type !== &quot;practice&quot;)) {throw Error(block_type + &quot; is not supported.&quot;)};
+
+    // Initialize a variable for this so it is usable inside on_start
+    var sequencing_side_by_side_exp = this;
+    var address = location.protocol + &quot;//&quot; + location.hostname + &quot;:&quot; + location.port + &quot;/sequencing_side_by_side_trial&quot;;
+
+    // local variables so likert trial can access it too
+    var adjusted_value;
+    var index;
+    var constants
+
+    // let participants know which number subcondition block they are about to perform
+    var subcond_num = {
+      stimulus: &apos;&apos;,
+      type: &apos;html-keyboard-response&apos;,
+      choices: [&apos; &apos;],
+      on_start: function(subcond_num) {
+        if (block_type === &quot;test&quot;){
+          var index = sequencing_side_by_side_exp.current_sub_condition_index;
+        }
+        else {
+          var index = sequencing_side_by_side_exp.current_practice_condition_index;
+        }
+        subcond_num.stimulus = `&lt;div align=&quot;center&quot; style=&quot;font-size:20px&quot;&gt;&lt;p&gt;&lt;b&gt;Ready? Experiment block ${index + 1} of ${sequencing_side_by_side_exp.raw_constants.length} will now begin.&lt;/b&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;Press the spacebar to continue.&lt;/p&gt;&lt;/div&gt;`;
+      }
+    }
+
+    // conditional timeline wrapper
+    var subcond_num_timeline = {
+      timeline: [subcond_num],
+      conditional_function: function() {
+        if (sequencing_side_by_side_exp.is_start_of_subcondition() &amp;&amp; block_type === &quot;test&quot;) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+
+    // &quot;First&quot; trial in the sequence. Contains the two side-by-side plots.
+    var first = {
+      type:&apos;sequencing-graph&apos;,
+      block_type: block_type,
+      //url: address,
+      choices: jsPsych.NO_KEYS,
+      //execute_script: true,
+      //trial_duration: 1000,
+
+      on_start: function(first){
+        sequencing_side_by_side_exp.cur_exp_type = block_type;
+        if (block_type == &quot;test&quot;){
+          index = sequencing_side_by_side_exp.current_sub_condition_index;
+          constants = sequencing_side_by_side_exp.sub_conditions_constants[index];
+          sequencing_side_by_side_exp.practice_end = true;
+        }
+        else {
+          index = sequencing_side_by_side_exp.current_practice_condition_index;
+          constants = sequencing_side_by_side_exp.practice_conditions_constants[index];
+          //console.log(&quot;Trial Number: &quot; + adjusted_quantity_practice.size)
+        }
+        // Get parameters
+        first.trial_duration = constants.stimulus_duration;
+
+        // Calculate adjusted value and distribution
+        adjusted_value = sequencing_side_by_side_exp.calculate_adjusted_value(constants);
+        console.log(&quot;Base Correlation: &quot; + constants.base_correlation);
+        console.log(&quot;Adjusted Value: &quot; + adjusted_value);
+        // Save data into matrix and jsPsych data object
+        sequencing_side_by_side_exp.handle_data_saving(first, block_type, constants, index, adjusted_value, &quot;first&quot;);
+
+        // Generate distributions
+        var base_coordinates = generate_initial_distribution(constants);
+        var adjusted_coordinates = generate_adjusted_distribution(constants, adjusted_value);
+
+        // Randomize position of the base and adjusted graphs
+        var result = randomize_position(first,
+                                       base_coordinates,
+                                       adjusted_coordinates,
+                                       constants,
+                                       adjusted_value);
+
+        // Set up D3 variables for plotting
+        sequencing_side_by_side_exp.coordinates = [result.left, result.right];
+
+
+        sequencing_side_by_side_exp.trial_data = first.data;
+
+        // Custom jsPsych type requirement
+        first.exp_obj = sequencing_side_by_side_exp;
+
+        // Console log
+        if (constants.task) {
+          console.log(&quot;[TASK TYPE]: &quot; + constants.task);
+        }
+        console.log(&quot;[RIGHT] Correlation: &quot; + first.data.right_correlation);
+        console.log(&quot;[RIGHT] Num points: &quot; + first.data.right_num_points);
+
+        console.log(&quot;[LEFT] Correlation: &quot; + first.data.left_correlation);
+        console.log(&quot;[LEFT] Num points: &quot; + first.data.left_num_points);
+      },
+    };
+    var distractor_size = sequencing_side_by_side_exp.getScreenHeight() / (4.3)
+    console.log(distractor_size)
+    var distractor = {
+      type: &apos;html-keyboard-response&apos;,
+      stimulus: `&lt;div align = &quot;center&quot;&gt;` + `&lt;img src=&quot;${IMAGE_PATH}&quot; width=&quot;${distractor_size}px&quot; style=&quot;margin: 0px 50px;&quot; &gt;&lt;/img&gt;&lt;img src=&quot;${IMAGE_PATH}&quot; width=&quot;${distractor_size}px&quot; style=&quot;margin: 50px 0px;&quot;&gt;&lt;/img&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;`,
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1000,
+      on_start: function(distractor) {
+        if (block_type == &quot;test&quot;){
+          var index = sequencing_side_by_side_exp.current_sub_condition_index;
+          var constants = sequencing_side_by_side_exp.sub_conditions_constants[index];
+        }
+        else {
+          var index = sequencing_side_by_side_exp.current_practice_condition_index;
+          var constants = sequencing_side_by_side_exp.practice_conditions_constants[index];
+        }
+        distractor.trial_duration = constants.distractor_duration;
+      }
+    };
+
+    var blank = {
+      type:&apos;sequencing-graph&apos;,
+      block_type: block_type,
+      //url: address,
+      //execute_script: true,
+      choices:[&apos;z&apos;, &apos;m&apos;, &apos;q&apos;, &apos;t&apos;, &apos;w&apos;], //q is exit button (for debugging)
+      on_start: function(blank){
+        sequencing_side_by_side_exp.coordinates = [];
+        console.log(&quot;Entered on_start&quot;)
+        if (sequencing_side_by_side_exp.auto_mode) {
+          blank.post_trial_gap = 12;
+          blank.trial_duration = 12;
+        }
+        console.log(&quot;blank data.adjusted value &quot; + adjusted_value);
+        sequencing_side_by_side_exp.handle_data_saving(blank, block_type, constants, index, adjusted_value, &quot;blank&quot;);
+        console.log(&quot;Data adjusted value &quot; + blank.data.adjusted_value);
+        blank.stimulus = &quot;&lt;div align=&apos;center&apos;&gt;&lt;/div&gt;&quot;;
+        blank.exp_obj = sequencing_side_by_side_exp;
+
+      },
+      on_finish: function(data){
+        console.log(&quot;Entered on_finish &quot;)
+        // Set the constants to be used:
+        let index;
+        let constants;
+        if (data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;t&apos;) || sequencing_side_by_side_exp.auto_mode) {
+          // Turn on automation
+          sequencing_side_by_side_exp.auto_mode = true;
+          if (Math.random() &lt; 0.5) {
+            console.log(&quot;&apos;z&apos; pressed&quot;);
+            data.key_press = jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;z&apos;);
+          } else {
+            console.log(&quot;&apos;m&apos; pressed&quot;);
+            data.key_press = jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;m&apos;);
+          }
+        }
+
+        sequencing_side_by_side_exp.check_response_sequencing(data);
+        console.log(&quot;RESPONSE: &quot; + data.correct);
+      },
+    };
+
+    var likert = {
+      type: &apos;survey-likert&apos;,
+      questions: [
+        {prompt: &quot;&lt;div align=&apos;center&apos;&gt;Please rate your confidence in your estimates for the previous three blocks,&lt;br&gt; with 1 being a pure guess, and 5 being complete certainty.&lt;/div&gt;&quot;, labels: [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;]}
+      ],
+      on_start: function(likert) {
+
+        if (sequencing_side_by_side_exp.auto_mode) {
+          likert.post_trial_gap = 100;
+          //likert.trial_duration = 12;
+          sequencing_side_by_side_exp.auto_mode = false;
+          console.log(&quot;Automode off&quot;);
+        }
+
+        if (block_type === &quot;test&quot;){
+          var index = sequencing_side_by_side_exp.current_sub_condition_index;
+          var constants = sequencing_side_by_side_exp.sub_conditions_constants[index];
+        }
+        else {
+          var index = sequencing_side_by_side_exp.current_practice_condition_index;
+          var constants = sequencing_side_by_side_exp.practice_conditions_constants[index];
+        }
+
+        // Handling saving this trial&apos;s data:
+        sequencing_side_by_side_exp.handle_data_saving(likert, block_type, constants, index, adjusted_value, &quot;likert&quot;);
+      }
+    };
+
+    // conditional likert timeline wrapper
+    var likert_timeline = {
+      timeline: [likert],
+      conditional_function: function() {
+        // if subcondition should end, add likert scale
+        if (sequencing_side_by_side_exp.end_sub_condition() &amp;&amp; (sequencing_side_by_side_exp.current_sub_condition_index + 1) % 3 == 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    };
+
+    // initialize trial to return
+    var trial = [];
+    trial = [subcond_num_timeline, first, distractor, blank, likert_timeline];
+
+    return trial;
+  };
+
+  /**
+   * Handles saving the relevant data on a given trial.
+   *
+   * For reference, these are the helper variables created to assist in trial logic (i.e not present in excel)
+   * trial_variables =
+   *       {type: &apos;sequencing&apos;,
+   *       run_type: &apos;&apos;,
+   *       left_correlation: &apos;&apos;,
+   *       right_correlation: &apos;&apos;,
+   *       };
+   *
+   * These are variables created WITHIN the trial logic that were not present in excel (but need to be
+   * outputted to results).
+   * export_variables =
+   *       {sub_condition: &apos;&apos;,           // Chronological ordering of sub_condition [1, 2, 3 ... ]
+   *        balanced_sub_condition: &apos;&apos;,  // Index of sub_condition according to balancing order
+   *        jnd: &apos;&apos;,
+   *        direction &apos;&apos;,
+   *        base_correlation: &apos;&apos;,
+   *        adjusted_value: &apos;&apos;,
+   *        correct: &apos;&apos;,
+   *       };
+   *
+   * @param trial {object}
+   *        block_type {string}           &quot;test&quot; or &quot;practice&quot;
+   *        constants {assoc array}
+   *        index {integer}
+   *        adjusted_value {double}
+   *        order_type {sring}            &quot;first&quot;, &quot;blank&quot;, &quot;likert&quot;
+   */
+  handle_data_saving(trial, block_type, constants, index, adjusted_value, order_type) {
+    // Add all constants from excel
+    trial.data = constants;
+    // Adding constants that required computation (not from excel)
+    trial.data.type = &quot;sequencing_side_by_side&quot;;
+    trial.data.graph_type = this.graph_type;
+    trial.data.order = order_type;
+
+    trial.data.adjusted_value = adjusted_value;
+    console.log(&quot;Handle Data Saving Adjusted value: &quot; + trial.data.adjusted_value);
+    //trial.data.adjusted_value_type = &quot;correlation&quot;;
+    trial.data.sub_condition = index;
+    trial.data.balanced_sub_condition = this.sub_condition_order[index];
+
+    // Sequence Order specific saves
+    // Only &quot;first&quot; trials are saved as they are the last one in the sequence
+    // &quot;likert&quot; are saved for likert data, treated as the last one of the subcondition
+    if(order_type === &quot;first&quot; || order_type === &quot;likert&quot;){
+      // Task type switch
+      if (constants.task) {
+        switch (constants.task) {
+          case &quot;numerosity&quot;:
+            trial.data.adjusted_value_type = &quot;number of points&quot;;
+            trial.data.jnd = Math.abs(adjusted_value - constants.num_points);
+            break;
+          case &quot;correlation&quot;:
+            trial.data.adjusted_value_type = &quot;correlation&quot;;
+            trial.data.jnd = Math.abs(adjusted_value - constants.base_correlation);
+            break;
+          default:
+            throw Error(&quot;Calculations for jnd has not been handled for task: &quot; + constants.task);
+        }
+      } else {
+        trial.data.jnd = Math.abs(adjusted_value - constants.base_correlation);
+      }
+
+      // Block specific saves
+      if (block_type == &quot;test&quot;){
+        this.adjusted_quantity_matrix[index].push(adjusted_value);
+        trial.data.run_type = &quot;test&quot;;
+        //trial.data.converged = this.converged;
+      }
+      else{
+        this.adjusted_quantity_practice.push(adjusted_value);
+        trial.data.run_type = &quot;practice&quot;;
+      }
+    }
+  }
+
+  /**
+   * Determines whether the current sub condition can end or not.
+   *
+   * @return {boolean}            True if sub condition should end.
+   */
+  end_sub_condition() {
+    if(this.end_sub_condition_debug){
+      console.log(&quot;Skiping Sub Condition&quot;)
+      return true;
+    }
+
+    if (this.adjusted_quantity_matrix[this.current_sub_condition_index].length &gt;= this.MIN_TRIALS &amp;&amp;
+          this.is_converged_in_window()){
+      console.log(&quot;Subcondtion Converged&quot; + this.adjusted_quantity_matrix[this.current_sub_condition_index].length)
+      return true;
+    }
+
+    if (this.adjusted_quantity_matrix[this.current_sub_condition_index].length &gt;= this.MAX_TRIALS){
+      console.log(&quot;end_sub_condition MAX_TRIALS reached&quot; + this.adjusted_quantity_matrix[this.current_sub_condition_index].length)
+      return true;
+    }
+
+    if(this.adjusted_quantity_practice.length &gt;= this.MAX_PRACTICE_TRIALS){
+      console.log(&quot;Max number of practice trials reached&quot;)
+
+      return true;
+    }
+
+    return false;
+
+  }
+
+  /**
+   * Checks whether we have just started a subcondition.
+   *
+   * @return {boolean}            True if sub condition has just started.
+   */
+  is_start_of_subcondition() {
+
+    if (this.adjusted_quantity_matrix[this.current_sub_condition_index].length === 0) {
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * Determines whether current subcondition has converged or not.
+   *
+   * @return {boolean}            True if converged.
+   */
+  is_converged_in_window() {
+
+    var converged = false;
+    var num_completed_trials = this.adjusted_quantity_matrix[this.current_sub_condition_index].length;
+
+    // Check if we have completed the minimum number of trials
+    // and if the number of completed trials is greater than the window size
+    if (num_completed_trials &gt;= this.MIN_TRIALS &amp;&amp; num_completed_trials &gt;= this.WINDOW_SIZE) {
+
+      // 2D Matrix of windows of adjusted quantities
+      var adjusted_quantity_windows = [];
+
+      // The index of the last trial
+      var last_trial = num_completed_trials - 1;
+
+      // Compute the interval size and remainder
+      // The remainder is computed in case the window size isn&apos;t divisible by the # intervals
+      var interval_size = this.WINDOW_SIZE / this.WINDOW_INTERVAL;
+      var interval_remainder = this.WINDOW_SIZE % this.WINDOW_INTERVAL;
+
+      // This is the first trial in the window
+      // For example:
+      // numCompletedTrials = 5
+      // windowSize = 3
+      // [ 0 1 2 3 4 5 6 7 8 9 ]
+      // windowStart would be at index: 5 - 3 = 2
+      var window_start = num_completed_trials - this.WINDOW_SIZE;
+      console.log(&quot;num completed: &quot; + num_completed_trials);
+      console.log(&quot;window start: &quot; + window_start);
+
+      // Iterate over all of the trials from the start of the window to the last trial
+      // and organize them into the 2D adjustedQuantityWindows matrix
+      while (window_start &lt; last_trial) {
+
+        // While we have extra elements that don&apos;t fit into an interval
+        // add one extra to each window interval
+        var current_interval_size = interval_remainder &gt; 0 ? interval_size + 1 : interval_size;
+        if (interval_remainder &gt; 0) {
+          interval_remainder--;
+        }
+
+        // Collect the adjusted quantity values from the trials into the double[]
+        var adjusted_quantities = [];
+        for (let i = 0; i &lt; current_interval_size; ++i) {
+          var adjusted_quantity = this.adjusted_quantity_matrix[this.current_sub_condition_index][i + window_start];
+          adjusted_quantities.push(adjusted_quantity);
+        }
+
+        // Set the window start to the next interval
+        window_start += current_interval_size;
+        adjusted_quantity_windows.push(adjusted_quantities);
+      }
+
+      console.log(adjusted_quantity_windows);
+
+      var variance = [];
+      var mean = [];
+      for (let i = 0; i &lt; adjusted_quantity_windows.length; i++){
+        variance.push(math.var(adjusted_quantity_windows[i]));
+        mean.push(math.mean(adjusted_quantity_windows[i]));
+      }
+
+      var mean_of_variances = math.mean(variance);
+      var variance_of_means = math.var(mean);
+      var F = variance_of_means/mean_of_variances;
+      console.log(&quot;F: &quot; + F);
+      // Convergence if the F value is &lt; 1 - convergenceThreshold
+      // if the F is greater than 0.25, then converge
+      converged = F &lt; (1 - this.CONVERGENCE_THRESHOLD);
+    }
+
+    if (converged) {console.log(&quot;CONVERGED!!!!&quot;)};
+
+    return converged;
+  }
+
+  /**
+   * Calculates the adjusted value depending on whether this is the
+   * first trial of the sub condition or not.
+   *
+   * @param  constants {assoc array}
+   * @return adjusted_value {double}
+   */
+  calculate_adjusted_value(constants) {
+
+    // For the first trial, we need to initialize the adjusted correlation:
+    if (this.first_trial_of_sub_condition){
+      var adjusted_value = this.initialize_adjusted_statistic(constants);
+      // Set flag to false
+      this.first_trial_of_sub_condition = false;
+    }
+    else{
+      var last_trial = jsPsych.data.get().filter({type: &quot;sequencing_side_by_side&quot;}).last(1).values()[0];
+
+      var adjusted_value = this.get_next_adjusted_statistic(last_trial, constants);
+    }
+    return adjusted_value;
+  }
+
+  /**
+   * Initializes the adjusted value for the first time.
+   *
+   * @param  {object}             constants
+   * @return {double}             adjusted_value
+   */
+  initialize_adjusted_statistic(constants) {
+    let adjusted_value;
+
+    if (constants.reference_start) {
+      adjusted_value = constants.reference_start;
+    }
+    else {
+      if (constants.converge_from_above){
+        adjusted_value = Math.min(this.MAX_CORRELATION, constants.base_correlation + constants.initial_difference);
+      }
+      else {
+        adjusted_value = Math.max(this.MIN_CORRELATION, constants.base_correlation - constants.initial_difference);
+      };
+    }
+    return adjusted_value;
+  }
+
+  /**
+   * Calculates the next adjusted value.
+   *
+   * @param  {object} last_trial
+   *.        {object} constants
+   * @return {double} next_adjusted_statistic
+   */
+  get_next_adjusted_statistic(last_trial, constants){
+    let next_adjusted_statistic;
+
+    if (constants.task){
+      switch (constants.task) {
+        case &quot;numerosity&quot;:
+          if (last_trial.correct) {
+            let correct_numerosity_statistic_increment = 1;
+            next_adjusted_statistic = last_trial.adjusted_value + correct_numerosity_statistic_increment;
+          } else {
+            let incorrect_numerosity_statistic_increment = 3;
+            next_adjusted_statistic = last_trial.adjusted_value - incorrect_numerosity_statistic_increment;
+          }
+          break;
+        case &quot;correlation&quot;:
+          // For num_corr conditions, guard to force adjusted stat to be use this calculation instead of the
+          // traditional min/max AKA what is in get_next_adjusted_correlation
+          if (this.condition_name.split(&quot;_&quot;).includes(&quot;num&quot;) &amp;&amp; this.condition_name.split(&quot;_&quot;).includes(&quot;corr&quot;)) {
+            if (last_trial.correct) {
+              this.correct_statistic_increment = 0.01;
+              next_adjusted_statistic = last_trial.adjusted_value + this.correct_statistic_increment;
+                if (next_adjusted_statistic &gt;= constants.reference_start + 0.1) {
+                  next_adjusted_statistic = constants.reference_start + 0.1;
+                }
+            } else {
+              this.incorrect_statistic_increment = 0.03;
+              next_adjusted_statistic = last_trial.adjusted_value - this.incorrect_statistic_increment;
+                if (next_adjusted_statistic &lt;= 0.00) {
+                  next_adjusted_statistic = 0.00;
+              }
+            }
+          }
+          else {
+            next_adjusted_statistic = this.get_next_adjusted_correlation(last_trial, constants);
+          }
+          break;
+
+        default:
+          throw Error(&quot;Calculations for getting next adjusted statistic has not been handled for task: &quot; + constants.task);
+          break;
+      }
+    }
+    else {
+      let initial_difference = constants.base_correlation;
+      next_adjusted_statistic = this.get_next_adjusted_correlation(last_trial, constants);
+    }
+    return next_adjusted_statistic;
+  }
+
+  /**
+   * Calculates the next adjusted correlation (the traditional way).
+   *
+   * @param  {object} last_JND_trial
+   *.        {object} constants
+   * @return {double} next_adjusted_statistic
+   */
+  get_next_adjusted_correlation(last_JND_trial, constants){
+    let next_adjusted_statistic;
+    let initial_difference = constants.base_correlation;
+
+    if (constants.converge_from_above) {
+      if (last_JND_trial.correct) {
+        next_adjusted_statistic = Math.max(initial_difference, last_JND_trial.adjusted_value - constants.max_step_size);
+      } else {
+        next_adjusted_statistic = Math.min(this.MAX_CORRELATION, last_JND_trial.adjusted_value + constants.max_step_size
+                                  * this.INCORRECT_MULTIPLIER);
+      }
+    } else {
+      if (last_JND_trial.correct) {
+        next_adjusted_statistic = Math.min(initial_difference, last_JND_trial.adjusted_value + constants.max_step_size);
+      } else {
+        next_adjusted_statistic = Math.max(this.MIN_CORRELATION, last_JND_trial.adjusted_value - constants.max_step_size
+                                  * this.INCORRECT_MULTIPLIER);
+      }
+    }
+    return next_adjusted_statistic;
+  }
+
+  /**
+   * Given a JND trial data, determines whether response is
+   * correct or not.
+   *
+   * @param  {JsPsych.data}  data
+   * @param. {object}        constants
+   * @return {boolean}
+   */
+  check_response(data, constants) {
+
+    // For debugging purposes:
+    if (data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;q&apos;)){
+      data.correct = -1;
+      return -1;
+    }
+
+    let right_greater_clause;
+    let left_greater_clause;
+
+    if (!constants.task || constants.task === &quot;correlation&quot;) {
+
+      right_greater_clause = data.right_correlation &gt; data.left_correlation;
+      left_greater_clause = data.left_correlation &gt; data.right_correlation;
+
+    } else if (constants.task === &quot;numerosity&quot;) {
+
+      right_greater_clause = data.right_num_points &gt; data.left_num_points;
+      left_greater_clause = data.left_num_points &gt; data.right_num_points;
+
+    } else {
+      throw Error(&quot;Check response function has not been handled for task: &quot; + constants.task);
+    }
+
+    if (right_greater_clause &amp;&amp; (data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;m&apos;)) ||
+        left_greater_clause &amp;&amp; (data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;z&apos;))){
+
+      data.correct = true;
+      return true;
+    }
+    // Assuming that if base_correlation = adjusted_correlation, at this point
+    // any user choice is wrong.
+    else {
+      data.correct = false;
+      return false;
+    }
+  }
+
+  /**
+   * Given a Sequencing trial data, determines whether response is
+   * correct or not.
+   *
+   * @param  {JsPsych.data}  data
+   * @return {boolean}
+   */
+  check_response_sequencing(data) {
+    // For debugging purposes:
+    if (data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;q&apos;)){
+      data.correct = -1; // debug flag
+      return -1;
+    }
+    // Skip current subcondition
+    if (data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;w&apos;)){
+      this.end_sub_condition_debug = true;
+      data.correct = -1; // skip subcondition flag
+      return -1;
+    }
+
+    let right_greater_clause;
+    let left_greater_clause;
+
+    var alpha = 0.000001; // Alpha value to compare doubles
+    var are_equal = Math.abs(data.base_correlation - data.adjusted_value) &lt;= alpha;
+
+    // Assuming that if base_correlation = adjusted_correlation, at this point
+    // any user choice is wrong.
+    if(are_equal){
+      data.correct = false;
+      data.jnd = 0;
+
+      return false;
+    }
+
+    right_greater_clause = data.right_correlation &gt; data.left_correlation;
+    left_greater_clause = data.left_correlation &gt; data.right_correlation;
+
+    if (right_greater_clause &amp;&amp; (data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;m&apos;)) ||
+        left_greater_clause &amp;&amp; (data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(&apos;z&apos;))){
+
+      data.correct = true;
+      return true;
+    }
+    else{
+      data.correct = false;
+      return false;
+    }
+  }
+
+  /**
+   * When called, will save individual trial data into a CSV.
+   */
+  export_trial_data() {
+
+    const trial_data = jsPsych.data.get().filter({type: &apos;sequencing_side_by_side&apos;, run_type: &apos;test&apos;})
+                                       .filterCustom(function(x){ //Don&apos;t include the exit trials
+                                         return x.correct != -1;
+                                       })
+                                       .filterCustom(function(x){
+                                         if (x.order === &quot;blank&quot; || x.order === &quot;likert&quot;)  // filter for only base and likert trials
+                                         return x;
+                                       })
+                                       // Sequencing&apos;s trial variables
+                                       .ignore(&apos;type&apos;)
+                                       .ignore(&apos;run_type&apos;)
+                                       .ignore(&apos;left_correlation&apos;)
+                                       .ignore(&apos;right_correlation&apos;)
+                                       // These are variables forced on by jsPsych
+                                       .ignore(&apos;stimulus&apos;)
+                                       .ignore(&apos;key_press&apos;)
+                                       .ignore(&apos;choices&apos;)
+                                       .ignore(&apos;trial_type&apos;)
+                                       .ignore(&apos;trial_index&apos;)
+                                       .ignore(&apos;time_elapsed&apos;)
+                                       .ignore(&apos;internal_node_id&apos;);
+
+    //console.log(&quot;trial data: &quot;,trial_data.json());
+    //console.log(&quot;stringified trial data: &quot;, JSON.stringify(JSON.parse(trial_data.json())));
+
+    // TODO: js converting key_string to use double quotes, needs to be single to pass into ignore() fxn
+    //
+    // for (var key in sequencing_exp.trial_variables){
+    //  var key_string = &apos;${key}&apos;;
+    //  trial_data.ignore(key);
+    // }
+    //
+    //
+    // Local save
+    // var string = &quot;S&quot; + this.subject_id + &quot;_&quot; + this.condition_name + &quot;_sequencing_trial_results.csv&quot;;
+    // trial_data.localSave(&apos;csv&apos;, string);
+
+    //Firebase upload
+
+    let summary_data = [];
+
+    for (let i = 0; i&lt;this.sub_conditions_constants.length; i++) {
+      let sub_data = {};
+
+      const constants = this.sub_conditions_constants[i];
+
+      const condition_data = jsPsych.data.get().filter({type: &apos;sequencing_side_by_side&apos;, run_type: &apos;test&apos;, balanced_sub_condition: this.sub_condition_order[i]})
+                                               .filterCustom(function(x) {
+                                                 return (x.correct != -1
+                                                      &amp;&amp; x.order === &quot;blank&quot;);
+                                                    });
+
+      const likert_data = jsPsych.data.get().filter({type: &apos;sequencing_side_by_side&apos;, run_type: &apos;test&apos;, balanced_sub_condition: this.sub_condition_order[i]})
+                                               .filterCustom(function(x) {
+                                                return (x.order === &quot;likert&quot;);
+                                                });
+
+      sub_data.jnd = condition_data.select(&apos;jnd&apos;).mean();
+      sub_data.last_24 = condition_data.last(24).select(&apos;jnd&apos;).mean();
+      sub_data.base_correlation = constants.base_correlation;
+      sub_data.stimulus_duration = constants.stimulus_duration;
+      sub_data.num_points = constants.num_points;
+      sub_data.trial_count = condition_data.count();
+      sub_data.likert_data = JSON.stringify(likert_data.select(&apos;responses&apos;).values[0]);
+
+      summary_data.push(sub_data);
+      console.log(&quot;index success &quot; + i);
+
+    }
+
+    $.post(&quot;/api/experiment_data&quot;,
+            {trial_data: JSON.parse(trial_data.json()), summary_data: summary_data, experiment: &quot;sequencing_side_by_side&quot;, condition: params[&quot;condition&quot;], prolific_pid: params[&quot;subject_id&quot;], study_id: params[&quot;study_id&quot;], session_id: params[&quot;session_id&quot;]},
+            function(data, status) {
+              console.log(&quot;Data: &quot; + data + &quot;\nStatus: &quot; + status)
+            }
+          );
+  }
+
+  /* Randomize array in-place using Durstenfeld shuffle algorithm
+  * Kindly taken from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+  * @param array {array}
+  */
+  shuffleArray(array) {
+    for (var i = array.length - 1; i &gt; 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+  }
+
+  /* Get the height of the screen
+  * Kindly taken from https://stackoverflow.com/questions/1038727/how-to-get-browser-width-using-javascript-code
+  */
+  getScreenHeight() {
+    return screen.height
+
+  }
+
+  /**
+ * Get constants of block type.
+ *
+ * @param {String} block_type - Either &quot;test&quot; or &quot;practice&quot;
+ * @returns {String} constants - Ex) {SD: 0.2, adjusted_value: 0.8, dist_base: 0.3, error: 0.0001, num_points: 100, type: &quot;jnd&quot;, ...}
+ * @author Jake Moh
+ */
+  get_constants_of_block_type(block_type) {
+  // Error handling
+  if (block_type != &quot;test&quot; &amp;&amp; block_type != &quot;practice&quot;) {
+    throw Error(`Invalid experiment type of ${block_type}`);
+  }
+
+  let constants;
+  if (block_type == &quot;test&quot;){
+    constants = this.get_practice_conditions_constants_at_current_index();
+  } else {
+    constants = this.get_experience_conditions_constants_at_current_index();
+  }
+
+  return constants;
+}
+
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

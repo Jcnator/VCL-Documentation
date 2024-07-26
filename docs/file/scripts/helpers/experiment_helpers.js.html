@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">scripts/helpers/experiment_helpers.js | vcl-web-framework</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<script src="./inject/script/0-conditions-config.js"></script><script src="./inject/script/0-experiments-config.js"></script><script src="./inject/script/0-graphing-config.js"></script><script src="./inject/script/0-trial-structure-config.js"></script><script src="./inject/script/0-balancing-config.js"></script><script src="./inject/script/0-view-controller.js"></script><script src="./inject/script/0-experiments-renderer.js"></script><script src="./inject/script/0-conditions-renderer.js"></script><script src="./inject/script/0-supported-properties-renderer.js"></script><link rel="stylesheet" href="./inject/css/0-styles.css"><meta name="description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="vcl-web-framework"><meta property="twitter:description" content="This is a Node.js application that runs correlation-related experiments of the VCL Lab."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/UBC-VCL/VCLWebFramework.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing">experiment-properties/balancing</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-balance_subconditions">balance_subconditions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing-balancing-helpers">experiment-properties/balancing/balancing_helpers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_index_array">generate_index_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_any_array">get_any_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_any_array_repeated">get_any_array_repeated</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_permutation">get_permutation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_remaining_elements">get_remaining_elements</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-heapsPermute">heapsPermute</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reorder">reorder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffle">shuffle</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-balancing-generators">experiment-properties/balancing/generators</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_blocked_latin_square">initialize_blocked_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-innitialize_custom_latin_square">innitialize_custom_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_counter_balanced_order">generate_counter_balanced_order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-innitialize_custom_order">innitialize_custom_order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_latin_square">initialize_latin_square</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initialize_random_order">initialize_random_order</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-counter">experiment-properties/counter</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-print_curr_trial">print_curr_trial</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-data">experiment-properties/data</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_custom_subcondition">get_custom_subcondition</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_condition_dataset">create_condition_dataset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_design_condition_dataset">create_design_condition_dataset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_data">get_data</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_data_subset">get_data_subset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CUSTOM_TRIAL_STRUCTURE_CONDITIONS">CUSTOM_TRIAL_STRUCTURE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_BASES">EXPERIMENT_BASES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EXPERIMENT_CONDITIONS">EXPERIMENT_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-data-constants">experiment-properties/data/constants</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENSEMBLE_AVERAGE_BASE">ENSEMBLE_AVERAGE_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ENSEMBLE_AVERAGE_CONDITIONS">ENSEMBLE_AVERAGE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ESTIMATION_CONDITIONS">ESTIMATION_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HYBRID_BASE">HYBRID_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-HYBRID_CONDITIONS">HYBRID_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_BASE">JND_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_CONDITIONS">JND_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_BASE">JND_RADIUS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-JND_RADIUS_CONDITIONS">JND_RADIUS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_BASE">NUMEROSITY_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NUMEROSITY_CONDITIONS">NUMEROSITY_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_BASE">SEQUENCING_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_CONDITIONS">SEQUENCING_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SIDE_BY_SIDE_BASE">SEQUENCING_SIDE_BY_SIDE_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SIDE_BY_SIDE_CONDITIONS">SEQUENCING_SIDE_BY_SIDE_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SYMBOLS_BASE">SEQUENCING_SYMBOLS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SEQUENCING_SYMBOLS_CONDITIONS">SEQUENCING_SYMBOLS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_BASE">STEVENS_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STEVENS_CONDITIONS">STEVENS_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-VISUAL_SEARCH_BASE">VISUAL_SEARCH_BASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-VISUAL_SEARCH_CONDITIONS">VISUAL_SEARCH_CONDITIONS</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-distribution">experiment-properties/distribution</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_adjusted_distribution">generate_adjusted_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_initial_distribution">generate_initial_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_random_distribution">generate_random_distribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-correlationNotWithinError">correlationNotWithinError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateDistribution">generateDistribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomGaussian">generateRandomGaussian</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getPearsonCorrelation">getPearsonCorrelation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointNotWithinRequiredStdDevs">pointNotWithinRequiredStdDevs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_coordinates">prepare_coordinates</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-random_bm">random_bm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-readjustPoints">readjustPoints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformPoints">transformPoints</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomDistribution">generateRandomDistribution</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateRandomUniform">generateRandomUniform</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateUniformDistribution">generateUniformDistribution</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing">experiment-properties/graphing</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_color">generate_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_color_hex">generate_color_hex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-is_custom_plot">is_custom_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_custom_plot">prepare_custom_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-add_graph_features">add_graph_features</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_attributes_object">generate_attributes_object</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_distributions">plot_distributions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-base-plots">experiment-properties/graphing/d3-base-plots</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_parallel_plot">create_parallel_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_ring_plot">create_ring_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_scatter_plot">create_scatter_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_scatter_points">plot_scatter_points</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_shape_plot">create_shape_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_strip_plot">create_strip_plot</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-custom-plots">experiment-properties/graphing/d3-custom-plots</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_distractor_scatter_plot">create_distractor_scatter_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_bisection_plot">create_estimation_bisection_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_interference_plot">create_estimation_interference_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_multi_interference_plot">create_estimation_multi_interference_plot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create_estimation_plot">create_estimation_plot</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-graphing-d3-plot-features">experiment-properties/graphing/d3-plot-features</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-combine_target_and_distractor">combine_target_and_distractor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-plot_mixed_attribute_graph">plot_mixed_attribute_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_array_mix_graph">prepare_array_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_mix_graph">prepare_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_targeted_mix_graph">prepare_targeted_mix_graph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prepare_visual_mask_graph">prepare_visual_mask_graph</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-properties-instructions">experiment-properties/instructions</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_subcond_instruction_block">generate_subcond_instruction_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_instructions">get_instructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_jspsych_instructions">get_jspsych_instructions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-instruction-screen">experiment-timeline/instruction_screen</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_instructions">generate_instructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_ready_screen">generate_ready_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_sitting_distance_screen">generate_sitting_distance_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_welcome">generate_welcome</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-resolution-scaling">experiment-timeline/resolution_scaling</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-manual_resolution_scaling">manual_resolution_scaling</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-resolution_scaling">resolution_scaling</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiment-timeline-screening">experiment-timeline/screening</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningInstructions">screeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningPCPInverted">screeningPCPInverted</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-instructionsRegression">instructionsRegression</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningCorrelationSelect">screeningCorrelationSelect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningCorrelationSort">screeningCorrelationSort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningInstructions">screeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningQuestions">screeningQuestions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningRegressionSelect">screeningRegressionSelect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-colorScreeningInstructions">colorScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ignoreScreeningInstructions">ignoreScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-luminanceScreeningInstructions">luminanceScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-orientationScreeningInstructions">orientationScreeningInstructions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screeningStripColorYellowBlue">screeningStripColorYellowBlue</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screenningStripLuminanceSort">screenningStripLuminanceSort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-screenningStripOrientationSort">screenningStripOrientationSort</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-ensemble-average">experiments/ensemble_average</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/ensemble_average/ensemble_average.js~Ensemble_Average.html">Ensemble_Average</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ensemble_avg_exp">ensemble_avg_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-estimation">experiments/estimation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/estimation/estimation.js~Estimation.html">Estimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-estimation_exp">estimation_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-hybrid">experiments/hybrid</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/hybrid/hybrid.js~Hybrid.html">Hybrid</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-hybrid_exp">hybrid_exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_exp">jnd_exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-stevens_exp">stevens_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-jnd">experiments/jnd</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/jnd/jnd.js~JND.html">JND</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_block">generate_experiment_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_end">generate_experiment_end</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_screen">generate_feedback_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_block">generate_practice_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_ready_experiment">generate_ready_experiment</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_stop_block">generate_stop_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_exp">jnd_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-jnd-radius">experiments/jnd_radius</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/jnd_radius/jnd_radius.js~JND_Radius.html">JND_Radius</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-jnd_radius_exp">jnd_radius_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-numerosity">experiments/numerosity</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/numerosity/numerosity.js~Numerosity.html">Numerosity</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-numerosity_exp">numerosity_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing">experiments/sequencing</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing/sequencing.js~Sequencing.html">Sequencing</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-IMAGE_PATH">IMAGE_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_exp">sequencing_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing-side-by-side">experiments/sequencing_side_by_side</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js~Sequencing_Side_by_Side.html">Sequencing_Side_by_Side</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-IMAGE_PATH">IMAGE_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_side_by_side_exp">sequencing_side_by_side_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-sequencing-symbols">experiments/sequencing_symbols</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/sequencing_symbols/sequencing_symbols.js~Sequencing_Symbols.html">Sequencing_Symbols</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment">generate_experiment</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_experiment_end">generate_experiment_end</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_screen">generate_feedback_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feedback_wrapper">generate_feedback_wrapper</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_block">generate_practice_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_practice_instruction_block">generate_practice_instruction_block</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_stop_practice_trials">generate_stop_practice_trials</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RECTANGLE_MASK_PATH">RECTANGLE_MASK_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SQUARE_MASK_PATH">SQUARE_MASK_PATH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sequencing_symbols_exp">sequencing_symbols_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-stevens">experiments/stevens</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/stevens/stevens.js~Stevens.html">Stevens</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-stevens_exp">stevens_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#experiments-visual-search">experiments/visual_search</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/experiments/visual_search/visual_search_timeline.js~Visual_Search.html">Visual_Search</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_color_paths">get_color_paths</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hex_to_color">hex_to_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-visual_search_exp">visual_search_exp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers">helpers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/scripts/helpers/correlation_dependencies.js~Correlation_Dependencies.html">Correlation_Dependencies</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-above_and_below_generate_random_trial_array">above_and_below_generate_random_trial_array</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bundle_z_values">bundle_z_values</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-check_params">check_params</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-force_greater_right_position">force_greater_right_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_feature_search_trials">generate_feature_search_trials</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate_timeline_screen">generate_timeline_screen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-genereate_hybrid_instruction">genereate_hybrid_instruction</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getScreenHeight">getScreenHeight</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_mixed_graph_styles">get_mixed_graph_styles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_mixed_masks">get_mixed_masks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_num_blocks">get_num_blocks</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_running_average">get_running_average</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_single_graph_style">get_single_graph_style</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get_single_mask">get_single_mask</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-is_converged_in_window">is_converged_in_window</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nova_variables">nova_variables</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_graph_attributes_mixed">randomize_graph_attributes_mixed</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_position">randomize_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_position_symmetric">randomize_position_symmetric</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-randomize_radius_position">randomize_radius_position</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-repeat_y_values">repeat_y_values</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffleArray">shuffleArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-correlation_dependencies">correlation_dependencies</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">scripts/helpers/experiment_helpers.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { EXPERIMENTS } from &quot;/config/experiments-config.js&quot;;
+
+/**
+ * Helper function to generate generic timeline object
+ * @param {string} type - the type of timeline object
+ * @param {number} duration - time in ms for screen duration
+ * @param {string[]} choices - key choices - either a number array of valid ascii keys OR no keys
+ *
+ * @returns {Object} a timeline object with stimulus set to empty &apos;&apos;
+ */
+export function generate_timeline_screen(duration, choices, type = &quot;html-keyboard-response&quot;) {
+  return {
+    type: type,
+    stimulus: &apos;&apos;,
+    choices: choices,
+    trial_duration: duration
+  };
+}
+
+/**
+ * Returns the number of blocks in a condition with the block
+ * property
+ * 
+ * @param {Object} constants 
+ * @param {Object} blocking_attribute 
+ * @returns {number}
+ */
+export function get_num_blocks(constants, blocking_attribute){
+  let block_size = 0;
+  let prev_block;
+  for(let i = 0; i &lt; constants.length; i++){
+    let curr_block = constants[i][blocking_attribute];
+    if(prev_block != curr_block){
+      block_size++
+    }
+    prev_block = curr_block;
+  }
+  return block_size;
+}
+
+/**
+ * 
+ * @param {Object} experiment 
+ * @param {string} experiment_name 
+ * @param {string} trial_structure 
+ * @param {string} graph_type 
+ * @param {string} balancing_type 
+ * @throws {Error}
+ */
+export function check_params(experiment, experiment_name, trial_structure, graph_type, balancing_type){
+  // **NOTE: EXPERIMENTS variable comes from /public/config/experiments-config.js
+  if(!EXPERIMENTS[experiment_name]){
+    throw Error(`${experiment_name} is not supported.`)
+  }
+  experiment.experiment_name = experiment_name;
+  if (!EXPERIMENTS[experiment_name][&quot;trial_structure&quot;].includes(trial_structure)) {
+    throw Error(trial_structure + &quot; is not supported.&quot;);}
+  else {
+    experiment.trial_structure = trial_structure;
+  }
+
+  if (!EXPERIMENTS[experiment_name][&quot;graph_type&quot;].includes(graph_type)){
+    throw Error(graph_type + &quot; is not supported.&quot;)}
+  else {
+    experiment.graph_type = graph_type;
+  };
+
+  if (!EXPERIMENTS[experiment_name][&quot;balancing_type&quot;].includes(balancing_type)) {
+    throw Error(balancing_type + &quot; is not supported.&quot;) }
+  else {
+    experiment.balancing_type = balancing_type;
+  }
+}
+  
+/**
+ * Tests for convergange in a subcondition&apos;s adjusted quantity array with sliding window
+ * 
+ * @param {number[]} subcondition_adjusted_quantities - the adjusted quantities to check for convergance
+ * @param {number}   min_trials - minimum number of trials needed before convergance is chekced
+ * @param {number}   window_size - for sliding window
+ * @param {number}   window_interval 
+ * @param {number} convergance_threshold 
+ * @returns {boolean}   True if converged.
+ */
+export function is_converged_in_window(subcondition_adjusted_quantities, min_trials, window_size, window_interval, convergance_threshold) {
+
+  var converged = false;
+  var num_completed_trials = subcondition_adjusted_quantities.length;
+
+  // Check if we have completed the minimum number of trials
+  // and if the number of completed trials is greater than the window size
+  if (num_completed_trials &gt;= min_trials &amp;&amp; num_completed_trials &gt;= window_size) {
+
+    // 2D Matrix of windows of adjusted quantities
+    var adjusted_quantity_windows = [];
+
+    // The index of the last trial
+    var last_trial = num_completed_trials - 1;
+
+    // Compute the interval size and remainder
+    // The remainder is computed in case the window size isn&apos;t divisible by the # intervals
+    var interval_size = window_size / window_interval;
+    var interval_remainder = window_size % window_interval;
+
+    // This is the first trial in the window
+    // For example:
+    // numCompletedTrials = 5
+    // windowSize = 3
+    // [ 0 1 2 3 4 5 6 7 8 9 ]
+    // windowStart would be at index: 5 - 3 = 2
+    var window_start = num_completed_trials - window_size;
+    console.log(&quot;num completed: &quot; + num_completed_trials);
+    console.log(&quot;window start: &quot; + window_start);
+
+    // Iterate over all of the trials from the start of the window to the last trial
+    // and organize them into the 2D adjustedQuantityWindows matrix
+    while (window_start &lt; last_trial) {
+
+      // While we have extra elements that don&apos;t fit into an interval
+      // add one extra to each window interval
+      var current_interval_size = interval_remainder &gt; 0 ? interval_size + 1 : interval_size;
+      if (interval_remainder &gt; 0) {
+        interval_remainder--;
+      }
+
+      // Collect the adjusted quantity values from the trials into the double[]
+      var adjusted_quantities = [];
+      for (let i = 0; i &lt; current_interval_size; ++i) {
+        var adjusted_quantity = subcondition_adjusted_quantities[i + window_start];
+        adjusted_quantities.push(adjusted_quantity);
+      }
+
+      // Set the window start to the next interval
+      window_start += current_interval_size;
+      adjusted_quantity_windows.push(adjusted_quantities);
+    }
+
+    //console.log(adjusted_quantity_windows);
+
+    var variance = [];
+    var mean = [];
+    for (let i = 0; i &lt; adjusted_quantity_windows.length; i++){
+      variance.push(math.variance(adjusted_quantity_windows[i]));
+      mean.push(math.mean(adjusted_quantity_windows[i]));
+    }
+
+    var mean_of_variances = math.mean(variance);
+    var variance_of_means = math.variance(mean);
+    var F = variance_of_means/mean_of_variances;
+    console.log(&quot;F: &quot; + F);
+    // Convergence if the F value is &lt; 1 - convergenceThreshold
+    // if the F is greater than 0.25, then converge
+    converged = F &lt; (1 - convergance_threshold);
+  }
+
+  if (converged) {console.log(&quot;CONVERGED!!!!&quot;)};
+
+  return converged;
+}
+
+/** 
+ * Randomizes the position of the base and adjusted coordinates
+ * being displayed on the left or right graphs, and returns
+ * the coordinates for the graphs.
+ * @param  {Object}                       trial 
+ * @param  {{x_values: number[], y_values: number[]}} base_coordinates   
+ * @param  {{x_values: number[], y_values: number[]}} adjusted_coordinates 
+ * @param  {Object}                       constants 
+ * @param  {number}                        adjusted_value 
+ * @returns{{left: number[number[]], right: number[number[]]}}          
+ */
+export function randomize_position(trial, base_coordinates, adjusted_coordinates, constants, adjusted_value) {
+
+  // Handle for numerosity
+  var result = { left: [], right: [], base_is_right: true };
+
+  // Right is adjusted
+  if (Math.random() &lt; 0.5) {
+
+    if (!constants.task || (constants.task &amp;&amp; constants.task === &quot;correlation&quot;)) {
+      result.left = base_coordinates;
+      result.base_is_right = false;
+      trial.data.left_correlation = constants.base_correlation;
+      trial.data.left_num_points = constants.num_points;
+
+      result.right = adjusted_coordinates;
+      trial.data.right_correlation = adjusted_value;
+      trial.data.right_num_points = constants.num_points;
+    }
+    else if (constants.task === &quot;numerosity&quot;) {
+      result.left = base_coordinates;
+      result.base_is_right = false;
+      trial.data.left_correlation = constants.base_correlation;
+      trial.data.left_num_points = constants.num_points;
+
+      result.right = adjusted_coordinates;
+      trial.data.right_correlation = constants.base_correlation;
+      trial.data.right_num_points = adjusted_value;
+    } else {
+      throw Error(&quot;Position randomization has not been handled for task: &quot; + constants.task);
+    }
+  }
+  // Left is adjusted
+  else {
+
+    if (!constants.task || (constants.task &amp;&amp; constants.task === &quot;correlation&quot;)) {
+      result.left = adjusted_coordinates;
+      trial.data.left_correlation = adjusted_value;
+      trial.data.left_num_points = constants.num_points;
+
+      result.right = base_coordinates;
+      trial.data.right_correlation = constants.base_correlation;
+      trial.data.right_num_points = constants.num_points;
+    }
+    else if (constants.task === &quot;numerosity&quot;) {
+      result.left = adjusted_coordinates;
+      trial.data.left_correlation = constants.base_correlation;
+      trial.data.left_num_points = adjusted_value;
+
+      result.right = base_coordinates;
+      trial.data.right_correlation = constants.base_correlation;
+      trial.data.right_num_points = constants.num_points;
+    } else {
+      throw Error(&quot;Position randomization has not been handled for task: &quot; + constants.task);
+    }
+  }
+
+  return result;
+}
+
+/** 
+ * Randomizes the position of the base and adjusted coordinates for side-by-side displays
+ * and returns the coordinates for the left/top graph first and right/bottom graph second.
+ * @param  {Object}                        constants 
+ * @param  {{x_values: [], y_values: []} } adjusted_coordinates_high  
+ * @param  {{x_values: [], y_values: []} } adjusted_coordinates_low       
+ * @param  {Object}                        constants 
+ * @param  {number}                         adjusted_value 
+ * @param  {number}                         adjusted_value_low 
+ * @returns {{left: [coordinates], right: [coordinates]}}            
+ */
+export function randomize_position_symmetric(constants, adjusted_coordinates_high, adjusted_coordinates_low, adjusted_value_high, adjusted_value_low) {
+
+  var randomized_positions = { left_coordinates: [], right_coordinates: [], left_correlation: 0, right_correlation: 0};
+
+  // Left High Right Low
+  if (Math.random() &lt; 0.5) {
+
+    if (!constants.task || (constants.task &amp;&amp; constants.task === &quot;correlation&quot;)) {
+      randomized_positions.left_coordinates = adjusted_coordinates_high;
+      randomized_positions.left_correlation = adjusted_value_high;
+      // trial.data.left_correlation = adjusted_value_high;
+      // trial.data.left_num_points = constants.num_points;
+      randomized_positions.right_coordinates = adjusted_coordinates_low;
+      randomized_positions.right_correlation = adjusted_value_low;
+      //trial.data.right_correlation = adjusted_value_low;
+    }
+    else {
+      throw Error(&quot;Position randomization has not been handled for task: &quot; + constants.task);
+    }
+  }
+  // Left High Right Low
+  else {
+
+    if (!constants.task || (constants.task &amp;&amp; constants.task === &quot;correlation&quot;)) {
+      randomized_positions.left_coordinates = adjusted_coordinates_low;
+      randomized_positions.left_correlation = adjusted_value_low;
+      // trial.data.left_correlation = adjusted_value_low;
+      // trial.data.left_num_points = constants.num_points;
+      randomized_positions.right_coordinates = adjusted_coordinates_high;
+      randomized_positions.right_correlation = adjusted_value_high;
+      // trial.data.right_correlation = adjusted_value_high;
+      // trial.data.right_num_points = constants.num_points;
+    }
+    else {
+      throw Error(&quot;Position randomization has not been handled for task: &quot; + constants.task);
+    }
+  }
+
+  return randomized_positions;
+}
+
+/**
+ * Adds an extra dimension to an n-dimensional collection of coordinates
+ * 
+ * @param {number[number[]]} coordinates - [[x0,y0],...,[xn,yn]]
+ * @param {number[]} z_values - [z0,...,zn]
+ * @returns {number[number[]]} - bundled z_values [[x0,y0,z0],...,[xn,yn,zn]]
+ */
+export function bundle_z_values(coordinates, z_values){
+  if (coordinates.length == z_values.length){ 
+    for(let i = 0; i &lt; coordinates.length; i++){
+      coordinates[i].push(z_values[i])
+    }
+    return coordinates;
+  }
+  else{
+    throw Error(&quot;Different size coordinates. Expected &quot; + coordinates + &apos; got &apos; + z_values.length );
+  }
+}
+
+/**
+ * 
+ * @param {number[number[]]} coordinates [[x0,y0],...,[xn,yn]]
+ * @returns {number[number[]]} bundled z_values equal to y values [[x0,y0,y0],...,[xn,yn,yn]]
+ */
+export function repeat_y_values(coordinates){
+  for(let i = 0; i &lt; coordinates.length; i++){
+    let curr_coord = coordinates[i];
+    curr_coord.push(curr_coord[1])
+  }
+  return coordinates;
+}
+
+
+
+/** 
+ * Randomizes the attribute location of the mixed graph type
+ * In comparisons where one graph is on top of the other, left = above, right = below
+ * Return object is an array so it can be used in graphing controller
+ * @returns {string[]}           
+ */
+export function randomize_graph_attributes_mixed() {
+  var result = []
+  if (Math.random() &lt; 0.5) {
+    // trial.data.left_graph = &quot;graph_a&quot;;
+    // trial.data.right_graph = &quot;graph_b&quot;;
+    result.push(&quot;graph_a_attributes&quot;);
+    result.push(&quot;graph_b_attributes&quot;);
+  } 
+  else{
+    result.push(&quot;graph_b_attributes&quot;);
+    result.push(&quot;graph_a_attributes&quot;);
+    // trial.data.left_graph = &quot;graph_b&quot;;
+    // trial.data.right_graph = &quot;graph_a&quot;;
+  } 
+
+  return result;
+}
+
+/**
+ * Adds a new value onto a running average
+ * @param {number} previous_average 
+ * @param {number} new_value 
+ * @param {number} total_n 
+ * @returns {number}
+ */
+export function get_running_average(previous_average, new_value, total_n){
+  let prev_sum = previous_average * (total_n - 1);
+  let new_sum = prev_sum + new_value;
+  let new_average = new_sum / total_n;
+  return new_average;
+}
+
+
+
+export function randomize_radius_position(trial, base_radius, adjusted_radius) {
+
+  var result = { left: 0, right: 0, base_is_right: true };
+
+  if (Math.random() &lt; 0.5) {
+    result.left = base_radius;
+    result.base_is_right = false;
+    trial.data.left_radius = base_radius;
+
+    result.right = adjusted_radius;
+    trial.data.right_radius = adjusted_radius;
+  }
+  else {
+    result.left = adjusted_radius;
+    trial.data.left_radius = adjusted_radius;
+
+    result.right = base_radius;
+    trial.data.right_radius = base_radius;
+  }
+
+  return result;
+}
+
+/** 
+ * Forces the right graph to always have the greater correlation.
+ * Used for testing purposes.
+ * 
+ * @param {trial} trial 
+ * @param {number[number[]]} base_coordinates 
+ * @param {number[number[]]} adjusted_coordinates 
+ * @param {number} base_correlation 
+ * @param {number} adjusted_correlation 
+ * @returns {{left: number[number[]], right: number[number[]]}}
+ */
+export function force_greater_right_position(trial, base_coordinates, adjusted_coordinates, base_correlation, adjusted_correlation) {
+  var result = { left: [], right: [] };
+
+  if (base_correlation &gt; adjusted_correlation) {
+    result.right = base_coordinates;
+    trial.data.right_correlation = base_correlation;
+
+    result.left = adjusted_coordinates;
+    trial.data.left_correlation = adjusted_correlation;
+  }
+  else {
+    result.right = adjusted_coordinates;
+    trial.data.right_correlation = adjusted_correlation;
+
+    result.left = base_coordinates;
+    trial.data.left_correlation = base_correlation;
+  }
+
+  return result;
+}
+
+
+
+/****************************************************************************************************
+  
+
+  nova_variables(n, proportion_data); &lt;- returns array of objects
+
+  ***************************************************************************************************
+  *Parameters: 
+
+    n (int): input for desired number of elements for the output array
+
+    proportion_data (object): {
+      corner: {
+        valid: 0.0 - 1.0,
+        invalid: 0.0 - 1.0, (OPTIONAL)
+      },
+
+      symbol: {
+        present: 0.0 - 1.0,
+        absent: 0.0 - 1.0, (OPTIONAL)
+      },
+
+      symbol_direction: {
+        toward: 0.0 - 1.0,
+        away: 0.0 - 1.0,
+        neutral: 0.0 - 1.0, (OPTIONAL)
+      },
+
+      letter: {
+        A: 0.0 - 1.0,
+        E: 0.0 - 1.0, (OPTIONAL)
+      },
+    }
+
+    The proportion values range from 0 to 1 and the values for mutually exclusive variables should add to 1.
+  ***************************************************************************************************
+  *Return:
+
+    example output array: [{  corner: &quot;valid&quot;, 
+                              letter: &quot;A&quot;,
+                              symbol: &quot;present&quot;,
+                              symbol_direction: &quot;away&quot;,
+                            },
+                            
+                            {
+                              corner: &quot;invalid&quot;, 
+                              letter: &quot;E&quot;,
+                              symbol: &quot;absent&quot;,
+                              symbol_direction: null,
+                            },
+
+                            {
+                              corner: &quot;valid&quot;, 
+                              letter: &quot;E&quot;,
+                              symbol: &quot;present&quot;,
+                              symbol_direction: &quot;toward&quot;,
+                            }, ...]
+
+  ******** NOTE ********
+  The output array will be of length n if the proportion values multiplied by n return an integer.
+  If it doesn&apos;t multiply to an integer, the number will be floored, and as a result the array length will become n-1.
+*/
+
+/**
+ * Generates experiment variables array for NOVA condition where the number of each variable is exacty
+ * n times the proportion inputted. Array elements are randomized.
+ * 
+ * @param {number} n - input for desired number of elements for the output array
+ * @param {{corner: Object, symbol: Object, symbol_direction: Object, letter: Object}} proportion_data - input for desired number of elements for the output array
+ * @returns {Object}
+ */
+export function nova_variables(n, proportion_data) {
+  let arr = [];
+
+  //create the number of instances for each variable
+  //note that the number is rounded down if the value is not an integer
+  let num_valid = Math.floor(proportion_data.corner.valid * n);
+  let num_invalid = Math.floor(proportion_data.corner.invalid * n) || n - num_valid;
+
+  let num_A = Math.floor(proportion_data.letter.A * n);
+  let num_E = Math.floor(proportion_data.letter.E * n) || n - num_A;
+
+  let num_present = Math.floor(proportion_data.symbol.present * n);
+  let num_absent = Math.floor(proportion_data.symbol.absent * n) || n - num_present;
+
+  let num_toward = Math.floor(proportion_data.symbol_direction.toward * num_present);
+  let num_away = Math.floor(proportion_data.symbol_direction.away * num_present);
+
+  /*
+  console.log(&quot;valid &quot; + num_valid);
+  console.log(&quot;invalid &quot; + num_invalid);
+  console.log(&quot;A &quot; + num_A);
+  console.log(&quot;E &quot; + num_E);
+  console.log(&quot;present &quot; + num_present);
+  console.log(&quot;absent &quot; + num_absent);
+  console.log(&quot;toward &quot; + num_toward);
+  */
+
+  for (let i = 0; i &lt; n; i++) {
+    let obj = {}
+
+    //generate valid or invalid for corner key 
+    if (num_valid &gt; 0) {
+      obj.corner = &quot;valid&quot;
+      num_valid--;
+    }
+    else if (num_invalid &gt; 0) {
+      obj.corner = &quot;invalid&quot;
+      num_invalid--;
+    }
+
+    //generate A or E for letter key, but also randomize which is selected in this pass
+    if (Math.random() &lt; 0.5) {
+      if (num_A &gt; 0) {
+        obj.letter = &quot;A&quot;
+        num_A--;
+      }
+      else if (num_E &gt; 0) {
+        obj.letter = &quot;E&quot;;
+        num_E--;
+      }
+    }
+    else {
+      if (num_E &gt; 0) {
+        obj.letter = &quot;E&quot;
+        num_E--;
+      }
+      else if (num_A &gt; 0) {
+        obj.letter = &quot;A&quot;;
+        num_A--;
+      }
+    }
+
+    //generate present or absent for symbol key, randomize which is selected on this passby, and also generate toward or away if present
+    if (Math.random() &lt; 0.5) {
+      if (num_present &gt; 0) {
+        obj.symbol = &quot;present&quot;;
+        num_present--;
+
+        if (num_toward &gt; 0) {
+          obj.symbol_direction = &quot;toward&quot;;
+          num_toward--;
+        }
+        else if (num_away &gt; 0) {
+          obj.symbol_direction = &quot;away&quot;;
+          num_away--;
+        }
+        else {
+          obj.symbol_direction = &quot;neutral&quot;;
+        }
+      }
+      else if (num_absent &gt; 0) {
+        obj.symbol = &quot;absent&quot;;
+        obj.symbol_direction = null;
+        num_absent--;
+      }
+    }
+    else {
+      if (num_absent &gt; 0) {
+        obj.symbol = &quot;absent&quot;;
+        obj.symbol_direction = null;
+        num_absent--;
+      }
+      else if (num_present &gt; 0) {
+        obj.symbol = &quot;present&quot;;
+        num_present--;
+
+        if (num_toward &gt; 0) {
+          obj.symbol_direction = &quot;toward&quot;;
+          num_toward--;
+        }
+        else if (num_away &gt; 0) {
+          obj.symbol_direction = &quot;away&quot;;
+          num_away--;
+        }
+        else {
+          obj.symbol_direction = &quot;neutral&quot;;
+        }
+      }
+    }
+
+    arr.push(obj);
+  }
+
+  //Durstenfeld shuffle
+  for (let i = arr.length - 1; i &gt; 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+
+  //Remove empty objects
+  let out = arr.filter(element =&gt; Object.keys(element).length &gt; 0);
+
+  return out;
+}
+
+
+
+/**
+ * The trial properties array generation function for the feature search task.
+ * Developed 2021-02-21
+ * 
+ * The specifications of the required array of trial parameters can be found in &quot;Condition 1&quot; here: 
+ * https://docs.google.com/document/d/1fTKn6hmgGXiHuWM8iZmhekhLRqKLHRqa2RCvUj-77Z8/edit?usp=sharing
+ * 
+ * @param {number} n - (Number of trials per supersubcondition of the feature search task)
+ * 
+ * @returns {object[]} Sample of output:
+ *         [
+ *          {
+ *            target_color: null,
+ *            distractor_color: &apos;#20874a&apos;,
+ *            correlation: 0.6,
+ *            set_size: 50,
+ *            num_trials: 5
+ *          },
+ *          {
+ *            target_color: &apos;#007ebc&apos;,
+ *            distractor_color: &apos;#dbc667&apos;,
+ *            correlation: 0.9,
+ *            set_size: 50,
+ *            num_trials: 5
+ *          },
+ *            ...
+ *         ]
+ */
+export function generate_feature_search_trials(n) {
+  // Properties are distractor colors, and the values are the associated target colors
+  const color_properties = {
+    &quot;#e45f43&quot;: &quot;#cd4c32&quot;,
+    &quot;#20874a&quot;: &quot;#cd4c32&quot;,
+    &quot;#2391d1&quot;: &quot;#007ebc&quot;,
+    &quot;#dbc667&quot;: &quot;#007ebc&quot;,
+  };
+
+  // Define constants for correlation values and set sizes
+  const correlations_per_distractor = [0.3, 0.6, 0.9];
+  const set_sizes = [20, 50];
+
+  // Define output array
+  let output_arrays = {
+    &quot;#cd4c32&quot;: [],
+    &quot;#007ebc&quot;: []
+  };
+
+  // 4 total distractor colors each associated with 1 of 2 target colors
+  for (let distractor_color in color_properties) {
+    // 12 total supersubconditions per distractor color
+    for (let i = 0; i &lt; 12; i++) {
+      // Every distractor value has 4 associated supersubconditions
+      let correlation = correlations_per_distractor[Math.floor(i / 4)];
+
+      // Set size property alternates for every supersubcondition
+      let set_size = set_sizes[i % 2];
+
+      // Every 2 supersubconditions has 2 absent target colors
+      let target_color;
+      if (Math.floor(i / 2) % 2 === 0) {
+        target_color = color_properties[distractor_color];
+      }
+      else {
+        target_color = null
+      }
+
+      // Append object to unsorted array depending on the target color because each array needs to be shuffled individually
+      output_arrays[color_properties[distractor_color]].push({
+        target_color: target_color,
+        distractor_color: distractor_color,
+        correlation: correlation,
+        set_size: set_size,
+        num_trials: n,
+      });
+    }
+  };
+
+  // Durstenfeld shuffle for each array seperately
+  for (let target_color in output_arrays) {
+    for (let i = output_arrays[target_color].length - 1; i &gt; 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [output_arrays[target_color][i], output_arrays[target_color][j]] = [output_arrays[target_color][j], output_arrays[target_color][i]];
+    }
+  };
+
+  // Concat both array sections and return final array
+  return output_arrays[&quot;#cd4c32&quot;].concat(output_arrays[&quot;#007ebc&quot;]);
+}
+
+/**
+ * Create randomized array of each track type, above or below, such that there
+ * is not more than MAX_REPETITIONS of the same track in a row
+ * 
+ * @param {array} array 
+ * @param {number} max_length 
+ */
+export function above_and_below_generate_random_trial_array(array, max_length){
+  while(array.length &lt; 2 * max_length){
+
+    // remaining_trials will always be even: 2*this.MAX_TRIALS is even,
+    // this.trial_selection_matrix[index].length grows in 2s in the push(above/blow) lines so its also even
+    // 2k - 2m = 2(k-m) where k and m are interger, k-m = j where j is an integer
+    // remaining_trials / 2 = 2j / 2 = j
+    var remaining_trials = 2 * max_length - array.length;
+
+    // Base case when remaining number of trials is less than sub_block size
+    // eg with MAX_TRIALS = 52 and MAX_REPETITIONS = 5, the 11th iteration of the while loop will
+    // have 4 &quot;spots&quot; remaining in the trial_selection_matrix[index] array (52 * 2 = 104) so, you
+    // can&apos;t fill it with 2 * MAX_REPETITIONS = 10 trials
+    if( remaining_trials  &lt; 2 * this.MAX_REPETITIONS){
+      var sub_block = [];
+      for (var i = 0; i &lt; remaining_trials / 2; i++){
+        sub_block.push(&quot;above&quot;);
+        sub_block.push(&quot;below&quot;);
+      }
+      this.shuffleArray(sub_block);
+      array.push(...sub_block);
+    }
+    // Normal case, above/below trial added at the same time, sub_block will be of size 2 * MAX_REPETITIONS
+    else{
+      var sub_block = [];
+      for(var i = 0; i &lt; this.MAX_REPETITIONS; i++){
+        sub_block.push(&quot;above&quot;);
+        sub_block.push(&quot;below&quot;);
+      }
+      this.shuffleArray(sub_block);
+      array.push(...sub_block);
+    }
+  }
+  console.log(array);
+}
+  
+/**
+ * Generates formated css display element for margins and alignment for a particular stimulus mask
+ * to be used in an experiment.js function. Graph_attrributes are generated by the get_mixed_graph_styles function below,
+ * intended to be used with the Mixed Graph type.
+ *
+ * @param  {Object} graph_attributes
+ * @returns {string} css style element stimulus source with correct margins on left, right, top and bottom
+ * @author Jose Navarro
+*/
+export function get_mixed_masks(attributes){
+  
+  let graph_attributes = {}
+  graph_attributes.left = attributes[0];
+  graph_attributes.right = attributes[1];
+  
+  //console.log(graph_attributes)
+  let style_left =  `style=&quot;display:${graph_attributes.left.display}; margin: ${graph_attributes.left.top} ${graph_attributes.left.right} ${graph_attributes.left.bot} ${graph_attributes.left.left};&quot;`
+  let style_right = `style=&quot;display:${graph_attributes.right.display}; margin: ${graph_attributes.right.top} ${graph_attributes.right.right} ${graph_attributes.right.bot} ${graph_attributes.right.left};&quot;`
+  
+  let left_graph_stimulus =   `&lt;img src=&quot;${graph_attributes.left.image_path}&quot; width=&quot;${graph_attributes.left.width}&quot; height=&quot;${graph_attributes.left.height}&quot; ${style_left}&lt;/img&gt;`
+  let right_graph_stimulus =  `&lt;img src=&quot;${graph_attributes.right.image_path}&quot; width=&quot;${graph_attributes.right.width}&quot; height=&quot;${graph_attributes.right.height}&quot; ${style_right}&lt;/img&gt;`
+
+  let mixed_mask = `&lt;div align = &quot;center&quot;&gt; ${left_graph_stimulus} ${right_graph_stimulus}&lt;/div&gt;`;
+  //console.log(ret)
+  return mixed_mask;
+
+}
+
+/**
+ * Geretes the Mask stimulus for a single graph
+ * @param {Object} graph_attributes 
+ * @returns {string}
+ */
+export function get_single_mask(graph_attributes){
+  let style = `style=&quot;display:${graph_attributes.display}; margin: ${graph_attributes.top} ${graph_attributes.right} ${graph_attributes.bot} ${graph_attributes.left};&quot;`
+  let graph_stimulus = `&lt;img src=&quot;${graph_attributes.image_path}&quot; width=&quot;${graph_attributes.width}&quot; height=&quot;${graph_attributes.height}&quot; ${style}&lt;/img&gt;`
+  let mask = `&lt;div align = &quot;center&quot;&gt; ${graph_stimulus}&lt;/div&gt;`;
+  return mask;
+}
+
+
+/**
+ * Generates the correct mask image path and margins for left and right graphs and mask based on graph type.
+ * Used with Mixed-type graphs but can support any graph type if needed. 
+ * This returns the CSS style properties for mixed graphs. Top, right, bot, and left refer to the margin properties
+ * 
+ * This function and functions depending on it such as prepare_mixed_plot in the graphing controller are not generalized for more than 
+ * two graphs (left and right / top and bottom, etc...). 
+ * 
+ * TODO: figure out a better way to set out separations rather than hard coding them in this function.
+ * Note: If graph is aligning but not the mask, add &apos;px&apos; to the end of the margin values
+ * @param  {Object} constants
+ * @param  {array} graph_properties left and right graph properties
+ * @param  {string} rectangle_mask_path 
+ * @param  {string} square_mask_path 
+* @returns  {{ left:{}, right:{}}} margins assoc array that has the left and right margins and image path.
+*                       margins = { left:{}, right:{}}
+* @author Jose Navarro
+*/
+export function get_mixed_graph_styles(constants, graph_properties, MASK_PATHS){
+  let square_mask_path = constants.background_color === &quot;WHITE&quot; ? MASK_PATHS.square : MASK_PATHS.square_black;
+  let rectangle_mask_path = constants.background_color === &quot;WHITE&quot; ? MASK_PATHS.rectangle: MASK_PATHS.rectangle_black;
+  let attributes = {
+    left: {image_path: &quot;&quot;, height: &quot;&quot;, width: &quot;&quot;, top: &quot;&quot;, right: &quot;&quot;, bot: &quot;&quot;, left: &quot;&quot;, display: &quot;&quot;}, 
+    right:{image_path: &quot;&quot;, height: &quot;&quot;, width: &quot;&quot;, top: &quot;&quot;, right: &quot;&quot;, bot: &quot;&quot;, left: &quot;&quot;, display: &quot;&quot;}
+  };
+
+  let left_graph_data;
+  let right_graph_data;
+
+  if(constants.graph_a_attributes &amp;&amp; constants.graph_b_attributes){
+    left_graph_data = constants[graph_properties[0]];
+    right_graph_data = constants[graph_properties[1]];
+  }
+  else{
+    left_graph_data = constants;
+    right_graph_data = constants;
+  }
+
+  let left_graph_type = left_graph_data.graph_type;
+  let right_graph_type = right_graph_data.graph_type;
+
+  const zero_px = &apos;0px&apos;;
+  const strip_plot_distance = 450/2; // 45 mm
+  const horizontal_scatter_strip_separation = 150/2; // 15 mm
+  const vertical_strip_margin = 450/2 - 300/2 // 15 mm Scatter height + buffer - strip plot line height
+  const strip_strip_vertical_spacing = 75/2
+  const scatter_strip_separation = 150/2; // 15 mm
+  const scatter_spacing = 50/2; // 5 mm
+  const pcp_separation = 250/2; // 25 mm
+  const scatter_pcp_separation = 200/2; // 20 mm
+
+  switch(left_graph_type){
+    case &quot;scatter&quot;:
+      attributes.left.image_path = square_mask_path;
+      attributes.left.width = left_graph_data.axis_length + left_graph_data.buffer;
+      attributes.left.height = attributes.left.width;
+      switch(right_graph_type){
+        case &quot;scatter&quot;:
+          attributes.left.top    = zero_px;
+          attributes.left.right  = attributes.left.width/4 + &apos;px&apos;;
+          attributes.left.bot    = zero_px;
+          attributes.left.left   = zero_px;
+          
+          attributes.right.image_path = square_mask_path;
+          attributes.right.width   = right_graph_data.axis_length + right_graph_data.buffer;
+          attributes.right.height  = attributes.right.width;
+          attributes.right.top   = zero_px;
+          attributes.right.right = zero_px;
+          attributes.right.bot   = zero_px;
+          attributes.right.left  = attributes.right.width/4 + &apos;px&apos;; 
+          break;
+        case &quot;strip&quot;:
+          console.log(&quot;Strip&quot;)
+          //scatter atributes
+          //attributes.left.display  = &quot;inline-block&quot;; // needed to center scatter without margins:auto when the graph is above another graph
+          attributes.left.top      = zero_px;
+          attributes.left.right    = scatter_spacing +  100/2 + &apos;px&apos;
+          attributes.left.bot      = zero_px;
+          attributes.left.left     = scatter_spacing + &apos;px&apos;
+
+          //strip atributes
+          attributes.right.image_path = rectangle_mask_path;
+          attributes.right.width      = right_graph_data.axis_length + right_graph_data.buffer;
+          attributes.right.height     = right_graph_data.line_height;
+          //attributes.right.display  = &quot;block&quot; // uncomment to do top and bottom displays
+          //attributes.right.top      = (strip_plot_distance - right_graph_data.line_height) + &apos;px&apos;;
+          attributes.right.top        = vertical_strip_margin/2 + &apos;px&apos;;
+          attributes.right.right      = zero_px;
+          attributes.right.bot        = vertical_strip_margin/2 + &apos;px&apos;;
+          attributes.right.left       = zero_px
+          break;
+        case &quot;parallel&quot;:
+          const scatter_height_centering = (right_graph_data.axis_height + 2*right_graph_data.axis_buffer) - attributes.left.height;
+
+          attributes.left.top    = scatter_height_centering + &apos;px&apos;;
+          attributes.left.right  = scatter_pcp_separation/2 + &apos;px&apos;
+          attributes.left.bot    = scatter_height_centering + &apos;px&apos;;
+          attributes.left.left   = zero_px;
+
+          attributes.right.image_path = square_mask_path;
+          attributes.right.width = right_graph_data.axis_separation;
+          attributes.right.height = (right_graph_data.axis_height + 2*right_graph_data.axis_buffer) + &apos;px&apos;;
+          attributes.right.top   = zero_px;
+          attributes.right.right = zero_px;
+          attributes.right.bot   = zero_px;
+          attributes.right.left  = scatter_pcp_separation/2 + &apos;px&apos;; 
+          break;
+      }
+      break;
+    case &quot;strip&quot;:
+      attributes.left.image_path  = rectangle_mask_path;
+      attributes.left.width       = left_graph_data.axis_length + left_graph_data.buffer;
+      attributes.left.height      = left_graph_data.line_height;
+      //attributes.left.display = &quot;block&quot;;
+      attributes.left.top         = zero_px;
+      //attributes.left.right   = zero_px; // set in each case
+      attributes.left.left        = zero_px;
+      attributes.left.bot         = zero_px;
+
+      switch(right_graph_type){
+        case &quot;scatter&quot;:
+          attributes.left.top         = vertical_strip_margin/2 + &apos;px&apos;;
+          attributes.left.bot         = vertical_strip_margin/2 + &apos;px&apos;; 
+          //attributes.left.bot       =  (strip_plot_distance- left_graph_data.line_height) + &apos;px&apos;;
+          attributes.left.right       = zero_px
+          
+          // scatter attributes 
+          attributes.right.width      = right_graph_data.axis_length + right_graph_data.buffer;
+          attributes.right.height     = attributes.right.width;
+          attributes.right.image_path = square_mask_path;
+          attributes.right.top        = zero_px;
+          attributes.right.right      = scatter_spacing + &apos;px&apos;
+          attributes.right.bot        = zero_px;
+          attributes.right.left       = scatter_spacing + 100 + &apos;px&apos;
+          //attributes.right.display = &quot;inline-block&quot;; 
+          break;
+        case &quot;strip&quot;:
+          //attributes.left.bot = (strip_plot_distance - left_graph_data.line_height) + &apos;px&apos;;
+          attributes.left.right        = horizontal_scatter_strip_separation/2 + &apos;px&apos;;
+
+          attributes.right.image_path  = rectangle_mask_path;
+          attributes.right.width       = right_graph_data.axis_length + right_graph_data.buffer;
+          attributes.right.height      = right_graph_data.line_height;
+          //attributes.right.top       = (strip_plot_distance - right_graph_data.line_height) + &apos;px&apos;;
+          attributes.right.top         = zero_px;
+          attributes.right.right       = zero_px;
+          attributes.right.bot         = zero_px;
+          attributes.right.left        = horizontal_scatter_strip_separation/2 + &apos;px&apos;;
+          // To big for a single horizontal line at 8cm or so
+          if(attributes.left.width &gt; 400 || attributes.right.width &gt; 400){
+            attributes.right.display     = &quot;block&quot;;
+            attributes.left.display      = &quot;block&quot;;
+            attributes.right.left        = zero_px;
+            attributes.left.right        = zero_px;
+            attributes.right.top         = strip_strip_vertical_spacing + &apos;px&apos;;
+            attributes.right.bot         = strip_strip_vertical_spacing + &apos;px&apos;;
+          }
+          break;
+      }
+      
+      break;
+    case &quot;parallel&quot;:
+      attributes.left.image_path = square_mask_path;
+      attributes.left.width = left_graph_data.axis_separation + &apos;px&apos;;
+      attributes.left.height = (left_graph_data.axis_height + 2*left_graph_data.axis_buffer) + &apos;px&apos;;
+      switch(right_graph_type){
+        case &quot;scatter&quot;:
+          attributes.left.top    = zero_px;
+          attributes.left.right  = scatter_pcp_separation/2 + &apos;px&apos;
+          attributes.left.bot    = zero_px;
+          attributes.left.left   = zero_px;
+
+          attributes.right.image_path = square_mask_path;
+          attributes.right.width   = right_graph_data.axis_length + right_graph_data.buffer;
+          attributes.right.height  = attributes.right.width;
+          const scatter_height_centering = (left_graph_data.axis_height + 2*left_graph_data.axis_buffer) - attributes.right.height;
+          attributes.right.top   = scatter_height_centering + &apos;px&apos;;
+          attributes.right.right = zero_px;
+          attributes.right.bot   = scatter_height_centering + &apos;px&apos;;
+          attributes.right.left  = scatter_pcp_separation/2 + &apos;px&apos;
+          break;
+        case &quot;strip&quot;:
+          break;
+        case &quot;parallel&quot;:
+          attributes.left.top    = zero_px;
+          attributes.left.right  = pcp_separation/2 + &apos;px&apos;
+          attributes.left.bot    = zero_px;
+          attributes.left.left   = zero_px;
+
+          attributes.right.image_path = square_mask_path;
+          attributes.right.width = right_graph_data.axis_separation + &apos;px&apos;;
+          attributes.right.height = (right_graph_data.axis_height + 2*right_graph_data.axis_buffer); 
+          attributes.right.top   = zero_px;
+          attributes.right.right = zero_px;
+          attributes.right.bot   = zero_px;
+          attributes.right.left  = pcp_separation/2 + &apos;px&apos;; 
+          break;
+      }
+      break;
+  }
+  return [attributes.left, attributes.right];
+}
+
+/**
+ * 
+ * @param {Object} constants 
+ * @param {Object} graph_properties 
+ * @param {string} square_mask_path 
+ * @param {string} rectangle_mask_path 
+ * @returns {Object}
+ */
+export function get_single_graph_style(constants, graph_properties, square_mask_path, rectangle_mask_path){
+  let graph_style = {image_path: &quot;&quot;, height: &quot;&quot;, width: &quot;&quot;, top: &quot;&quot;, right: &quot;&quot;, bot: &quot;&quot;, left: &quot;&quot;, display: &quot;&quot;};
+  const zero_px = &apos;0px&apos;;
+
+  switch(graph_properties.graph_type){
+    case &quot;scatter&quot;:
+      graph_style.image_path = square_mask_path;
+      graph_style.width     = graph_properties.axis_length + graph_properties.buffer;
+      graph_style.height    = graph_style.width;
+      graph_style.top       = zero_px;
+      graph_style.right     = zero_px;
+      graph_style.bot       = zero_px;
+      graph_style.left      = zero_px;
+      break;
+
+  }
+  return graph_style;
+}
+
+ /**
+  * Randomize array in-place using Durstenfeld shuffle algorithm
+  * Kindly taken from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+  * 
+  * @param {number[]} array 
+  */
+ export function shuffleArray(array) {
+  for (var i = array.length - 1; i &gt; 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+  }
+}
+
+/**
+ * Generates conditional timeline instruction for JND and Stevens hybrid conditions.
+ * @param {Object} experiment experiment object either JND or Stevens
+ * @returns {jsPsych trial}
+ */
+export function genereate_hybrid_instruction(experiment){
+  
+  let other_task_name;
+  switch(experiment.EXPERIMENT_NAME){
+    case &quot;JND&quot;:
+      other_task_name = &quot;Stevens&quot;;
+      break;
+    case &quot;Stevens&quot;:
+      other_task_name = &quot;JND&quot;
+      break
+  }
+
+  let instructions = 
+  `&lt;div align = &apos;center&apos;&gt;
+    &lt;p&gt; Please exit full screen mode and switch to the ${other_task_name} Task.
+      &lt;br&gt; Do not close this window. You will return to it when the ${other_task_name} Task is completed.
+      &lt;br&gt; Enter full screen mode again and press any key to continue when you return.
+    &lt;/p&gt;
+  &lt;/div&gt;`
+
+  let instruction_trial = {
+    type: &apos;html-keyboard-response&apos;,
+    stimulus: instructions
+  };
+  // conditional timeline wrapper
+
+  let block_size = experiment.EXPERIMENT_NAME === &quot;JND&quot; ? 3 : 1
+
+  var hybrid_timeline = {
+    timeline: [instruction_trial],
+    conditional_function: function() {
+      console.log(&quot;Testing hybrid?!!!!!!!!!!&quot;)
+      console.log(experiment.end_sub_condition(&quot;test&quot;, experiment.current_sub_condition_index) &amp;&amp; (experiment.current_sub_condition_index + 1) % block_size == 0)
+      
+      // if it is the end of the Sub Condition and the end of a block (assumes block size is 3 for hybrid tasks)
+      if (experiment.end_sub_condition(&quot;test&quot;, experiment.current_sub_condition_index) &amp;&amp; (experiment.current_sub_condition_index + 1) % block_size == 0) {
+        console.log(&quot;Hybrid case!&quot;)
+        return true;
+      } else {
+        return false;
+      }
+    }
+  };
+
+  return hybrid_timeline
+}
+
+
+/* Get the height of the screen
+* Kindly taken from https://stackoverflow.com/questions/1038727/how-to-get-browser-width-using-javascript-code
+*/
+export function getScreenHeight() {
+  return screen.height
+
+}
+
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

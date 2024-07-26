@@ -1,0 +1,5267 @@
+[
+  {
+    "name": "balance_subconditions",
+    "filePath": "scripts/experiment-properties/balancing/balancing_controller.js",
+    "lines": [
+      {
+        "lineNumber": 9,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 10,
+        "line": " * Returns the balanced order of the subconditions given balancing type,\r"
+      },
+      {
+        "lineNumber": 11,
+        "line": " * experiment, and number of subconditions.\r"
+      },
+      {
+        "lineNumber": 12,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 13,
+        "line": " * @param {string}     \t\tbalancing_type\r"
+      },
+      {
+        "lineNumber": 14,
+        "line": " * @param {experiment_name} name of experiment\r"
+      },
+      {
+        "lineNumber": 15,
+        "line": " * @param {dataset_length}  length of dataset AKA number of subconditions\r"
+      },
+      {
+        "lineNumber": 16,
+        "line": " * @param {dataset} \t\tarray of subconditions\r"
+      },
+      {
+        "lineNumber": 17,
+        "line": " * @param {block_attribute} attribute we wish to block by\r"
+      },
+      {
+        "lineNumber": 18,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 19,
+        "line": " * @return {[]}\t\t  \t\tarray of indices, representing each subcondition in the dataset.\r"
+      },
+      {
+        "lineNumber": 20,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 21,
+        "line": "function balance_subconditions(balancing_type, experiment_name, dataset_length, dataset=null, block_attribute=\"block\", custom_order_string=null){\r"
+      }
+    ],
+    "codeParams": [
+      "balancing_type",
+      "experiment_name",
+      "dataset_length",
+      "dataset",
+      "block_attribute",
+      "custom_order_string"
+    ],
+    "docParams": [
+      "balancing_type",
+      "name",
+      "length",
+      "array",
+      "attribute"
+    ]
+  },
+  {
+    "name": "get_any_array",
+    "filePath": "scripts/experiment-properties/balancing/balancing_helpers/balancing_helper.js",
+    "lines": [
+      {
+        "lineNumber": 48,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 49,
+        "line": " * \r"
+      },
+      {
+        "lineNumber": 50,
+        "line": " * @param {Array} array Array of indices and * for any index \r"
+      },
+      {
+        "lineNumber": 51,
+        "line": " * @returns {Array} \r"
+      },
+      {
+        "lineNumber": 52,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 53,
+        "line": "export function get_any_array(a){\r"
+      }
+    ],
+    "codeParams": [
+      "a"
+    ],
+    "docParams": [
+      "array"
+    ]
+  },
+  {
+    "name": "initialize_blocked_latin_square",
+    "filePath": "scripts/experiment-properties/balancing/generators/blocked_latin_square_generator.js",
+    "lines": [
+      {
+        "lineNumber": 3,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 4,
+        "line": " * Returns the balanced order of the subconditions in latin square order by block attribute,\r"
+      },
+      {
+        "lineNumber": 5,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 6,
+        "line": " * @param {dataset_length}  length of dataset AKA number of subconditions\r"
+      },
+      {
+        "lineNumber": 7,
+        "line": " * @param {dataset} \t\tarray of subconditions\r"
+      },
+      {
+        "lineNumber": 8,
+        "line": " * @param {block_attribute} attribute we wish to block by\r"
+      },
+      {
+        "lineNumber": 9,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 10,
+        "line": " * @return {[]}\t\t  \t\tarray of indices, representing each subcondition in the dataset.\r"
+      },
+      {
+        "lineNumber": 11,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 12,
+        "line": "function initialize_blocked_latin_square(dataset_length, dataset, block_attribute) {\r"
+      }
+    ],
+    "codeParams": [
+      "dataset_length",
+      "dataset",
+      "block_attribute"
+    ],
+    "docParams": [
+      "length",
+      "array",
+      "attribute"
+    ]
+  },
+  {
+    "name": "innitialize_custom_latin_square",
+    "filePath": "scripts/experiment-properties/balancing/generators/blocked_latin_square_generator.js",
+    "lines": [
+      {
+        "lineNumber": 36,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 37,
+        "line": " * Returns the balanced order of the subconditions in latin square order by block attribute\r"
+      },
+      {
+        "lineNumber": 38,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 39,
+        "line": " * @param {array}     \t\tblock_order we wish the block attribute to be\r"
+      },
+      {
+        "lineNumber": 40,
+        "line": " * @param {assoc} \t\t    array of subconditions\r"
+      },
+      {
+        "lineNumber": 41,
+        "line": " * @param {string}          attribute we wish to block by\r"
+      },
+      {
+        "lineNumber": 42,
+        "line": " * @param {boolean}         flag to determine if we allow repeating or insuficient blocks\r"
+      },
+      {
+        "lineNumber": 43,
+        "line": " * @return {[]}\t\t  \t\tarray of indices, representing each subcondition in the dataset.\r"
+      },
+      {
+        "lineNumber": 44,
+        "line": " */ \r"
+      },
+      {
+        "lineNumber": 45,
+        "line": "function innitialize_custom_latin_square(block_order, dataset, block_attribute, repeating_blocks){\r"
+      }
+    ],
+    "codeParams": [
+      "block_order",
+      "dataset",
+      "block_attribute",
+      "repeating_blocks"
+    ],
+    "docParams": [
+      "block_order",
+      "array",
+      "attribute",
+      "flag"
+    ]
+  },
+  {
+    "name": "generate_counter_balanced_order",
+    "filePath": "scripts/experiment-properties/balancing/generators/counter_balanced_order_generator.js",
+    "lines": [
+      {
+        "lineNumber": 3,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 4,
+        "line": " * Counter Balances a given Blocked Latin Square Order by ordering the subconditions within the blocks\r"
+      },
+      {
+        "lineNumber": 5,
+        "line": " * according to a given Counter Balance Order. We can \r"
+      },
+      {
+        "lineNumber": 6,
+        "line": " * \r"
+      },
+      {
+        "lineNumber": 7,
+        "line": " * @param {number[]} blocked_order      Blocked Latin Square Order\r"
+      },
+      {
+        "lineNumber": 8,
+        "line": " * @param {number} block_size           Number of Subconditions Per Block\r"
+      },
+      {
+        "lineNumber": 9,
+        "line": " * @param {number} balance_order_type   Which Counter Balanced Order we want to Counter Balance by.\r"
+      },
+      {
+        "lineNumber": 10,
+        "line": " *                                      The number of types is equal to the number of permutations a block can have\r"
+      },
+      {
+        "lineNumber": 11,
+        "line": " * @param {number} num_blocks           Number of Blocks in the Blocked Order we want to Counter Balance\r"
+      },
+      {
+        "lineNumber": 12,
+        "line": " * @returns {number[]}\r"
+      },
+      {
+        "lineNumber": 13,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 14,
+        "line": "export function generate_counter_balanced_order(blocked_order, block_size, balance_order_type, num_blocks_to_cb){\r"
+      }
+    ],
+    "codeParams": [
+      "blocked_order",
+      "block_size",
+      "balance_order_type",
+      "num_blocks_to_cb"
+    ],
+    "docParams": [
+      "blocked_order",
+      "block_size",
+      "balance_order_type",
+      "num_blocks"
+    ]
+  },
+  {
+    "name": "innitialize_custom_order",
+    "filePath": "scripts/experiment-properties/balancing/generators/custom_order_generator.js",
+    "lines": [
+      {
+        "lineNumber": 11,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 12,
+        "line": " * Documentation: https://docs.google.com/document/d/1EQb3qFepxX-nbXKM2CqBSqxrDCj5sYL8z61RnrXry88/edit#heading=h.7mwcmrbuwnzo\r"
+      },
+      {
+        "lineNumber": 13,
+        "line": " * \r"
+      },
+      {
+        "lineNumber": 14,
+        "line": " * Reads from the URL directly to avoid having to route the parameters for each experiment (can be changed in the future for consistency)\r"
+      },
+      {
+        "lineNumber": 15,
+        "line": " * \r"
+      },
+      {
+        "lineNumber": 16,
+        "line": " * \r"
+      },
+      {
+        "lineNumber": 17,
+        "line": " * @param {number[]}          balanced_order given by experiment's order in balancing_controller.js\r"
+      },
+      {
+        "lineNumber": 18,
+        "line": " * @param {dataset} \t\t      array conditiond dataset\r"
+      },
+      {
+        "lineNumber": 19,
+        "line": " * @param {string}            block_attribute we wish to block by in custom blocked latin square\r"
+      },
+      {
+        "lineNumber": 20,
+        "line": " * @param {string}            custom_order_string custom order string routed to params\r"
+      },
+      {
+        "lineNumber": 21,
+        "line": " * @return  {number[]}        new subcondition order or original balanced order if custom subcondition order fails\r"
+      },
+      {
+        "lineNumber": 22,
+        "line": " * @author Jose Navarro\r"
+      },
+      {
+        "lineNumber": 23,
+        "line": "**/\r"
+      },
+      {
+        "lineNumber": 24,
+        "line": "function innitialize_custom_order(balanced_order, dataset=null, block_attribute=null, custom_order_string=null){\r"
+      }
+    ],
+    "codeParams": [
+      "balanced_order",
+      "dataset",
+      "block_attribute",
+      "custom_order_string"
+    ],
+    "docParams": [
+      "balanced_order",
+      "array",
+      "block_attribute",
+      "custom_order_string"
+    ]
+  },
+  {
+    "name": "is_distractor_diamond_square",
+    "filePath": "scripts/experiment-properties/data/custom_subcondition_generator.js",
+    "lines": [
+      {
+        "lineNumber": 70,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 71,
+        "line": " * Checks if the condition name is a \"distractor_diamond_square\" one.\r"
+      },
+      {
+        "lineNumber": 72,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 73,
+        "line": " * @param   {object}   experiment\r"
+      },
+      {
+        "lineNumber": 74,
+        "line": " * @return  {boolean}\r"
+      },
+      {
+        "lineNumber": 75,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 76,
+        "line": "function is_distractor_diamond_square(condition_name) {\r"
+      }
+    ],
+    "codeParams": [
+      "condition_name"
+    ],
+    "docParams": [
+      "experiment"
+    ]
+  },
+  {
+    "name": "check_dataset",
+    "filePath": "scripts/experiment-properties/data/data_controller.js",
+    "lines": [
+      {
+        "lineNumber": 119,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 120,
+        "line": " * Checks if all subconditions have the necessary attributes to run the experiment.\r"
+      },
+      {
+        "lineNumber": 121,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 122,
+        "line": " * @param  experiment      {string}                 type of experiment\r"
+      },
+      {
+        "lineNumber": 123,
+        "line": " *         graph_type.     {string}                 type of graph\r"
+      },
+      {
+        "lineNumber": 124,
+        "line": " *         dataset         {array of JS objects}    dataset to check            \r"
+      },
+      {
+        "lineNumber": 125,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 126,
+        "line": "function check_dataset(experiment_name, graph_type, dataset) {\r"
+      }
+    ],
+    "codeParams": [
+      "experiment_name",
+      "graph_type",
+      "dataset"
+    ],
+    "docParams": [
+      "experiment"
+    ]
+  },
+  {
+    "name": "sample_coordinates",
+    "filePath": "scripts/experiment-properties/distribution/gaussian_distribution_generator.js",
+    "lines": [
+      {
+        "lineNumber": 110,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 111,
+        "line": "* Randomly picks x number of points from the distribution\r"
+      },
+      {
+        "lineNumber": 112,
+        "line": "* where x = num_points.\r"
+      },
+      {
+        "lineNumber": 113,
+        "line": "*\r"
+      },
+      {
+        "lineNumber": 114,
+        "line": "* @param coordinates { [x1, y1], [x2, y2] ... }\r"
+      },
+      {
+        "lineNumber": 115,
+        "line": "*        num_points {integer}\r"
+      },
+      {
+        "lineNumber": 116,
+        "line": "* @return output_coordinates with size num_points { [x1, y1], [x2, y2] ... }\r"
+      },
+      {
+        "lineNumber": 117,
+        "line": "*/\r"
+      },
+      {
+        "lineNumber": 118,
+        "line": "function sample_coordinates(coordinates, num_points){\r"
+      }
+    ],
+    "codeParams": [
+      "coordinates",
+      "num_points"
+    ],
+    "docParams": [
+      "coordinates"
+    ]
+  },
+  {
+    "name": "prepare_coordinates",
+    "filePath": "scripts/experiment-properties/distribution/gaussian_distribution_generator.js",
+    "lines": [
+      {
+        "lineNumber": 83,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 84,
+        "line": "* Converts the coordinates into this format for d3:\r"
+      },
+      {
+        "lineNumber": 85,
+        "line": "* [ [x1, y1], [x2, y2] ... [xn, yn] ]\r"
+      },
+      {
+        "lineNumber": 86,
+        "line": "* And samples the distribution for the specified num_points.\r"
+      },
+      {
+        "lineNumber": 87,
+        "line": "*\r"
+      },
+      {
+        "lineNumber": 88,
+        "line": "* @param coordinates { {x_values: [], y_values: []} }\r"
+      },
+      {
+        "lineNumber": 89,
+        "line": "*        num_points {integer}\r"
+      },
+      {
+        "lineNumber": 90,
+        "line": "* @return output_coordinates { [x1, y1], [x2, y2] ... }\r"
+      },
+      {
+        "lineNumber": 91,
+        "line": "*/\r"
+      },
+      {
+        "lineNumber": 92,
+        "line": "function prepare_coordinates(coordinates, num_points){\r"
+      }
+    ],
+    "codeParams": [
+      "coordinates",
+      "num_points"
+    ],
+    "docParams": [
+      "coordinates"
+    ]
+  },
+  {
+    "name": "generate_random_coordinate",
+    "filePath": "scripts/experiment-properties/distribution/random_distribution_generator.js",
+    "lines": [
+      {
+        "lineNumber": 28,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 29,
+        "line": " * Generates random coordinate given row and column values.\r"
+      },
+      {
+        "lineNumber": 30,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 31,
+        "line": " * @param  row                  {int}\r"
+      },
+      {
+        "lineNumber": 32,
+        "line": " *         col                  {int}\r"
+      },
+      {
+        "lineNumber": 33,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 34,
+        "line": " * @return [row, col] (JSON stringified so can do object comparisons)\r"
+      },
+      {
+        "lineNumber": 35,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 36,
+        "line": "function generate_random_coordinate(row, col) {\r"
+      }
+    ],
+    "codeParams": [
+      "row",
+      "col"
+    ],
+    "docParams": [
+      "row"
+    ]
+  },
+  {
+    "name": "prepare_coordinates",
+    "filePath": "scripts/experiment-properties/distribution/random_distribution_generator.js",
+    "lines": [
+      {
+        "lineNumber": 53,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 54,
+        "line": "* Converts the coordinates into this format for d3:\r"
+      },
+      {
+        "lineNumber": 55,
+        "line": "* [ [x1, y1], [x2, y2] ... [xn, yn] ]\r"
+      },
+      {
+        "lineNumber": 56,
+        "line": "* And samples the distribution for the specified num_points.\r"
+      },
+      {
+        "lineNumber": 57,
+        "line": "*\r"
+      },
+      {
+        "lineNumber": 58,
+        "line": "* @param coordinates { {x_values: [], y_values: []} }\r"
+      },
+      {
+        "lineNumber": 59,
+        "line": "*        num_points {integer}\r"
+      },
+      {
+        "lineNumber": 60,
+        "line": "* @return output_coordinates { [x1, y1], [x2, y2] ... }\r"
+      },
+      {
+        "lineNumber": 61,
+        "line": "*/\r"
+      },
+      {
+        "lineNumber": 62,
+        "line": "function prepare_coordinates(coordinates, num_points){\r"
+      }
+    ],
+    "codeParams": [
+      "coordinates",
+      "num_points"
+    ],
+    "docParams": [
+      "coordinates"
+    ]
+  },
+  {
+    "name": "sample_coordinates",
+    "filePath": "scripts/experiment-properties/distribution/random_distribution_generator.js",
+    "lines": [
+      {
+        "lineNumber": 77,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 78,
+        "line": "* Randomly picks x number of points from the distribution\r"
+      },
+      {
+        "lineNumber": 79,
+        "line": "* where x = num_points\r"
+      },
+      {
+        "lineNumber": 80,
+        "line": "* Method is currently unused but kept in case of use for further extension\r"
+      },
+      {
+        "lineNumber": 81,
+        "line": "* @param coordinates { [x1, y1], [x2, y2] ... }\r"
+      },
+      {
+        "lineNumber": 82,
+        "line": "*        num_points {integer}\r"
+      },
+      {
+        "lineNumber": 83,
+        "line": "* @return output_coordinates with size num_points { [x1, y1], [x2, y2] ... }\r"
+      },
+      {
+        "lineNumber": 84,
+        "line": "*/\r"
+      },
+      {
+        "lineNumber": 85,
+        "line": "function sample_coordinates(coordinates, num_points){\r"
+      }
+    ],
+    "codeParams": [
+      "coordinates",
+      "num_points"
+    ],
+    "docParams": [
+      "coordinates"
+    ]
+  },
+  {
+    "name": "create_parallel_plot",
+    "filePath": "scripts/experiment-properties/graphing/d3-base-plots/parallel_plot.js",
+    "lines": [
+      {
+        "lineNumber": 4,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 5,
+        "line": " * D3 code for plotting a PCP.\r"
+      },
+      {
+        "lineNumber": 6,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 7,
+        "line": " * @param {object}   attributes\r"
+      },
+      {
+        "lineNumber": 8,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 9,
+        "line": "function create_parallel_plot(attributes, style_attributes = null, distractor_attributes = null) {\r"
+      }
+    ],
+    "codeParams": [
+      "attributes",
+      "style_attributes",
+      "distractor_attributes"
+    ],
+    "docParams": [
+      "attributes"
+    ]
+  },
+  {
+    "name": "generate_chart",
+    "filePath": "scripts/experiment-properties/graphing/d3-base-plots/scatter_plot.js",
+    "lines": [
+      {
+        "lineNumber": 456,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 457,
+        "line": " * Sets the correct style attributes depending if the experiment provides a style_attributes property or not\r"
+      },
+      {
+        "lineNumber": 458,
+        "line": " * @param {asoc array} style_attributes \r"
+      },
+      {
+        "lineNumber": 459,
+        "line": " * @returns {chart} \r"
+      },
+      {
+        "lineNumber": 460,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 461,
+        "line": "function generate_chart(height, width, buffer, style_attributes){\r"
+      }
+    ],
+    "codeParams": [
+      "height",
+      "width",
+      "buffer",
+      "style_attributes"
+    ],
+    "docParams": [
+      "style_attributes"
+    ]
+  },
+  {
+    "name": "plot_circle",
+    "filePath": "scripts/experiment-properties/graphing/d3-base-plots/shape_plot.js",
+    "lines": [
+      {
+        "lineNumber": 74,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 75,
+        "line": " * D3 code for plotting a circle.\r"
+      },
+      {
+        "lineNumber": 76,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 77,
+        "line": " * @param  chart      {svg object}\r"
+      },
+      {
+        "lineNumber": 78,
+        "line": " *         radius     {double} \r"
+      },
+      {
+        "lineNumber": 79,
+        "line": " *         max_radius {double}     Largest radius of the given trial\r"
+      },
+      {
+        "lineNumber": 80,
+        "line": " *         diff       {double}     Difference between max and min radius of given trial        \r"
+      },
+      {
+        "lineNumber": 81,
+        "line": " */ \r"
+      },
+      {
+        "lineNumber": 82,
+        "line": "function plot_circle(chart, radius, max_radius, diff, properties) {\r"
+      }
+    ],
+    "codeParams": [
+      "chart",
+      "radius",
+      "max_radius",
+      "diff",
+      "properties"
+    ],
+    "docParams": [
+      "chart"
+    ]
+  },
+  {
+    "name": "plot_slice",
+    "filePath": "scripts/experiment-properties/graphing/d3-base-plots/shape_plot.js",
+    "lines": [
+      {
+        "lineNumber": 124,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 125,
+        "line": " * D3 code for plotting a slice (1/4 of circle).\r"
+      },
+      {
+        "lineNumber": 126,
+        "line": " *      \r"
+      },
+      {
+        "lineNumber": 127,
+        "line": " * @param  chart      {svg object}\r"
+      },
+      {
+        "lineNumber": 128,
+        "line": " *         radius     {double} \r"
+      },
+      {
+        "lineNumber": 129,
+        "line": " *         rotation   {int}        Degrees of rotation in the counterclockwise direction.        \r"
+      },
+      {
+        "lineNumber": 130,
+        "line": " *         max_radius {double}     Largest radius of the given trial\r"
+      },
+      {
+        "lineNumber": 131,
+        "line": " *         diff       {double}     Difference between max and min radius of given trial  \r"
+      },
+      {
+        "lineNumber": 132,
+        "line": " *         properties {object}     Graph attributes extracted from constants\r"
+      },
+      {
+        "lineNumber": 133,
+        "line": " */ \r"
+      },
+      {
+        "lineNumber": 134,
+        "line": "function plot_slice(chart, radius, rotation, max_radius, diff, properties) {\r"
+      }
+    ],
+    "codeParams": [
+      "chart",
+      "radius",
+      "rotation",
+      "max_radius",
+      "diff",
+      "properties"
+    ],
+    "docParams": [
+      "chart"
+    ]
+  },
+  {
+    "name": "plot_square",
+    "filePath": "scripts/experiment-properties/graphing/d3-base-plots/shape_plot.js",
+    "lines": [
+      {
+        "lineNumber": 191,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 192,
+        "line": " * D3 code for plotting a square.\r"
+      },
+      {
+        "lineNumber": 193,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 194,
+        "line": " * @param  chart      {svg object}\r"
+      },
+      {
+        "lineNumber": 195,
+        "line": " *         radius     {double} \r"
+      },
+      {
+        "lineNumber": 196,
+        "line": " *         max_radius {double}     Largest radius of the given trial\r"
+      },
+      {
+        "lineNumber": 197,
+        "line": " *         diff       {double}     Difference between max and min radius of given trial  \r"
+      },
+      {
+        "lineNumber": 198,
+        "line": " *         properties {object}     Graph attributes extracted from constants       \r"
+      },
+      {
+        "lineNumber": 199,
+        "line": " */ \r"
+      },
+      {
+        "lineNumber": 200,
+        "line": "function plot_square(chart, radius, max_radius, diff, properties) {\r"
+      }
+    ],
+    "codeParams": [
+      "chart",
+      "radius",
+      "max_radius",
+      "diff",
+      "properties"
+    ],
+    "docParams": [
+      "chart"
+    ]
+  },
+  {
+    "name": "plot_rotated_square",
+    "filePath": "scripts/experiment-properties/graphing/d3-base-plots/shape_plot.js",
+    "lines": [
+      {
+        "lineNumber": 221,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 222,
+        "line": " * D3 code for plotting a rotated square AKA diamond.\r"
+      },
+      {
+        "lineNumber": 223,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 224,
+        "line": " * @param  chart      {svg object}\r"
+      },
+      {
+        "lineNumber": 225,
+        "line": " *         radius     {double} \r"
+      },
+      {
+        "lineNumber": 226,
+        "line": " *         max_radius {double}     Largest radius of the given trial\r"
+      },
+      {
+        "lineNumber": 227,
+        "line": " *         diff       {double}     Difference between max and min radius of given trial   \r"
+      },
+      {
+        "lineNumber": 228,
+        "line": " *         properties {object}     Graph attributes extracted from constants     \r"
+      },
+      {
+        "lineNumber": 229,
+        "line": " */ \r"
+      },
+      {
+        "lineNumber": 230,
+        "line": "function plot_rotated_square(chart, radius, max_radius, diff, properties) {\r"
+      }
+    ],
+    "codeParams": [
+      "chart",
+      "radius",
+      "max_radius",
+      "diff",
+      "properties"
+    ],
+    "docParams": [
+      "chart"
+    ]
+  },
+  {
+    "name": "plot_triangle",
+    "filePath": "scripts/experiment-properties/graphing/d3-base-plots/shape_plot.js",
+    "lines": [
+      {
+        "lineNumber": 253,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 254,
+        "line": " * D3 code for plotting a triangle.\r"
+      },
+      {
+        "lineNumber": 255,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 256,
+        "line": " * @param  chart      {svg object}\r"
+      },
+      {
+        "lineNumber": 257,
+        "line": " *         radius     {double} \r"
+      },
+      {
+        "lineNumber": 258,
+        "line": " *         max_radius {double}     Largest radius of the given trial\r"
+      },
+      {
+        "lineNumber": 259,
+        "line": " *         diff       {double}     Difference between max and min radius of given trial   \r"
+      },
+      {
+        "lineNumber": 260,
+        "line": " *         properties {object}     Graph attributes extracted from constants     \r"
+      },
+      {
+        "lineNumber": 261,
+        "line": " */ \r"
+      },
+      {
+        "lineNumber": 262,
+        "line": "function plot_triangle(chart, radius, max_radius, diff, properties) {\r"
+      }
+    ],
+    "codeParams": [
+      "chart",
+      "radius",
+      "max_radius",
+      "diff",
+      "properties"
+    ],
+    "docParams": [
+      "chart"
+    ]
+  },
+  {
+    "name": "plot_rotated_triangle",
+    "filePath": "scripts/experiment-properties/graphing/d3-base-plots/shape_plot.js",
+    "lines": [
+      {
+        "lineNumber": 284,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 285,
+        "line": " * D3 code for plotting a rotated triangle.\r"
+      },
+      {
+        "lineNumber": 286,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 287,
+        "line": " * @param  chart      {svg object}\r"
+      },
+      {
+        "lineNumber": 288,
+        "line": " *         radius     {double} \r"
+      },
+      {
+        "lineNumber": 289,
+        "line": " *         max_radius {double}     Largest radius of the given trial\r"
+      },
+      {
+        "lineNumber": 290,
+        "line": " *         diff       {double}     Difference between max and min radius of given trial \r"
+      },
+      {
+        "lineNumber": 291,
+        "line": " *         properties {object}     Graph attributes extracted from constants       \r"
+      },
+      {
+        "lineNumber": 292,
+        "line": " */ \r"
+      },
+      {
+        "lineNumber": 293,
+        "line": "function plot_rotated_triangle(chart, radius, max_radius, diff, properties) {\r"
+      }
+    ],
+    "codeParams": [
+      "chart",
+      "radius",
+      "max_radius",
+      "diff",
+      "properties"
+    ],
+    "docParams": [
+      "chart"
+    ]
+  },
+  {
+    "name": "plotStripZValue",
+    "filePath": "scripts/experiment-properties/graphing/d3-base-plots/strip_plot.js",
+    "lines": [
+      {
+        "lineNumber": 152,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 153,
+        "line": " * Plots the z-value features of the strip plot by modifying the existing rect object attributes\r"
+      },
+      {
+        "lineNumber": 154,
+        "line": " * @param {object} chart \r"
+      },
+      {
+        "lineNumber": 155,
+        "line": " * @param {assoc array} properties \r"
+      },
+      {
+        "lineNumber": 156,
+        "line": " * @param {int} height \r"
+      },
+      {
+        "lineNumber": 157,
+        "line": " * @param {function} xscale_data \r"
+      },
+      {
+        "lineNumber": 158,
+        "line": " * @param {function} rotate_data \r"
+      },
+      {
+        "lineNumber": 159,
+        "line": " * @param {function} yscale \r"
+      },
+      {
+        "lineNumber": 160,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 161,
+        "line": "function plotStripZValue(chart, properties, height, xscale_data, rotate_data, yscale, luminance_scale){\r"
+      }
+    ],
+    "codeParams": [
+      "chart",
+      "properties",
+      "height",
+      "xscale_data",
+      "rotate_data",
+      "yscale",
+      "luminance_scale"
+    ],
+    "docParams": [
+      "chart",
+      "properties",
+      "height",
+      "xscale_data",
+      "rotate_data",
+      "yscale"
+    ]
+  },
+  {
+    "name": "create_strip_plot",
+    "filePath": "scripts/experiment-properties/graphing/d3-base-plots/strip_plot.js",
+    "lines": [
+      {
+        "lineNumber": 6,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 7,
+        "line": " * D3 code to plot a strip plot\r"
+      },
+      {
+        "lineNumber": 8,
+        "line": " * @param {array} dataset - Array of data coordinates to plot the strip plot lines\r"
+      },
+      {
+        "lineNumber": 9,
+        "line": " * @param {assoc array} properties - D3 Graph Properties such as height, width, axis thickness, etc...\r"
+      },
+      {
+        "lineNumber": 10,
+        "line": " * @param {assoc array} style_attributes - Optional style attributes for css styling\r"
+      },
+      {
+        "lineNumber": 11,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 12,
+        "line": "function create_strip_plot(attributes, style_attributes = null, distractor_attributes = null) {\r"
+      }
+    ],
+    "codeParams": [
+      "attributes",
+      "style_attributes",
+      "distractor_attributes"
+    ],
+    "docParams": [
+      "dataset",
+      "properties",
+      "style_attributes"
+    ]
+  },
+  {
+    "name": "plot_fan",
+    "filePath": "scripts/experiment-properties/graphing/d3-custom-plots/estimation_plot.js",
+    "lines": [
+      {
+        "lineNumber": 247,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 248,
+        "line": " * Plots a fan.\r"
+      },
+      {
+        "lineNumber": 249,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 250,
+        "line": " * @param chart {object}\r"
+      },
+      {
+        "lineNumber": 251,
+        "line": " * @param width {number}\r"
+      },
+      {
+        "lineNumber": 252,
+        "line": " * @param y_pos {number}\r"
+      },
+      {
+        "lineNumber": 253,
+        "line": " * @param x_pos {number}\r"
+      },
+      {
+        "lineNumber": 254,
+        "line": " * @param is_ref {boolean} if the shape is a reference shape or a modifiable shape,\r"
+      },
+      {
+        "lineNumber": 255,
+        "line": " *                         is_ref === true if the shape is a reference shape\r"
+      },
+      {
+        "lineNumber": 256,
+        "line": " * @param outline {string}\r"
+      },
+      {
+        "lineNumber": 257,
+        "line": " * @param fill {string}\r"
+      },
+      {
+        "lineNumber": 258,
+        "line": " * @param options {object}\r"
+      },
+      {
+        "lineNumber": 259,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 260,
+        "line": "function plot_fan(chart, diameter, y_pos, x_pos, is_ref, outline, fill, options) {\r"
+      }
+    ],
+    "codeParams": [
+      "chart",
+      "diameter",
+      "y_pos",
+      "x_pos",
+      "is_ref",
+      "outline",
+      "fill",
+      "options"
+    ],
+    "docParams": [
+      "chart",
+      "width",
+      "y_pos",
+      "x_pos",
+      "is_ref",
+      "outline",
+      "fill",
+      "options"
+    ]
+  },
+  {
+    "name": "compute_angle_shift",
+    "filePath": "scripts/experiment-properties/graphing/d3-custom-plots/estimation_plot.js",
+    "lines": [
+      {
+        "lineNumber": 321,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 322,
+        "line": " * Returns the amount of rotational shift in degrees to align the angle \r"
+      },
+      {
+        "lineNumber": 323,
+        "line": " * at the desired alignment.\r"
+      },
+      {
+        "lineNumber": 324,
+        "line": " *  \r"
+      },
+      {
+        "lineNumber": 325,
+        "line": " * @param {double}   angle - size of angle in degrees\r"
+      },
+      {
+        "lineNumber": 326,
+        "line": " *        {string}   alignment - e.g. bottom or top of circle\r"
+      },
+      {
+        "lineNumber": 327,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 328,
+        "line": "function compute_angle_shift(angle, alignment) {\r"
+      }
+    ],
+    "codeParams": [
+      "angle",
+      "alignment"
+    ],
+    "docParams": [
+      "angle"
+    ]
+  },
+  {
+    "name": "plot_text",
+    "filePath": "scripts/experiment-properties/graphing/d3-custom-plots/estimation_plot.js",
+    "lines": [
+      {
+        "lineNumber": 732,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 733,
+        "line": " * Plots text centered at the bottom of the page. \r"
+      },
+      {
+        "lineNumber": 734,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 735,
+        "line": " * @param chart {object}\r"
+      },
+      {
+        "lineNumber": 736,
+        "line": " *        text  {string}\r"
+      },
+      {
+        "lineNumber": 737,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 738,
+        "line": "function plot_text(chart, text){\r"
+      }
+    ],
+    "codeParams": [
+      "chart",
+      "text"
+    ],
+    "docParams": [
+      "chart"
+    ]
+  },
+  {
+    "name": "flicker_shape",
+    "filePath": "scripts/experiment-properties/graphing/d3-custom-plots/estimation_plot.js",
+    "lines": [
+      {
+        "lineNumber": 752,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 753,
+        "line": " * Flickers on and off the D3 selection.\r"
+      },
+      {
+        "lineNumber": 754,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 755,
+        "line": " * @param {object} selection\r"
+      },
+      {
+        "lineNumber": 756,
+        "line": " *        {string} fill\r"
+      },
+      {
+        "lineNumber": 757,
+        "line": " *        {string} stroke\r"
+      },
+      {
+        "lineNumber": 758,
+        "line": " *        {double} on_duration - duration selection displays for in ms\r"
+      },
+      {
+        "lineNumber": 759,
+        "line": " *        {double} off_duration - duration selection becomes invisible for in ms\r"
+      },
+      {
+        "lineNumber": 760,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 761,
+        "line": "function flicker_shape(selection, fill, stroke, on_duration, off_duration) {\r"
+      }
+    ],
+    "codeParams": [
+      "selection",
+      "fill",
+      "stroke",
+      "on_duration",
+      "off_duration"
+    ],
+    "docParams": [
+      "selection"
+    ]
+  },
+  {
+    "name": "calculate_size_change",
+    "filePath": "scripts/experiment-properties/graphing/d3-custom-plots/estimation_plot.js",
+    "lines": [
+      {
+        "lineNumber": 777,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 778,
+        "line": " * Calculates the next size and saves the data.\r"
+      },
+      {
+        "lineNumber": 779,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 780,
+        "line": " * @param {object}  event_key  m to increase the size and z to decrease the size\r"
+      },
+      {
+        "lineNumber": 781,
+        "line": " * @param {double}  size the previous size of the shape\r"
+      },
+      {
+        "lineNumber": 782,
+        "line": " * @param {string}  the type of shape\r"
+      },
+      {
+        "lineNumber": 783,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 784,
+        "line": " * @returns {number}  the new size in pixels\r"
+      },
+      {
+        "lineNumber": 785,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 786,
+        "line": "function calculate_size_change(event_key, size, shape_type) {\r"
+      }
+    ],
+    "codeParams": [
+      "event_key",
+      "size",
+      "shape_type"
+    ],
+    "docParams": [
+      "event_key",
+      "size",
+      "the"
+    ]
+  },
+  {
+    "name": "calculate_angle_change",
+    "filePath": "scripts/experiment-properties/graphing/d3-custom-plots/estimation_plot.js",
+    "lines": [
+      {
+        "lineNumber": 803,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 804,
+        "line": " * Calculates the next angle and saves the data.\r"
+      },
+      {
+        "lineNumber": 805,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 806,
+        "line": " * @param {object}  event_key  m to increase the size and z to decrease the size\r"
+      },
+      {
+        "lineNumber": 807,
+        "line": " * @param {double}  previous angle\r"
+      },
+      {
+        "lineNumber": 808,
+        "line": " * @param {double}  radius of the fan\r"
+      },
+      {
+        "lineNumber": 809,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 810,
+        "line": " * @returns {number}  the new angle in degrees\r"
+      },
+      {
+        "lineNumber": 811,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 812,
+        "line": "function calculate_angle_change(event_key, angle, radius) {\r"
+      }
+    ],
+    "codeParams": [
+      "event_key",
+      "angle",
+      "radius"
+    ],
+    "docParams": [
+      "event_key",
+      "previous",
+      "radius"
+    ]
+  },
+  {
+    "name": "create_estimation_plot",
+    "filePath": "scripts/experiment-properties/graphing/d3-custom-plots/estimation_plot.js",
+    "lines": [
+      {
+        "lineNumber": 7,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 8,
+        "line": " * Plots a regular estimation condition\r"
+      },
+      {
+        "lineNumber": 9,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 10,
+        "line": " * @param {object} experiment\r"
+      },
+      {
+        "lineNumber": 11,
+        "line": " *        {object} attributes\r"
+      },
+      {
+        "lineNumber": 12,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 13,
+        "line": "function create_estimation_plot(experiment, attributes) {\r"
+      }
+    ],
+    "codeParams": [
+      "experiment",
+      "attributes"
+    ],
+    "docParams": [
+      "experiment"
+    ]
+  },
+  {
+    "name": "create_estimation_interference_plot",
+    "filePath": "scripts/experiment-properties/graphing/d3-custom-plots/estimation_plot.js",
+    "lines": [
+      {
+        "lineNumber": 60,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 61,
+        "line": " * Plots an interference estimation condition \r"
+      },
+      {
+        "lineNumber": 62,
+        "line": " * (e.g. conditions with \"interference\" in their name but are not multi)\r"
+      },
+      {
+        "lineNumber": 63,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 64,
+        "line": " * @param {object} experiment\r"
+      },
+      {
+        "lineNumber": 65,
+        "line": " *        {object} attributes\r"
+      },
+      {
+        "lineNumber": 66,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 67,
+        "line": "function create_estimation_interference_plot(experiment, attributes) {\r"
+      }
+    ],
+    "codeParams": [
+      "experiment",
+      "attributes"
+    ],
+    "docParams": [
+      "experiment"
+    ]
+  },
+  {
+    "name": "create_estimation_multi_interference_plot",
+    "filePath": "scripts/experiment-properties/graphing/d3-custom-plots/estimation_plot.js",
+    "lines": [
+      {
+        "lineNumber": 91,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 92,
+        "line": " * Plots a multi interference estimation condition \r"
+      },
+      {
+        "lineNumber": 93,
+        "line": " * (e.g. conditions with \"interference\" and \"multi\" in their name)\r"
+      },
+      {
+        "lineNumber": 94,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 95,
+        "line": " * @param {object} experiment\r"
+      },
+      {
+        "lineNumber": 96,
+        "line": " *        {object} attributes\r"
+      },
+      {
+        "lineNumber": 97,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 98,
+        "line": "function create_estimation_multi_interference_plot(experiment, attributes) {\r"
+      }
+    ],
+    "codeParams": [
+      "experiment",
+      "attributes"
+    ],
+    "docParams": [
+      "experiment"
+    ]
+  },
+  {
+    "name": "create_estimation_bisection_plot",
+    "filePath": "scripts/experiment-properties/graphing/d3-custom-plots/estimation_plot.js",
+    "lines": [
+      {
+        "lineNumber": 34,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 35,
+        "line": " * Plots a bisection estimation condition\r"
+      },
+      {
+        "lineNumber": 36,
+        "line": " * (e.g. conditions with \"bisection\" in their name)\r"
+      },
+      {
+        "lineNumber": 37,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 38,
+        "line": " * @param {object} experiment\r"
+      },
+      {
+        "lineNumber": 39,
+        "line": " *        {object} attributes\r"
+      },
+      {
+        "lineNumber": 40,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 41,
+        "line": "function create_estimation_bisection_plot(experiment, attributes) {\r"
+      }
+    ],
+    "codeParams": [
+      "experiment",
+      "attributes"
+    ],
+    "docParams": [
+      "experiment"
+    ]
+  },
+  {
+    "name": "prepare_mix_graph",
+    "filePath": "scripts/experiment-properties/graphing/d3-plot-features/mix_attribute_generator.js",
+    "lines": [
+      {
+        "lineNumber": 30,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 31,
+        "line": " * Will plot points depending on what is defined as the mix attribute,\r"
+      },
+      {
+        "lineNumber": 32,
+        "line": " * and will sample (w/o replacement) from the dataset to display points\r"
+      },
+      {
+        "lineNumber": 33,
+        "line": " * with all defined values for the mix attribute.\r"
+      },
+      {
+        "lineNumber": 34,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 35,
+        "line": " * E.g. if properties[\"mix_data\"] = {\"point_size\" = [1, 2, 3, 4]}\r"
+      },
+      {
+        "lineNumber": 36,
+        "line": " *      and there are 100 points in the dataset, will plot 25 points with\r"
+      },
+      {
+        "lineNumber": 37,
+        "line": " *      point_size = 1, 25 points with point_size = 2, etc...\r"
+      },
+      {
+        "lineNumber": 38,
+        "line": " * \r"
+      },
+      {
+        "lineNumber": 39,
+        "line": " * E.g. if properties[\"mix_data\"] = {\"point_size\" = [1, 2], \"point_color\" = [black, blue]}\r"
+      },
+      {
+        "lineNumber": 40,
+        "line": " *      and there are 100 points in the dataset, will first convert the set into the array \r"
+      },
+      {
+        "lineNumber": 41,
+        "line": " *      [{\"point_size\" = 1, \"point_color\" = red}, {\"point_size\" = 2, \"point_color\" = red},\r"
+      },
+      {
+        "lineNumber": 42,
+        "line": " *      {\"point_size\" = 1, \"point_color\" = blue}, {\"point_size\" = 2, \"point_color\" = blue}], \r"
+      },
+      {
+        "lineNumber": 43,
+        "line": " *      then plot 25 points with point_size = 1 and point_color = red, \r"
+      },
+      {
+        "lineNumber": 44,
+        "line": " *      25 points with point_size = 2 and point_color = red, etc...\r"
+      },
+      {
+        "lineNumber": 45,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 46,
+        "line": " * E.g. if properties[\"mix_data\"] = {\"point_size\" = [1, 2], \"point_color\" = [black, blue]}\r"
+      },
+      {
+        "lineNumber": 47,
+        "line": " *      and there are 100 points in the dataset, will first convert the set into the array \r"
+      },
+      {
+        "lineNumber": 48,
+        "line": " *      [{\"point_size\" = 1, \"point_color\" = red}, {\"point_size\" = 2, \"point_color\" = red},\r"
+      },
+      {
+        "lineNumber": 49,
+        "line": " *      {\"point_size\" = 1, \"point_color\" = blue}, {\"point_size\" = 2, \"point_color\" = blue}], \r"
+      },
+      {
+        "lineNumber": 50,
+        "line": " *      then plot 25 points with point_size = 1 and point_color = red, \r"
+      },
+      {
+        "lineNumber": 51,
+        "line": " *      25 points with point_size = 2 and point_color = red, etc...\r"
+      },
+      {
+        "lineNumber": 52,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 53,
+        "line": " * @param {object}         chart\r"
+      },
+      {
+        "lineNumber": 54,
+        "line": " * @param {function}       xscale\r"
+      },
+      {
+        "lineNumber": 55,
+        "line": " * @param {function}       yscale\r"
+      },
+      {
+        "lineNumber": 56,
+        "line": " * @param {number[]}          dataset ([x_value, y_value])\r"
+      },
+      {
+        "lineNumber": 57,
+        "line": " * @param {assoc. array}   e.g. {\"point_shape\": \"square\", \"point_size\": 5 .... }\r"
+      },
+      {
+        "lineNumber": 58,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 59,
+        "line": "export function prepare_mix_graph(chart, xscale, yscale, dataset, properties, plot_graph) {\r"
+      }
+    ],
+    "codeParams": [
+      "chart",
+      "xscale",
+      "yscale",
+      "dataset",
+      "properties",
+      "plot_graph"
+    ],
+    "docParams": [
+      "chart",
+      "xscale",
+      "yscale",
+      "dataset"
+    ]
+  },
+  {
+    "name": "prepare_targeted_mix_graph",
+    "filePath": "scripts/experiment-properties/graphing/d3-plot-features/mix_attribute_generator.js",
+    "lines": [
+      {
+        "lineNumber": 127,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 128,
+        "line": " * The same as prepare_mix_graph but now the first item in the mix by attributes array\r"
+      },
+      {
+        "lineNumber": 129,
+        "line": " * is treated as the target\r"
+      },
+      {
+        "lineNumber": 130,
+        "line": " * The user can specify how many target points there are\r"
+      },
+      {
+        "lineNumber": 131,
+        "line": " * The rest of the mix by attributes are treated as distractors\r"
+      },
+      {
+        "lineNumber": 132,
+        "line": " * and the remaining number of points is distributed evenly among them\r"
+      },
+      {
+        "lineNumber": 133,
+        "line": " * \r"
+      },
+      {
+        "lineNumber": 134,
+        "line": " * e.g. if if properties[\"mix_by_attribute_targeted\"] = {\"point_size\" = [1, 2, 3, 4], num_target: 10}\r"
+      },
+      {
+        "lineNumber": 135,
+        "line": " *      and there are 100 points in the dataset, will plot 10 points with\r"
+      },
+      {
+        "lineNumber": 136,
+        "line": " *      point_size = 1, 30 points with point_size = 2, 3 and 4.\r"
+      },
+      {
+        "lineNumber": 137,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 138,
+        "line": " * @param {object}         chart\r"
+      },
+      {
+        "lineNumber": 139,
+        "line": " * @param {function}       xscale\r"
+      },
+      {
+        "lineNumber": 140,
+        "line": " * @param {function}       yscale\r"
+      },
+      {
+        "lineNumber": 141,
+        "line": " * @param {number[]}       dataset ([x_value, y_value])\r"
+      },
+      {
+        "lineNumber": 142,
+        "line": " * @param {assoc. array}   e.g. {\"point_shape\": \"square\", \"point_size\": 5 .... }\r"
+      },
+      {
+        "lineNumber": 143,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 144,
+        "line": "export function prepare_targeted_mix_graph(chart, xscale, yscale, dataset, properties, plot_graph) {\r"
+      }
+    ],
+    "codeParams": [
+      "chart",
+      "xscale",
+      "yscale",
+      "dataset",
+      "properties",
+      "plot_graph"
+    ],
+    "docParams": [
+      "chart",
+      "xscale",
+      "yscale",
+      "dataset"
+    ]
+  },
+  {
+    "name": "prepare_array_mix_graph",
+    "filePath": "scripts/experiment-properties/graphing/d3-plot-features/mix_attribute_generator.js",
+    "lines": [
+      {
+        "lineNumber": 186,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 187,
+        "line": " * similar to mix_by_attribute, prepare_array_mix_graph will plot points\r"
+      },
+      {
+        "lineNumber": 188,
+        "line": " * depending on what is defined as the mix attributes. However, mix_by_attribute_array\r"
+      },
+      {
+        "lineNumber": 189,
+        "line": " * allows for several attributes to be changed within a single graph.\r"
+      },
+      {
+        "lineNumber": 190,
+        "line": " * \r"
+      },
+      {
+        "lineNumber": 191,
+        "line": " * e.g. if properties[\"mix_by_attribute_array\"] =\r"
+      },
+      {
+        "lineNumber": 192,
+        "line": " *      [{\"point_size\" = 1}, \r"
+      },
+      {
+        "lineNumber": 193,
+        "line": " *      {\"point_size\" = 2, \"point_color\" = blue, \"point_shape\" = circle}, \r"
+      },
+      {
+        "lineNumber": 194,
+        "line": " *      {\"point_size\" = 3, \"point_color\" = red},\r"
+      },
+      {
+        "lineNumber": 195,
+        "line": " *      {\"point_size\" = 4, \"point_color\" = red},]\r"
+      },
+      {
+        "lineNumber": 196,
+        "line": " *      and there are 100 points in the dataset, will plot 25 points with\r"
+      },
+      {
+        "lineNumber": 197,
+        "line": " *      point_size = 1, 25 points with point_size = 2 and point_color = blue and point_shape = circle, etc...\r"
+      },
+      {
+        "lineNumber": 198,
+        "line": " * \r"
+      },
+      {
+        "lineNumber": 199,
+        "line": " * \r"
+      },
+      {
+        "lineNumber": 200,
+        "line": " * @param {*} chart \r"
+      },
+      {
+        "lineNumber": 201,
+        "line": " * @param {*} xscale \r"
+      },
+      {
+        "lineNumber": 202,
+        "line": " * @param {*} yscale \r"
+      },
+      {
+        "lineNumber": 203,
+        "line": " * @param {*} dataset ([x_value, y_value])\r"
+      },
+      {
+        "lineNumber": 204,
+        "line": " * @param {*} properties {\"point_shape\": \"square\", \"point_size\": 5 .... }\r"
+      },
+      {
+        "lineNumber": 205,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 206,
+        "line": "export function prepare_array_mix_graph(chart, xscale, yscale, dataset, properties, plot_graph) {\r"
+      }
+    ],
+    "codeParams": [
+      "chart",
+      "xscale",
+      "yscale",
+      "dataset",
+      "properties",
+      "plot_graph"
+    ],
+    "docParams": [
+      "chart",
+      "xscale",
+      "yscale",
+      "dataset",
+      "properties"
+    ]
+  },
+  {
+    "name": "prepare_visual_mask_graph",
+    "filePath": "scripts/experiment-properties/graphing/d3-plot-features/visual_mask_generator.js",
+    "lines": [
+      {
+        "lineNumber": 0,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 1,
+        "line": " * D3 code for appending data to the graph depending on point shape type.\r"
+      },
+      {
+        "lineNumber": 2,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 3,
+        "line": " * @param {object}         chart\r"
+      },
+      {
+        "lineNumber": 4,
+        "line": " * @param {function}       xscale\r"
+      },
+      {
+        "lineNumber": 5,
+        "line": " * @param {function}       yscale\r"
+      },
+      {
+        "lineNumber": 6,
+        "line": " * @param {array}          data ([x_value, y_value])\r"
+      },
+      {
+        "lineNumber": 7,
+        "line": " * @param {assoc. array}   properties e.g. {\"point_shape\": \"square\", \"point_size\": 5 .... }\r"
+      },
+      {
+        "lineNumber": 8,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 9,
+        "line": "export function prepare_visual_mask_graph(chart, properties) {\r"
+      }
+    ],
+    "codeParams": [
+      "chart",
+      "properties"
+    ],
+    "docParams": [
+      "chart",
+      "xscale",
+      "yscale",
+      "data",
+      "properties"
+    ]
+  },
+  {
+    "name": "condition_custom_html_to_trial",
+    "filePath": "scripts/experiment-properties/instructions/instructions_controller.js",
+    "lines": [
+      {
+        "lineNumber": 199,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 200,
+        "line": " * Transforms legacy HTML instructions in conditions-config to jsPsych trials.\r"
+      },
+      {
+        "lineNumber": 201,
+        "line": " * They are html-keyboard-response trials to retain \"press any key to continue\"\r"
+      },
+      {
+        "lineNumber": 202,
+        "line": " * functionality rather than use the \"next page\" mouse button.\r"
+      },
+      {
+        "lineNumber": 203,
+        "line": " * \r"
+      },
+      {
+        "lineNumber": 204,
+        "line": " * @param {string} experiment\r"
+      },
+      {
+        "lineNumber": 205,
+        "line": " * @param {assoc array} html_instructions \r"
+      },
+      {
+        "lineNumber": 206,
+        "line": " * @return {jsPsych trial}\r"
+      },
+      {
+        "lineNumber": 207,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 208,
+        "line": "function condition_custom_html_to_trial(condition_object, experiment_instructions) {\r"
+      }
+    ],
+    "codeParams": [
+      "condition_object",
+      "experiment_instructions"
+    ],
+    "docParams": [
+      "experiment",
+      "html_instructions"
+    ]
+  },
+  {
+    "name": "condition_custom_block_html_to_trial",
+    "filePath": "scripts/experiment-properties/instructions/instructions_controller.js",
+    "lines": [
+      {
+        "lineNumber": 248,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 249,
+        "line": " * Transforms legacy HTML instructions and custom block images in conditions-config to jsPsych trials.\r"
+      },
+      {
+        "lineNumber": 250,
+        "line": " * They are html-keyboard-response trials to retain \"press any key to continue\"\r"
+      },
+      {
+        "lineNumber": 251,
+        "line": " * functionality rather than use the \"next page\" mouse button.\r"
+      },
+      {
+        "lineNumber": 252,
+        "line": " * \r"
+      },
+      {
+        "lineNumber": 253,
+        "line": " * @param {string} experiment (in conditions-config)\r"
+      },
+      {
+        "lineNumber": 254,
+        "line": " * @param {assoc array} html_instructions \r"
+      },
+      {
+        "lineNumber": 255,
+        "line": " * @returns {jsPsych trial}\r"
+      },
+      {
+        "lineNumber": 256,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 257,
+        "line": "function condition_custom_block_html_to_trial(experiment, experiment_instructions) {\r"
+      }
+    ],
+    "codeParams": [
+      "experiment",
+      "experiment_instructions"
+    ],
+    "docParams": [
+      "experiment",
+      "html_instructions"
+    ]
+  },
+  {
+    "name": "is_custom_html_trial_instruction",
+    "filePath": "scripts/experiment-properties/instructions/instructions_controller.js",
+    "lines": [
+      {
+        "lineNumber": 287,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 288,
+        "line": " * \r"
+      },
+      {
+        "lineNumber": 289,
+        "line": " * @param {object} condition_instructions_object \r"
+      },
+      {
+        "lineNumber": 290,
+        "line": " * @returns {boolean}\r"
+      },
+      {
+        "lineNumber": 291,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 292,
+        "line": "function is_custom_html_trial_instruction(condition_instructions_object, experiment_name) {\r"
+      }
+    ],
+    "codeParams": [
+      "condition_instructions_object",
+      "experiment_name"
+    ],
+    "docParams": [
+      "condition_instructions_object"
+    ]
+  },
+  {
+    "name": "get_subcondition_instruction_trial",
+    "filePath": "scripts/experiment-properties/instructions/instructions_controller.js",
+    "lines": [
+      {
+        "lineNumber": 336,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 337,
+        "line": " * Gets the instruction trial defined for the current block/sub condition in the condition.\r"
+      },
+      {
+        "lineNumber": 338,
+        "line": " * @param {object} experiment \r"
+      },
+      {
+        "lineNumber": 339,
+        "line": " * @returns {trial}\r"
+      },
+      {
+        "lineNumber": 340,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 341,
+        "line": "function get_subcondition_instruction_trial(experiment, experiment_name, curr_block) {\r"
+      }
+    ],
+    "codeParams": [
+      "experiment",
+      "experiment_name",
+      "curr_block"
+    ],
+    "docParams": [
+      "experiment"
+    ]
+  },
+  {
+    "name": "Estimation#save_estimated_size",
+    "filePath": "scripts/experiments/estimation/estimation.js",
+    "lines": [
+      {
+        "lineNumber": 325,
+        "line": "    /**\r"
+      },
+      {
+        "lineNumber": 326,
+        "line": "     * Saves the estimated size to the curr_trial_data.\r"
+      },
+      {
+        "lineNumber": 327,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 328,
+        "line": "     * @param {double}   estimated_size\r"
+      },
+      {
+        "lineNumber": 329,
+        "line": "     *        {string}   unit of the estimated_size\r"
+      },
+      {
+        "lineNumber": 330,
+        "line": "     */\r"
+      },
+      {
+        "lineNumber": 331,
+        "line": "    save_estimated_size(estimated_size, unit) {\r"
+      }
+    ],
+    "codeParams": [
+      "estimated_size",
+      "unit"
+    ],
+    "docParams": [
+      "estimated_size"
+    ]
+  },
+  {
+    "name": "Estimation#compute_shape_area",
+    "filePath": "scripts/experiments/estimation/estimation.js",
+    "lines": [
+      {
+        "lineNumber": 391,
+        "line": "    /**\r"
+      },
+      {
+        "lineNumber": 392,
+        "line": "     * Computes the area for a given shape and the size. \r"
+      },
+      {
+        "lineNumber": 393,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 394,
+        "line": "     * @param  {string}   shape\r"
+      },
+      {
+        "lineNumber": 395,
+        "line": "     *         {string}   size   (in pixels)\r"
+      },
+      {
+        "lineNumber": 396,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 397,
+        "line": "     * @return {double}  area   (in CM^2)\r"
+      },
+      {
+        "lineNumber": 398,
+        "line": "     */\r"
+      },
+      {
+        "lineNumber": 399,
+        "line": "    compute_shape_area(shape, size) {\r"
+      }
+    ],
+    "codeParams": [
+      "shape",
+      "size"
+    ],
+    "docParams": [
+      "shape"
+    ]
+  },
+  {
+    "name": "Estimation#compute_fan_area",
+    "filePath": "scripts/experiments/estimation/estimation.js",
+    "lines": [
+      {
+        "lineNumber": 437,
+        "line": "    /**\r"
+      },
+      {
+        "lineNumber": 438,
+        "line": "     * Computes the area for a fan.\r"
+      },
+      {
+        "lineNumber": 439,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 440,
+        "line": "     * @param  {double}   angle  (in degrees)\r"
+      },
+      {
+        "lineNumber": 441,
+        "line": "     *         {double}   radius (in pixels)\r"
+      },
+      {
+        "lineNumber": 442,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 443,
+        "line": "     * @return {double}  area   (in CM^2)\r"
+      },
+      {
+        "lineNumber": 444,
+        "line": "     */\r"
+      },
+      {
+        "lineNumber": 445,
+        "line": "    compute_fan_area(angle, radius) {\r"
+      }
+    ],
+    "codeParams": [
+      "angle",
+      "radius"
+    ],
+    "docParams": [
+      "angle"
+    ]
+  },
+  {
+    "name": "Estimation#compute_plot_attributes",
+    "filePath": "scripts/experiments/estimation/estimation.js",
+    "lines": [
+      {
+        "lineNumber": 452,
+        "line": "    /**\r"
+      },
+      {
+        "lineNumber": 453,
+        "line": "     * Computes attributes for all estimation plots.\r"
+      },
+      {
+        "lineNumber": 454,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 455,
+        "line": "     * @param {object}   experiment\r"
+      },
+      {
+        "lineNumber": 456,
+        "line": "     */\r"
+      },
+      {
+        "lineNumber": 457,
+        "line": "    compute_plot_attributes() {\r"
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "experiment"
+    ]
+  },
+  {
+    "name": "Estimation#compute_bisection_attributes",
+    "filePath": "scripts/experiments/estimation/estimation.js",
+    "lines": [
+      {
+        "lineNumber": 556,
+        "line": "    /**\r"
+      },
+      {
+        "lineNumber": 557,
+        "line": "     * Computes attributes for bisection conditions (AKA has \"bisection\" in condition name).\r"
+      },
+      {
+        "lineNumber": 558,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 559,
+        "line": "     * @param {object}   sub_cond\r"
+      },
+      {
+        "lineNumber": 560,
+        "line": "     *        {object}   attributes\r"
+      },
+      {
+        "lineNumber": 561,
+        "line": "     */\r"
+      },
+      {
+        "lineNumber": 562,
+        "line": "    compute_bisection_attributes(sub_cond, attributes) {\r"
+      }
+    ],
+    "codeParams": [
+      "sub_cond",
+      "attributes"
+    ],
+    "docParams": [
+      "sub_cond"
+    ]
+  },
+  {
+    "name": "Estimation#compute_estimation_interference_attributes",
+    "filePath": "scripts/experiments/estimation/estimation.js",
+    "lines": [
+      {
+        "lineNumber": 620,
+        "line": "    /**\r"
+      },
+      {
+        "lineNumber": 621,
+        "line": "     * Computes attributes for single-interference conditions (AKA no \"multi\" in condition name).\r"
+      },
+      {
+        "lineNumber": 622,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 623,
+        "line": "     * @param {object}   sub_cond\r"
+      },
+      {
+        "lineNumber": 624,
+        "line": "     *        {object}   attributes\r"
+      },
+      {
+        "lineNumber": 625,
+        "line": "     */\r"
+      },
+      {
+        "lineNumber": 626,
+        "line": "    compute_estimation_interference_attributes(sub_cond, attributes) {\r"
+      }
+    ],
+    "codeParams": [
+      "sub_cond",
+      "attributes"
+    ],
+    "docParams": [
+      "sub_cond"
+    ]
+  },
+  {
+    "name": "Estimation#compute_estimation_multi_interference_attributes",
+    "filePath": "scripts/experiments/estimation/estimation.js",
+    "lines": [
+      {
+        "lineNumber": 660,
+        "line": "    /**\r"
+      },
+      {
+        "lineNumber": 661,
+        "line": "     * Computes attributes for multi-interference conditions (AKA has \"multi\" in condition name).\r"
+      },
+      {
+        "lineNumber": 662,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 663,
+        "line": "     * @param {object}   sub_cond\r"
+      },
+      {
+        "lineNumber": 664,
+        "line": "     *        {object}   attributes\r"
+      },
+      {
+        "lineNumber": 665,
+        "line": "     */\r"
+      },
+      {
+        "lineNumber": 666,
+        "line": "    compute_estimation_multi_interference_attributes(sub_cond, attributes) {\r"
+      }
+    ],
+    "codeParams": [
+      "sub_cond",
+      "attributes"
+    ],
+    "docParams": [
+      "sub_cond"
+    ]
+  },
+  {
+    "name": "Estimation#calculate_length_from_area_ratio",
+    "filePath": "scripts/experiments/estimation/estimation.js",
+    "lines": [
+      {
+        "lineNumber": 704,
+        "line": "    /**\r"
+      },
+      {
+        "lineNumber": 705,
+        "line": "     * For 2 shapes S1 and S2, with an area ratio of S1:S2, computes the length\r"
+      },
+      {
+        "lineNumber": 706,
+        "line": "     * for S2 to maintain this area ratio.\r"
+      },
+      {
+        "lineNumber": 707,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 708,
+        "line": "     * @param {string}   S1_shape_type    \r"
+      },
+      {
+        "lineNumber": 709,
+        "line": "     *        {double}   S1_length        (in pixels) \r"
+      },
+      {
+        "lineNumber": 710,
+        "line": "     *        {double}   S1_S2_area_ratio (S1 area / S2 area)         \r"
+      },
+      {
+        "lineNumber": 711,
+        "line": "     *        {string}   S2_shape_type\r"
+      },
+      {
+        "lineNumber": 712,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 713,
+        "line": "     * @return {double}  S2_length        (in pixels)\r"
+      },
+      {
+        "lineNumber": 714,
+        "line": "     */\r"
+      },
+      {
+        "lineNumber": 715,
+        "line": "    calculate_length_from_area_ratio(S1_shape_type, S1_length, S1_S2_area_ratio, S2_shape_type) {\r"
+      }
+    ],
+    "codeParams": [
+      "S1_shape_type",
+      "S1_length",
+      "S1_S2_area_ratio",
+      "S2_shape_type"
+    ],
+    "docParams": [
+      "S1_shape_type"
+    ]
+  },
+  {
+    "name": "Estimation#compute_shape_length",
+    "filePath": "scripts/experiments/estimation/estimation.js",
+    "lines": [
+      {
+        "lineNumber": 732,
+        "line": "    /**\r"
+      },
+      {
+        "lineNumber": 733,
+        "line": "     * Computes the shape length with the specified area.\r"
+      },
+      {
+        "lineNumber": 734,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 735,
+        "line": "     * @param {string}   shape_type     \r"
+      },
+      {
+        "lineNumber": 736,
+        "line": "     *        {double}   target area\r"
+      },
+      {
+        "lineNumber": 737,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 738,
+        "line": "     * @return {double}  length\r"
+      },
+      {
+        "lineNumber": 739,
+        "line": "     */\r"
+      },
+      {
+        "lineNumber": 740,
+        "line": "    compute_shape_length(shape_type, area) {\r"
+      }
+    ],
+    "codeParams": [
+      "shape_type",
+      "area"
+    ],
+    "docParams": [
+      "shape_type"
+    ]
+  },
+  {
+    "name": "Estimation#append_ref_sub_attributes",
+    "filePath": "scripts/experiments/estimation/estimation.js",
+    "lines": [
+      {
+        "lineNumber": 767,
+        "line": "    /**\r"
+      },
+      {
+        "lineNumber": 768,
+        "line": "     * Computes attributes for the sub shape on the ref side for multi interference conditions.\r"
+      },
+      {
+        "lineNumber": 769,
+        "line": "     * Additionally adjusts the main shape on the ref side depending on the alignment.\r"
+      },
+      {
+        "lineNumber": 770,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 771,
+        "line": "     * @param {object}   sub_cond\r"
+      },
+      {
+        "lineNumber": 772,
+        "line": "     *        {object}   attributes\r"
+      },
+      {
+        "lineNumber": 773,
+        "line": "     *        {boolean}  is_ref_left\r"
+      },
+      {
+        "lineNumber": 774,
+        "line": "     */\r"
+      },
+      {
+        "lineNumber": 775,
+        "line": "    append_ref_sub_attributes(sub_cond, attributes, is_ref_left) {\r"
+      }
+    ],
+    "codeParams": [
+      "sub_cond",
+      "attributes",
+      "is_ref_left"
+    ],
+    "docParams": [
+      "sub_cond"
+    ]
+  },
+  {
+    "name": "Estimation#append_mod_attributes",
+    "filePath": "scripts/experiments/estimation/estimation.js",
+    "lines": [
+      {
+        "lineNumber": 886,
+        "line": "    /**\r"
+      },
+      {
+        "lineNumber": 887,
+        "line": "     * Computes attributes for the modifiable shape for multi interference conditions.\r"
+      },
+      {
+        "lineNumber": 888,
+        "line": "     * Additionally adjusts the main shape on the mod side depending on the alignment.\r"
+      },
+      {
+        "lineNumber": 889,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 890,
+        "line": "     * @param {object}   sub_cond\r"
+      },
+      {
+        "lineNumber": 891,
+        "line": "     *        {object}   attributes\r"
+      },
+      {
+        "lineNumber": 892,
+        "line": "     *        {boolean}  is_ref_left\r"
+      },
+      {
+        "lineNumber": 893,
+        "line": "     */\r"
+      },
+      {
+        "lineNumber": 894,
+        "line": "    append_mod_attributes(sub_cond, attributes, is_ref_left) {\r"
+      }
+    ],
+    "codeParams": [
+      "sub_cond",
+      "attributes",
+      "is_ref_left"
+    ],
+    "docParams": [
+      "sub_cond"
+    ]
+  },
+  {
+    "name": "Estimation#calculate_y_position",
+    "filePath": "scripts/experiments/estimation/estimation.js",
+    "lines": [
+      {
+        "lineNumber": 1031,
+        "line": "    /**\r"
+      },
+      {
+        "lineNumber": 1032,
+        "line": "     * Calculates the y value of the position where the shape should be plotted\r"
+      },
+      {
+        "lineNumber": 1033,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 1034,
+        "line": "     * @param   {number}  radius the radius of the shape\r"
+      },
+      {
+        "lineNumber": 1035,
+        "line": "     * @param   {boolean} whether to jitter the y pos or not\r"
+      },
+      {
+        "lineNumber": 1036,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 1037,
+        "line": "     * @returns {number}\r"
+      },
+      {
+        "lineNumber": 1038,
+        "line": "     */\r"
+      },
+      {
+        "lineNumber": 1039,
+        "line": "    calculate_y_position(radius, with_jitter) {\r"
+      }
+    ],
+    "codeParams": [
+      "radius",
+      "with_jitter"
+    ],
+    "docParams": [
+      "radius",
+      "whether"
+    ]
+  },
+  {
+    "name": "JND#prepare_experiment",
+    "filePath": "scripts/experiments/jnd/jnd.js",
+    "lines": [
+      {
+        "lineNumber": 117,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 118,
+        "line": "   * Orders the input data according to balancing type and\r"
+      },
+      {
+        "lineNumber": 119,
+        "line": "   * initializes the JND object's variables.\r"
+      },
+      {
+        "lineNumber": 120,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 121,
+        "line": "   * @param  balancing_type {string}                             Type of balancing. Currently only latin_square\r"
+      },
+      {
+        "lineNumber": 122,
+        "line": "   *                                                             is supported.\r"
+      },
+      {
+        "lineNumber": 123,
+        "line": "   *         dataset {[{assoc array}, {assoc array}, ... ]}      The data to be ordered.\r"
+      },
+      {
+        "lineNumber": 124,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 125,
+        "line": "  prepare_experiment() {\r"
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "balancing_type"
+    ]
+  },
+  {
+    "name": "JND#prepare_practice",
+    "filePath": "scripts/experiments/jnd/jnd.js",
+    "lines": [
+      {
+        "lineNumber": 144,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 145,
+        "line": "   * Orders the input dataset by randomizing it, and initializes the practice variables.\r"
+      },
+      {
+        "lineNumber": 146,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 147,
+        "line": "   * @param  dataset {[{assoc array}, {assoc array}, ... ]}   The data to be ordered.\r"
+      },
+      {
+        "lineNumber": 148,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 149,
+        "line": "  prepare_practice() {\r"
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "dataset"
+    ]
+  },
+  {
+    "name": "JND#generate_trial",
+    "filePath": "scripts/experiments/jnd/jnd.js",
+    "lines": [
+      {
+        "lineNumber": 173,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 174,
+        "line": "   * Generates a JND trial object for use in the JsPsych timeline.\r"
+      },
+      {
+        "lineNumber": 175,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 176,
+        "line": "   * @param  type {string}             \"test\" or \"practice\"\r"
+      },
+      {
+        "lineNumber": 177,
+        "line": "   * @return trial {object}\r"
+      },
+      {
+        "lineNumber": 178,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 179,
+        "line": "  generate_trial(block_type) {\r"
+      }
+    ],
+    "codeParams": [
+      "block_type"
+    ],
+    "docParams": [
+      "type"
+    ]
+  },
+  {
+    "name": "JND#handle_data_saving",
+    "filePath": "scripts/experiments/jnd/jnd.js",
+    "lines": [
+      {
+        "lineNumber": 327,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 328,
+        "line": "   * Handles saving the relevant data on a given trial.\r"
+      },
+      {
+        "lineNumber": 329,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 330,
+        "line": "   * For reference, these are the helper variables created to assist in trial logic (i.e not present in excel)\r"
+      },
+      {
+        "lineNumber": 331,
+        "line": "   * trial_variables =\r"
+      },
+      {
+        "lineNumber": 332,
+        "line": "   *       {type: 'jnd',\r"
+      },
+      {
+        "lineNumber": 333,
+        "line": "   *       run_type: '',\r"
+      },
+      {
+        "lineNumber": 334,
+        "line": "   *       left_correlation: '',\r"
+      },
+      {
+        "lineNumber": 335,
+        "line": "   *       right_correlation: '',\r"
+      },
+      {
+        "lineNumber": 336,
+        "line": "   *       };\r"
+      },
+      {
+        "lineNumber": 337,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 338,
+        "line": "   * These are variables created WITHIN the trial logic that were not present in excel (but need to be\r"
+      },
+      {
+        "lineNumber": 339,
+        "line": "   * outputted to results).\r"
+      },
+      {
+        "lineNumber": 340,
+        "line": "   * export_variables =\r"
+      },
+      {
+        "lineNumber": 341,
+        "line": "   *       {sub_condition: '',           // Chronological ordering of sub_condition [1, 2, 3 ... ]\r"
+      },
+      {
+        "lineNumber": 342,
+        "line": "   *        balanced_sub_condition: '',  // Index of sub_condition according to balancing order\r"
+      },
+      {
+        "lineNumber": 343,
+        "line": "   *        jnd: '',\r"
+      },
+      {
+        "lineNumber": 344,
+        "line": "   *        base_correlation: '',\r"
+      },
+      {
+        "lineNumber": 345,
+        "line": "   *        adjusted_value: '',\r"
+      },
+      {
+        "lineNumber": 346,
+        "line": "   *        correct: '',\r"
+      },
+      {
+        "lineNumber": 347,
+        "line": "   *       };\r"
+      },
+      {
+        "lineNumber": 348,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 349,
+        "line": "   * @param trial {object}\r"
+      },
+      {
+        "lineNumber": 350,
+        "line": "   *        block_type {string}           \"test\" or \"practice\"\r"
+      },
+      {
+        "lineNumber": 351,
+        "line": "   *        constants {assoc array}\r"
+      },
+      {
+        "lineNumber": 352,
+        "line": "   *        index {integer}\r"
+      },
+      {
+        "lineNumber": 353,
+        "line": "   *        adjusted_value {double}\r"
+      },
+      {
+        "lineNumber": 354,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 355,
+        "line": "  handle_data_saving(trial, block_type, constants, index, adjusted_value) {\r"
+      }
+    ],
+    "codeParams": [
+      "trial",
+      "block_type",
+      "constants",
+      "index",
+      "adjusted_value"
+    ],
+    "docParams": [
+      "trial"
+    ]
+  },
+  {
+    "name": "JND#check_response",
+    "filePath": "scripts/experiments/jnd/jnd.js",
+    "lines": [
+      {
+        "lineNumber": 393,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 394,
+        "line": "   * Given a JND trial data, determines whether response is\r"
+      },
+      {
+        "lineNumber": 395,
+        "line": "   * correct or not.\r"
+      },
+      {
+        "lineNumber": 396,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 397,
+        "line": "   * @param  {JsPsych.data}  data\r"
+      },
+      {
+        "lineNumber": 398,
+        "line": "   * @param. {object}        constants\r"
+      },
+      {
+        "lineNumber": 399,
+        "line": "   * @return {boolean}\r"
+      },
+      {
+        "lineNumber": 400,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 401,
+        "line": "  check_response(data, constants) {\r"
+      }
+    ],
+    "codeParams": [
+      "data",
+      "constants"
+    ],
+    "docParams": [
+      "data"
+    ]
+  },
+  {
+    "name": "JND_Radius#prepare_experiment",
+    "filePath": "scripts/experiments/jnd_radius/jnd_radius.js",
+    "lines": [
+      {
+        "lineNumber": 98,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 99,
+        "line": "   * Orders the input data according to balancing type and\r"
+      },
+      {
+        "lineNumber": 100,
+        "line": "   * initializes the JND object's variables.  \r"
+      },
+      {
+        "lineNumber": 101,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 102,
+        "line": "   * @param  balancing_type {string}                             Type of balancing. Currently only latin_square\r"
+      },
+      {
+        "lineNumber": 103,
+        "line": "   *                                                             is supported.\r"
+      },
+      {
+        "lineNumber": 104,
+        "line": "   *         data_set {[{assoc array}, {assoc array}, ... ]}     The data to be ordered. \r"
+      },
+      {
+        "lineNumber": 105,
+        "line": "   *         practice_set {[{assoc array}, {assoc array}, ... ]} The practice data. \r"
+      },
+      {
+        "lineNumber": 106,
+        "line": "   */ \r"
+      },
+      {
+        "lineNumber": 107,
+        "line": "  prepare_experiment() {\r"
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "balancing_type"
+    ]
+  },
+  {
+    "name": "JND_Radius#generate_trial",
+    "filePath": "scripts/experiments/jnd_radius/jnd_radius.js",
+    "lines": [
+      {
+        "lineNumber": 128,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 129,
+        "line": "   * Generates a JND trial object for use in the JsPsych timeline.\r"
+      },
+      {
+        "lineNumber": 130,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 131,
+        "line": "   * @param  type {string}             \"test\" or \"practice\"\r"
+      },
+      {
+        "lineNumber": 132,
+        "line": "   * @return trial {object}\r"
+      },
+      {
+        "lineNumber": 133,
+        "line": "   */ \r"
+      },
+      {
+        "lineNumber": 134,
+        "line": "  generate_trial(block_type) {\r"
+      }
+    ],
+    "codeParams": [
+      "block_type"
+    ],
+    "docParams": [
+      "type"
+    ]
+  },
+  {
+    "name": "JND_Radius#handle_data_saving",
+    "filePath": "scripts/experiments/jnd_radius/jnd_radius.js",
+    "lines": [
+      {
+        "lineNumber": 204,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 205,
+        "line": "   * Handles saving the relevant data on a given trial.\r"
+      },
+      {
+        "lineNumber": 206,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 207,
+        "line": "   * For reference, these are the helper variables created to assist in trial logic (i.e not present in excel)\r"
+      },
+      {
+        "lineNumber": 208,
+        "line": "   * trial_variables =         \r"
+      },
+      {
+        "lineNumber": 209,
+        "line": "   *       {type: 'jnd',\r"
+      },
+      {
+        "lineNumber": 210,
+        "line": "   *       run_type: '',\r"
+      },
+      {
+        "lineNumber": 211,
+        "line": "   *       left_radius: '',\r"
+      },
+      {
+        "lineNumber": 212,
+        "line": "   *       right_radius: '',\r"
+      },
+      {
+        "lineNumber": 213,
+        "line": "   *       };\r"
+      },
+      {
+        "lineNumber": 214,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 215,
+        "line": "   * These are variables created WITHIN the trial logic that were not present in excel (but need to be\r"
+      },
+      {
+        "lineNumber": 216,
+        "line": "   * outputted to results).     \r"
+      },
+      {
+        "lineNumber": 217,
+        "line": "   * export_variables = \r"
+      },
+      {
+        "lineNumber": 218,
+        "line": "   *       {sub_condition: '',           // Chronological ordering of sub_condition [1, 2, 3 ... ]\r"
+      },
+      {
+        "lineNumber": 219,
+        "line": "   *        balanced_sub_condition: '',  // Index of sub_condition according to balancing order\r"
+      },
+      {
+        "lineNumber": 220,
+        "line": "   *        jnd: '',\r"
+      },
+      {
+        "lineNumber": 221,
+        "line": "   *        base_radius: '',\r"
+      },
+      {
+        "lineNumber": 222,
+        "line": "   *        adjusted_radius: '',\r"
+      },
+      {
+        "lineNumber": 223,
+        "line": "   *        correct: '',\r"
+      },
+      {
+        "lineNumber": 224,
+        "line": "   *       };\r"
+      },
+      {
+        "lineNumber": 225,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 226,
+        "line": "   * @param trial {object}\r"
+      },
+      {
+        "lineNumber": 227,
+        "line": "   *        block_type {string}           \"test\" or \"practice\"\r"
+      },
+      {
+        "lineNumber": 228,
+        "line": "   *        constants {assoc array}\r"
+      },
+      {
+        "lineNumber": 229,
+        "line": "   *        index {integer}\r"
+      },
+      {
+        "lineNumber": 230,
+        "line": "   *        adjusted_correlation {double}\r"
+      },
+      {
+        "lineNumber": 231,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 232,
+        "line": "  handle_data_saving(trial, block_type, constants, index, adjusted_radius) {\r"
+      }
+    ],
+    "codeParams": [
+      "trial",
+      "block_type",
+      "constants",
+      "index",
+      "adjusted_radius"
+    ],
+    "docParams": [
+      "trial"
+    ]
+  },
+  {
+    "name": "JND_Radius#initialize_adjusted_statistic",
+    "filePath": "scripts/experiments/jnd_radius/jnd_radius.js",
+    "lines": [
+      {
+        "lineNumber": 382,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 383,
+        "line": "   * Initializes the adjusted radius for the first time.\r"
+      },
+      {
+        "lineNumber": 384,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 385,
+        "line": "   * @param  converge_from_above {boolean}    \r"
+      },
+      {
+        "lineNumber": 386,
+        "line": "   *         base_radius {double}         \r"
+      },
+      {
+        "lineNumber": 387,
+        "line": "   *         initial_difference {double}\r"
+      },
+      {
+        "lineNumber": 388,
+        "line": "   * @return adjusted_radius {double}          \r"
+      },
+      {
+        "lineNumber": 389,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 390,
+        "line": "  initialize_adjusted_statistic(converge_from_above, base_radius, initial_difference) {\r"
+      }
+    ],
+    "codeParams": [
+      "converge_from_above",
+      "base_radius",
+      "initial_difference"
+    ],
+    "docParams": [
+      "converge_from_above"
+    ]
+  },
+  {
+    "name": "JND_Radius#get_next_adjusted_statistic",
+    "filePath": "scripts/experiments/jnd_radius/jnd_radius.js",
+    "lines": [
+      {
+        "lineNumber": 402,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 403,
+        "line": "   * Calculates the next adjusted correlation/statistic.\r"
+      },
+      {
+        "lineNumber": 404,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 405,
+        "line": "   * @param  correct {boolean}\r"
+      },
+      {
+        "lineNumber": 406,
+        "line": "   *         converge_from_above {boolean}    \r"
+      },
+      {
+        "lineNumber": 407,
+        "line": "   *         adjusted_quantity {double}         \r"
+      },
+      {
+        "lineNumber": 408,
+        "line": "   *         base_correlation {double}\r"
+      },
+      {
+        "lineNumber": 409,
+        "line": "   *         initial_difference {double}\r"
+      },
+      {
+        "lineNumber": 410,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 411,
+        "line": "   * @return adjusted_correlation {double}          \r"
+      },
+      {
+        "lineNumber": 412,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 413,
+        "line": "  get_next_adjusted_statistic(correct, converge_from_above, adjusted_quantity, base_radius) {\r"
+      }
+    ],
+    "codeParams": [
+      "correct",
+      "converge_from_above",
+      "adjusted_quantity",
+      "base_radius"
+    ],
+    "docParams": [
+      "correct"
+    ]
+  },
+  {
+    "name": "Sequencing#prepare_experiment",
+    "filePath": "scripts/experiments/sequencing/sequencing.js",
+    "lines": [
+      {
+        "lineNumber": 141,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 142,
+        "line": "   * Orders the input data according to balancing type and\r"
+      },
+      {
+        "lineNumber": 143,
+        "line": "   * initializes the Sequencing object's variables.\r"
+      },
+      {
+        "lineNumber": 144,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 145,
+        "line": "   * @param  balancing_type {string}                             Type of balancing. Currently only latin_square\r"
+      },
+      {
+        "lineNumber": 146,
+        "line": "   *                                                             is supported.\r"
+      },
+      {
+        "lineNumber": 147,
+        "line": "   *         dataset {[{assoc array}, {assoc array}, ... ]}      The data to be ordered.\r"
+      },
+      {
+        "lineNumber": 148,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 149,
+        "line": "  prepare_experiment() {\r"
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "balancing_type"
+    ]
+  },
+  {
+    "name": "Sequencing#prepare_practice",
+    "filePath": "scripts/experiments/sequencing/sequencing.js",
+    "lines": [
+      {
+        "lineNumber": 174,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 175,
+        "line": "   * Orders the input dataset by randomizing it, and initializes the practice variables.\r"
+      },
+      {
+        "lineNumber": 176,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 177,
+        "line": "   * @param  dataset {[{assoc array}, {assoc array}, ... ]}   The data to be ordered.\r"
+      },
+      {
+        "lineNumber": 178,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 179,
+        "line": "  prepare_practice() {\r"
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "dataset"
+    ]
+  },
+  {
+    "name": "Sequencing#generate_trial",
+    "filePath": "scripts/experiments/sequencing/sequencing.js",
+    "lines": [
+      {
+        "lineNumber": 241,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 242,
+        "line": "   * Generates a Sequencing trial object for use in the JsPsych timeline.\r"
+      },
+      {
+        "lineNumber": 243,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 244,
+        "line": "   * @param  type {string}             \"test\" or \"practice\"\r"
+      },
+      {
+        "lineNumber": 245,
+        "line": "   * @return trial {object}\r"
+      },
+      {
+        "lineNumber": 246,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 247,
+        "line": "  generate_trial(block_type) {\r"
+      }
+    ],
+    "codeParams": [
+      "block_type"
+    ],
+    "docParams": [
+      "type"
+    ]
+  },
+  {
+    "name": "Sequencing#handle_data_saving",
+    "filePath": "scripts/experiments/sequencing/sequencing.js",
+    "lines": [
+      {
+        "lineNumber": 457,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 458,
+        "line": "   * Handles saving the relevant data on a given trial.\r"
+      },
+      {
+        "lineNumber": 459,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 460,
+        "line": "   * For reference, these are the helper variables created to assist in trial logic (i.e not present in excel)\r"
+      },
+      {
+        "lineNumber": 461,
+        "line": "   * trial_variables =\r"
+      },
+      {
+        "lineNumber": 462,
+        "line": "   *       {type: 'sequencing',\r"
+      },
+      {
+        "lineNumber": 463,
+        "line": "   *       run_type: '',\r"
+      },
+      {
+        "lineNumber": 464,
+        "line": "   *       left_correlation: '',\r"
+      },
+      {
+        "lineNumber": 465,
+        "line": "   *       right_correlation: '',\r"
+      },
+      {
+        "lineNumber": 466,
+        "line": "   *       };\r"
+      },
+      {
+        "lineNumber": 467,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 468,
+        "line": "   * These are variables created WITHIN the trial logic that were not present in excel (but need to be\r"
+      },
+      {
+        "lineNumber": 469,
+        "line": "   * outputted to results).\r"
+      },
+      {
+        "lineNumber": 470,
+        "line": "   * export_variables =\r"
+      },
+      {
+        "lineNumber": 471,
+        "line": "   *       {sub_condition: '',           // Chronological ordering of sub_condition [1, 2, 3 ... ]\r"
+      },
+      {
+        "lineNumber": 472,
+        "line": "   *        balanced_sub_condition: '',  // Index of sub_condition according to balancing order\r"
+      },
+      {
+        "lineNumber": 473,
+        "line": "   *        jnd: '',\r"
+      },
+      {
+        "lineNumber": 474,
+        "line": "   *        direction '',\r"
+      },
+      {
+        "lineNumber": 475,
+        "line": "   *        base_correlation: '',\r"
+      },
+      {
+        "lineNumber": 476,
+        "line": "   *        adjusted_value: '',\r"
+      },
+      {
+        "lineNumber": 477,
+        "line": "   *        correct: '',\r"
+      },
+      {
+        "lineNumber": 478,
+        "line": "   *       };\r"
+      },
+      {
+        "lineNumber": 479,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 480,
+        "line": "   * @param trial {object}\r"
+      },
+      {
+        "lineNumber": 481,
+        "line": "   *        block_type {string}           \"test\" or \"practice\"\r"
+      },
+      {
+        "lineNumber": 482,
+        "line": "   *        constants {assoc array}\r"
+      },
+      {
+        "lineNumber": 483,
+        "line": "   *        index {integer}\r"
+      },
+      {
+        "lineNumber": 484,
+        "line": "   *        adjusted_value {double}\r"
+      },
+      {
+        "lineNumber": 485,
+        "line": "   *        order_type {sring}            \"base\" or \"difference\"\r"
+      },
+      {
+        "lineNumber": 486,
+        "line": "   *        direction {string}            \"above\" or \"below\"\r"
+      },
+      {
+        "lineNumber": 487,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 488,
+        "line": "  handle_data_saving(trial, block_type, constants, index, adjusted_value, order_type, direction) {\r"
+      }
+    ],
+    "codeParams": [
+      "trial",
+      "block_type",
+      "constants",
+      "index",
+      "adjusted_value",
+      "order_type",
+      "direction"
+    ],
+    "docParams": [
+      "trial"
+    ]
+  },
+  {
+    "name": "Sequencing#save_to_matrix",
+    "filePath": "scripts/experiments/sequencing/sequencing.js",
+    "lines": [
+      {
+        "lineNumber": 523,
+        "line": "  /** Generic function to save data into different matrices, either the practice matrix\r"
+      },
+      {
+        "lineNumber": 524,
+        "line": "  (so that it doesn't affect the rest of the experiment) or the proper experiment matrix\r"
+      },
+      {
+        "lineNumber": 525,
+        "line": "  * @param trial {object}\r"
+      },
+      {
+        "lineNumber": 526,
+        "line": "  *        block_type {string}           \"test\" or \"practice\"\r"
+      },
+      {
+        "lineNumber": 527,
+        "line": "  *        constants {assoc array}\r"
+      },
+      {
+        "lineNumber": 528,
+        "line": "  *        index {integer}\r"
+      },
+      {
+        "lineNumber": 529,
+        "line": "  *        adjusted_value {double}\r"
+      },
+      {
+        "lineNumber": 530,
+        "line": "  *        direction {string}            \"above\" or \"below\"\r"
+      },
+      {
+        "lineNumber": 531,
+        "line": "  *        matrix {matrix array}         \"adjusted_quantity_matrix\" or \"adjusted_quantity_practice\"\r"
+      },
+      {
+        "lineNumber": 532,
+        "line": "  */\r"
+      },
+      {
+        "lineNumber": 533,
+        "line": "  save_to_matrix(trial, block_type, index, adjusted_value, direction, constants, matrix){\r"
+      }
+    ],
+    "codeParams": [
+      "trial",
+      "block_type",
+      "index",
+      "adjusted_value",
+      "direction",
+      "constants",
+      "matrix"
+    ],
+    "docParams": [
+      "trial"
+    ]
+  },
+  {
+    "name": "Sequencing#calculate_adjusted_value",
+    "filePath": "scripts/experiments/sequencing/sequencing.js",
+    "lines": [
+      {
+        "lineNumber": 710,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 711,
+        "line": "   * Calculates the adjusted value depending on whether this is the\r"
+      },
+      {
+        "lineNumber": 712,
+        "line": "   * first trial of the sub condition or not.\r"
+      },
+      {
+        "lineNumber": 713,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 714,
+        "line": "   * @param  constants {assoc array}\r"
+      },
+      {
+        "lineNumber": 715,
+        "line": "   * @param  type {string} \"above\" or \"below\"\r"
+      },
+      {
+        "lineNumber": 716,
+        "line": "\r"
+      },
+      {
+        "lineNumber": 717,
+        "line": "   * @return adjusted_value {double}\r"
+      },
+      {
+        "lineNumber": 718,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 719,
+        "line": "  calculate_adjusted_value(constants, direction) {\r"
+      }
+    ],
+    "codeParams": [
+      "constants",
+      "direction"
+    ],
+    "docParams": [
+      "constants",
+      "type"
+    ]
+  },
+  {
+    "name": "Sequencing#get_next_adjusted_statistic",
+    "filePath": "scripts/experiments/sequencing/sequencing.js",
+    "lines": [
+      {
+        "lineNumber": 774,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 775,
+        "line": "   * Calculates the next adjusted value.\r"
+      },
+      {
+        "lineNumber": 776,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 777,
+        "line": "   * @param  {object} last_Sequencing_trial\r"
+      },
+      {
+        "lineNumber": 778,
+        "line": "   *.        {object} constants\r"
+      },
+      {
+        "lineNumber": 779,
+        "line": "             {string} direction \"above\" or \"below\"\r"
+      },
+      {
+        "lineNumber": 780,
+        "line": "   * @return {double} next_adjusted_statistic\r"
+      },
+      {
+        "lineNumber": 781,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 782,
+        "line": "  get_next_adjusted_statistic(last_Sequencing_trial, constants, direction){\r"
+      }
+    ],
+    "codeParams": [
+      "last_Sequencing_trial",
+      "constants",
+      "direction"
+    ],
+    "docParams": [
+      "last_Sequencing_trial"
+    ]
+  },
+  {
+    "name": "Sequencing#check_response",
+    "filePath": "scripts/experiments/sequencing/sequencing.js",
+    "lines": [
+      {
+        "lineNumber": 815,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 816,
+        "line": "   * Given a Sequencing trial data, determines whether response is\r"
+      },
+      {
+        "lineNumber": 817,
+        "line": "   * correct or not.\r"
+      },
+      {
+        "lineNumber": 818,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 819,
+        "line": "   * @param  {JsPsych.data}  data\r"
+      },
+      {
+        "lineNumber": 820,
+        "line": "   * @param. {object}        constants\r"
+      },
+      {
+        "lineNumber": 821,
+        "line": "   * @return {boolean}\r"
+      },
+      {
+        "lineNumber": 822,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 823,
+        "line": "  check_response(data, constants) {\r"
+      }
+    ],
+    "codeParams": [
+      "data",
+      "constants"
+    ],
+    "docParams": [
+      "data"
+    ]
+  },
+  {
+    "name": "Sequencing_Side_by_Side#prepare_experiment",
+    "filePath": "scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js",
+    "lines": [
+      {
+        "lineNumber": 135,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 136,
+        "line": "   * Orders the input data according to balancing type and\r"
+      },
+      {
+        "lineNumber": 137,
+        "line": "   * initializes the Sequencing object's variables.\r"
+      },
+      {
+        "lineNumber": 138,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 139,
+        "line": "   * @param  balancing_type {string}                             Type of balancing. Currently only latin_square\r"
+      },
+      {
+        "lineNumber": 140,
+        "line": "   *                                                             is supported.\r"
+      },
+      {
+        "lineNumber": 141,
+        "line": "   *         dataset {[{assoc array}, {assoc array}, ... ]}      The data to be ordered.\r"
+      },
+      {
+        "lineNumber": 142,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 143,
+        "line": "  prepare_experiment() {\r"
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "balancing_type"
+    ]
+  },
+  {
+    "name": "Sequencing_Side_by_Side#prepare_practice",
+    "filePath": "scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js",
+    "lines": [
+      {
+        "lineNumber": 165,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 166,
+        "line": "   * Orders the input dataset by randomizing it, and initializes the practice variables.\r"
+      },
+      {
+        "lineNumber": 167,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 168,
+        "line": "   * @param  dataset {[{assoc array}, {assoc array}, ... ]}   The data to be ordered.\r"
+      },
+      {
+        "lineNumber": 169,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 170,
+        "line": "  prepare_practice() {\r"
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "dataset"
+    ]
+  },
+  {
+    "name": "Sequencing_Side_by_Side#generate_trial",
+    "filePath": "scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js",
+    "lines": [
+      {
+        "lineNumber": 193,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 194,
+        "line": "   * Generates a Sequencing trial object for use in the JsPsych timeline.\r"
+      },
+      {
+        "lineNumber": 195,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 196,
+        "line": "   * @param  type {string}             \"test\" or \"practice\"\r"
+      },
+      {
+        "lineNumber": 197,
+        "line": "   * @return trial {object}\r"
+      },
+      {
+        "lineNumber": 198,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 199,
+        "line": "  generate_trial(block_type) {\r"
+      }
+    ],
+    "codeParams": [
+      "block_type"
+    ],
+    "docParams": [
+      "type"
+    ]
+  },
+  {
+    "name": "Sequencing_Side_by_Side#handle_data_saving",
+    "filePath": "scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js",
+    "lines": [
+      {
+        "lineNumber": 412,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 413,
+        "line": "   * Handles saving the relevant data on a given trial.\r"
+      },
+      {
+        "lineNumber": 414,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 415,
+        "line": "   * For reference, these are the helper variables created to assist in trial logic (i.e not present in excel)\r"
+      },
+      {
+        "lineNumber": 416,
+        "line": "   * trial_variables =\r"
+      },
+      {
+        "lineNumber": 417,
+        "line": "   *       {type: 'sequencing',\r"
+      },
+      {
+        "lineNumber": 418,
+        "line": "   *       run_type: '',\r"
+      },
+      {
+        "lineNumber": 419,
+        "line": "   *       left_correlation: '',\r"
+      },
+      {
+        "lineNumber": 420,
+        "line": "   *       right_correlation: '',\r"
+      },
+      {
+        "lineNumber": 421,
+        "line": "   *       };\r"
+      },
+      {
+        "lineNumber": 422,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 423,
+        "line": "   * These are variables created WITHIN the trial logic that were not present in excel (but need to be\r"
+      },
+      {
+        "lineNumber": 424,
+        "line": "   * outputted to results).\r"
+      },
+      {
+        "lineNumber": 425,
+        "line": "   * export_variables =\r"
+      },
+      {
+        "lineNumber": 426,
+        "line": "   *       {sub_condition: '',           // Chronological ordering of sub_condition [1, 2, 3 ... ]\r"
+      },
+      {
+        "lineNumber": 427,
+        "line": "   *        balanced_sub_condition: '',  // Index of sub_condition according to balancing order\r"
+      },
+      {
+        "lineNumber": 428,
+        "line": "   *        jnd: '',\r"
+      },
+      {
+        "lineNumber": 429,
+        "line": "   *        direction '',\r"
+      },
+      {
+        "lineNumber": 430,
+        "line": "   *        base_correlation: '',\r"
+      },
+      {
+        "lineNumber": 431,
+        "line": "   *        adjusted_value: '',\r"
+      },
+      {
+        "lineNumber": 432,
+        "line": "   *        correct: '',\r"
+      },
+      {
+        "lineNumber": 433,
+        "line": "   *       };\r"
+      },
+      {
+        "lineNumber": 434,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 435,
+        "line": "   * @param trial {object}\r"
+      },
+      {
+        "lineNumber": 436,
+        "line": "   *        block_type {string}           \"test\" or \"practice\"\r"
+      },
+      {
+        "lineNumber": 437,
+        "line": "   *        constants {assoc array}\r"
+      },
+      {
+        "lineNumber": 438,
+        "line": "   *        index {integer}\r"
+      },
+      {
+        "lineNumber": 439,
+        "line": "   *        adjusted_value {double}\r"
+      },
+      {
+        "lineNumber": 440,
+        "line": "   *        order_type {sring}            \"first\", \"blank\", \"likert\"\r"
+      },
+      {
+        "lineNumber": 441,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 442,
+        "line": "  handle_data_saving(trial, block_type, constants, index, adjusted_value, order_type) {\r"
+      }
+    ],
+    "codeParams": [
+      "trial",
+      "block_type",
+      "constants",
+      "index",
+      "adjusted_value",
+      "order_type"
+    ],
+    "docParams": [
+      "trial"
+    ]
+  },
+  {
+    "name": "Sequencing_Side_by_Side#get_next_adjusted_statistic",
+    "filePath": "scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js",
+    "lines": [
+      {
+        "lineNumber": 663,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 664,
+        "line": "   * Calculates the next adjusted value.\r"
+      },
+      {
+        "lineNumber": 665,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 666,
+        "line": "   * @param  {object} last_trial\r"
+      },
+      {
+        "lineNumber": 667,
+        "line": "   *.        {object} constants\r"
+      },
+      {
+        "lineNumber": 668,
+        "line": "   * @return {double} next_adjusted_statistic\r"
+      },
+      {
+        "lineNumber": 669,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 670,
+        "line": "  get_next_adjusted_statistic(last_trial, constants){\r"
+      }
+    ],
+    "codeParams": [
+      "last_trial",
+      "constants"
+    ],
+    "docParams": [
+      "last_trial"
+    ]
+  },
+  {
+    "name": "Sequencing_Side_by_Side#get_next_adjusted_correlation",
+    "filePath": "scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js",
+    "lines": [
+      {
+        "lineNumber": 719,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 720,
+        "line": "   * Calculates the next adjusted correlation (the traditional way).\r"
+      },
+      {
+        "lineNumber": 721,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 722,
+        "line": "   * @param  {object} last_JND_trial\r"
+      },
+      {
+        "lineNumber": 723,
+        "line": "   *.        {object} constants\r"
+      },
+      {
+        "lineNumber": 724,
+        "line": "   * @return {double} next_adjusted_statistic\r"
+      },
+      {
+        "lineNumber": 725,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 726,
+        "line": "  get_next_adjusted_correlation(last_JND_trial, constants){\r"
+      }
+    ],
+    "codeParams": [
+      "last_JND_trial",
+      "constants"
+    ],
+    "docParams": [
+      "last_JND_trial"
+    ]
+  },
+  {
+    "name": "Sequencing_Side_by_Side#check_response",
+    "filePath": "scripts/experiments/sequencing_side_by_side/sequencing_side_by_side.js",
+    "lines": [
+      {
+        "lineNumber": 748,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 749,
+        "line": "   * Given a JND trial data, determines whether response is\r"
+      },
+      {
+        "lineNumber": 750,
+        "line": "   * correct or not.\r"
+      },
+      {
+        "lineNumber": 751,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 752,
+        "line": "   * @param  {JsPsych.data}  data\r"
+      },
+      {
+        "lineNumber": 753,
+        "line": "   * @param. {object}        constants\r"
+      },
+      {
+        "lineNumber": 754,
+        "line": "   * @return {boolean}\r"
+      },
+      {
+        "lineNumber": 755,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 756,
+        "line": "  check_response(data, constants) {\r"
+      }
+    ],
+    "codeParams": [
+      "data",
+      "constants"
+    ],
+    "docParams": [
+      "data"
+    ]
+  },
+  {
+    "name": "Sequencing_Symbols#generate_trial",
+    "filePath": "scripts/experiments/sequencing_symbols/sequencing_symbols.js",
+    "lines": [
+      {
+        "lineNumber": 200,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 201,
+        "line": "   * Generates a Sequencing trial object for use in the jsPsych timeline.\r"
+      },
+      {
+        "lineNumber": 202,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 203,
+        "line": "   * @param  {string} type \"test\" or \"practice\"\r"
+      },
+      {
+        "lineNumber": 204,
+        "line": "   * @return {object} trial \r"
+      },
+      {
+        "lineNumber": 205,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 206,
+        "line": "  generate_trial(block_type) {\r"
+      }
+    ],
+    "codeParams": [
+      "block_type"
+    ],
+    "docParams": [
+      "type"
+    ]
+  },
+  {
+    "name": "Sequencing_Symbols#check_response_sequencing",
+    "filePath": "scripts/experiments/sequencing_symbols/sequencing_symbols.js",
+    "lines": [
+      {
+        "lineNumber": 625,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 626,
+        "line": "   * Given a Sequencing trial data, determines whether response is\r"
+      },
+      {
+        "lineNumber": 627,
+        "line": "   * correct or not.\r"
+      },
+      {
+        "lineNumber": 628,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 629,
+        "line": "   * @param  {JsPsych.data}  data\r"
+      },
+      {
+        "lineNumber": 630,
+        "line": "   * @param {object} sequencing experiment\r"
+      },
+      {
+        "lineNumber": 631,
+        "line": "   * @return {boolean}\r"
+      },
+      {
+        "lineNumber": 632,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 633,
+        "line": "  check_response_sequencing(data, sequencing_symbols_exp) {\r"
+      }
+    ],
+    "codeParams": [
+      "data",
+      "sequencing_symbols_exp"
+    ],
+    "docParams": [
+      "data",
+      "sequencing"
+    ]
+  },
+  {
+    "name": "Sequencing_Symbols#get_last_trial_data",
+    "filePath": "scripts/experiments/sequencing_symbols/sequencing_symbols.js",
+    "lines": [
+      {
+        "lineNumber": 973,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 974,
+        "line": "     * Returns the data of the last trial on the jsPsych data object\r"
+      },
+      {
+        "lineNumber": 975,
+        "line": "     * @param {string} experiment_name\r"
+      },
+      {
+        "lineNumber": 976,
+        "line": "     * @returns {assoc array} last jsPsych trial data object\r"
+      },
+      {
+        "lineNumber": 977,
+        "line": "     */\r"
+      },
+      {
+        "lineNumber": 978,
+        "line": "  get_last_trial_data(){\r"
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "experiment_name"
+    ]
+  },
+  {
+    "name": "Stevens#prepare_experiment",
+    "filePath": "scripts/experiments/stevens/stevens.js",
+    "lines": [
+      {
+        "lineNumber": 122,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 123,
+        "line": "   * Orders the input data according to balancing type and\r"
+      },
+      {
+        "lineNumber": 124,
+        "line": "   * initializes the Stevens object's variables.  \r"
+      },
+      {
+        "lineNumber": 125,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 126,
+        "line": "   * @param  balancing_type {string}                           Type of balancing. Currently only latin_square\r"
+      },
+      {
+        "lineNumber": 127,
+        "line": "   *                                                           is supported.\r"
+      },
+      {
+        "lineNumber": 128,
+        "line": "   *         dataset {[{assoc array}, {assoc array}, ... ]}   The data to be ordered. \r"
+      },
+      {
+        "lineNumber": 129,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 130,
+        "line": "  prepare_experiment() {\r"
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "balancing_type"
+    ]
+  },
+  {
+    "name": "Stevens#prepare_practice",
+    "filePath": "scripts/experiments/stevens/stevens.js",
+    "lines": [
+      {
+        "lineNumber": 172,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 173,
+        "line": "   * Creates the practice dataset by taking the first FOUR subconditions.\r"
+      },
+      {
+        "lineNumber": 174,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 175,
+        "line": "   * @param  dataset {[{assoc array}, {assoc array}, ... ]}   The data to be ordered. \r"
+      },
+      {
+        "lineNumber": 176,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 177,
+        "line": "  prepare_practice() {\r"
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "dataset"
+    ]
+  },
+  {
+    "name": "Stevens#generate_trial",
+    "filePath": "scripts/experiments/stevens/stevens.js",
+    "lines": [
+      {
+        "lineNumber": 479,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 480,
+        "line": "   * Generates a Stevens object for use in the JsPsych timeline.\r"
+      },
+      {
+        "lineNumber": 481,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 482,
+        "line": "   * @param  type {string}                             \"test\" or \"practice\"\r"
+      },
+      {
+        "lineNumber": 483,
+        "line": "   * @return trial {object}\r"
+      },
+      {
+        "lineNumber": 484,
+        "line": "   */   \r"
+      },
+      {
+        "lineNumber": 485,
+        "line": "  generate_trial(block_type) {\r"
+      }
+    ],
+    "codeParams": [
+      "block_type"
+    ],
+    "docParams": [
+      "type"
+    ]
+  },
+  {
+    "name": "Stevens#get_last_trial",
+    "filePath": "scripts/experiments/stevens/stevens.js",
+    "lines": [
+      {
+        "lineNumber": 650,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 651,
+        "line": "   * Retrieves the last stevens trial depending on block_type for a\r"
+      },
+      {
+        "lineNumber": 652,
+        "line": "   * given sub condition index. \r"
+      },
+      {
+        "lineNumber": 653,
+        "line": "   * If this is the first trial of a given block_type, returns null. \r"
+      },
+      {
+        "lineNumber": 654,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 655,
+        "line": "   * @param  trial {object}   \r"
+      },
+      {
+        "lineNumber": 656,
+        "line": "   *         block_type {string}          \"test\" or \"practice\"         \r"
+      },
+      {
+        "lineNumber": 657,
+        "line": "   *         index {integer}\r"
+      },
+      {
+        "lineNumber": 658,
+        "line": "   * @return last_stevens_trial {object}           \r"
+      },
+      {
+        "lineNumber": 659,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 660,
+        "line": "  get_last_trial(trial, block_type, index) {\r"
+      }
+    ],
+    "codeParams": [
+      "trial",
+      "block_type",
+      "index"
+    ],
+    "docParams": [
+      "trial"
+    ]
+  },
+  {
+    "name": "Stevens#handle_data_saving",
+    "filePath": "scripts/experiments/stevens/stevens.js",
+    "lines": [
+      {
+        "lineNumber": 689,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 690,
+        "line": "   * Handles saving the relevant data on a given trial.\r"
+      },
+      {
+        "lineNumber": 691,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 692,
+        "line": "   * For reference, these are the helper variables created to assist in trial logic (i.e not present in excel)\r"
+      },
+      {
+        "lineNumber": 693,
+        "line": "   * this.trial_variables =         \r"
+      },
+      {
+        "lineNumber": 694,
+        "line": "   *       {type: 'stevens',\r"
+      },
+      {
+        "lineNumber": 695,
+        "line": "   *       run_type: '',\r"
+      },
+      {
+        "lineNumber": 696,
+        "line": "   *       left_correlation: '',\r"
+      },
+      {
+        "lineNumber": 697,
+        "line": "   *       right_correlation: '',\r"
+      },
+      {
+        "lineNumber": 698,
+        "line": "   *       round_refreshes: 0,      // Number of times there is a refresh for a given round \r"
+      },
+      {
+        "lineNumber": 699,
+        "line": "   *       high_ref_is_right: false\r"
+      },
+      {
+        "lineNumber": 700,
+        "line": "   *       start_ref: ''\r"
+      },
+      {
+        "lineNumber": 701,
+        "line": "   *       };\r"
+      },
+      {
+        "lineNumber": 702,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 703,
+        "line": "   * These are variables created WITHIN the trial logic that were not present in excel (but need to be\r"
+      },
+      {
+        "lineNumber": 704,
+        "line": "   * outputted to results).         \r"
+      },
+      {
+        "lineNumber": 705,
+        "line": "   * this.export_variables = \r"
+      },
+      {
+        "lineNumber": 706,
+        "line": "   *       {trial_num: 0,                // Round index trial is currently on (aka trial_num from excel)\r"
+      },
+      {
+        "lineNumber": 707,
+        "line": "   *        sub_condition: '',           // Chronological ordering of sub_condition [1, 2, 3 ... ]\r"
+      },
+      {
+        "lineNumber": 708,
+        "line": "   *        balanced_sub_condition: '',  // Index of sub_condition according to balancing order\r"
+      },
+      {
+        "lineNumber": 709,
+        "line": "   *        estimated_mid: '',\r"
+      },
+      {
+        "lineNumber": 710,
+        "line": "   *        num_adjustments: 0,          // Number of inputs for a given round (aka num_adjustments from excel)\r"
+      },
+      {
+        "lineNumber": 711,
+        "line": "   *        trials_per_round: '',\r"
+      },
+      {
+        "lineNumber": 712,
+        "line": "   *       };\r"
+      },
+      {
+        "lineNumber": 713,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 714,
+        "line": "   * @param trial {object}\r"
+      },
+      {
+        "lineNumber": 715,
+        "line": "   *        block_type {string}               \"test\" or \"practice\"\r"
+      },
+      {
+        "lineNumber": 716,
+        "line": "   *        constants {assoc array}\r"
+      },
+      {
+        "lineNumber": 717,
+        "line": "   *        estimated_correlation {double}\r"
+      },
+      {
+        "lineNumber": 718,
+        "line": "   *        last_stevens_trial {object}\r"
+      },
+      {
+        "lineNumber": 719,
+        "line": "   *        index {integer}\r"
+      },
+      {
+        "lineNumber": 720,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 721,
+        "line": "  handle_data_saving(trial, block_type, constants, estimated_correlation, last_stevens_trial, index) {\r"
+      }
+    ],
+    "codeParams": [
+      "trial",
+      "block_type",
+      "constants",
+      "estimated_correlation",
+      "last_stevens_trial",
+      "index"
+    ],
+    "docParams": [
+      "trial"
+    ]
+  },
+  {
+    "name": "Stevens#update_estimated_correlation",
+    "filePath": "scripts/experiments/stevens/stevens.js",
+    "lines": [
+      {
+        "lineNumber": 772,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 773,
+        "line": "   * Updates the estimated correlation.\r"
+      },
+      {
+        "lineNumber": 774,
+        "line": "   * If  : \r"
+      },
+      {
+        "lineNumber": 775,
+        "line": "   *    Is the first trial, will initialize the correlation and step size.\r"
+      },
+      {
+        "lineNumber": 776,
+        "line": "   * Else:\r"
+      },
+      {
+        "lineNumber": 777,
+        "line": "   *    If there was a key press in previous trial, will calculate the\r"
+      },
+      {
+        "lineNumber": 778,
+        "line": "   *    the estimated correlation (depending on whether it was an inc or dec).\r"
+      },
+      {
+        "lineNumber": 779,
+        "line": "   *    Else if no key press in previous trial, will set estimated correlation\r"
+      },
+      {
+        "lineNumber": 780,
+        "line": "   *    to the previous trial's. \r"
+      },
+      {
+        "lineNumber": 781,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 782,
+        "line": "   * @param  trial {object}   \r"
+      },
+      {
+        "lineNumber": 783,
+        "line": "   *         constants {object}         \r"
+      },
+      {
+        "lineNumber": 784,
+        "line": "   *         last_trial {object}\r"
+      },
+      {
+        "lineNumber": 785,
+        "line": "   * @return estimated_correlation {double}           \r"
+      },
+      {
+        "lineNumber": 786,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 787,
+        "line": "  update_estimated_correlation(trial, constants, last_trial, block_type) {\r"
+      }
+    ],
+    "codeParams": [
+      "trial",
+      "constants",
+      "last_trial",
+      "block_type"
+    ],
+    "docParams": [
+      "trial"
+    ]
+  },
+  {
+    "name": "Correlation_Dependencies#get_next_adjusted_statistic",
+    "filePath": "scripts/helpers/correlation_dependencies.js",
+    "lines": [
+      {
+        "lineNumber": 264,
+        "line": "    /**\r"
+      },
+      {
+        "lineNumber": 265,
+        "line": "     * Calculates the next adjusted value.\r"
+      },
+      {
+        "lineNumber": 266,
+        "line": "     *\r"
+      },
+      {
+        "lineNumber": 267,
+        "line": "     * @param  {object} experiment\r"
+      },
+      {
+        "lineNumber": 268,
+        "line": "     * @return {number|number[]} next_adjusted_statistic\r"
+      },
+      {
+        "lineNumber": 269,
+        "line": "     */\r"
+      },
+      {
+        "lineNumber": 270,
+        "line": "    get_next_adjusted_statistic(experiment, constants){\r"
+      }
+    ],
+    "codeParams": [
+      "experiment",
+      "constants"
+    ],
+    "docParams": [
+      "experiment"
+    ]
+  },
+  {
+    "name": "Correlation_Dependencies#get_subcondition_index",
+    "filePath": "scripts/helpers/correlation_dependencies.js",
+    "lines": [
+      {
+        "lineNumber": 459,
+        "line": "  /**\r"
+      },
+      {
+        "lineNumber": 460,
+        "line": "   * Get current subcondition index of block type for current index.\r"
+      },
+      {
+        "lineNumber": 461,
+        "line": "   *\r"
+      },
+      {
+        "lineNumber": 462,
+        "line": "   * @param   {String} block_type - Either \"test\" or \"practice\"\r"
+      },
+      {
+        "lineNumber": 463,
+        "line": "   * @returns {number}     index - current subcondition index\r"
+      },
+      {
+        "lineNumber": 464,
+        "line": "   */\r"
+      },
+      {
+        "lineNumber": 465,
+        "line": "  get_subcondition_index(experiment, block_type) {\r"
+      }
+    ],
+    "codeParams": [
+      "experiment",
+      "block_type"
+    ],
+    "docParams": [
+      "block_type"
+    ]
+  },
+  {
+    "name": "generate_timeline_screen",
+    "filePath": "scripts/helpers/experiment_helpers.js",
+    "lines": [
+      {
+        "lineNumber": 2,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 3,
+        "line": " * Helper function to generate generic timeline object\r"
+      },
+      {
+        "lineNumber": 4,
+        "line": " * @param {string} type - the type of timeline object\r"
+      },
+      {
+        "lineNumber": 5,
+        "line": " * @param {number} duration - time in ms for screen duration\r"
+      },
+      {
+        "lineNumber": 6,
+        "line": " * @param {string[]} choices - key choices - either a number array of valid ascii keys OR no keys\r"
+      },
+      {
+        "lineNumber": 7,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 8,
+        "line": " * @returns {Object} a timeline object with stimulus set to empty ''\r"
+      },
+      {
+        "lineNumber": 9,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 10,
+        "line": "export function generate_timeline_screen(duration, choices, type = \"html-keyboard-response\") {\r"
+      }
+    ],
+    "codeParams": [
+      "duration",
+      "choices",
+      "type"
+    ],
+    "docParams": [
+      "type",
+      "duration",
+      "choices"
+    ]
+  },
+  {
+    "name": "randomize_position_symmetric",
+    "filePath": "scripts/helpers/experiment_helpers.js",
+    "lines": [
+      {
+        "lineNumber": 230,
+        "line": "/** \r"
+      },
+      {
+        "lineNumber": 231,
+        "line": " * Randomizes the position of the base and adjusted coordinates for side-by-side displays\r"
+      },
+      {
+        "lineNumber": 232,
+        "line": " * and returns the coordinates for the left/top graph first and right/bottom graph second.\r"
+      },
+      {
+        "lineNumber": 233,
+        "line": " * @param  {Object}                        constants \r"
+      },
+      {
+        "lineNumber": 234,
+        "line": " * @param  {{x_values: [], y_values: []} } adjusted_coordinates_high  \r"
+      },
+      {
+        "lineNumber": 235,
+        "line": " * @param  {{x_values: [], y_values: []} } adjusted_coordinates_low       \r"
+      },
+      {
+        "lineNumber": 236,
+        "line": " * @param  {Object}                        constants \r"
+      },
+      {
+        "lineNumber": 237,
+        "line": " * @param  {number}                         adjusted_value \r"
+      },
+      {
+        "lineNumber": 238,
+        "line": " * @param  {number}                         adjusted_value_low \r"
+      },
+      {
+        "lineNumber": 239,
+        "line": " * @returns {{left: [coordinates], right: [coordinates]}}            \r"
+      },
+      {
+        "lineNumber": 240,
+        "line": " */\r"
+      },
+      {
+        "lineNumber": 241,
+        "line": "export function randomize_position_symmetric(constants, adjusted_coordinates_high, adjusted_coordinates_low, adjusted_value_high, adjusted_value_low) {\r"
+      }
+    ],
+    "codeParams": [
+      "constants",
+      "adjusted_coordinates_high",
+      "adjusted_coordinates_low",
+      "adjusted_value_high",
+      "adjusted_value_low"
+    ],
+    "docParams": [
+      "constants",
+      "}",
+      "}",
+      "constants",
+      "adjusted_value",
+      "adjusted_value_low"
+    ]
+  },
+  {
+    "name": "get_mixed_masks",
+    "filePath": "scripts/helpers/experiment_helpers.js",
+    "lines": [
+      {
+        "lineNumber": 742,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 743,
+        "line": " * Generates formated css display element for margins and alignment for a particular stimulus mask\r"
+      },
+      {
+        "lineNumber": 744,
+        "line": " * to be used in an experiment.js function. Graph_attrributes are generated by the get_mixed_graph_styles function below,\r"
+      },
+      {
+        "lineNumber": 745,
+        "line": " * intended to be used with the Mixed Graph type.\r"
+      },
+      {
+        "lineNumber": 746,
+        "line": " *\r"
+      },
+      {
+        "lineNumber": 747,
+        "line": " * @param  {Object} graph_attributes\r"
+      },
+      {
+        "lineNumber": 748,
+        "line": " * @returns {string} css style element stimulus source with correct margins on left, right, top and bottom\r"
+      },
+      {
+        "lineNumber": 749,
+        "line": " * @author Jose Navarro\r"
+      },
+      {
+        "lineNumber": 750,
+        "line": "*/\r"
+      },
+      {
+        "lineNumber": 751,
+        "line": "export function get_mixed_masks(attributes){\r"
+      }
+    ],
+    "codeParams": [
+      "attributes"
+    ],
+    "docParams": [
+      "graph_attributes"
+    ]
+  },
+  {
+    "name": "get_mixed_graph_styles",
+    "filePath": "scripts/helpers/experiment_helpers.js",
+    "lines": [
+      {
+        "lineNumber": 783,
+        "line": "/**\r"
+      },
+      {
+        "lineNumber": 784,
+        "line": " * Generates the correct mask image path and margins for left and right graphs and mask based on graph type.\r"
+      },
+      {
+        "lineNumber": 785,
+        "line": " * Used with Mixed-type graphs but can support any graph type if needed. \r"
+      },
+      {
+        "lineNumber": 786,
+        "line": " * This returns the CSS style properties for mixed graphs. Top, right, bot, and left refer to the margin properties\r"
+      },
+      {
+        "lineNumber": 787,
+        "line": " * \r"
+      },
+      {
+        "lineNumber": 788,
+        "line": " * This function and functions depending on it such as prepare_mixed_plot in the graphing controller are not generalized for more than \r"
+      },
+      {
+        "lineNumber": 789,
+        "line": " * two graphs (left and right / top and bottom, etc...). \r"
+      },
+      {
+        "lineNumber": 790,
+        "line": " * \r"
+      },
+      {
+        "lineNumber": 791,
+        "line": " * TODO: figure out a better way to set out separations rather than hard coding them in this function.\r"
+      },
+      {
+        "lineNumber": 792,
+        "line": " * Note: If graph is aligning but not the mask, add 'px' to the end of the margin values\r"
+      },
+      {
+        "lineNumber": 793,
+        "line": " * @param  {Object} constants\r"
+      },
+      {
+        "lineNumber": 794,
+        "line": " * @param  {array} graph_properties left and right graph properties\r"
+      },
+      {
+        "lineNumber": 795,
+        "line": " * @param  {string} rectangle_mask_path \r"
+      },
+      {
+        "lineNumber": 796,
+        "line": " * @param  {string} square_mask_path \r"
+      },
+      {
+        "lineNumber": 797,
+        "line": "* @returns  {{ left:{}, right:{}}} margins assoc array that has the left and right margins and image path.\r"
+      },
+      {
+        "lineNumber": 798,
+        "line": "*                       margins = { left:{}, right:{}}\r"
+      },
+      {
+        "lineNumber": 799,
+        "line": "* @author Jose Navarro\r"
+      },
+      {
+        "lineNumber": 800,
+        "line": "*/\r"
+      },
+      {
+        "lineNumber": 801,
+        "line": "export function get_mixed_graph_styles(constants, graph_properties, MASK_PATHS){\r"
+      }
+    ],
+    "codeParams": [
+      "constants",
+      "graph_properties",
+      "MASK_PATHS"
+    ],
+    "docParams": [
+      "constants",
+      "graph_properties",
+      "rectangle_mask_path",
+      "square_mask_path"
+    ]
+  }
+]
